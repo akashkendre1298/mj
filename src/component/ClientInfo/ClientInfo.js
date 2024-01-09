@@ -39,6 +39,8 @@ const ClientInfo = () => {
       <div>
         <Header />
       </div>
+
+      <div>sgdhjk</div>
       <form className="formcont">
         <h1 className="text">Client Information</h1>
 
