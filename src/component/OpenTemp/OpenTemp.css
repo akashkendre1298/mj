@@ -1,0 +1,126 @@
+/* CSS */
+.template-card_OpenTemp{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  height: 60vh;
+  border: 1px solid rgb(191, 189, 189);
+  border-radius: 5px;
+  border: rgb(229, 229, 229);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: rgb(229, 229, 229);
+
+  top: 300px;
+  }
+  .Contant{
+    padding-top: 150px;
+    padding-left: 30%;
+  }
+.template-selector {
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(242, 236, 236);
+    border: solid 1px rgb(191, 189, 189);
+    padding: 12px;
+  }
+  .selectTemp{
+    font-size: 12px;
+  }
+  .close-button {
+    background-color: transparent;
+    border: none;
+  }
+  .para1{
+    padding: 0 20px ;
+    text-align: center;
+    font-size: 15px;
+  }
+  .template-card__body__center__input__OpenTemp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .template-card__body__center__input__field {
+    width: 90%;
+    height: 90%;
+    resize: none;
+    overflow-y: scroll;
+    border: 1px solid rgb(190, 188, 188);
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .TempName{
+    text-align: center;
+    font-size: 15px;
+  }
+  .para2_OpenTemp{
+    display: flex;
+    flex-direction: column;
+    width: 89%;
+    height: 20px;
+    border: 1px solid rgb(191, 189, 189);
+    border-radius: 5px;
+    padding: 5px;
+    /* margin: 5px; */
+    margin-left: 25px;
+  }
+  .para3_OpenTemp{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 20%;
+    border: 1px solid rgb(191, 189, 189);
+    border-radius: 5px;
+    padding: 5px;
+    /* margin: 10px; */
+    margin-left: 20px;
+
+  }
+  .button-container {
+    display: flex;
+    /* justify-content: space-between; */
+    width: 200px;
+    margin-left: 37%;
+    padding: 5px;
+  }
+  
+  .open-button_OpenTemp {
+    font-size: 14px;
+    width: 100px;
+    height: 30px;
+    background-color: #f3f2f1;
+    color: black;
+    border: 2px solid rgb(191, 189, 189);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .open-button:hover {
+    background-color: #d7e9f7;
+    border-color: #005a9e;
+  }
+  
+  .cancel-button_OpenTemp {
+    font-size: 14px;
+    width: 100px;
+    height: 30px;
+    background-color: #f3f2f1;
+    color: black;
+    border: 2px solid rgb(191, 189, 189);
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cancel-button:hover {
+    background-color: #d7e9f7;
+    border-color: #005a9e;
+  }
+  
+
+

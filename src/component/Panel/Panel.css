@@ -1,0 +1,105 @@
+body{
+    background-color: #fee4c3;
+}
+.container {
+    display: flex;
+    /* justify-content: center; */
+    
+    
+}
+
+.panel {
+    display: flex;
+    align-items: center;
+    margin: 7px;
+}
+
+.button-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.scroll-box,
+.scroll-box1 {
+    margin: 5px;
+    overflow-y: scroll; /* Enable vertical scrollbar */
+    border: solid thin black; /* Border for visibility */
+    background-color: white;
+}
+
+.scroll-box_panel1 {
+    width: 120vh;
+    height: 37vh;
+    border: solid black 1px;
+    margin-left: 20px;
+}
+
+.scroll-box1 {
+    width: 280px;
+    height: 140px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-button {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid black;
+    background: none;
+    cursor: pointer;
+}
+
+.panelupdown{
+    display: flex;
+
+    flex-direction: column;
+}
+
+.checkbox-list {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-right: 10px;
+  }
+  
+  label {
+    margin-bottom: 8px; /* Adjust as needed for spacing between checkboxes */
+  }
+  
+@media screen and (max-width: 1200px) {
+    .scroll-box {
+        width: 95vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .scroll-box {
+        width: 50vw;
+    }
+
+    .scroll-box1 {
+        width: 100px;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .scroll-box {
+        width: 80vw;
+    }
+
+    .scroll-box1 {
+        width: 90vw;
+    }
+}
+
+@media (max-width: 400px) {
+    /* Adjust styles for smaller tab sizes */
+    .scroll-box {
+        width: 70vw;
+    }
+}

@@ -1,0 +1,70 @@
+
+
+body {
+  overflow: hidden;
+}
+
+.main-container {
+  text-align: center;
+  background-color: #FEE4C3;
+  padding: 1px;
+  height: 100vh;
+  align-items: center;
+  padding-top: 0px;
+  z-index: 0;
+  
+}
+
+.formcont {
+  margin-right: 20vh;
+  align-items: center;
+}
+
+.text {
+  color: #333;
+  text-align: center;
+  margin-left: 15%;
+  font-family: 'Raleway';
+  font-weight: normal;
+  margin-bottom: 2%;
+}
+
+.form-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+  margin-left: 2%;
+
+}
+
+.form-group1 {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+  margin-left: 13%;
+  width: 42%;
+  justify-content: center;
+}
+
+.label {
+
+  text-align: right;
+  width: 20%;
+  margin-block-start: 10px
+}
+
+.input-for-form {
+  flex: 1;
+  padding: 4px;
+  border: 2px solid #ccc;
+  border-radius: 2px;
+  width: 150px;
+  outline: none;
+
+}
+
+.input-for-form:focus {
+  border-bottom-color: #007bff;
+}
