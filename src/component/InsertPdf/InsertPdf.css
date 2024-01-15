@@ -1,0 +1,13 @@
+.add-remove-pdf-docs-and-arrange-documents-section {
+  display: flex;
+  justify-content: space-between;
+  margin: 2em;
+}
+.for-first-section-header-and-the-btns {
+  display: flex;
+  width: 42em;
+  justify-content: center;
+}
+.arrange-document-list-right-side-section {
+  width: 11em;
+}
