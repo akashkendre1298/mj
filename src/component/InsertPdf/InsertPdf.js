@@ -124,7 +124,7 @@ const InsertPdf = () => {
             Add/Remove PDF Documents
           </p>
           <div className="header-and-add-doc-add-form-btns">
-            <div className="two-btns-for-add-pdf-and-forms mt-10">
+            <div className="two-btns-for-add-pdf-and-forms">
               {/* <button className="add-doc-btn-for-section-document">
                 Add Document
               </button> */}
