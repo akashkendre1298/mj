@@ -122,11 +122,11 @@ li.list-icon-status-online {
   font-size: 10px;
 }
 .modal-for-the-confirmation-of-deletion-of-document {
-  width: 25em;
+  width: 36em;
   text-align: center;
   font-size: 14px;
-  margin-top: 3em;
-  background-color: #80808038;
+  margin: 1em;
+  background-color: white;
   display: grid;
   align-items: center;
   border-radius: 1px;

@@ -159,7 +159,8 @@ const InsertPdf = () => {
                   </div>
                   {showConfirmation && (
                     <ConfirmationModal
-                      message="Are you sure you want to delete this PDF?"
+                      message="Are you sure you want to remove this document from your inspection file ?
+                      You can select 'Dont Print' if you don't want the document to be printed in the report."
                       onConfirm={handleConfirmRemove}
                       onCancel={handleCancelRemove}
                     />
