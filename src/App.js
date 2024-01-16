@@ -3,7 +3,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import ClientInfo from "./component/ClientInfo/ClientInfo";
-// import Panel1 from "./component/Panel/Panel1"
+import Panel1 from "./component/Panel/Panel1"
 import Footer from "./component/Footer/Footer";
 import ColorPalet from './component/ColorPalet/ColorPalet';
 import InsertPdf from './component/InsertPdf/InsertPdf';
