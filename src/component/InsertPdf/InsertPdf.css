@@ -26,7 +26,7 @@
   background-color: rgb(135 207 235 / 34%);
 }
 .two-btns-for-add-pdf-and-forms {
-  margin-top: -0.5rem;
+  /* margin-top: -0.5rem; */
   display: flex;
   gap: 0.5em;
   justify-content: center;
@@ -56,7 +56,7 @@
 }
 .arrgane-document-header-for-section {
   padding-left: 12px;
-  margin-bottom: 1.8em;
+  margin-bottom: 2.7em;
 }
 ul.list-icon-status-online {
   list-style-image: url("../../Assets/icons/status_online.png");
@@ -86,7 +86,7 @@ li.list-icon-status-online {
 }
 .uploaded-documents-preview {
   border: 0.1px solid grey;
-  width: 68em;
+  width: 71.5em;
   height: 100vh;
 }
 .add-remove-header-text-for-section {
@@ -96,4 +96,54 @@ li.list-icon-status-online {
   width: 100%;
   border: 0.1px solid #80808069;
   margin-bottom: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+.form-for-check-box-and-search-box {
+  display: grid;
+  align-items: center;
+}
+.form-for-check-box-and-search-box > label {
+  display: flex;
+  align-items: center;
+}
+.check-boxes-and-remove-button {
+  display: flex;
+  font-size: 13px;
+  gap: 4em;
+  padding: 1em;
+}
+.bookmark-name-input-box-ss {
+  border: 1px solid grey;
+  text-align: center;
+  height: 18px;
+  /* display: flex; */
+  width: 125px;
+  font-size: 10px;
+}
+.modal-for-the-confirmation-of-deletion-of-document {
+  width: 36em;
+  text-align: center;
+  font-size: 14px;
+  margin: 1em;
+  background-color: white;
+  display: grid;
+  align-items: center;
+  border-radius: 1px;
+  padding: 1em;
+}
+.section-of-cancel-and-confirm-deletion-of-decument {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  font-size: 12px;
+}
+
+.btn-for-cancel-and-confirm-insert-pdf-section {
+  border: 2px solid skyblue;
+  font-size: 11px;
+  border-radius: 3px;
+  height: 2em;
+  width: 7em;
+  text-align: center;
 }

@@ -1,11 +1,36 @@
 import React, { useState } from "react";
 import "./InsertPdf.css";
 import Header from "../Header/Header";
-import listicon from "../../Assets/icons/status_online.png";
+// import listicon from "../../Assets/icons/status_online.png";
+
+const ConfirmationModal = ({ message, onConfirm, onCancel }) => {
+  return (
+    <div className="modal-for-the-confirmation-of-deletion-of-document">
+      <p>{message}</p>
+      <div className="section-of-cancel-and-confirm-deletion-of-decument">
+        <button
+          className="btn-for-cancel-and-confirm-insert-pdf-section"
+          onClick={onConfirm}
+        >
+          Confirm
+        </button>
+        <button
+          className="btn-for-cancel-and-confirm-insert-pdf-section"
+          onClick={onCancel}
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  );
+};
 const InsertPdf = () => {
   const [selectedPdfs, setSelectedPdfs] = useState([]);
   const [previewUrls, setPreviewUrls] = useState([]);
   const [fileNames, setFileNames] = useState([]);
+
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [confirmationIndex, setConfirmationIndex] = useState(null);
 
   const handleFileChange = (event) => {
     const files = event.target.files;
@@ -39,23 +64,67 @@ const InsertPdf = () => {
       setFileNames([...newFileNames]);
     }
   };
+
   const handleButtonClick = () => {
     // Trigger the file input click
     document.getElementById("fileInput").click();
   };
+
+  // Remove pdf new code
+  const handleRemovePdf = (index) => {
+    setConfirmationIndex(index);
+    setShowConfirmation(true);
+  };
+
+  const handleConfirmRemove = () => {
+    const newSelectedPdfs = [...selectedPdfs];
+    const newPreviewUrls = [...previewUrls];
+    const newFileNames = [...fileNames];
+
+    newSelectedPdfs.splice(confirmationIndex, 1);
+    newPreviewUrls.splice(confirmationIndex, 1);
+    newFileNames.splice(confirmationIndex, 1);
+
+    setSelectedPdfs(newSelectedPdfs);
+    setPreviewUrls(newPreviewUrls);
+    setFileNames(newFileNames);
+
+    // Close the confirmation modal
+    setShowConfirmation(false);
+  };
+
+  const handleCancelRemove = () => {
+    // Close the confirmation modal
+    setShowConfirmation(false);
+  };
+
+  // Remove Pdf old code
+  // const handleRemovePdf = (index) => {
+  //   const newSelectedPdfs = [...selectedPdfs];
+  //   const newPreviewUrls = [...previewUrls];
+  //   const newFileNames = [...fileNames];
+
+  //   newSelectedPdfs.splice(index, 1);
+  //   newPreviewUrls.splice(index, 1);
+  //   newFileNames.splice(index, 1);
+
+  //   setSelectedPdfs(newSelectedPdfs);
+  //   setPreviewUrls(newPreviewUrls);
+  //   setFileNames(newFileNames);
+
   return (
     <>
       <div>
         {/* Calling Header */}
         <Header />
-      </div>
+      </div>{" "}
       <div className="add-remove-pdf-docs-and-arrange-documents-section">
         <div className="for-first-section-header-and-the-btns">
           <p className="add-remove-header-text-for-section">
             Add/Remove PDF Documents
           </p>
           <div className="header-and-add-doc-add-form-btns">
-            <div className="two-btns-for-add-pdf-and-forms mt-10">
+            <div className="two-btns-for-add-pdf-and-forms">
               {/* <button className="add-doc-btn-for-section-document">
                 Add Document
               </button> */}
@@ -87,6 +156,45 @@ const InsertPdf = () => {
                       className="overflow-y-hidden overflow-x-hidden"
                     />{" "}
                     <h2>{fileNames[index]}</h2>
+                  </div>
+                  {showConfirmation && (
+                    <ConfirmationModal
+                      message="Are you sure you want to remove this document from your inspection file ?
+                      You can select 'Dont Print' if you don't want the document to be printed in the report."
+                      onConfirm={handleConfirmRemove}
+                      onCancel={handleCancelRemove}
+                    />
+                  )}
+                  <div className="check-boxes-and-remove-button">
+                    {/* <div className="form-for-check"> */}
+                    <form className="form-for-check-box-and-search-box">
+                      <label>
+                        <input type="checkbox" />
+                        Dont Print
+                      </label>
+                      <label>
+                        <input type="checkbox" />
+                        Save To Template
+                      </label>
+                      <label>
+                        <input type="checkbox" />
+                        Ignore Page Margins
+                      </label>
+                      <label>
+                        <input type="checkbox" />
+                        Bookmark
+                      </label>
+                      <input
+                        name="fsrch"
+                        className="bookmark-name-input-box-ss"
+                        placeholder="<<Bookmark Name>>"
+                      ></input>
+                    </form>
+                    {/* </div> */}
+
+                    <button onClick={() => handleRemovePdf(index)}>
+                      Remove <br /> Document
+                    </button>
                   </div>
                 </div>
               ))}
