@@ -15,7 +15,9 @@ import img9 from "../../Assets/icons/contract_page.png"
 import img10 from "../../Assets/icons/copy.png"
 import img11 from "../../Assets/icons/paste.png"
 import img12 from "../../Assets/icons/generate_report.png"
-import img13 from "../../Assets/icons/upload_report.png" // Import your EditTemplate component
+import img13 from "../../Assets/icons/upload_report.png"
+import img14 from "../../Assets/icons/address_book.png"
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [openTemplatePopup, setOpenTemplatePopup] = useState(false);
@@ -154,6 +156,14 @@ const Header = () => {
               </div>
             </a>
           </li>
+          <Link to={{pathname:"/Book"}}>
+          <li>
+            <a href="#">
+              <img src={img14} alt="" />
+              <div>Address<br /> Book</div>
+            </a>
+          </li>
+          </Link>
           <li>
             <a href="#">
               <img src={img9} alt="" />

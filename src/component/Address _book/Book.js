@@ -4,7 +4,7 @@ import "./Style.css";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 
-const ClientInfo = () => {
+const Book = () => {
     const [lastName, setLastName] = useState("");
     const [firstName, setFirstName] = useState("");
     const [Company, setCompany] = useState("");
@@ -446,7 +446,7 @@ const ClientInfo = () => {
     );
 };
 
-export default ClientInfo;
+export default Book;
 
 
 
