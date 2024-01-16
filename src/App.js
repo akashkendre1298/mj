@@ -14,6 +14,7 @@ function App() {
         <Route path="/insertpdf" element={<InsertPdf />}></Route>
         {/* <Route path="/" element={<Panel1 />}></Route> */}
         <Route path="/" element={<Footer />}></Route>
+        <Route path="/colorpalet" element={<ColorPalet />}></Route>
       </Routes>
     </BrowserRouter>
   );
