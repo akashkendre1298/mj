@@ -1,0 +1,15 @@
+.RC-contaier {
+  position: absolute;
+  margin-left: 520px;
+  margin-top: -160px;
+}
+
+/* Label styling */
+.RC-contaier label {
+  margin-bottom: 10px; /* Optional: Add margin for spacing between label and inputs */
+}
+
+.RC-contaier input {
+  /* Optional: Add margin for spacing between inputs */
+  width: 210px; /* Optional: Set the width of the input fields */
+}
