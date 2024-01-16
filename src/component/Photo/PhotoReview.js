@@ -38,7 +38,7 @@
 //   return (
 //     <>
 //       <Header></Header>
-//       <p>{/* ... (Your existing text) ... */}</p>
+//       <p className="para-phto-review">{/* ... (Your existing text) ... */}</p>
 //       <div className="rectangle-container">
 //         {rectangles.map((index) => (
 //           <div
@@ -54,7 +54,7 @@
 
 //             {/* Drag and drop file upload section */}
 //             <div className="dropzone">
-//               <p>You can directly drag & drop a cover photo here to add</p>
+//               <p className="para-phto-review">You can directly drag & drop a cover photo here to add</p>
 //             </div>
 
 //             <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -116,7 +116,7 @@
 //   return (
 //     <>
 //       <Header></Header>
-//       <p>
+//       <p className="para-phto-review">
 //         The photo added to the top left box will appear on the cover of the
 //         report <br />
 //         the drop-down boxes are automatically preloaded with the sectors from
@@ -177,7 +177,7 @@
 //               )}
 
 //               {!uploadedFile && (
-//                 <p>You can directly drag & drop a file here to add</p>
+//                 <p className="para-phto-review">You can directly drag & drop a file here to add</p>
 //               )}
 //             </div>
 
@@ -245,7 +245,7 @@ const PhotoReview = () => {
   return (
     <>
       <Header></Header>
-      <p>
+      <p className="para-phto-review">
         The photo added to the top left box will appear on the cover of the
         report <br />
         the drop-down boxes are automatically preloaded with the sectors from
@@ -306,7 +306,7 @@ const PhotoReview = () => {
               )}
 
               {!uploadedFile && (
-                <p>You can directly drag & drop a file here to add</p>
+                <p className="para-phto-review">You can directly drag & drop a file here to add</p>
               )}
             </div>
 
@@ -318,7 +318,7 @@ const PhotoReview = () => {
           </div>
         ))}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

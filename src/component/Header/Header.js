@@ -15,7 +15,8 @@ import img9 from "../../Assets/icons/contract_page.png";
 import img10 from "../../Assets/icons/copy.png";
 import img11 from "../../Assets/icons/paste.png";
 import img12 from "../../Assets/icons/generate_report.png";
-import img13 from "../../Assets/icons/upload_report.png"; // Import your EditTemplate component
+import img13 from "../../Assets/icons/upload_report.png";
+import img14 from "../../Assets/icons/address_book.png";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -79,11 +80,11 @@ const Header = () => {
     setActiveMenu(activeMenu === index ? null : index);
   };
   return (
-
     <>
-
-
-      <div className="dropdown-container flex">
+      <div
+        className="dropdown-container flex"
+        style={{ backgroundColor: "#f7f7f7" }}
+      >
         <div className="menu-item relative ml-4">
           <div
             className="main-label cursor-pointer"
@@ -92,13 +93,31 @@ const Header = () => {
             File
           </div>
           {activeMenu === 0 && (
-            <ul className="submenu absolute z-10 bg-white shadow mt-2">
+            <ul
+              className="submenu absolute z-10 bg-white shadow mt-2 w-48 leading-tight"
+              style={{ width: "180px", lineHeight: "12px" }}
+            >
               <li className="py-2 px-4 hover:bg-gray-200">Open Inspection</li>
               <li className="py-2 px-4 hover:bg-gray-200">Save Inspection</li>
               <li className="py-2 px-4 hover:bg-gray-200">Open Template</li>
               <li className="py-2 px-4 hover:bg-gray-200">Save Template</li>
             </ul>
           )}
+        </div>
+        <div>
+          <ul>
+            <li className="ml-5">Edit</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li className="ml-5">Internet</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li className="ml-5">Report Setting</li>
+          </ul>
         </div>
 
         <div className="menu-item relative ml-4">
@@ -111,22 +130,31 @@ const Header = () => {
           {activeMenu === 1 && (
             <ul className="submenu absolute z-10 bg-white shadow mt-2">
               <Link to="/photoreview">
-                <li className="py-2 px-4 hover:bg-gray-200">Add Review Photos</li>
+                <li className="py-2 px-4 hover:bg-gray-200">
+                  Add Review Photos
+                </li>
               </Link>
               <li className="py-2 px-4 hover:bg-gray-200">Batch Add Photos</li>
               <li className="py-2 px-4 hover:bg-gray-200">Clear All Photos</li>
             </ul>
           )}
         </div>
+        <div>
+          <ul>
+            <li className="ml-5">About</li>
+          </ul>
+        </div>
       </div>
 
-      <div className="header">
+      <div className="header" style={{ backgroundColor: "#f7f7f7" }}>
         <nav>
           <ul className="uordered-list-in-header-section">
             <li className="list-for-header-section-main-nav">
               <a href="#file" onClick={handleOpenInspectionClick}>
                 <img src={img1} alt="" />
-                <div>Open Inspection</div>
+                <div>
+                  Open <br /> Inspection
+                </div>
               </a>
               <input
                 type="file"
@@ -138,7 +166,9 @@ const Header = () => {
             <li className="list-for-header-section-main-nav">
               <a href="#edit" onClick={handleSaveInspectionClick}>
                 <img src={img2} alt="" />
-                <div>Save Inspection</div>
+                <div>
+                  Save <br /> Inspection
+                </div>
               </a>
             </li>
             <hr />
@@ -205,7 +235,7 @@ const Header = () => {
             <Link to="/book">
               <li className="list-for-header-section-main-nav">
                 <a href="#">
-                  <img src={img8} alt="" />
+                  <img src={img14} alt="" />
                   <div>
                     Address
                     <br /> Book
@@ -279,7 +309,6 @@ const Header = () => {
           </div>
         )}
       </div>
-
     </>
   );
 };

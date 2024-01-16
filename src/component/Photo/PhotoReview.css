@@ -1,11 +1,11 @@
-p {
+.para-phto-review {
   text-align: center;
 }
 .rectangle-container {
   position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin-top: -15px;
+  margin-top: 6px;
   margin-left: 20px;
 }
 
