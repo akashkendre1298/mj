@@ -96,4 +96,54 @@ li.list-icon-status-online {
   width: 100%;
   border: 0.1px solid #80808069;
   margin-bottom: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+.form-for-check-box-and-search-box {
+  display: grid;
+  align-items: center;
+}
+.form-for-check-box-and-search-box > label {
+  display: flex;
+  align-items: center;
+}
+.check-boxes-and-remove-button {
+  display: flex;
+  font-size: 13px;
+  gap: 4em;
+  padding: 1em;
+}
+.bookmark-name-input-box-ss {
+  border: 1px solid grey;
+  text-align: center;
+  height: 18px;
+  /* display: flex; */
+  width: 125px;
+  font-size: 10px;
+}
+.modal-for-the-confirmation-of-deletion-of-document {
+  width: 25em;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 3em;
+  background-color: #80808038;
+  display: grid;
+  align-items: center;
+  border-radius: 1px;
+  padding: 1em;
+}
+.section-of-cancel-and-confirm-deletion-of-decument {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  font-size: 12px;
+}
+
+.btn-for-cancel-and-confirm-insert-pdf-section {
+  border: 2px solid skyblue;
+  font-size: 11px;
+  border-radius: 3px;
+  height: 2em;
+  width: 7em;
+  text-align: center;
 }
