@@ -16,6 +16,7 @@ import img10 from "../../Assets/icons/copy.png";
 import img11 from "../../Assets/icons/paste.png";
 import img12 from "../../Assets/icons/generate_report.png";
 import img13 from "../../Assets/icons/upload_report.png"; // Import your EditTemplate component
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [openTemplatePopup, setOpenTemplatePopup] = useState(false);
@@ -134,12 +135,15 @@ const Header = () => {
           </li>
 
           <li className="list-for-header-section-main-nav">
-            <a href="#">
-              <img src={img7} alt="" />
-              <div>
-                Insert PDF <br /> Documments
-              </div>
-            </a>
+            <Link to="/insertpdf">
+              {" "}
+              <a href="#">
+                <img src={img7} alt="" />
+                <div>
+                  Insert PDF <br /> Documments
+                </div>
+              </a>
+            </Link>
           </li>
           <hr />
           <li className="list-for-header-section-main-nav">
