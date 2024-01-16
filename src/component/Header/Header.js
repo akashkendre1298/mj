@@ -1,21 +1,22 @@
 import React, { useRef, useState } from "react";
 import "./Header.css";
-import OpenTemp from '../OpenTemp/OpenTemp'
-import EditTemp from "../EditTemp/EditTemp"
-import SaveTemp from "../SaveTemp/SaveTemp"
-import img1 from "../../Assets/icons/open_inspection.png"
-import img2 from "../../Assets/icons/save_inspection.png"
-import img3 from "../../Assets/icons/open_template.png"
-import img4 from "../../Assets/icons/save_template.png"
-import img5 from "../../Assets/icons/edit_comments.png"
-import img6 from "../../Assets/icons/edit_template.png"
-import img7 from "../../Assets/icons/pdf.png"
-import img8 from "../../Assets/icons/client_info.png"
-import img9 from "../../Assets/icons/contract_page.png"
-import img10 from "../../Assets/icons/copy.png"
-import img11 from "../../Assets/icons/paste.png"
-import img12 from "../../Assets/icons/generate_report.png"
-import img13 from "../../Assets/icons/upload_report.png" // Import your EditTemplate component
+import OpenTemp from "../OpenTemp/OpenTemp";
+import EditTemp from "../EditTemp/EditTemp";
+import SaveTemp from "../SaveTemp/SaveTemp";
+import img1 from "../../Assets/icons/open_inspection.png";
+import img2 from "../../Assets/icons/save_inspection.png";
+import img3 from "../../Assets/icons/open_template.png";
+import img4 from "../../Assets/icons/save_template.png";
+import img5 from "../../Assets/icons/edit_comments.png";
+import img6 from "../../Assets/icons/edit_template.png";
+import img7 from "../../Assets/icons/pdf.png";
+import img8 from "../../Assets/icons/client_info.png";
+import img9 from "../../Assets/icons/contract_page.png";
+import img10 from "../../Assets/icons/copy.png";
+import img11 from "../../Assets/icons/paste.png";
+import img12 from "../../Assets/icons/generate_report.png";
+import img13 from "../../Assets/icons/upload_report.png"; // Import your EditTemplate component
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [openTemplatePopup, setOpenTemplatePopup] = useState(false);
