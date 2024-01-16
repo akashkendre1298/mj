@@ -73,154 +73,214 @@ const Header = () => {
     }
   };
 
-  return (
-    <div className="header">
-      <nav>
-        <ul className="uordered-list-in-header-section">
-          <li className="list-for-header-section-main-nav">
-            <a href="#file" onClick={handleOpenInspectionClick}>
-              <img src={img1} alt="" />
-              <div>Open Inspection</div>
-            </a>
-            <input
-              type="file"
-              ref={fileInputRef}
-              style={{ display: "none" }}
-              onChange={handleFileChange}
-            />
-          </li>
-          <li className="list-for-header-section-main-nav">
-            <a href="#edit" onClick={handleSaveInspectionClick}>
-              <img src={img2} alt="" />
-              <div>Save Inspection</div>
-            </a>
-          </li>
-          <hr />
-          <li className="list-for-header-section-main-nav">
-            <a href="#" onClick={openOpenTemplatePopup}>
-              <img src={img3} alt="" />
-              <div>
-                Open
-                <br /> Template
-              </div>
-            </a>
-          </li>
-          <li className="list-for-header-section-main-nav">
-            <a href="#report-settings" onClick={openSaveTemplatePopup}>
-              <img src={img4} alt="" />
-              <div>
-                Save
-                <br /> Template
-              </div>
-            </a>
-          </li>
-          <hr />
-          <li className="list-for-header-section-main-nav">
-            <a href="#">
-              <img src={img5} alt="" />
-              <div>
-                Edit <br />
-                Comments
-              </div>
-            </a>
-          </li>
-          <li className="list-for-header-section-main-nav">
-            <a href="#" onClick={openEditTemplatePopup}>
-              <img src={img6} alt="" />
-              <div>
-                Edit <br />
-                Template
-              </div>
-            </a>
-          </li>
+  const [activeMenu, setActiveMenu] = useState(null);
 
-          <li className="list-for-header-section-main-nav">
-            <Link to="/insertpdf">
-              {" "}
-              <a href="#">
-                <img src={img7} alt="" />
+  const handleMenuClick = (index) => {
+    setActiveMenu(activeMenu === index ? null : index);
+  };
+  return (
+
+    <>
+
+
+      <div className="dropdown-container flex">
+        <div className="menu-item relative ml-4">
+          <div
+            className="main-label cursor-pointer"
+            onClick={() => handleMenuClick(0)}
+          >
+            File
+          </div>
+          {activeMenu === 0 && (
+            <ul className="submenu absolute z-10 bg-white shadow mt-2">
+              <li className="py-2 px-4 hover:bg-gray-200">Open Inspection</li>
+              <li className="py-2 px-4 hover:bg-gray-200">Save Inspection</li>
+              <li className="py-2 px-4 hover:bg-gray-200">Open Template</li>
+              <li className="py-2 px-4 hover:bg-gray-200">Save Template</li>
+            </ul>
+          )}
+        </div>
+
+        <div className="menu-item relative ml-4">
+          <div
+            className="main-label cursor-pointer"
+            onClick={() => handleMenuClick(1)}
+          >
+            Photos
+          </div>
+          {activeMenu === 1 && (
+            <ul className="submenu absolute z-10 bg-white shadow mt-2">
+              <Link to="/photoreview">
+                <li className="py-2 px-4 hover:bg-gray-200">Add Review Photos</li>
+              </Link>
+              <li className="py-2 px-4 hover:bg-gray-200">Batch Add Photos</li>
+              <li className="py-2 px-4 hover:bg-gray-200">Clear All Photos</li>
+            </ul>
+          )}
+        </div>
+      </div>
+
+      <div className="header">
+        <nav>
+          <ul className="uordered-list-in-header-section">
+            <li className="list-for-header-section-main-nav">
+              <a href="#file" onClick={handleOpenInspectionClick}>
+                <img src={img1} alt="" />
+                <div>Open Inspection</div>
+              </a>
+              <input
+                type="file"
+                ref={fileInputRef}
+                style={{ display: "none" }}
+                onChange={handleFileChange}
+              />
+            </li>
+            <li className="list-for-header-section-main-nav">
+              <a href="#edit" onClick={handleSaveInspectionClick}>
+                <img src={img2} alt="" />
+                <div>Save Inspection</div>
+              </a>
+            </li>
+            <hr />
+            <li className="list-for-header-section-main-nav">
+              <a href="#" onClick={openOpenTemplatePopup}>
+                <img src={img3} alt="" />
                 <div>
-                  Insert PDF <br /> Documments
+                  Open
+                  <br /> Template
                 </div>
               </a>
+            </li>
+            <li className="list-for-header-section-main-nav">
+              <a href="#report-settings" onClick={openSaveTemplatePopup}>
+                <img src={img4} alt="" />
+                <div>
+                  Save
+                  <br /> Template
+                </div>
+              </a>
+            </li>
+            <hr />
+            <li className="list-for-header-section-main-nav">
+              <a href="#">
+                <img src={img5} alt="" />
+                <div>
+                  Edit <br />
+                  Comments
+                </div>
+              </a>
+            </li>
+            <li className="list-for-header-section-main-nav">
+              <a href="#" onClick={openEditTemplatePopup}>
+                <img src={img6} alt="" />
+                <div>
+                  Edit <br />
+                  Template
+                </div>
+              </a>
+            </li>
+            <Link to="/insertpdf">
+              <li className="list-for-header-section-main-nav">
+                <a href="#">
+                  <img src={img7} alt="" />
+                  <div>
+                    Insert PDF <br /> Documments
+                  </div>
+                </a>
+              </li>
             </Link>
-          </li>
-          <hr />
-          <li>
-            <a href="#">
-              <img src={img8} alt="" />
-              <div>
-                Client
-                <br /> Info
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src={img9} alt="" />
-              <div>
-                Contact
-                <br /> Page
-              </div>
-            </a>
-          </li>
-          <hr />
-          <li className="list-for-header-section-main-nav">
-            <a href="#">
-              <img src={img10} alt="" />
-              <div>Copy</div>
-            </a>
-          </li>
-          <li className="list-for-header-section-main-nav">
-            <a href="#">
-              <img src={img11} alt="" />
-              <div>Paste</div>
-            </a>
-          </li>
-          <hr />
-          <li className="list-for-header-section-main-nav">
-            <a href="#">
-              <img src={img12} alt="" />{" "}
-              <div>
-                Geneate
-                <br /> report
-              </div>
-            </a>
-          </li>
-          <hr />
-          <li className="list-for-header-section-main-nav">
-            <a href="#">
-              <img src={img13} alt="" />{" "}
-              <div>
-                Upload
-                <br /> report
-              </div>
-            </a>
-          </li>
-          <hr />
-        </ul>
-      </nav>
-      {openTemplatePopup && (
-        <div className="popup">
-          {/* Render your OpenTemplate component here */}
-          <OpenTemp onClose={closeOpenTemplatePopup} />
-        </div>
-      )}
+            <hr />
+            <Link to="/">
+              <li className="list-for-header-section-main-nav">
+                <a href="#">
+                  <img src={img8} alt="" />
+                  <div>
+                    Client
+                    <br /> Info
+                  </div>
+                </a>
+              </li>
+            </Link>
 
-      {saveTemplatePopup && (
-        <div className="popup">
-          {/* Render your OpenTemplate component here */}
-          <SaveTemp onClose={closeSaveTemplatePopup} />
-        </div>
-      )}
+            <Link to="/book">
+              <li className="list-for-header-section-main-nav">
+                <a href="#">
+                  <img src={img8} alt="" />
+                  <div>
+                    Address
+                    <br /> Book
+                  </div>
+                </a>
+              </li>
+            </Link>
+            <li className="list-for-header-section-main-nav">
+              <a href="#">
+                <img src={img9} alt="" />
+                <div>
+                  Contact
+                  <br /> Page
+                </div>
+              </a>
+            </li>
+            <hr />
+            <li className="list-for-header-section-main-nav">
+              <a href="#">
+                <img src={img10} alt="" />
+                <div>Copy</div>
+              </a>
+            </li>
+            <li className="list-for-header-section-main-nav">
+              <a href="#">
+                <img src={img11} alt="" />
+                <div>Paste</div>
+              </a>
+            </li>
+            <hr />
+            <li className="list-for-header-section-main-nav">
+              <a href="#">
+                <img src={img12} alt="" />{" "}
+                <div>
+                  Geneate
+                  <br /> report
+                </div>
+              </a>
+            </li>
+            <hr />
+            <li className="list-for-header-section-main-nav">
+              <a href="#">
+                <img src={img13} alt="" />{" "}
+                <div>
+                  Upload
+                  <br /> report
+                </div>
+              </a>
+            </li>
+            <hr />
+          </ul>
+        </nav>
+        {openTemplatePopup && (
+          <div className="popup">
+            {/* Render your OpenTemplate component here */}
+            <OpenTemp onClose={closeOpenTemplatePopup} />
+          </div>
+        )}
 
-      {editTemplatePopup && (
-        <div className="popup m-0">
-          {/* Render your EditTemplate component here */}
-          <EditTemp onClose={closeEditTemplatePopup} />
-        </div>
-      )}
-    </div>
+        {saveTemplatePopup && (
+          <div className="popup">
+            {/* Render your OpenTemplate component here */}
+            <SaveTemp onClose={closeSaveTemplatePopup} />
+          </div>
+        )}
+
+        {editTemplatePopup && (
+          <div className="popup m-0">
+            {/* Render your EditTemplate component here */}
+            <EditTemp onClose={closeEditTemplatePopup} />
+          </div>
+        )}
+      </div>
+
+    </>
   );
 };
 
