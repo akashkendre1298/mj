@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Panel.css';
+import './Panel1.css';
 import './Style.css'
 
 
@@ -102,7 +102,7 @@ function Panel1() {
       <div className="panel-heading text-center mt-10">
         Panel 1
       </div>
-      <div className="container">
+      <div className="container-panel1">
         <div className="panel">
 
         <div className="p-5">
@@ -189,7 +189,7 @@ function Panel1() {
 
           </div>
           <div className='panelupdown' >
-            <div className="button-container">
+            <div className="button-container-panel1">
               <button className="image-button" onClick={() => handleMoveUp(blackText, setBlackText)}>
                 <img src="ic_up.png" alt="Button 1" width={20} />
               </button>
@@ -204,7 +204,7 @@ function Panel1() {
               </button>
             </div>
 
-            <div className="button-container">
+            <div className="button-container-panel1">
             <button className="image-button" onClick={handleMoveUpBlackBox}>
                 <img src="ic_up2.png" alt="Button 3" width={20} />
               </button>

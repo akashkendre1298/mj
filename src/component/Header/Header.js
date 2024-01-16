@@ -17,6 +17,7 @@ import img11 from "../../Assets/icons/paste.png";
 import img12 from "../../Assets/icons/generate_report.png";
 import img13 from "../../Assets/icons/upload_report.png"; // Import your EditTemplate component
 import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [openTemplatePopup, setOpenTemplatePopup] = useState(false);

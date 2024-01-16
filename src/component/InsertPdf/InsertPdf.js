@@ -5,12 +5,15 @@ import listicon from "../../Assets/icons/status_online.png";
 const InsertPdf = () => {
   const [selectedPdfs, setSelectedPdfs] = useState([]);
   const [previewUrls, setPreviewUrls] = useState([]);
+  const [fileNames, setFileNames] = useState([]);
+
   const handleFileChange = (event) => {
     const files = event.target.files;
 
     if (files.length > 0) {
       const newSelectedPdfs = [...selectedPdfs];
       const newPreviewUrls = [...previewUrls];
+      const newFileNames = [...fileNames];
 
       for (let i = 0; i < files.length; i++) {
         const file = files[i];
@@ -25,6 +28,7 @@ const InsertPdf = () => {
 
           reader.readAsDataURL(file);
           newSelectedPdfs.push(file);
+          newFileNames.push(file.name);
         } else {
           // Handle invalid file type
           alert(`File ${file.name} is not a valid PDF.`);
@@ -32,11 +36,28 @@ const InsertPdf = () => {
       }
 
       setSelectedPdfs([...newSelectedPdfs]);
+      setFileNames([...newFileNames]);
     }
   };
+
   const handleButtonClick = () => {
     // Trigger the file input click
     document.getElementById("fileInput").click();
+  };
+
+  // Remove Pdf
+  const handleRemovePdf = (index) => {
+    const newSelectedPdfs = [...selectedPdfs];
+    const newPreviewUrls = [...previewUrls];
+    const newFileNames = [...fileNames];
+
+    newSelectedPdfs.splice(index, 1);
+    newPreviewUrls.splice(index, 1);
+    newFileNames.splice(index, 1);
+
+    setSelectedPdfs(newSelectedPdfs);
+    setPreviewUrls(newPreviewUrls);
+    setFileNames(newFileNames);
   };
   return (
     <>
@@ -73,12 +94,17 @@ const InsertPdf = () => {
               {selectedPdfs.map((pdf, index) => (
                 <div className="pdf-preview-for-multiple-files" key={index}>
                   {/* <h2>PDF Preview {index + 1}</h2> */}
-                  <embed
-                    src={previewUrls[index]}
-                    type="application/pdf"
-                    width="200"
-                    height="100"
-                  />
+                  <div className="pdw-preview-with-name-of-pdf flex items-center">
+                    <embed
+                      src={previewUrls[index]}
+                      type="application/pdf"
+                      width="200"
+                      height="150"
+                      className="overflow-y-hidden overflow-x-hidden"
+                    />{" "}
+                    <h2>{fileNames[index]}</h2>
+                  </div>{" "}
+                  <button onClick={() => handleRemovePdf(index)}>Remove</button>
                 </div>
               ))}
             </div>
