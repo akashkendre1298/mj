@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "./ClientInfo.css";
+import "./DemoClientFrom.css";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 
-const ClientInfo = () => {
+const DemoClientFrom = () => {
   const [lastName, setLastName] = useState("");
   const [firstName, setFirstName] = useState("");
   const [phone, setPhone] = useState("");
@@ -34,13 +34,69 @@ const ClientInfo = () => {
     setDefaultDate(formattedDate);
   }, []);
 
+
+    // Function to save form data to localStorage
+    const saveClient = () => {
+      const formClient = {
+        lastName,
+        firstName,
+        phone,
+        fax,
+        email,
+        inspectionAddress,
+        addressLine2,
+        city,
+        state,
+        zipCode,
+        agent,
+        dateOfInspection,
+        timeOfInspection,
+        ageOfHome,
+        size,
+        inspectionFee,
+        weather,
+        otherInfo,
+      };
+  
+      // Convert the formData object to a string and save it in localStorage
+      localStorage.setItem("formClient", JSON.stringify(formClient));
+    };
+  
+    // useEffect to load form data from localStorage on component mount
+    useEffect(() => {
+      const saveClient = localStorage.getItem("formClient");
+      if (saveClient) {
+        const parsedFormClient = JSON.parse(saveClient);
+  
+        // Set form state with saved data
+        setLastName(parsedFormClient.lastName || "");
+        setFirstName(parsedFormClient.firstName || "");
+        setPhone(parsedFormClient.phone || "");
+        setFax(parsedFormClient.fax || "");
+        setEmail(parsedFormClient.email || "");
+        setInspectionAddress(parsedFormClient.inspectionAddress || "");
+        setAddressLine2(parsedFormClient.addressLine2 || "");
+        setCity(parsedFormClient.city || "");
+        setState(parsedFormClient.state || "");
+        setZipCode(parsedFormClient.zipCode || "");
+        setAgent(parsedFormClient.agent || "");
+        setDateOfInspection(parsedFormClient.dateOfInspection || defaultDate);
+        setTimeOfInspection(parsedFormClient.timeOfInspection || "");
+        setAgeOfHome(parsedFormClient.ageOfHome || "");
+        setSize(parsedFormClient.size || "");
+        setInspectionFee(parsedFormClient.inspectionFee || "");
+        setWeather(parsedFormClient.weather || "");
+        setOtherInfo(parsedFormClient.otherInfo || "");
+      }
+    }, []);
+
+
   return (
-    <div className="main-container ">
+    <div className="main-container z">
       <div>
         <Header />
       </div>
 
-      {/* <div>sgdhjk</div> */}
       <form className="formcont">
         <h1 className="text">Client Information</h1>
 
@@ -291,6 +347,8 @@ const ClientInfo = () => {
           ></textarea>
         </div>
       </form>
+      
+    <button onClick={saveClient}>Save</button>
       <div>
         <Footer />
       </div>
@@ -298,4 +356,4 @@ const ClientInfo = () => {
   );
 };
 
-export default ClientInfo;
+export default DemoClientFrom;
