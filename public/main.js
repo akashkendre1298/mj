@@ -1,59 +1,59 @@
-// const { app, BrowserWindow, Menu } = require("electron/main");
-const { app, BrowserWindow } = require("electron/main");
+const { app, BrowserWindow, Menu } = require("electron/main");
+
 const path = require("node:path");
 
-// let isMac = process.platform == "darwin";
-// let template = [
-//   {
-//     label: "File",
-//     submenu: [
-//       { label: "Open Inspection" },
-//       { label: "Save Insprction" },
-//       { label: "Open Template" },
-//       { label: "Save Template" },
-//       isMac ? { role: "close" } : { role: "quit" },
-//     ],
-//   },
-//   {
-//     label: "Edite",
-//     submenu: [
-//       { label: "Client Information" },
-//       { label: "Address Book" },
-//       { label: "Contract Page" },
-//       { label: "Create/Edit Documents" },
-//       { label: "Insert PDF Documents" },
-//       { label: "Application Settings" },
-//     ],
-//   },
-//   {
-//     label: "Internet",
-//     submenu: [{ label: "Office Login" }, { label: "Upload Report" }],
-//   },
-//   {
-//     label: "Report Settings",
-//     submenu: [
-//       { label: "Company Logo" },
-//       { label: "Inspector Signature" },
-//       { label: "Client Signature" },
-//     ],
-//   },
-//   {
-//     label: "Photos",
-//     submenu: [
-//       { label: "Add Review Photos" },
-//       { label: "Batch Add Photos" },
-//       { label: "Clear All Photos" },
-//     ],
-//   },
-//   {
-//     label: "About",
-//     submenu: [
-//       { label: "Contact Support" },
-//       { label: "Remote Help Connection" },
-//       { label: "About" },
-//     ],
-//   },
-// ];
+let isMac = process.platform == "darwin";
+let template = [
+  {
+    label: "File",
+    submenu: [
+      { label: "Open Inspection" },
+      { label: "Save Insprction" },
+      { label: "Open Template" },
+      { label: "Save Template" },
+      isMac ? { role: "close" } : { role: "quit" },
+    ],
+  },
+  {
+    label: "Edite",
+    submenu: [
+      { label: "Client Information" },
+      { label: "Address Book" },
+      { label: "Contract Page" },
+      { label: "Create/Edit Documents" },
+      { label: "Insert PDF Documents" },
+      { label: "Application Settings" },
+    ],
+  },
+  {
+    label: "Internet",
+    submenu: [{ label: "Office Login" }, { label: "Upload Report" }],
+  },
+  {
+    label: "Report Settings",
+    submenu: [
+      { label: "Company Logo" },
+      { label: "Inspector Signature" },
+      { label: "Client Signature" },
+    ],
+  },
+  {
+    label: "Photos",
+    submenu: [
+      { label: "Add Review Photos" },
+      { label: "Batch Add Photos" },
+      { label: "Clear All Photos" },
+    ],
+  },
+  {
+    label: "About",
+    submenu: [
+      { label: "Contact Support" },
+      { label: "Remote Help Connection" },
+      { label: "About" },
+    ],
+  },
+];
 
 function createWindow() {
   const win = new BrowserWindow({

@@ -15,9 +15,7 @@ import img9 from "../../Assets/icons/contract_page.png"
 import img10 from "../../Assets/icons/copy.png"
 import img11 from "../../Assets/icons/paste.png"
 import img12 from "../../Assets/icons/generate_report.png"
-import img13 from "../../Assets/icons/upload_report.png" 
-import img14 from "../../Assets/icons/address_book.png" // Import your EditTemplate component
-import { Link } from "react-router-dom";
+import img13 from "../../Assets/icons/upload_report.png" // Import your EditTemplate component
 
 const Header = () => {
   const [openTemplatePopup, setOpenTemplatePopup] = useState(false);
@@ -47,7 +45,7 @@ const Header = () => {
   const closeEditTemplatePopup = () => {
     setEditTemplatePopup(false);
   };
-  
+
   const fileInputRef = useRef(null);
   const [selectedFile, setSelectedFile] = useState(null);
 
@@ -77,9 +75,9 @@ const Header = () => {
   return (
     <div className="header">
       <nav>
-        <ul>
-          <li>
-        <a href="#file" onClick={handleOpenInspectionClick}>
+        <ul className="uordered-list-in-header-section">
+          <li className="list-for-header-section-main-nav">
+            <a href="#file" onClick={handleOpenInspectionClick}>
               <img src={img1} alt="" />
               <div>Open Inspection</div>
             </a>
@@ -90,91 +88,112 @@ const Header = () => {
               onChange={handleFileChange}
             />
           </li>
-          <li>
+          <li className="list-for-header-section-main-nav">
             <a href="#edit" onClick={handleSaveInspectionClick}>
               <img src={img2} alt="" />
               <div>Save Inspection</div>
             </a>
           </li>
           <hr />
-          <li>
+          <li className="list-for-header-section-main-nav">
             <a href="#" onClick={openOpenTemplatePopup}>
               <img src={img3} alt="" />
-              <div>Open<br /> Template</div>
+              <div>
+                Open
+                <br /> Template
+              </div>
             </a>
           </li>
-          <li>
+          <li className="list-for-header-section-main-nav">
             <a href="#report-settings" onClick={openSaveTemplatePopup}>
               <img src={img4} alt="" />
-              <div>Save<br /> Template</div>
+              <div>
+                Save
+                <br /> Template
+              </div>
             </a>
           </li>
           <hr />
-          <li>
+          <li className="list-for-header-section-main-nav">
             <a href="#">
               <img src={img5} alt="" />
-              <div>Edit <br />Comments</div>
+              <div>
+                Edit <br />
+                Comments
+              </div>
             </a>
           </li>
-          <li>
+          <li className="list-for-header-section-main-nav">
             <a href="#" onClick={openEditTemplatePopup}>
               <img src={img6} alt="" />
-              <div>Edit <br />Template</div>
+              <div>
+                Edit <br />
+                Template
+              </div>
             </a>
           </li>
 
-          <li>
-            <a href="#">
-              <img src={img7} alt="" />
-              <div>Insert PDF <br /> Documments</div>
-            </a>
+          <li className="list-for-header-section-main-nav">
+            <Link to="/insertpdf">
+              {" "}
+              <a href="#">
+                <img src={img7} alt="" />
+                <div>
+                  Insert PDF <br /> Documments
+                </div>
+              </a>
+            </Link>
           </li>
           <hr />
-          <Link to={{pathname:"/ClientInfo"}}>
           <li>
             <a href="#">
               <img src={img8} alt="" />
-              <div>Client<br /> Info</div>
+              <div>
+                Client
+                <br /> Info
+              </div>
             </a>
           </li>
-          </Link>
-          <Link to={{pathname:"/Book"}}>
-          <li>
-            <a href="#">
-              <img src={img14} alt="" />
-              <div>Address<br /> Book</div>
-            </a>
-          </li>
-          </Link>
           <li>
             <a href="#">
               <img src={img9} alt="" />
-              <div>Contact<br /> Page</div>
+              <div>
+                Contact
+                <br /> Page
+              </div>
             </a>
           </li>
           <hr />
-          <li>
+          <li className="list-for-header-section-main-nav">
             <a href="#">
               <img src={img10} alt="" />
               <div>Copy</div>
             </a>
           </li>
-          <li>
+          <li className="list-for-header-section-main-nav">
             <a href="#">
               <img src={img11} alt="" />
               <div>Paste</div>
             </a>
           </li>
           <hr />
-          <li>
+          <li className="list-for-header-section-main-nav">
             <a href="#">
-              <img src={img12} alt="" /> <div>Geneate<br /> report</div>
+              <img src={img12} alt="" />{" "}
+              <div>
+                Geneate
+                <br /> report
+              </div>
             </a>
           </li>
           <hr />
-          <li>
+          <li className="list-for-header-section-main-nav">
             <a href="#">
-              <img src={img13} alt="" /> <div>Upload<br /> report</div>
+              <img src={img13} alt="" />{" "}
+              <div>
+                Upload
+                <br /> report
+              </div>
             </a>
           </li>
           <hr />
