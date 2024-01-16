@@ -17,7 +17,6 @@ import img11 from "../../Assets/icons/paste.png";
 import img12 from "../../Assets/icons/generate_report.png";
 import img13 from "../../Assets/icons/upload_report.png"; // Import your EditTemplate component
 import { Link } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 const Header = () => {
   const [openTemplatePopup, setOpenTemplatePopup] = useState(false);
@@ -79,83 +78,46 @@ const Header = () => {
   const handleMenuClick = (index) => {
     setActiveMenu(activeMenu === index ? null : index);
   };
-
-  const template = [
-    {
-      label: "File",
-      submenu: [
-        { label: "Open Inspection" },
-        { label: "Save Insprction" },
-        { label: "Open Template" },
-        { label: "Save Template" },
-
-      ],
-    },
-    {
-      label: "Edite",
-      submenu: [
-        { label: "Client Information" },
-        { label: "Address Book" },
-        { label: "Contract Page" },
-        { label: "Create/Edit Documents" },
-        { label: "Insert PDF Documents" },
-        { label: "Application Settings" },
-      ],
-    },
-    {
-      label: "Internet",
-      submenu: [{ label: "Office Login" }, { label: "Upload Report" }],
-    },
-    {
-      label: "Report Settings",
-      submenu: [
-        { label: "Company Logo" },
-        { label: "Inspector Signature" },
-        { label: "Client Signature" },
-      ],
-    },
-    {
-      label: "Photos",
-      submenu: [
-        { label: "Add Review Photos" },
-        { label: "Batch Add Photos" },
-        { label: "Clear All Photos" },
-      ],
-    },
-    {
-      label: "About",
-      submenu: [
-        { label: "Contact Support" },
-        { label: "Remote Help Connection" },
-        { label: "About" },
-      ],
-    },
-  ]
   return (
 
     <>
 
 
       <div className="dropdown-container flex">
-        {template.map((menuItem, index) => (
-          <div key={index} className="menu-item relative ml-4">
-            <div
-              className="main-label cursor-pointer"
-              onClick={() => handleMenuClick(index)}
-            >
-              {menuItem.label}
-            </div>
-            {activeMenu === index && (
-              <ul className="submenu absolute z-10 bg-white shadow mt-2">
-                {menuItem.submenu.map((subItem, subIndex) => (
-                  <li key={subIndex} className="py-2 px-4 hover:bg-gray-200">
-                    {subItem.label}
-                  </li>
-                ))}
-              </ul>
-            )}
+        <div className="menu-item relative ml-4">
+          <div
+            className="main-label cursor-pointer"
+            onClick={() => handleMenuClick(0)}
+          >
+            File
           </div>
-        ))}
+          {activeMenu === 0 && (
+            <ul className="submenu absolute z-10 bg-white shadow mt-2">
+              <li className="py-2 px-4 hover:bg-gray-200">Open Inspection</li>
+              <li className="py-2 px-4 hover:bg-gray-200">Save Inspection</li>
+              <li className="py-2 px-4 hover:bg-gray-200">Open Template</li>
+              <li className="py-2 px-4 hover:bg-gray-200">Save Template</li>
+            </ul>
+          )}
+        </div>
+
+        <div className="menu-item relative ml-4">
+          <div
+            className="main-label cursor-pointer"
+            onClick={() => handleMenuClick(1)}
+          >
+            Photos
+          </div>
+          {activeMenu === 1 && (
+            <ul className="submenu absolute z-10 bg-white shadow mt-2">
+              <Link to="/photoreview">
+                <li className="py-2 px-4 hover:bg-gray-200">Add Review Photos</li>
+              </Link>
+              <li className="py-2 px-4 hover:bg-gray-200">Batch Add Photos</li>
+              <li className="py-2 px-4 hover:bg-gray-200">Clear All Photos</li>
+            </ul>
+          )}
+        </div>
       </div>
 
       <div className="header">
@@ -217,25 +179,40 @@ const Header = () => {
                 </div>
               </a>
             </li>
-
-            <li className="list-for-header-section-main-nav">
-              <a href="#">
-                <img src={img7} alt="" />
-                <div>
-                  Insert PDF <br /> Documments
-                </div>
-              </a>
-            </li>
+            <Link to="/insertpdf">
+              <li className="list-for-header-section-main-nav">
+                <a href="#">
+                  <img src={img7} alt="" />
+                  <div>
+                    Insert PDF <br /> Documments
+                  </div>
+                </a>
+              </li>
+            </Link>
             <hr />
-            <li className="list-for-header-section-main-nav">
-              <a href="#">
-                <img src={img8} alt="" />
-                <div>
-                  Client
-                  <br /> Info
-                </div>
-              </a>
-            </li>
+            <Link to="/">
+              <li className="list-for-header-section-main-nav">
+                <a href="#">
+                  <img src={img8} alt="" />
+                  <div>
+                    Client
+                    <br /> Info
+                  </div>
+                </a>
+              </li>
+            </Link>
+
+            <Link to="/book">
+              <li className="list-for-header-section-main-nav">
+                <a href="#">
+                  <img src={img8} alt="" />
+                  <div>
+                    Address
+                    <br /> Book
+                  </div>
+                </a>
+              </li>
+            </Link>
             <li className="list-for-header-section-main-nav">
               <a href="#">
                 <img src={img9} alt="" />
