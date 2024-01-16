@@ -39,9 +39,25 @@ const InsertPdf = () => {
       setFileNames([...newFileNames]);
     }
   };
+
   const handleButtonClick = () => {
     // Trigger the file input click
     document.getElementById("fileInput").click();
+  };
+
+  // Remove Pdf
+  const handleRemovePdf = (index) => {
+    const newSelectedPdfs = [...selectedPdfs];
+    const newPreviewUrls = [...previewUrls];
+    const newFileNames = [...fileNames];
+
+    newSelectedPdfs.splice(index, 1);
+    newPreviewUrls.splice(index, 1);
+    newFileNames.splice(index, 1);
+
+    setSelectedPdfs(newSelectedPdfs);
+    setPreviewUrls(newPreviewUrls);
+    setFileNames(newFileNames);
   };
   return (
     <>
@@ -87,7 +103,8 @@ const InsertPdf = () => {
                       className="overflow-y-hidden overflow-x-hidden"
                     />{" "}
                     <h2>{fileNames[index]}</h2>
-                  </div>
+                  </div>{" "}
+                  <button onClick={() => handleRemovePdf(index)}>Remove</button>
                 </div>
               ))}
             </div>
