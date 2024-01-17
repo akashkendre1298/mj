@@ -86,7 +86,7 @@ li.list-icon-status-online {
 }
 .uploaded-documents-preview {
   border: 0.1px solid grey;
-  width: 71.5em;
+  width: 67.9em;
   height: 100vh;
 }
 .add-remove-header-text-for-section {
@@ -95,7 +95,7 @@ li.list-icon-status-online {
 .pdf-preview-for-multiple-files {
   width: 100%;
   border: 0.1px solid #80808069;
-  margin-bottom: 1em;
+  /* margin-bottom: 1em; */
   display: flex;
   justify-content: space-between;
 }
@@ -122,15 +122,17 @@ li.list-icon-status-online {
   font-size: 10px;
 }
 .modal-for-the-confirmation-of-deletion-of-document {
-  width: 36em;
-  text-align: center;
-  font-size: 14px;
-  margin: 1em;
+  position: fixed;
+  top: 34%;
+  left: 43%;
+  font-size: 13px;
+  transform: translate(-50%, -50%);
   background-color: white;
-  display: grid;
-  align-items: center;
-  border-radius: 1px;
-  padding: 1em;
+  padding: 20px;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  text-align: center;
+  width: 41em;
 }
 .section-of-cancel-and-confirm-deletion-of-decument {
   display: flex;
