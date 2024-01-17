@@ -35,14 +35,13 @@ const ClientInfo = () => {
   }, []);
 
   return (
-    <div className="main-container ">
+    <div className="main-container-clientinfo">
       <div>
         <Header />
       </div>
 
-      {/* <div>sgdhjk</div> */}
-      <form className="formcont">
-        <h1 className="text">Client Information</h1>
+      <form className="formcont text-sm">
+        <h1 className="text text-lg">Client Information</h1>
 
         <div className="form-group">
           <label htmlFor="inputlastname" className="label">

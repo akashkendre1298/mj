@@ -26,7 +26,7 @@
   background-color: rgb(135 207 235 / 34%);
 }
 .two-btns-for-add-pdf-and-forms {
-  margin-top: -0.5rem;
+  /* margin-top: -0.5rem; */
   display: flex;
   gap: 0.5em;
   justify-content: center;
@@ -46,7 +46,7 @@
 }
 .header-and-add-doc-add-form-btns {
   width: 100%;
-  display: grid;
+  /* display: grid; */
   justify-content: center;
 }
 .list-for-the-documents-in-the-section {
@@ -56,7 +56,7 @@
 }
 .arrgane-document-header-for-section {
   padding-left: 12px;
-  margin-bottom: 1.8em;
+  margin-bottom: 2.7em;
 }
 ul.list-icon-status-online {
   list-style-image: url("../../Assets/icons/status_online.png");
@@ -72,7 +72,10 @@ li.list-icon-status-online {
 }
 
 .nested-list li {
-  margin-bottom: 5px; /* Adjust as needed */
+  margin-bottom: 0; /* Adjust as needed */
+  display: flex;
+  align-items: center;
+  padding: 6px;
 }
 
 .nested-list li::before {
@@ -86,7 +89,7 @@ li.list-icon-status-online {
 }
 .uploaded-documents-preview {
   border: 0.1px solid grey;
-  width: 68em;
+  width: 100%;
   height: 100vh;
 }
 .add-remove-header-text-for-section {
@@ -95,7 +98,7 @@ li.list-icon-status-online {
 .pdf-preview-for-multiple-files {
   width: 100%;
   border: 0.1px solid #80808069;
-  margin-bottom: 1em;
+  /* margin-bottom: 1em; */
   display: flex;
   justify-content: space-between;
 }
@@ -106,10 +109,11 @@ li.list-icon-status-online {
 .form-for-check-box-and-search-box > label {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 .check-boxes-and-remove-button {
   display: flex;
-  font-size: 13px;
+  font-size: 11px;
   gap: 4em;
   padding: 1em;
 }
@@ -122,15 +126,18 @@ li.list-icon-status-online {
   font-size: 10px;
 }
 .modal-for-the-confirmation-of-deletion-of-document {
-  width: 25em;
+  position: fixed;
+  top: 32%;
+  left: 43%;
+  font-size: 13px;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 9px;
+  border: 1px solid #ccc;
+  z-index: 1000;
   text-align: center;
-  font-size: 14px;
-  margin-top: 3em;
-  background-color: #80808038;
-  display: grid;
-  align-items: center;
-  border-radius: 1px;
-  padding: 1em;
+  width: 43em;
+  border-radius: 6px;
 }
 .section-of-cancel-and-confirm-deletion-of-decument {
   display: flex;
@@ -147,3 +154,6 @@ li.list-icon-status-online {
   width: 7em;
   text-align: center;
 }
+/* .btn-for-cancel-and-confirm-insert-pdf-section:hover {
+  background-color: rgb(135 207 235 / 34%);
+} */

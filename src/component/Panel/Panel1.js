@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import "./Panel1.css";
-import "./Style.css";
+import React, { useState } from 'react';
+import './Panel1.css';
+
+
 
 function Panel1() {
   const [selectedText, setSelectedText] = useState("");
@@ -162,7 +163,7 @@ function Panel1() {
             </button>
           </div>
 
-          <div className="container1">
+          <div className="container1 ">
             <div className="scroll-box1" onClick={() => handleLineClick(index)}>
               {blackText.split("\n").map((line, index) => (
                 <div

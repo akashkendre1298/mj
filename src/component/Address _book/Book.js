@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
+import { v4 as uuidv4 } from 'uuid';
 import "./Book.css";
 import "./Style.css";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 
 const Book = () => {
-  const [lastName, setLastName] = useState("");
-  const [firstName, setFirstName] = useState("");
+  // const [lastName, setLastName] = useState("");
+  // const [firstName, setFirstName] = useState("");
+  const [formData, setFormData] = useState({ id: '', agentlastname: '', firstName: '' });
+  const [tableData, setTableData] = useState([]);
+
   const [Company, setCompany] = useState("");
   const [workPhone, setworkPhone] = useState("");
   const [WorkFax, setWorkFax] = useState("");
@@ -66,6 +70,30 @@ const Book = () => {
     setSelectedFile(null);
   };
 
+  
+  useEffect(() => {
+    const existingData = JSON.parse(localStorage.getItem('formData')) || [];
+    setTableData(existingData);
+  }, []);
+
+  const submitForm = () => {
+    const id = uuidv4();
+    const newFormData = { ...formData, id };
+    setTableData([...tableData, newFormData]);
+    setFormData({ id: '', agentlastname: '', firstName: '' });
+  };
+
+  useEffect(() => {
+    localStorage.setItem('formData', JSON.stringify(tableData));
+  }, [tableData]);
+
+  const clearLocalStorage = () => {
+    localStorage.removeItem('formData');
+    setTableData([]);
+    setFormData({ id: '', agentlastname: '', firstName: '' });
+  };
+
+
   return (
     <div className="main-container-book">
       <div>
@@ -74,9 +102,9 @@ const Book = () => {
 
       <div class="flex flex-row" style={{ lineHeight: "17px" }}>
         <div class="basis-1/1">
-          <div className="box1-book flex ml-5">
-            <form className="formcont-book mr-">
-              <h1 className="text-book">Real Estate Agent Information</h1>
+          <div className="box1-book flex ml-5 ">
+            <form className="formcont-book ">
+              <h1 className="text-book text-lg">Real Estate Agent Information</h1>
 
               <div className="form-group-book">
                 <label htmlFor="inputlastname" className="label-book">
@@ -85,11 +113,11 @@ const Book = () => {
                 <input
                   type="text"
                   className="input-for-form-book"
-                  id="inputlastname"
-                  value={lastName}
+                  id="agentlastname"
+                  value={formData.lastName}
                   style={{ width: "11%" }}
-                  onChange={(e) => setLastName(e.target.value)}
-                />
+                  onChange={(e) => setFormData({ ...formData, agentlastname: e.target.value })}
+                  />
 
                 <label
                   htmlFor="inputfirstname"
@@ -101,11 +129,11 @@ const Book = () => {
                 <input
                   type="text"
                   className="input-for-form-book"
-                  id="inputfirstname"
-                  value={firstName}
+                  id="firstName"
+                  value={formData.firstName}
                   style={{ width: "11%", marginLeft: "5px" }}
-                  onChange={(e) => setFirstName(e.target.value)}
-                />
+                  onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                  />
               </div>
               <div className="form-group-book">
                 <label htmlFor="inputCompany" className="label-book">
@@ -130,7 +158,7 @@ const Book = () => {
                   className="input-for-form-book"
                   id="inputworkPhone"
                   value={workPhone}
-                  style={{ width: "11%" }}
+                  style={{ width: "11%", marginLeft: "5px" }}
                   onChange={(e) => setworkPhone(e.target.value)}
                 />
 
@@ -333,7 +361,7 @@ const Book = () => {
                 </div>
                 <div className="form-group-book">
                   <label htmlFor="inputzip" className="label-book">
-                    ZIP Code:
+                    ZIP Code
                   </label>
                   <input
                     type="text"
@@ -361,16 +389,16 @@ const Book = () => {
             </form>
             <div class="basis-1/1 ml-5">
               <div className="photoupload-book ">
-                <div className="bg-white ml-2 mt-10 w-40 h-48 border-2 border-dashed border-gray-400 flex items-center justify-center">
+                <div className="bg-white ml-2 mt-10 mr-5 w-40 h-48 border-2 border-dashed border-gray-400 flex items-center justify-center">
                   <p class="text-gray-600">Agent Photo</p>
                 </div>
 
                 <div class="flex ml-2 mt-2">
                   <div class="flex space-x-4">
-                    <button class="bg-gray-300 hover:bg-gray-400 px-3 border border-gray-400 rounded">
+                    <button class="bg-gray-300 hover:bg-gray-400 px-3 h-7 border border-gray-400 rounded">
                       Upload
                     </button>
-                    <button class="bg-gray-300 hover:bg-gray-400  px-3 border border-gray-400 rounded">
+                    <button class="bg-gray-300 hover:bg-gray-400  px-3 h-7 border border-gray-400 rounded">
                       Cancel
                     </button>
                   </div>
@@ -379,9 +407,9 @@ const Book = () => {
             </div>
           </div>
         </div>
-
+        <div className="border-l border-black"></div>
         <div
-          className="basis-1/2 bg-white mt-2 w-100 mr-3 ml-10 "
+          className="basis-1/2 bg-white mt-2 w-100 mr-3 ml-5 "
           style={{ hight: "45%" }}
         >
           <div className="">
@@ -410,23 +438,35 @@ const Book = () => {
                     className="border border-black p-2 text-center"
                     style={{ width: "20%" }}
                   >
-                    Work
+                    Work Phone
                   </td>
                 </tr>
               </thead>
+              <tbody>
+          {tableData.map((data) => (
+            <tr key={data.id}>
+              {/* <td>{data.id}</td> */}
+              <td>{data.agentlastname}</td>
+              <td>{data.firstName}</td>
+            </tr>
+          ))}
+        </tbody>
             </table>
           </div>
         </div>
       </div>
-      <div className="btn-conat-book ml-5 ">
+
+      <div className="btn-conat-book ml-5 text-sm ">
         <div className="flex flex-col-3 gap-1 mt-2 ml-2 ">
-          <button className="border border-black bg-gray-300 hover:bg-blue-100 w-60 h-6 rounded">
+          <button className="border border-black bg-gray-300 hover:bg-blue-100 w-60 h-6 rounded"
+           onClick={submitForm}>
             Save
           </button>
           <button className="border border-black bg-gray-300 hover:bg-blue-100 w-60 h-6 rounded">
             Export Contacts
           </button>
-          <button className="border border-black bg-gray-300 hover:bg-blue-100  w-60  h-6 rounded">
+          <button className="border border-black bg-gray-300 hover:bg-blue-100  w-60  h-6 rounded"
+          onClick={clearLocalStorage}>
             Delete Agent
           </button>
         </div>
@@ -447,7 +487,7 @@ const Book = () => {
         <div className="flex gap-1 mt-2 ml-2">
           <button
             className="border border-black bg-gray-300 hover:bg-blue-100  h-6 rounded"
-            style={{ width: "48.5%" }}
+            style={{ width: "48.2%" }}
           >
             Import Contacts
           </button>
