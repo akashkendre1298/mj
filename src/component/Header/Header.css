@@ -3,7 +3,7 @@
   height: 80px;
 }
 
-nav {
+.header2 {
   display: flex;
 }
 
@@ -19,14 +19,14 @@ nav {
   margin: 0 5px;
 }
 
-a {
+.header2-tag-a {
   text-decoration: none;
   color: #333;
   padding: 6px;
   display: block;
 }
 
-a:hover {
+.header2-tag-a:hover {
   background-color: #ddd;
 }
 

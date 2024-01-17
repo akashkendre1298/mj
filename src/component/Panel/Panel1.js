@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Panel1.css';
-import './Style.css'
+
 
 
 function Panel1() {
@@ -216,9 +216,6 @@ function Panel1() {
               <button className="image-button" onClick={() => handleMoveDown(redText, setRedText)}>
                 <img src="ic_down.png" alt="Button 2" width={20} />
               </button>
-
-
-
             </div>
           </div>
         </div>
