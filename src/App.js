@@ -3,12 +3,13 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import ClientInfo from "./component/ClientInfo/ClientInfo";
-import Panel1 from "./component/Panel/Panel1"
+import Panel1 from "./component/Panel/Panel1";
 import Footer from "./component/Footer/Footer";
-import ColorPalet from './component/ColorPalet/ColorPalet';
-import InsertPdf from './component/InsertPdf/InsertPdf';
+import ColorPalet from "./component/ColorPalet/ColorPalet";
+import InsertPdf from "./component/InsertPdf/InsertPdf";
 import Book from "./component/Address _book/Book";
-import PhotoReview from './component/Photo/PhotoReview';
+import PhotoReview from "./component/Photo/PhotoReview";
+import BatchAddPhotos from "./component/Photo/BatchAddPhotos/BatchAddPhotos";
 function App() {
   return (
     <BrowserRouter>
@@ -20,9 +21,7 @@ function App() {
         <Route path="/insertpdf" element={<InsertPdf />}></Route>
         <Route path="/book" element={<Book />}></Route>
         <Route path="/photoreview" element={<PhotoReview />}></Route>
-
-
-
+        <Route path="/batchaddphotos" element={<BatchAddPhotos />}></Route>
       </Routes>
     </BrowserRouter>
   );

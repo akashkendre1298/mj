@@ -6,11 +6,14 @@
 }
 .PhotoReview-Location-button {
   margin-left: 75px;
-  /* margin-top: 10px; */
+  margin-top: 10px;
+  background-color: white;
+  width: 2em;
+  text-align: center;
 }
-.PhotoReview-Location-Checkbox-Container{
+.PhotoReview-Location-Checkbox-Container {
   margin-left: 5px;
 }
-.PhotoReview-Location-Checkbox-label{
+.PhotoReview-Location-Checkbox-label {
   margin-left: 3px;
 }

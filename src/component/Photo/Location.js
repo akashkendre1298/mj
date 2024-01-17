@@ -29,7 +29,7 @@ const Location = () => {
         <select className="PhotoReview-Location-first-inputfields"></select>
       </div>
       <div className="PhotoReview-Location-button">
-        <button>=</button>
+        <button>@</button>
       </div>
 
       <div className="PhotoReview-Location-Checkbox-Container">

@@ -9,6 +9,7 @@ import img8 from "./icons/diskette.png";
 import img9 from "./icons/search-in-browser-64.png";
 import img10 from "./icons/preview-48.png";
 import img11 from "./icons/delete.png";
+
 import "./Buttons.css";
 
 const Buttons = ({ onFileSelect }) => {
