@@ -143,7 +143,7 @@ function Panel1() {
             <button className="bg-gray-100 border border-gray-400 hover:bg-blue-100 text-black px-0 py-0 rounded">Show PDFs</button>
           </div>
 
-          <div className="container1">
+          <div className="container1 ">
             <div className="scroll-box1" onClick={() => handleLineClick(index)}>
               {blackText.split('\n').map((line, index) => (
                 <div
