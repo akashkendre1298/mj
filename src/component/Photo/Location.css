@@ -1,13 +1,16 @@
-.Location-container {
+.PhotoReview-Location-container {
   margin-left: 6px;
 }
-#locationIF {
+.PhotoReview-Location-first-inputfields {
   width: 170px;
 }
-.LCButton-container {
+.PhotoReview-Location-button {
   margin-left: 75px;
   /* margin-top: 10px; */
 }
-.fb-container {
-  /* margin-top: 10px; */
+.PhotoReview-Location-Checkbox-Container{
+  margin-left: 5px;
+}
+.PhotoReview-Location-Checkbox-label{
+  margin-left: 3px;
 }

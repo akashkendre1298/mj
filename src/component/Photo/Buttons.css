@@ -1,6 +1,6 @@
 /* Buttons.module.css */
 
-.buttonlist {
+.Buttons-unorderlist-container {
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 columns */
@@ -8,7 +8,7 @@
   margin-top: -20px;
 }
 
-.buttonitem {
+.Buttons-orderlist-to-adjust-images {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,20 +17,20 @@
   padding: 1px;
 }
 
-.buttonitem img {
+.Buttons-orderlist-to-adjust-images {
   max-width: 100%;
   max-height: 100%;
 }
-.prev {
+.Buttons-unoorderlist-for-icons-buttons {
   display: grid;
   margin-top: -40px;
   margin-left: 300px;
 }
-.previtem {
+.Buttons-orderlist-for-icons-buttons {
   background-color: white;
 }
-.buttonitem img,
-.previtem img {
+.Buttons-orderlist-to-adjust-images,
+.Buttons-orderlist-for-icons-buttons {
   width: 25px;
   height: 25px;
 }

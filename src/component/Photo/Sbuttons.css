@@ -1,15 +1,15 @@
-.slist {
+.sbuttons-unorder-list {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 2px;
-  /* padding-right: 1000px; */
+
   padding-inline-start: 4px;
-  /* margin-left: 690px; */
+
   margin-top: -85px;
 }
 
-.prbutton {
+.sbuttons-unorder-list-images {
   background-color: rgb(211, 200, 200);
   padding: 0px;
 }

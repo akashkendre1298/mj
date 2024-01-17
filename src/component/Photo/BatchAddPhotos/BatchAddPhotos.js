@@ -23,29 +23,33 @@ const BatchAddPhotos = () => {
   return (
     <>
       {isPopupOpen && (
-        <div className="BA-container">
-          <div className="BA-header">
-            <span className="BA-title">Bulk Import</span>
+        <div className="Batch-AddPhotos-main-container">
+          <div className="Batch-AddPhotos-header-container">
+            <span className="Batch-AddPhotos-header-BulkImport">
+              Bulk Import
+            </span>
             <img
-              className="close-img"
+              className="Batch-AddPhotos-close-image"
               src={xButtonIcon}
               alt="Close"
               onClick={handleClose}
             />
           </div>
-          <div className="BA-content">
-            <button id="BAButton" onClick={handleBrowseClick}>
+          <div className="Batch-AddPhotos-Button-container">
+            <button
+              className="Batch-AddPhotos-Button-Browse"
+              onClick={handleBrowseClick}
+            >
               Browse and choose folder
             </button>
             <input
               type="file"
-              id="fileInput"
               style={{ display: "none" }}
               onChange={handleFileUpload}
             />
           </div>
-          <div className="BA-box">
-            <input id="BA-box" />
+          <div className="Batch-AddPhotos-Popupbox-main-container">
+            <input />
           </div>
           <div className="BA-Options">
             <label htmlFor="agree" id="BAlabel">
@@ -75,9 +79,9 @@ const BatchAddPhotos = () => {
             <br />
             {/* Additional options... */}
           </div>
-          <div className="BA-Options">{/* Your options */}</div>
-          <div className="OK-content">
-            <button id="OKButton">OK</button>
+
+          <div className="Batch-Addphotos-Ok-btn-container">
+            <button className="Batch-Addphotos-Ok-btn">OK</button>
           </div>
         </div>
       )}
