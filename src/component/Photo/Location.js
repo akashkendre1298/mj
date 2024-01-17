@@ -2,10 +2,10 @@ import "./Location.css";
 const Location = () => {
   return (
     <>
-      <div className="Location-container">
+      <div className="PhotoReview-Location-container">
         <label for="username">Location</label>
         <br />
-        <select id="locationIF">
+        <select className="PhotoReview-Location-first-inputfields">
           <option value=""></option>
           <option value="option1">Inspection Details</option>
           <option value="option2">Interior Areas</option>
@@ -26,20 +26,30 @@ const Location = () => {
           <option value="option3">Basement/Crawlspace</option>
         </select>
         <br />
-        <select id="locationIF"></select>
+        <select className="PhotoReview-Location-first-inputfields"></select>
       </div>
-      <div className="LCButton-container">
+      <div className="PhotoReview-Location-button">
         <button>=</button>
       </div>
 
-      <div className="fb-container">
-        <input type="checkbox" id="agree" name="agree" />
-        <label for="agree">Print At End</label>
-        <input type="checkbox" id="agree" name="agree" />
-        <label for="agree">Summary</label>
+      <div className="PhotoReview-Location-Checkbox-Container">
+        <input type="checkbox" name="agree" />
+        <label for="agree" className="PhotoReview-Location-Checkbox-label">
+          Print At End
+        </label>
+        <input
+          type="checkbox"
+          className="PhotoReview-Location-Checkbox-label"
+          name="agree"
+        />
+        <label for="agree" className="PhotoReview-Location-Checkbox-label">
+          Summary
+        </label>
         <br />
         <input type="checkbox" id="agree" name="agree" />
-        <label for="agree">Use Location As Caption</label>
+        <label for="agree" className="PhotoReview-Location-Checkbox-label">
+          Use Location As Caption
+        </label>
       </div>
     </>
   );

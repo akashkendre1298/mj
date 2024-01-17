@@ -134,7 +134,11 @@ const Header = () => {
                   Add Review Photos
                 </li>
               </Link>
-              <li className="py-2 px-4 hover:bg-gray-200">Batch Add Photos</li>
+              <Link to="/photoreview">
+                <li className="py-2 px-4 hover:bg-gray-200">
+                  Batch Add Photos
+                </li>
+              </Link>
               <li className="py-2 px-4 hover:bg-gray-200">Clear All Photos</li>
             </ul>
           )}

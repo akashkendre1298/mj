@@ -1,4 +1,4 @@
-.BA-container {
+.Batch-AddPhotos-main-container {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -11,18 +11,18 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-.BA-header {
+.Batch-AddPhotos-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
 }
 
-.BA-title {
+.Batch-AddPhotos-header-BulkImport {
   font-size: 15px;
 }
 
-.close-img {
+.Batch-AddPhotos-close-image {
   cursor: pointer;
 }
 
@@ -30,30 +30,27 @@
   text-align: center;
 }
 
-#BAButton {
+.Batch-AddPhotos-Button-Browse {
   padding-left: 10px;
   cursor: pointer;
   background-color: white;
   border-color: black;
 }
 
-.BA-box {
+.Batch-AddPhotos-Popupbox-main-container {
   margin-top: 10px;
 }
-#BA-box {
-  width: 550px;
-  height: 70px;
-}
-.OK-content {
+
+.Batch-Addphotos-Ok-btn-container {
   margin-left: 500px;
   margin-top: 15px;
 }
-#OKButton {
+.Batch-Addphotos-Ok-btn {
   padding-left: 25px;
   padding-right: 25px;
   background-color: white;
 }
-.close-img {
+.Batch-AddPhotos-close-image {
   width: 10px;
   height: 10px;
 }

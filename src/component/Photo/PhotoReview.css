@@ -1,7 +1,7 @@
-.para-phto-review {
+.PhotoReview-Main-Para {
   text-align: center;
 }
-.rectangle-container {
+.PhotoReview-rectangular-container {
   position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -9,15 +9,14 @@
   margin-left: 20px;
 }
 
-.rectangle {
+.PhotoReview-rectangle {
   width: 740px;
   height: 280px;
   border: 2px solid black;
   margin-bottom: 10px;
 }
-/* Add these styles to PhotoReview.css */
 
-.dropzone {
+.PhotoReview-Drag-Drop-Box {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,19 +30,19 @@
   cursor: pointer;
 }
 
-.dropzone:hover {
+.PhotoReview-Drag-Drop-Box:hover {
   border-color: #007bff;
 }
 
-.dropzone p {
+.Drag-Drop-Box-Para {
   margin: 0;
   font-size: 14px;
   color: black;
   font-weight: bolder;
+  text-align: center;
 }
 
-/* Additional styling for the dropzone when a file is dragged over it */
-.dropzone:active {
+.PhotoReview-Drag-Drop-Box:active {
   background-color: #f7f7f7;
 }
 body {

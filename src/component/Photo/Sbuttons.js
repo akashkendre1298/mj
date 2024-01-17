@@ -1,35 +1,35 @@
 import React from "react";
 import img1 from "./icons/paste.png";
-import styles from "./Sbuttons.module.css";
+import "./Sbuttons.css";
 
 const Sbuttons = () => {
   return (
-    <div>
-      <ul className={styles.slist}>
+    <div className="sbuttons-main-container">
+      <ul className="sbuttons-unorder-list">
         <li>
           <a href="#file">
-            <div className={styles.prbutton}>
+            <div className="sbuttons-unorder-list-images">
               <img src={img1} alt="" />
             </div>
           </a>
         </li>
         <li>
           <a href="#file">
-            <div className={styles.prbutton}>
+            <div className="sbuttons-unorder-list-images">
               <img src={img1} alt="" />
             </div>
           </a>
         </li>
         <li>
           <a href="#file">
-            <div className={styles.prbutton}>
+            <div className="sbuttons-unorder-list-images">
               <img src={img1} alt="" />
             </div>
           </a>
         </li>
         <li>
           <a href="#file">
-            <div className={styles.prbutton}>
+            <div className="sbuttons-unorder-list-images">
               <img src={img1} alt="" />
             </div>
           </a>
