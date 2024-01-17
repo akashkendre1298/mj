@@ -198,7 +198,10 @@ const InsertPdf = () => {
                         placeholder="<<Bookmark Name>>"
                       ></input>
                     </form>
-                    <button onClick={() => handleRemovePdf(index)}>
+                    <button
+                      style={{ backgroundcolor: "transparent" }}
+                      onClick={() => handleRemovePdf(index)}
+                    >
                       Remove <br /> Document
                     </button>
                   </div>
