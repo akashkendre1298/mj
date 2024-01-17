@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import "./InsertPdf.css";
 import Header from "../Header/Header";
 
-const ConfirmationModal = ({ message, onConfirm, onCancel }) => {
+const ConfirmationModal = ({ title, message, onConfirm, onCancel }) => {
   return (
     <div className="modal-for-the-confirmation-of-deletion-of-document">
+      <p className="mb-4">
+        <p className="flex">{title}</p>
+      </p>
       <p className="mb-4">{message}</p>
       <div className="section-of-cancel-and-confirm-deletion-of-decument">
         <button
@@ -29,10 +32,13 @@ const InsertPdf = () => {
   const [previewUrls, setPreviewUrls] = useState([]);
   const [fileNames, setFileNames] = useState([]);
 
+  // new state for pdf names in the list right side section
+  const [pdfNames, setPdfNames] = useState([]);
+
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [confirmationIndex, setConfirmationIndex] = useState(null);
 
-  const handleFileChange = (event) => {
+  const handleFileChange = (event, isForm) => {
     const files = event.target.files;
 
     if (files.length > 0) {
@@ -61,6 +67,10 @@ const InsertPdf = () => {
 
       setSelectedPdfs([...newSelectedPdfs]);
       setFileNames([...newFileNames]);
+
+      if (!isForm) {
+        setPdfNames([...newFileNames]);
+      }
     }
   };
 
@@ -86,7 +96,7 @@ const InsertPdf = () => {
       setSelectedPdfs(newSelectedPdfs);
       setPreviewUrls(newPreviewUrls);
       setFileNames(newFileNames);
-
+      setPdfNames([...newFileNames]); // Update PDF names
       // Close the confirmation modal
       setShowConfirmation(false);
       // Reset confirmation index to null
@@ -149,14 +159,15 @@ const InsertPdf = () => {
                       src={previewUrls[index]}
                       type="application/pdf"
                       width="200"
-                      height="150"
-                      className="overflow-y-hidden overflow-x-hidden"
+                      height="100"
+                      style={{ overflow: "hidden" }}
                     />
 
-                    <h2>{fileNames[index]}</h2>
+                    <h2 className="text-sm">{fileNames[index]}</h2>
                   </div>
                   {showConfirmation && (
                     <ConfirmationModal
+                      title="Document removal confirmation"
                       message={`Are you sure you want to remove this document from your inspection file ?
                     You can select 'Dont Print' if you don't want the document to be printed in the report ${fileNames[confirmationIndex]}?`}
                       onConfirm={handleConfirmRemove}
@@ -201,25 +212,15 @@ const InsertPdf = () => {
             Arrange Document
           </p>
           <div className="list-for-the-documents-in-the-section">
-            <h1>List with Green Icons</h1>
+            {/* <h1>List with Green Icons</h1> */}
             <ul className="nested-list">
-              <li>Item 1</li>
-              <li>Item 2</li>
-              <li>
-                Item 3
-                <ul className="nested-list">
-                  <li>Subitem 3.1</li>
-                  <li>Subitem 3.2</li>
-                  <li>
-                    Subitem 3.3
-                    <ul className="nested-list">
-                      <li>Sub-subitem 3.3.1</li>
-                      <li>Sub-subitem 3.3.2</li>
-                    </ul>
+              <ul className="nested-list">
+                {pdfNames.map((fileName, index) => (
+                  <li key={index}>
+                    <h2 className="text-sm">{fileName}</h2>
                   </li>
-                </ul>
-              </li>
-              <li>Item 4</li>
+                ))}
+              </ul>
             </ul>
           </div>
         </div>
