@@ -5,6 +5,7 @@ import inheritButtonImg from '../../Assets/icons/sync.png';
 import selectIconsButtonImg from '../../Assets/icons/open_inspection.png';
 
 const ColorPalette = () => {
+  // State for row colors
   const [rowColors, setRowColors] = useState([
     {
       id: 1,
@@ -29,6 +30,7 @@ const ColorPalette = () => {
     },
   ]);
 
+  // State for table data
   const [dummyData, setDummyData] = useState([
     {
       id: 1,
@@ -59,8 +61,16 @@ const ColorPalette = () => {
     },
   ]);
 
+  // State for selected row
   const [selectedRow, setSelectedRow] = useState(null);
 
+  // State for "Select All" checkbox
+  const [selectAll, setSelectAll] = useState(false);
+
+  // State to store all table data
+  const [allTableData, setAllTableData] = useState([]);
+
+  // Function to handle color change
   const handleColorChange = (id, column, color) => {
     setRowColors((prevColors) =>
       prevColors.map((row) =>
@@ -69,16 +79,20 @@ const ColorPalette = () => {
     );
   };
 
+  // Function to handle close
   const handleClose = () => {
     // Handle close logic here
   };
 
+  // Function to handle row click
   const handleRowClick = (index, columnIndex) => {
     if (columnIndex === 0) {
       setSelectedRow(index === selectedRow ? null : index);
+      setSelectAll(false); // Deselect "Select All" when a specific row is clicked
     }
   };
 
+  // Function to handle moving up
   const handleMoveUp = () => {
     if (selectedRow > 0) {
       setRowColors((prevColors) => {
@@ -101,6 +115,7 @@ const ColorPalette = () => {
     }
   };
 
+  // Function to handle moving down
   const handleMoveDown = () => {
     if (selectedRow !== null && selectedRow < rowColors.length - 1) {
       setRowColors((prevColors) => {
@@ -120,6 +135,20 @@ const ColorPalette = () => {
       });
 
       setSelectedRow(selectedRow + 1);
+    }
+  };
+
+  // Function to handle "Select All"
+  const handleSelectAll = () => {
+    setSelectAll(!selectAll);
+    setSelectedRow(null);
+
+    // Retrieve all table data when "Select All" is checked
+    if (!selectAll) {
+      const allData = dummyData.map((data) => ({ ...data }));
+      setAllTableData(allData);
+    } else {
+      setAllTableData([]);
     }
   };
 
@@ -149,6 +178,7 @@ const ColorPalette = () => {
               <table className="w-full" style={{ width: "100%", backgroundColor: "#ffff", border: "2px solid #3498db" }}>
                 <thead>
                   <tr className="text-sm  font-thin">
+
                     <th className="border p-2">Section name</th>
                     <th className="border p-2">Section title font</th>
                     <th className="border p-2">Print</th>
@@ -166,9 +196,12 @@ const ColorPalette = () => {
                   {dummyData.map((data, index) => (
                     <tr
                       key={index}
-                      className={selectedRow === index ? "bg-gray-200" : ""}
+                      className={
+                        (selectAll || selectedRow === index) ? "bg-gray-200" : ""
+                      }
                       onClick={() => handleRowClick(index, 0)}
                     >
+
                       <td className="border p-2">{data.sectionName}</td>
                       <td className="border p-2"></td>
                       <td className="border p-2">
@@ -243,6 +276,7 @@ const ColorPalette = () => {
                     </tr>
                   ))}
                 </tbody>
+
               </table>
             </div>
             <div className="text-center mx-2 text-sm" style={{ width: "20%" }}>
@@ -267,8 +301,8 @@ const ColorPalette = () => {
                 </button>
               </div>
               <div className="">
-                <button className="flex items-center justify-center w-full px-4 bg-white border border-black">
-                  <img alt="" className="mr-2" />Select All
+                <button className="flex items-center justify-center w-full px-4 bg-white border border-black" onClick={handleSelectAll}>
+                  {selectAll ? "Deselect All" : "Select All"}
                 </button>
               </div>
               <div className="">
