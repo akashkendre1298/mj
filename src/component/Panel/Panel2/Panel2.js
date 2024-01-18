@@ -111,7 +111,7 @@ function Panel2() {
           Panel 2
         </div>
         <div className='pl-2 m-2'>
-        <div className="scroll-box4-panel2 bg-gray-100">
+        <div className="scroll-box4-panel2 bg-white">
         </div>
         </div>
       </div>
