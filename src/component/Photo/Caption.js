@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import img7 from "./icons/notes.png";
-import editor from "./icons/content-creator.png";
+
 import close from "./icons/close_2997911.png";
 import "./Caption.css";
 

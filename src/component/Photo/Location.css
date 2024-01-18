@@ -7,10 +7,19 @@
 .PhotoReview-Location-button {
   margin-left: 75px;
   margin-top: 10px;
-  background-color: white;
+  background-color: #f3f2f1;
+  color: black;
+  border: 2px solid rgb(191, 189, 189);
+  border-radius: 5px;
+
   width: 2em;
   text-align: center;
 }
+.PhotoReview-Location-button:hover {
+  background-color: #d7e9f7;
+  border-color: #005a9e;
+}
+
 .PhotoReview-Location-Checkbox-Container {
   margin-left: 5px;
 }
