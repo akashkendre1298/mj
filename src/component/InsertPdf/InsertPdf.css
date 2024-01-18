@@ -1,0 +1,163 @@
+.add-remove-pdf-docs-and-arrange-documents-section {
+  display: flex;
+  justify-content: center;
+  margin: 1px;
+  width: 100%;
+}
+.main-div-for-insert-pdf{
+  height: 100vh;
+}
+.add-doc-btn-for-section-document {
+  border: 2px solid skyblue;
+  font-size: 11px;
+  border-radius: 3px;
+  height: 2em;
+  width: 10em;
+  text-align: center;
+}
+.add-doc-btn-for-section-document:hover {
+  background-color: rgb(135 207 235 / 34%);
+}
+.add-doc-btn-for-section-form {
+  border: 2px solid skyblue;
+  font-size: 11px;
+  border-radius: 3px;
+  height: 2em;
+  width: 7em;
+}
+.add-doc-btn-for-section-form:hover {
+  background-color: rgb(135 207 235 / 34%);
+}
+.two-btns-for-add-pdf-and-forms {
+  /* margin-top: -0.5rem; */
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+.for-first-section-header-and-the-btns {
+  /* display: flex; */
+  width: 80%;
+  justify-content: center;
+  border: 0.1px solid grey;
+  /* padding: 1em; */
+}
+.arrange-document-list-right-side-section {
+  width: 20%;
+  border: 0.1px solid grey;
+  padding: 2px;
+}
+.header-and-add-doc-add-form-btns {
+  width: 100%;
+  /* display: grid; */
+  justify-content: center;
+}
+.list-for-the-documents-in-the-section {
+  padding: 10px;
+  /* height: 100vh; */
+  height: auto;
+  border: 1px solid grey;
+}
+.arrgane-document-header-for-section {
+  padding-left: 12px;
+  margin-bottom: 2.7em;
+}
+ul.list-icon-status-online {
+  list-style-image: url("../../Assets/icons/status_online.png");
+}
+li.list-icon-status-online {
+  list-style: url("../../Assets/icons/status_online.png");
+}
+
+/* NestedList.css */
+.nested-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nested-list li {
+  margin-bottom: 0; /* Adjust as needed */
+  display: flex;
+  align-items: center;
+  padding: 6px;
+}
+
+.nested-list li::before {
+  content: "";
+  display: inline-block;
+  width: 10px; /* Adjust as needed */
+  height: 10px; /* Adjust as needed */
+  margin-right: 0.5em; /* Adjust as needed */
+  background-image: url("../../Assets/icons/status_online.png"); /* Provide the path to your custom icon */
+  background-size: contain;
+}
+.uploaded-documents-preview {
+  border: 0.1px solid grey;
+  width: 100%;
+  height: auto;
+}
+.add-remove-header-text-for-section {
+  padding-left: 12px;
+}
+.pdf-preview-for-multiple-files {
+  width: 100%;
+  border: 0.1px solid #80808069;
+  /* margin-bottom: 1em; */
+  display: flex;
+  justify-content: space-between;
+}
+.form-for-check-box-and-search-box {
+  display: grid;
+  align-items: center;
+}
+.form-for-check-box-and-search-box > label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.check-boxes-and-remove-button {
+  display: flex;
+  font-size: 11px;
+  gap: 4em;
+  padding: 1em;
+}
+.bookmark-name-input-box-ss {
+  border: 1px solid grey;
+  text-align: center;
+  height: 18px;
+  /* display: flex; */
+  width: 125px;
+  font-size: 10px;
+}
+.modal-for-the-confirmation-of-deletion-of-document {
+  position: fixed;
+  top: 32%;
+  left: 43%;
+  font-size: 13px;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 9px;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  text-align: center;
+  width: 43em;
+  border-radius: 6px;
+}
+.section-of-cancel-and-confirm-deletion-of-decument {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  font-size: 12px;
+}
+
+.btn-for-cancel-and-confirm-insert-pdf-section {
+  border: 2px solid skyblue;
+  font-size: 11px;
+  border-radius: 3px;
+  height: 2em;
+  width: 7em;
+  text-align: center;
+}
+/* .btn-for-cancel-and-confirm-insert-pdf-section:hover {
+  background-color: rgb(135 207 235 / 34%);
+} */

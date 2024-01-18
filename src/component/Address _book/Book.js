@@ -1,383 +1,563 @@
-import React, { useState } from 'react'
-import './Book.css'
+import React, { useState, useEffect } from "react";
+import { v4 as uuidv4 } from 'uuid';
+import "./Book.css";
+import "./Style.css";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
 
 const Book = () => {
-    const [lastName, setLastName] = useState('');
-    const [firstName, setFirstName] = useState('');
-    const [company, setCompany] = useState('')
-    const [workphone, setWorkphone] = useState('');
-    const [workfax, setWorkfax] = useState('');
-    const [homephone, setHomephone] = useState('')
-    const [homefax, setHomefax] = useState('')
-    const [cellphone, setCellphone] = useState('')
-    const [pager, setPager] = useState('')
-    const [address, setAddress] = useState('');
-    const [addressLine2, setAddressLine2] = useState('');
-    const [city, setCity] = useState('');
-    const [province, setProvince] = useState('')
-    const [postalcode, setPostalcode] = useState('');
-    const [country, setCountry] = useState('');
-    const [isn, setISN] = useState('');
-    const [hip, setHIP] = useState('');
-    const [nxt, setNxt] = useState('');
-    const [email, setEmail] = useState('');
-    const [website, setWebsite] = useState('');
-    const [notes, setNotes] = useState('');
-    const [agents, setAgents] = useState([]);
+  // const [lastName, setLastName] = useState("");
+  // const [firstName, setFirstName] = useState("");
+  //const [Company, setCompany] = useState("");
+  // const [workPhone, setworkPhone] = useState("");
 
-    const addAgent = () => {
-        const newAgent = {
-            firstName,
-            lastName,
-            company,
-            workphone,
-        };
-        setAgents([newAgent, ...agents]);  
+  const [formData, setFormData] = useState({ id: '', agentlastname: '', firstName: '', Company: '', workPhone: '' });
+  const [tableData, setTableData] = useState([]);
+  const [selectedAgentId, setSelectedAgentId] = useState(null);
 
-        setFirstName('');
-        setLastName('');
-        setCompany('');
-        setWorkphone('');
-        // ... (clear other fields if needed)
-    };
+ 
+  const [WorkFax, setWorkFax] = useState("");
+  const [HomePhone, setHomePhone] = useState("");
+  const [HomeFax, setHomeFax] = useState("");
+  const [Cellphone, setCellphone] = useState("");
+  const [Pager, setPager] = useState("");
+  const [Address, setAddress] = useState("");
+  const [addressLine2, setAddressLine2] = useState("");
+  const [City, setCity] = useState("");
+  const [Province, setProvince] = useState("");
+  const [PostalCode, setPostalCode] = useState("");
+  const [Country, setCountry] = useState("");
+  const [EmailAddress, setEmailAddress] = useState("");
+  const [Website, setWebsite] = useState("");
+  const [state, setState] = useState("");
+  const [zipCode, setZipCode] = useState("");
+  const [Notes, setNotes] = useState("");
 
+  const [otherInfo, setOtherInfo] = useState("");
 
-    const deleteAgent = (index) => {
-        const updatedAgents = [...agents];
-        updatedAgents.splice(index, 1);
-        setAgents(updatedAgents);
-    };
+  const [defaultDate, setDefaultDate] = useState("");
 
-    return (
-        <>
-            <div className="home">
-                <div className="main-container">
-                    <form className='formcont' onSubmit={(e) => { e.preventDefault(); addAgent(); }}>
-                        <h1 className="text">Real Estate Agent Information</h1>
-                        <div className="form-group">
-                            <label htmlFor="inputlastname" className="label">
-                                Agent Last Name:
-                            </label>
-                            <input
-                                type="text"
-                                className="input-for-form"
-                                id="inputlastname"
-                                value={lastName}
-                                onChange={(e) => setLastName(e.target.value)}
-                            />
+  useEffect(() => {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = `${currentDate.getMonth() + 1}`.padStart(2, "0"); // Month is zero-based
+    const day = `${currentDate.getDate()}`.padStart(2, "0");
+    const formattedDate = `${year}-${month}-${day}`;
+    setDefaultDate(formattedDate);
+  }, []);
 
-                            <label htmlFor="inputfirstname" className="label" style={{ width: '13%', textAlign: 'center' }} >
-                                First :
-                            </label>
-                            <input
-                                type="text"
-                                className="input-for-form"
-                                id="inputfirstname"
-                                value={firstName}
-                                onChange={(e) => setFirstName(e.target.value)}
-                            />
-                        </div>
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [isUploading, setIsUploading] = useState(false);
 
-                        <div className="form-group">
-                            <label htmlFor="inputcompany" className="label">
-                                Company:
-                            </label>
-                            <input
-                                type="text"
-                                className="input-for-form"
-                                id="inputcompany"
-                                value={company}
-                                onChange={(e) => setCompany(e.target.value)}
-                            />
-                        </div>
+  const handleFileChange = (event) => {
+    setSelectedFile(event.target.files[0]);
+  };
 
-                        <div className="form-group">
-                            <label htmlFor="inputworkphone" className="label">
-                                Work Phone:
-                            </label>
-                            <input
-                                type="text"
-                                className="input-for-form"
-                                id="inputworkphone"
-                                value={workphone}
-                                onChange={(e) => setWorkphone(e.target.value)}
-                            />
+  const handleUpload = () => {
+    if (selectedFile) {
+      setIsUploading(true);
 
-                            <label htmlFor="inputworkfax" className="label" style={{ width: '13%', textAlign: 'center' }} >
-                                Work Fax:
-                            </label>
-                            <input
-                                type="text"
-                                className="input-for-form"
-                                id="inputworkfax"
-                                value={workfax}
-                                onChange={(e) => setWorkfax(e.target.value)}
-                            />
-                        </div>
+      // Simulate an asynchronous upload (replace with your actual upload logic)
+      setTimeout(() => {
+        setIsUploading(false);
+        alert("File uploaded successfully!");
+        setSelectedFile(null);
+      }, 2000);
+    } else {
+      alert("Please select a file before uploading.");
+    }
+  };
 
-                        <div className="form-group">
-                            <label htmlFor="inputhomephone" className="label">
-                                Home Phone:
-                            </label>
-                            <input
-                                type="text"
-                                className="input-for-form"
-                                id="inputhomephone"
-                                value={homephone}
-                                onChange={(e) => setHomephone(e.target.value)}
-                            />
-
-                            <label htmlFor="inputworkfax" className="label" style={{ width: '13%', textAlign: 'center' }} >
-                                Home Fax:
-                            </label>
-                            <input
-                                type="text"
-                                className="input-for-form"
-                                id="inputhomefax"
-                                value={homefax}
-                                onChange={(e) => setHomefax(e.target.value)}
-                            />
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="inputcellphone" className="label">
-                                Cell Phone:
-                            </label>
-                            <input
-                                type="text"
-                                className="input-for-form"
-                                id="inputcellphone"
-                                value={cellphone}
-                                onChange={(e) => setCellphone(e.target.value)}
-                            />
-                            <label htmlFor="inputpager" className="label" style={{ width: '13%', textAlign: 'center' }}>
-                                Pager:
-                            </label>
-                            <input
-                                type="text"
-                                className="input-for-form"
-                                id="inputpager"
-                                value={pager}
-                                onChange={(e) => setPager(e.target.value)}
-                            />
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="inputaddress" className="label">
-                                Address:
-                            </label>
-                            <input
-                                type="text"
-                                className="input-for-form"
-                                id="inputaddress"
-                                value={address}
-                                onChange={(e) => setAddress(e.target.value)}
-                            />
-                        </div>
+  const handleCancel = () => {
+    setIsUploading(false);
+    setSelectedFile(null);
+  };
 
 
-                        <div className="form-group">
-                            <label htmlFor="inputaddress2" className="label">
-                                Address (Line 2):
-                            </label>
-                            <input
-                                type="text"
-                                className="input-for-form"
-                                id="inputaddress2"
-                                value={addressLine2}
-                                onChange={(e) => setAddressLine2(e.target.value)}
-                            />
-                        </div>
+  useEffect(() => {
+    const existingData = JSON.parse(localStorage.getItem('formData')) || [];
+    setTableData(existingData);
+  }, []);
 
-                        <div className='block'>
-                            <div className="form-group">
-                                <label htmlFor="inputcity" className="label">
-                                    City:
-                                </label>
-                                <input
-                                    type="text"
-                                    className="input-for-form"
-                                    id="inputcity"
-                                    value={city}
-                                    onChange={(e) => setCity(e.target.value)}
-                                />
+  const submitForm = () => {
+    const id = uuidv4();
+    const newFormData = { ...formData, id };
+    setTableData([...tableData, newFormData]);
+    setFormData({ id: '', agentlastname: '', firstName: '', Company: '', workPhone:'' });
+  };
 
-                                <label htmlFor="inputprovince" className="label" style={{ width: '13%', textAlign: 'center' }}>
-                                    Province:
-                                </label>
-                                <input
-                                    type="text"
-                                    className="input-for-form"
-                                    id="inputprovince"
-                                    value={province}
-                                    onChange={(e) => setProvince(e.target.value)}
-                                />
-                            </div>
+  useEffect(() => {
+    localStorage.setItem('formData', JSON.stringify(tableData));
+  }, [tableData]);
 
-                            <div className="form-group">
-                                <label htmlFor="inputpostalcode" className="label">
-                                    Postal Code:
-                                </label>
-                                <input
-                                    type="text"
-                                    className="input-for-form"
-                                    id="inputpostalcode"
-                                    value={postalcode}
-                                    onChange={(e) => setPostalcode(e.target.value)}
-                                />
-                                <label htmlFor="inputcountry" className="label" style={{ width: '13%', textAlign: 'center' }}>
-                                    Country:
-                                </label>
-                                <input
-                                    type="text"
-                                    className="input-for-form"
-                                    id="inputcountry"
-                                    value={country}
-                                    onChange={(e) => setCountry(e.target.value)}
-                                />
-                            </div>
+  const clearLocalStorage = (agentId) => {
+    // Remove the specific agent's data from localStorage
+    const storedData = JSON.parse(localStorage.getItem('formData')) || [];
+    const updatedData = storedData.filter((data) => data.id !== agentId);
+    localStorage.setItem('formData', JSON.stringify(updatedData));
 
-                            <div className="form-group">
-                                <label htmlFor="inputisn" className="label">
-                                    ISN Agent ID:
-                                </label>
-                                <input
-                                    type="text"
-                                    className="input-for-form"
-                                    id="inputisn"
-                                    value={isn}
-                                    onChange={(e) => setISN(e.target.value)}
-                                />
-                            </div>
+    // Update the table data
+    const updatedTableData = tableData.filter((data) => data.id !== agentId);
+    setTableData(updatedTableData);
 
-                            <div className="form-group" >
-                                <label htmlFor="inputhip" className="label">
-                                    HIP Office Agent ID:
-                                </label>
-                                <input
-                                    type="text"
-                                    className="input-for-form"
-                                    id="inputhip"
-                                    value={hip}
-                                    onChange={(e) => setHIP(e.target.value)}
-                                />
-                            </div>
+    // Clear the form data for the selected agent
+    setFormData({ id: '', agentlastname: '', firstName: '', Company: '', workPhone:''  });
 
-                            <div className="form-group">
-                                <label htmlFor="inputnxt" className="label">
-                                    NXT Agent ID:
-                                </label>
-                                <input
-                                    type="text"
-                                    className="input-for-form"
-                                    id="inputnxt"
-                                    value={nxt}
-                                    onChange={(e) => setNxt(e.target.value)}
-                                />
-                            </div>
+    // Clear the selectedAgentId
+    setSelectedAgentId(null);
+  };
+ 
+  
+  const clearForm = () => {
+    setFormData({
+      id: "",
+      agentlastname: "",
+      firstName: "",
+      Company: "",
+      workPhone: "",
+      // ... other form fields
+    });
 
-                            <div className="form-group">
-                                <label htmlFor="inputemail" className="label">
-                                    Email Address:
-                                </label>
-                                <input
-                                    type="email"
-                                    className="input-for-form"
-                                    id="inputemail"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                />
-                            </div>
+    // Clear other state variables as needed
+    setWorkFax("");
+    setHomePhone("");
+    setHomeFax("");
+    setCellphone("");
+    setPager("");
+    setAddress("");
+    setAddressLine2("");
+    setCity("");
+    setProvince("");
+    setPostalCode("");
+    setCountry("");
+    setEmailAddress("");
+    setWebsite("");
+    setState("");
+    setZipCode("");
+    setNotes("");
+    // setOtherState("");
+  };
 
 
-                            <div className="form-group">
-                                <label htmlFor="inputwebsite" className="label">
-                                    Website:
-                                </label>
-                                <input
-                                    type="text"
-                                    className="input-for-form"
-                                    id="inputwebsite"
-                                    value={website}
-                                    onChange={(e) => setWebsite(e.target.value)}
-                                />
-                            </div>
 
-                            <div className="form-group">
-                                <label htmlFor="inputnotes" className="label">
-                                    Notes:
-                                </label>
-                                <textarea
-                                    className="input-for-form"
-                                    id="inputnotes"
-                                    rows="4"
-                                    value={notes}
-                                    onChange={(e) => setNotes(e.target.value)}
-                                ></textarea>
-                            </div>
-                        </div>
-                        <div className='button-container' style={{ width: '50vw' }}>
-                            <button className="save">Save</button>
-                            <button className="delete"onClick={() => setAgents([])}>Delete Account</button>
-                            <button className="add-agent">Add New Agent</button>
+  return (
+    <div className="main-container-book">
+      <div>
+        <Header />
+      </div>
 
-                            <div >
-                                <button className="export">Export Contact</button>
-                                <button className="import">Import Contact</button>
-                            </div>
+      <div class="flex flex-row" style={{ lineHeight: "17px" }}>
+        <div class="basis-1/1">
+          <div className="box1-book flex ml-5 ">
+            <form className="formcont-book ">
+              <h1 className="text-book text-lg">Real Estate Agent Information</h1>
 
-                            <button className="sync">Sync Agents With HIP Office</button>
-                        </div>
-                    </form>
-{/* 
-                    <div className="photo-container" style={{ padding: '20px' }}>
-                        <label htmlFor="inputphoto" className="label">
-                            Upload Photo:
-                        </label>
-                        <div className="upload-photo-container">
-                            <div className="upload-photo-preview"></div>
-                            <input
-                                type="file"
-                                id="inputphoto"
-                                className="input-for-form"
-                                onChange={(e) => {
-                                }
-                                }
-                            /> 
-                            <div className="upload-buttons">
-                                <button className="upload">Upload</button>
-                                <button className="save">Save</button>
-                            </div>
-                        </div>
-                    </div> */}
+              <div className="form-group-book">
+                <label htmlFor="inputlastname" className="label-book">
+                  Agent Last Name
+                </label>
+                <input
+                  type="text"
+                  className="input-for-form-book"
+                  id="agentlastname"
+                  value={formData.agentlastname}
+                  style={{ width: "11%" }}
+                  onChange={(e) => setFormData({ ...formData, agentlastname: e.target.value })}
+                />
 
+                <label
+                  htmlFor="inputfirstname"
+                  className="label-book"
+                  style={{ width: "11%", marginLeft: "5px" }}
+                >
+                  First
+                </label>
+                <input
+                  type="text"
+                  className="input-for-form-book"
+                  id="firstName"
+                  value={formData.firstName}
+                  style={{ width: "11%", marginLeft: "5px" }}
+                  onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                />
+              </div>
+              <div className="form-group-book">
+                <label htmlFor="inputCompany" className="label-book">
+                  Company
+                </label>
+                <input
+                  type="emaCompanyil"
+                  className="input-for-form-book"
+                  id="Company"
+                  value={formData.Company}
+                  style={{ width: "11%" }}
+                  onChange={(e) => setFormData({ ...formData, Company: e.target.value })}
+                />
+              </div>
+
+              <div className="form-group-book">
+                <label htmlFor="inputworkPhone" className="label-book">
+                  Work Phone
+                </label>
+                <input
+                  type="text"
+                  className="input-for-form-book"
+                  id="workPhone"
+                  value={formData.workPhone}
+                  style={{ width: "11%", marginLeft: "5px" }}
+                  onChange={(e) => setFormData({ ...formData, workPhone: e.target.value })}
+                />
+
+                <label
+                  htmlFor="inputWorkFax"
+                  className="label-book"
+                  style={{ width: "11%", marginLeft: "5px" }}
+                >
+                  Work Fax
+                </label>
+                <input
+                  type="text"
+                  className="input-for-form-book"
+                  id="inputWorkFax"
+                  value={WorkFax}
+                  style={{ width: "12%", marginLeft: "6px" }}
+                  onChange={(e) => setWorkFax(e.target.value)}
+                />
+              </div>
+              <div className="form-group-book">
+                <label htmlFor="inputHomePhone" className="label-book">
+                  Home Phone
+                </label>
+                <input
+                  type="text"
+                  className="input-for-form-book"
+                  id="inputHomePhone"
+                  value={HomePhone}
+                  style={{ width: "11%", marginLeft: "5px" }}
+                  onChange={(e) => setHomePhone(e.target.value)}
+                />
+
+                <label
+                  htmlFor="inputHomeFax"
+                  className="label-book"
+                  style={{ width: "11%", marginLeft: "5px" }}
+                >
+                  Home Fax
+                </label>
+                <input
+                  type="text"
+                  className="input-for-form-book"
+                  id="inputHomeFax"
+                  value={HomeFax}
+                  onChange={(e) => setHomeFax(e.target.value)}
+                />
+              </div>
+              <div className="form-group-book">
+                <label htmlFor="inputCellphone" className="label-book">
+                  Cellphone
+                </label>
+                <input
+                  type="text"
+                  className="input-for-form-book"
+                  id="inputCellphone"
+                  value={Cellphone}
+                  style={{ width: "11%", marginLeft: "5px" }}
+                  onChange={(e) => setCellphone(e.target.value)}
+                />
+
+                <label
+                  htmlFor="inputfax"
+                  className="label-book"
+                  style={{ width: "11%", marginLeft: "5px" }}
+                >
+                  Pager
+                </label>
+                <input
+                  type="text"
+                  className="input-for-form-book"
+                  id="inputPager"
+                  value={Pager}
+                  onChange={(e) => setPager(e.target.value)}
+                />
+              </div>
+              <div className="form-group-book">
+                <label htmlFor="inputAddress" className="label-book">
+                  Address
+                </label>
+                <input
+                  type="Address"
+                  className="input-for-form-book"
+                  id="inputAddress"
+                  value={Address}
+                  style={{ width: "11%", marginLeft: "5px" }}
+                  onChange={(e) => setAddress(e.target.value)}
+                />
+              </div>
+              <div className="form-group-book">
+                <label htmlFor="inputaddress2" className="label-book">
+                  Address (Line 2):
+                </label>
+                <input
+                  type="text"
+                  className="input-for-form-book"
+                  id="inputaddress2"
+                  value={addressLine2}
+                  style={{ width: "11%", marginLeft: "5px" }}
+                  onChange={(e) => setAddressLine2(e.target.value)}
+                />
+              </div>
+              <div className="form-group-book">
+                <label htmlFor="inputCity" className="label-book">
+                  City
+                </label>
+                <input
+                  type="text"
+                  className="input-for-form-book"
+                  id="inputCity"
+                  value={City}
+                  style={{ width: "11%", marginLeft: "5px" }}
+                  onChange={(e) => setCity(e.target.value)}
+                />
+
+                <label
+                  htmlFor="inputProvince"
+                  className="label-book"
+                  style={{ width: "11%", marginLeft: "5px" }}
+                >
+                  Province
+                </label>
+                <input
+                  type="text"
+                  className="input-for-form-book"
+                  id="inputProvince"
+                  value={Province}
+                  onChange={(e) => setProvince(e.target.value)}
+                />
+              </div>
+              <div className="form-group-book">
+                <label htmlFor="inputPostalCode" className="label-book">
+                  Postal Code
+                </label>
+                <input
+                  type="text"
+                  className="input-for-form-book"
+                  id="inputPostalCode"
+                  value={PostalCode}
+                  style={{ width: "11%", marginLeft: "5px" }}
+                  onChange={(e) => setPostalCode(e.target.value)}
+                />
+
+                <label
+                  htmlFor="inputfaxCountry"
+                  className="label-book"
+                  style={{ width: "11%", marginLeft: "5px" }}
+                >
+                  Country
+                </label>
+                <input
+                  type="text"
+                  className="input-for-form-book"
+                  id="inputCountry"
+                  value={Country}
+                  onChange={(e) => setCountry(e.target.value)}
+                />
+              </div>
+              <div className="form-group-book">
+                <label htmlFor="inputEmailAddress" className="label-book">
+                  Email Address
+                </label>
+                <input
+                  type="text"
+                  className="input-for-form-book"
+                  id="inputEmailAddress"
+                  value={EmailAddress}
+                  style={{ width: "11%", marginLeft: "5px" }}
+                  onChange={(e) => setEmailAddress(e.target.value)}
+                />
+              </div>
+
+              <div className="block">
+                <div className="form-group-book">
+                  <label htmlFor="inputWebsite" className="label-book">
+                    Website
+                  </label>
+                  <input
+                    type="text"
+                    className="input-for-form-book"
+                    id="inputWebsite"
+                    value={Website}
+                    style={{ width: "11%", marginLeft: "5px" }}
+                    onChange={(e) => setWebsite(e.target.value)}
+                  />
+
+                  <label
+                    htmlFor="inputState"
+                    className="label-book"
+                    style={{ width: "11%", marginLeft: "5px" }}
+                  >
+                    State
+                  </label>
+                  <input
+                    type="text"
+                    className="input-for-form-book"
+                    id="inputstate"
+                    value={state}
+                    onChange={(e) => setState(e.target.value)}
+                  />
+                </div>
+                <div className="form-group-book">
+                  <label htmlFor="inputzip" className="label-book">
+                    ZIP Code
+                  </label>
+                  <input
+                    type="text"
+                    className="input-for-form-book"
+                    id="inputzip"
+                    value={zipCode}
+                    style={{ width: "11%", marginLeft: "5px" }}
+                    onChange={(e) => setZipCode(e.target.value)}
+                  />
+                </div>
+              </div>
+              <div className="form-group-book">
+                <label htmlFor="inputNotes" className="label-book">
+                  Notes
+                </label>
+                <textarea
+                  className="input-for-form-book"
+                  id="inputNotes"
+                  rows="5"
+                  value={Notes}
+                  style={{ width: "11%", marginLeft: "5px" }}
+                  onChange={(e) => setNotes(e.target.value)}
+                ></textarea>
+              </div>
+            </form>
+            <div class="basis-1/1 ml-5">
+              <div className="photoupload-book ">
+                <div className="bg-white ml-2 mt-10 mr-5 w-40 h-48 border-2 border-dashed border-gray-400 flex items-center justify-center">
+                  <p class="text-gray-600">Agent Photo</p>
                 </div>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>First</th>
-                            <th>Agent Last Name</th>
-                            <th>Company</th>
-                            <th>Work phone</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {agents.map((agent, index) => (
-                            <tr key={index}>
-                                <td>{agent.firstName}</td>
-                                <td>{agent.lastName}</td>
-                                <td>{agent.company}</td>
-                                <td>{agent.workphone}</td>
-                            </tr>
-                        ))}
-
-                    </tbody>
-                </table>
-
+                <div class="flex ml-2 mt-2">
+                  <div class="flex space-x-4">
+                    <button class="bg-gray-300 hover:bg-gray-400 px-3 h-7 border border-gray-400 rounded">
+                      Upload
+                    </button>
+                    <button class="bg-gray-300 hover:bg-gray-400  px-3 h-7 border border-gray-400 rounded">
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
-        </>
-    )
-}
+          </div>
+        </div>
+        <div className="border-l border-black"></div>
+        <div
+          className="basis-1/2 bg-white mt-2 w-100 mr-3 ml-5 "
+          style={{ hight: "45%" }}
+        >
+          <div className="">
+            <table className="table-auto border border-black ml-5 mt-2 " >
+              <thead>
+                <tr>
+                  <td
+                    className="border border-black p-2 text-center"
+                    style={{ width: "20%" }}
+                  >
+                    First
+                  </td>
+                  <td
+                    className="border border-black p-2 text-center"
+                    style={{ width: "20%" }}
+                  >
+                    Agent Last Name
+                  </td>
+                  <td
+                    className="border border-black p-2 text-center"
+                    style={{ width: "20%" }}
+                  >
+                    Company
+                  </td>
+                  <td
+                    className="border border-black p-2 text-center"
+                    style={{ width: "20%" }}
+                  >
+                    Work Phone
+                  </td>
+                </tr>
+              </thead>
 
-export default Book
+              <tbody>
+                {tableData.map((data) => (
+                  <tr key={data.id} onClick={() => setSelectedAgentId(data.id)} className={`cursor-pointer ${selectedAgentId === data.id ? 'bg-blue-500 text-white' : ''}`}>
+                    <td  style={{ border: '1px solid black' }}>{data.agentlastname}</td>
+                    <td  style={{ border: '1px solid black' }}>{data.firstName}</td>
+                    <td  style={{ border: '1px solid black' }}>{data.Company}</td>
+                    <td  style={{ border: '1px solid black' }}>{data.workPhone}</td>
+                    {/* Optionally include a button here if you want it per row */}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div className="btn-conat-book ml-5 text-sm ">
+        <div className="flex flex-col-3 gap-1 mt-2 ml-2 ">
+          <button className="border border-black bg-gray-300 hover:bg-blue-100 w-60 h-6 rounded"
+            onClick={submitForm}>
+            Save
+          </button>
+          <button className="border border-black bg-gray-300 hover:bg-blue-100 w-60 h-6 rounded">
+            Export Contacts
+          </button>
+          <button
+            className="border border-black bg-gray-300 hover:bg-blue-100 w-60 h-6 rounded"
+            onClick={() => clearLocalStorage(selectedAgentId)}
+          >
+            Delete Agent
+          </button>
+        </div>
+        <div className="flex gap-1 mt-2 ml-2">
+          <button
+            className="border border-black bg-gray-300 hover:bg-blue-100 h-6 rounded"
+            style={{ width: "24%" }}
+          >
+            Sync Agents with MACJ Office
+          </button>
+          <button
+            className="border border-black bg-gray-300 hover:bg-blue-100 h-6 rounded"
+            style={{ width: "24%" }}
+            onClick={clearForm}
+          >
+            Add New Agent
+          </button>
+        </div>
+        <div className="flex gap-1 mt-2 ml-2">
+          <button
+            className="border border-black bg-gray-300 hover:bg-blue-100  h-6 rounded"
+            style={{ width: "48.2%" }}
+          >
+            Import Contacts
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <Footer />
+      </div>
+    </div>
+  );
+};
+
+export default Book;
+
+
+
+
+
+
+

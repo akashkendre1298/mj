@@ -1,0 +1,51 @@
+.PhotoReview-Main-Para {
+  text-align: center;
+}
+.PhotoReview-rectangular-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 6px;
+  margin-left: 20px;
+}
+
+.PhotoReview-rectangle {
+  width: 740px;
+  height: 280px;
+  border: 2px solid black;
+  margin-bottom: 10px;
+  padding: 4px;
+}
+
+.PhotoReview-Drag-Drop-Box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  width: 220px;
+  border: 2px dashed black;
+  border-radius: 4px;
+  margin-left: 270px;
+  margin-top: -122px;
+  cursor: pointer;
+}
+
+.PhotoReview-Drag-Drop-Box:hover {
+  border-color: #007bff;
+}
+
+.Drag-Drop-Box-Para {
+  margin: 0;
+  font-size: 14px;
+  color: black;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.PhotoReview-Drag-Drop-Box:active {
+  background-color: #f7f7f7;
+}
+body {
+  background-color: #fee4c3;
+}
