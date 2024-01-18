@@ -1,0 +1,42 @@
+/* TabList.css */
+.tab-list-buttons {
+  display: grid;
+}
+
+.tab-list-button {
+  padding: 10px;
+  margin: 0;
+  border: 1px solid #ccc; /* Add border to each tab */
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.tab-list-active {
+  background-color: #ccc;
+  width: 5em;
+  height: 3em;
+}
+.tab-list-content {
+  width: 100%;
+}
+
+.tab-list-pane {
+  display: none;
+}
+
+.tab-list-pane.tab-list-active {
+  display: block;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+}
+.flex-container-for-tablist-for-edit-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.width-set-for-the-popup-windows-edit-image-section {
+  width: 60em;
+  display: flex;
+}
