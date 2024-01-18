@@ -75,7 +75,7 @@ const Header = () => {
   return (
     <div className="header">
       <nav>
-        <ul>
+        <ul className="header-list-flex">
           <li>
         <a href="#file" onClick={handleOpenInspectionClick}>
               <img src={img1} alt="" />

@@ -1,4 +1,4 @@
-/* CSS */
+ CSS
 .template-card_OpenTemp{
   position: relative;
   display: flex;
@@ -12,8 +12,8 @@
   background-color: rgb(229, 229, 229);
 
   top: 300px;
-  }
-  .Contant{
+  } 
+   .Contant{
     padding-top: 150px;
     padding-left: 30%;
   }
@@ -32,8 +32,8 @@
   .close-button {
     background-color: transparent;
     border: none;
-  }
-  .para1{
+  } 
+   .para1{
     padding: 0 20px ;
     text-align: center;
     font-size: 15px;
@@ -52,7 +52,7 @@
     border: 1px solid rgb(190, 188, 188);
     border-radius: 5px;
     padding: 5px;
-  }
+  } */
 
   .TempName{
     text-align: center;
@@ -66,10 +66,10 @@
     border: 1px solid rgb(191, 189, 189);
     border-radius: 5px;
     padding: 5px;
-    /* margin: 5px; */
-    margin-left: 25px;
-  }
-  .para3_OpenTemp{
+     margin: 5px; 
+     margin-left: 25px;
+  } 
+ .para3_OpenTemp{
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -77,19 +77,19 @@
     border: 1px solid rgb(191, 189, 189);
     border-radius: 5px;
     padding: 5px;
-    /* margin: 10px; */
+     margin: 10px; 
     margin-left: 20px;
 
-  }
+  }  
   .button-container {
-    display: flex;
-    /* justify-content: space-between; */
-    width: 200px;
-    margin-left: 37%;
-    padding: 5px;
-  }
+    display: flex; 
+   justify-content: space-between; 
+     width: 200px; 
+     margin-left: 37%; 
+     padding: 5px; 
+   } 
   
-  .open-button_OpenTemp {
+   .open-button_OpenTemp {
     font-size: 14px;
     width: 100px;
     height: 30px;
@@ -120,7 +120,7 @@
   .cancel-button:hover {
     background-color: #d7e9f7;
     border-color: #005a9e;
-  }
+  } 
   
 
 

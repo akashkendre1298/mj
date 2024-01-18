@@ -1,5 +1,5 @@
 /* CSS */
-.template-card {
+.template-card-edittemp{
   display: flex;
     position: relative;
   display: flex;
@@ -10,12 +10,12 @@
   border-radius: 5px;
   border: rgb(229, 229, 229);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  background-color: rgb(229, 229, 229);
+  background-color: rgb(254, 228, 195);
   /* padding: 10px; */
   top: 350px;
   left :-10%
 }
-.Contant{
+.Contant-edittemp{
   padding-top: 0px;
   padding-left: 20%;
   display: flex;
@@ -23,7 +23,7 @@
   align-items: center;
   height: 0; 
 }
-.template-selector {
+.template-selector-edittemp {
   height: 0px;
   display: flex;
   justify-content: space-between;
@@ -32,28 +32,28 @@
   border: solid 1px rgb(191, 189, 189);
   padding: 12px 0 12px 12px;
 }
-.selectTemp{
+.selectTemp-edittemp{
   font-size: 12px;
 }
-.close-button {
+.close-button-edittemp {
   background-color: transparent;
   border: none;
   width: 20px;
   /* padding: 5px; */
 }
-.close-div:hover {
+.close-div-edittemp:hover {
   background-color: red;
   width: 20px;
   /* height: 20px; */
 }
 
-.selected-subitem {
+.selected-subitem-edittemp {
   background-color: #e0e0e0; /* You can customize the background color */
 }
-.Menu-Item ul ul li {
+.Menu-Item-edittemp ul ul li {
   padding-left: 25px;
 }
-.Menu-Item2{
+.Menu-Item2-edittemp{
 
   display: flex;
   justify-content: space-between;
@@ -61,26 +61,26 @@
   align-items: center;
 
 }
-.menutitle{
+.menutitle-edittemp{
  padding-left: 150px;
 }
-.itemtitle{
+.itemtitle-edittemp{
 padding-right: 250px;
 }
-.custom-scrollbars__content {
+.custom-scrollbars__content-edittemp {
 overflow: auto;
 scrollbar-width: none;
 -ms-overflow-style: none;
 }
-.custom-scrollbars__content::-webkit-scrollbar {
+.custom-scrollbars__content-edittemp::-webkit-scrollbar {
 display: none;
 }
-.template-card__body__center__input {
+.template-card__body__center__input-edittemp {
 display: flex;
 justify-content: center;
 align-items: center;
 }
-.box {
+.box-edittemp {
   width: 50vh;
   height: 35vh;
   resize: none;
@@ -90,10 +90,10 @@ align-items: center;
   padding: 10px;
   margin-left: 15px;
 }
-.box:hover{
+.box-edittemp:hover{
   border-color: #005a9e;
 }
-.template-card__body__center__input__field_item {
+.template-card__body__center__input__field_item-edittemp {
 width: 67vh;
 height: 55vh;
 resize: none;
@@ -103,16 +103,16 @@ border-radius: 5px;
 padding: 10px;
 margin-right: 12px;
 }
-.template-card__body__center__input__field_item:hover{
+.template-card__body__center__input__field_item-edittemp:hover{
   border-color: #005a9e;
 }
-.input-container {
+.input-container-edittemp {
 margin: 10px;
 display: flex;
 align-items: center;
 
 }
-.custom-input {
+.custom-input-edittemp {
 padding: 10px;
 border: none;
 border: 2px solid rgb(191, 189, 189);
@@ -120,15 +120,15 @@ background-color: #f3f2f1;
 border-radius: 5px;
 transition: border-bottom-color 0.3s ease-in-out;
 width: 95px;
-height: 25px;
+height: 2px;
 margin-right: 5px;
 }
 
-.custom-input:hover {
+.custom-input-edittemp:hover {
 background-color: #d7e9f7;
 border-color: #005a9e;
 }
-.btnM{
+.btnM-edittemp{
 font-size: 14px;
 width: 95px;
 height: 25px;
@@ -139,21 +139,21 @@ border-radius: 5px;
 cursor: pointer;
 margin-right: 5px;
 }
-.btnM:hover {
+.btnM-edittemp:hover {
 background-color: #d7e9f7;
 border-color: #005a9e;
 }
-.para1{
+.para1-edittemp{
   text-align: center;
   font-size: 14px;
   
 }
 
-.Donebtn{
+.Donebtn-edittemp{
   padding: 10px;
   margin-left: 110vh;
 }
-.open-button {
+.open-button-edittemp {
   width: 95px;
   height: 25px;
   background-color: #f3f2f1;
@@ -163,14 +163,14 @@ border-color: #005a9e;
   cursor: pointer;
 }
 
-.open-button:hover {
+.open-button-edittemp:hover {
   background-color: #d7e9f7;
   border-color: #005a9e;
 }
-.iconmenu{
+.iconmenu-edittemp{
   display: flex;
 }
-.box2 {
+.box2-edittemp {
   width: 65vh;
   height: 35vh;
   resize: none;
@@ -180,24 +180,24 @@ border-color: #005a9e;
   padding: 10px;
   margin-right: 20px;
 }
-.box2:hover{
+.box2-edittemp:hover{
   border-color: #005a9e;
 }
-.iconfile{
+.iconfile-edittemp{
   display: flex;
 }
 /*popupbox*/
-.template-card1 {
+.template-card1-edittemp {
   display: flex;
   flex-direction: column;
-  width: 40vh;
-  height: 200px;
+  width: 45vh;
+  height: 150px;
   border: 1px solid rgb(191, 189, 189);
   border-radius: 5px;
   background-color: rgb(229, 229, 229);
  
 }
-.Contant1{
+.Contant1-edittemp{
   /* position: fixed; */
   top: 0;
   left: 0;
@@ -209,33 +209,34 @@ border-color: #005a9e;
   align-items: center;
 }
 
-.selectTemp1{
+.selectTemp1-edittemp{
   font-size: 12px;
 }
-.close-button1 {
+.close-button1-edittemp {
   background-color: transparent;
   border: none;
 }
-.para2{
-  padding: 17px;
-  margin-left: 20px;
+.para2-edittemp{
+  /* padding: 5px; */
+  margin-left: 2px;
+  margin-top:0px;
   font-size: 17px;
 }
-.menutext1{
-  padding: 7px;   
+.menutext1-edittemp{
+  padding: 5px;   
   border: none;
   border: 2px solid rgb(191, 189, 189);
   background-color: #f3f2f1;
   border-radius: 5px;
   transition: border-bottom-color 0.3s ease-in-out;
-  width: 30vh;
-  height: 30px;
-  margin-top: 10px;
+  width: 40vh;
+  height: 10px;
+  margin-top:0px;
 }
-.ok-button {
+.ok-button-edittemp {
   font-size: 14px;
   width: 100px;
-  height: 30px;
+  height: 25px;
   background-color: #f3f2f1;
   color: black;
   border: 2px solid rgb(191, 189, 189);
@@ -244,22 +245,22 @@ border-color: #005a9e;
   margin-right: 5px;
 }
 
-.ok-button:hover {
+.ok-button-edittemp:hover {
   background-color: #d7e9f7;
   border-color: #005a9e;
 }
-.button-container1 {
+.button-container1-edittemp {
   display: flex;
   justify-content: space-between;
   width: 200px;
-  margin-left: 42px;
+  margin-left: 58px;
   padding: 5px;
 }
 
-.cancel-button1 {
+.cancel-button1-edittemp {
   font-size: 14px;
   width: 100px;
-  height: 30px;
+  height: 25px;
   background-color: #f3f2f1;
   color: black;
   border: 2px solid rgb(191, 189, 189);
@@ -267,36 +268,34 @@ border-color: #005a9e;
   cursor: pointer;
 }
 
-.cancel-button1:hover {
+.cancel-button1-edittemp:hover {
   background-color: #d7e9f7;
   border-color: #005a9e;
 }
-.submenu{
+.submenu-edittemp{
   padding-left: 20px;
   font-size: 17px;
 }
 
 
-/* new css 
- */
-
- /* EditTemp.css */
-
-.Contant {
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; */
-}
+.button-container-edittemp {
+  display: flex; 
+    justify-content: space-between;
+    width: 200px;
+     /* margin-left: 37%;  */
+   padding: 5px;
+ } 
 
 
 
-.menu-box {
+
+
+.menu-box-edittemp {
   display: flex;
   flex-wrap: wrap;
 }
 
-.Menu-Item {
+.Menu-Item-edittemp {
   /* border: 1px solid #ccc; */
   display: flex;
   /* padding: 10px; */
@@ -305,32 +304,33 @@ border-color: #005a9e;
   gap: 242px;
 }
 
-.menu-item.selected {
+.menu-item-edittemp.selected {
   background-color: lightblue;
 }
 
 /* ... other existing styles ... */
 /* EditTemp.css */
 
-.Contant {
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 0; */
-}
 
 
 
-.menu-box {
+.menu-box-edittemp {
   display: flex;
   flex-wrap: wrap;
 }
 
 
 
-.menu-item.selected {
-  background-color: lightblue;
+.Menu-Item-edittemp > ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
 }
+
+.Menu-Item-edittemp > ul > li {
+  margin-bottom: 5px;
+} 
 
 /* ... other existing styles ... */
 
