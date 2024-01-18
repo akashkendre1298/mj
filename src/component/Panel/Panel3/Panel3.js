@@ -211,11 +211,10 @@ function Panel2() {
                                     </div>
                                 ))}
 
-                                {/* {redText.split('\n').map((line, index) => (
-                <div key={index}>{line}</div>
-              ))} */}
                             </div>
 
+
+          
                         </div>
                         <div className='panelupdown-panel3' >
                             <div className="button-container-panel3">
