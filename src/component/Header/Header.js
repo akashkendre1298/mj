@@ -1,23 +1,23 @@
 import React, { useRef, useState } from "react";
 import "./Header.css";
-import OpenTemp from '../OpenTemp/OpenTemp'
-import EditTemp from "../EditTemp/EditTemp"
-import SaveTemp from "../SaveTemp/SaveTemp"
-import img1 from "../../Assets/icons/open_inspection.png"
-import img2 from "../../Assets/icons/save_inspection.png"
-import img3 from "../../Assets/icons/open_template.png"
-import img4 from "../../Assets/icons/save_template.png"
-import img5 from "../../Assets/icons/edit_comments.png"
-import img6 from "../../Assets/icons/edit_template.png"
-import img7 from "../../Assets/icons/pdf.png"
-import img8 from "../../Assets/icons/client_info.png"
-import img9 from "../../Assets/icons/contract_page.png"
-import img10 from "../../Assets/icons/copy.png"
-import img11 from "../../Assets/icons/paste.png"
-import img12 from "../../Assets/icons/generate_report.png"
-import img13 from "../../Assets/icons/upload_report.png"
-import img14 from "../../Assets/icons/address_book.png"
-import img15 from "../../Assets/icons/sync.png"
+import OpenTemp from "../OpenTemp/OpenTemp";
+import EditTemp from "../EditTemp/EditTemp";
+import SaveTemp from "../SaveTemp/SaveTemp";
+import img1 from "../../Assets/icons/open_inspection.png";
+import img2 from "../../Assets/icons/save_inspection.png";
+import img3 from "../../Assets/icons/open_template.png";
+import img4 from "../../Assets/icons/save_template.png";
+import img5 from "../../Assets/icons/edit_comments.png";
+import img6 from "../../Assets/icons/edit_template.png";
+import img7 from "../../Assets/icons/pdf.png";
+import img8 from "../../Assets/icons/client_info.png";
+import img9 from "../../Assets/icons/contract_page.png";
+import img10 from "../../Assets/icons/copy.png";
+import img11 from "../../Assets/icons/paste.png";
+import img12 from "../../Assets/icons/generate_report.png";
+import img13 from "../../Assets/icons/upload_report.png";
+import img14 from "../../Assets/icons/address_book.png";
+import img15 from "../../Assets/icons/sync.png";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -99,10 +99,18 @@ const Header = () => {
               className="submenu absolute z-10 bg-white shadow mt-2 w-48 leading-tight"
               style={{ width: "180px", lineHeight: "12px" }}
             >
-              <li className="py-2 px-4 hover:bg-gray-200 text-xs">Open Inspection</li>
-              <li className="py-2 px-4 hover:bg-gray-200 text-xs">Save Inspection</li>
-              <li className="py-2 px-4 hover:bg-gray-200 text-xs">Open Template</li>
-              <li className="py-2 px-4 hover:bg-gray-200 text-xs">Save Template</li>
+              <li className="py-2 px-4 hover:bg-gray-200 text-xs">
+                Open Inspection
+              </li>
+              <li className="py-2 px-4 hover:bg-gray-200 text-xs">
+                Save Inspection
+              </li>
+              <li className="py-2 px-4 hover:bg-gray-200 text-xs">
+                Open Template
+              </li>
+              <li className="py-2 px-4 hover:bg-gray-200 text-xs">
+                Save Template
+              </li>
             </ul>
           )}
         </div>
@@ -166,13 +174,20 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="header text-sm border-b-2 border-black" style={{ backgroundColor: "#f7f7f7" }}>
+      <div
+        className="header text-sm border-b-2 border-black"
+        style={{ backgroundColor: "#f7f7f7" }}
+      >
         <nav className="header2">
           <ul className="uordered-list-in-header-section">
             <li className="list-for-header-section-main-nav">
-              <a href="#file" onClick={handleOpenInspectionClick} className="header2-tag-a">
+              <a
+                href="#file"
+                onClick={handleOpenInspectionClick}
+                className="header2-tag-a"
+              >
                 <div className="flex justify-center">
-                <img src={img1} alt="" />
+                  <img src={img1} alt="" />
                 </div>
                 <div className="">
                   Open <br /> Inspection
@@ -186,9 +201,13 @@ const Header = () => {
               />
             </li>
             <li className="list-for-header-section-main-nav  border-r border-black-900">
-              <a href="#edit" onClick={handleSaveInspectionClick} className="header2-tag-a">
+              <a
+                href="#edit"
+                onClick={handleSaveInspectionClick}
+                className="header2-tag-a"
+              >
                 <div className="flex justify-center">
-                <img src={img2} alt="" />
+                  <img src={img2} alt="" />
                 </div>
                 <div>
                   Save <br /> Inspection
@@ -197,9 +216,13 @@ const Header = () => {
             </li>
             <hr />
             <li className="list-for-header-section-main-nav">
-              <a href="#" onClick={openOpenTemplatePopup} className="header2-tag-a">
-              <div className="flex justify-center">
-                <img src={img3} alt="" />
+              <a
+                href="#"
+                onClick={openOpenTemplatePopup}
+                className="header2-tag-a"
+              >
+                <div className="flex justify-center">
+                  <img src={img3} alt="" />
                 </div>
                 <div>
                   Open
@@ -208,9 +231,13 @@ const Header = () => {
               </a>
             </li>
             <li className="list-for-header-section-main-nav  border-r border-black-900">
-              <a href="#report-settings" onClick={openSaveTemplatePopup} className="header2-tag-a">
+              <a
+                href="#report-settings"
+                onClick={openSaveTemplatePopup}
+                className="header2-tag-a"
+              >
                 <div className="flex justify-center">
-                <img src={img4} alt="" />
+                  <img src={img4} alt="" />
                 </div>
                 <div>
                   Save
@@ -222,7 +249,7 @@ const Header = () => {
             <li className="list-for-header-section-main-nav">
               <a href="#" className="header2-tag-a">
                 <div className="flex justify-center">
-                <img src={img5} alt="" />
+                  <img src={img5} alt="" />
                 </div>
                 <div>
                   Edit <br />
@@ -231,9 +258,13 @@ const Header = () => {
               </a>
             </li>
             <li className="list-for-header-section-main-nav  border-r border-black-900">
-              <a href="#" onClick={openEditTemplatePopup} className="header2-tag-a">
+              <a
+                href="#"
+                onClick={openEditTemplatePopup}
+                className="header2-tag-a"
+              >
                 <div className="flex justify-center">
-                <img src={img6} alt="" />
+                  <img src={img6} alt="" />
                 </div>
                 <div>
                   Edit <br />
@@ -244,8 +275,8 @@ const Header = () => {
             <Link to="/insertpdf">
               <li className="list-for-header-section-main-nav">
                 <a href="#" className="header2-tag-a">
-                  <div className="flex justify-center"> 
-                  <img src={img7} alt="" />
+                  <div className="flex justify-center">
+                    <img src={img7} alt="" />
                   </div>
                   <div>
                     Insert PDF <br /> Documments

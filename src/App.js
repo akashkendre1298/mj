@@ -1,11 +1,11 @@
 import React from "react";
-
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import ClientInfo from "./component/ClientInfo/ClientInfo";
 import Footer from "./component/Footer/Footer";
-import ColorPalet from './component/ColorPalet/ColorPalet';
-import InsertPdf from './component/InsertPdf/InsertPdf';
+import ColorPalet from "./component/ColorPalet/ColorPalet";
+import InsertPdf from "./component/InsertPdf/InsertPdf";
 import Book from "./component/Address _book/Book";
 import Panel1 from "./component/Panel/Panel1/Panel1";
 import Panel2 from "./component/Panel/Panel2/Panel2";
