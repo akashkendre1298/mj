@@ -112,7 +112,7 @@ function Panel2() {
                         Panel 3
                     </div>
                     <div className='pl-2 m-2'>
-                        <div className="scroll-box4-panel3 bg-gray-100">
+                        <div className="scroll-box4-panel3  bg-white">
                         </div>
 
                     </div>
@@ -123,7 +123,7 @@ function Panel2() {
                         Panel 3
                     </div>
                     <div className='pl-2 m-2'>
-                        <div className="scroll-box4-panel3 bg-gray-100">
+                        <div className="scroll-box4-panel3 bg-white">
                         </div>
 
                     </div>
@@ -212,9 +212,6 @@ function Panel2() {
                                 ))}
 
                             </div>
-
-
-          
                         </div>
                         <div className='panelupdown-panel3' >
                             <div className="button-container-panel3">

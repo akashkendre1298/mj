@@ -1,0 +1,28 @@
+.PhotoReview-Location-container {
+  margin-left: 6px;
+}
+.PhotoReview-Location-first-inputfields {
+  width: 170px;
+}
+.PhotoReview-Location-button {
+  margin-left: 75px;
+  margin-top: 10px;
+  background-color: #f3f2f1;
+  color: black;
+  border: 2px solid rgb(191, 189, 189);
+  border-radius: 5px;
+
+  width: 2em;
+  text-align: center;
+}
+.PhotoReview-Location-button:hover {
+  background-color: #d7e9f7;
+  border-color: #005a9e;
+}
+
+.PhotoReview-Location-Checkbox-Container {
+  margin-left: 5px;
+}
+.PhotoReview-Location-Checkbox-label {
+  margin-left: 3px;
+}

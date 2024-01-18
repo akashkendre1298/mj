@@ -1,0 +1,68 @@
+.Batch-AddPhotos-main-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(190, 184, 184);
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 660px;
+  height: 390px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.Batch-AddPhotos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.Batch-AddPhotos-header-BulkImport {
+  font-size: 15px;
+  padding-left: 5px;
+}
+
+.Batch-AddPhotos-close-image {
+  cursor: pointer;
+}
+
+.Batch-AddPhotos-Button-Browse {
+  padding-left: 10px;
+  cursor: pointer;
+  background-color: white;
+  border-color: black;
+}
+
+.Batch-Addphotos-Ok-btn-container {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 15px;
+}
+.Batch-Addphotos-Ok-btn {
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: white;
+}
+
+.Batch-AddPhotos-Button-container {
+  margin-top: 20px;
+  margin-left: 210px;
+}
+.BatchAddphotos-Box-container {
+  width: 620px;
+  height: 80px;
+  border: 2px solid black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.BatchAddPhots-close-image {
+  width: 10px;
+  height: 10px;
+}
+.Batch-AddPhotos-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
