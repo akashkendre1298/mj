@@ -179,9 +179,9 @@ const ColorPalette = () => {
                 <thead>
                   <tr className="text-sm  font-thin">
 
-                    <th className="border p-2">Section name</th>
-                    <th className="border p-2">Section title font</th>
-                    <th className="border p-2">Print</th>
+                    <th className="border font-semibold p-2">Section name</th>
+                    <th className="border font-semibold p-2">Section title font</th>
+                    <th className="border font-semibold p-2">Print</th>
                     <th className="border p-2 color-column">Border</th>
                     <th className="border p-2 color-column">Header Background</th>
                     <th className="border p-2">Header Font</th>

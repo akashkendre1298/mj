@@ -1,0 +1,141 @@
+.dialog-inspection {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65vh;
+    height: 60vh;
+    background-color: #fff;
+    border-right: 1px solid #9a9797;
+    box-shadow: 1px 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dialog-header-inspection {
+    padding: 20px;
+    /* border-bottom: 1px solid #ccc; */
+  }
+  
+  .dialog-header-inspection  {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  
+  .dialog-header-inspection .para-inspection {
+    margin: 10px 0 0;
+    font-size: 15px;
+    font-weight: 400;
+     color: black; 
+  }
+  
+  .dialog-body-inspection {
+    padding-left: 25px;
+  }
+  
+  .radio-group-inspection {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .radio-group-inspection input[type='radio'] {
+    display: none; 
+  } 
+  
+  .radio-group-inspection-label {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    /* margin-bottom: 10px; */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+  }
+  
+  .radio-group-inspection-label:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    transition: all 0.;
+  }
+
+  .cancel-button-inspection{
+    font-size: 14px;
+    width: 95px;
+    height: 25px;
+    background-color: #f3f2f1;
+    color: black;
+    border: 2px solid rgb(191, 189, 189);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+    }
+    .cancel-button-inspection:hover {
+    background-color: #d7e9f7;
+    border-color: #005a9e;
+    }
+
+    .back-button-inspection{
+      font-size: 14px;
+      width: 95px;
+      height: 25px;
+      background-color: #f3f2f1;
+      color: black;
+      border: 2px solid rgb(191, 189, 189);
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 5px;
+      }
+      .back-button-inspection:hover {
+      background-color: #d7e9f7;
+      border-color: #005a9e;
+      }
+
+      .next-button-inspection{
+        font-size: 14px;
+        width: 95px;
+        height: 25px;
+        background-color: #f3f2f1;
+        color: black;
+        border: 2px solid rgb(191, 189, 189);
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 5px;
+        }
+        .next-button-inspection:hover {
+        background-color: #d7e9f7;
+        border-color: #005a9e;
+        }
+
+        .done-button-inspection{
+          font-size: 14px;
+          width: 95px;
+          height: 25px;
+          background-color: #f3f2f1;
+          color: black;
+          border: 2px solid rgb(191, 189, 189);
+          border-radius: 5px;
+          cursor: pointer;
+          margin-right: 5px;
+          }
+          .done-button-inspection:hover {
+          background-color: #d7e9f7;
+          border-color: #005a9e;
+          }
+
+          .dialog-footer-inspection{
+            display: block;
+            margin-left: 70px;
+          }
+
+         .label-inspection {
+            display: block;
+            margin-bottom: 10px;
+          }
