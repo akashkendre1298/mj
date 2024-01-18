@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./InsertPdf.css";
 import Header from "../Header/Header";
+import Footer from './../Footer/Footer';
 
 const ConfirmationModal = ({ title, message, onConfirm, onCancel }) => {
   return (
@@ -113,119 +114,124 @@ const InsertPdf = () => {
 
   return (
     <>
-      <div>
-        <Header />
-      </div>{" "}
-      <div className="add-remove-pdf-docs-and-arrange-documents-section">
-        <div className="for-first-section-header-and-the-btns">
-          <p className="add-remove-header-text-for-section">
-            Add/Remove PDF Documents
-          </p>
-          <div className="header-and-add-doc-add-form-btns">
-            <div className="two-btns-for-add-pdf-and-forms">
-              <label
-                htmlFor="fileInput"
-                className="add-doc-btn-for-section-document"
-              >
-                Add Document
-              </label>
-              <input
-                id="fileInput"
-                type="file"
-                accept=".pdf"
-                style={{ display: "none" }}
-                onChange={handleFileChange}
-              />
-              <label
-                htmlFor="fileInput"
-                className="add-doc-btn-for-section-document"
-              >
-                Add Form
-              </label>
-              <input
-                id="fileInput"
-                type="file"
-                accept=".pdf"
-                style={{ display: "none" }}
-                onChange={handleFileChange}
-              />
-              {/* <button className="add-doc-btn-for-section-form">Add Form</button> */}
-            </div>
-            <div className="uploaded-documents-preview">
-              {selectedPdfs.map((pdf, index) => (
-                <div className="pdf-preview-for-multiple-files" key={index}>
-                  <div className="pdw-preview-with-name-of-pdf flex items-center">
-                    <embed
-                      src={previewUrls[index]}
-                      type="application/pdf"
-                      width="200"
-                      height="100"
-                      style={{ overflow: "hidden" }}
-                    />
+      <div className="main-div-for-insert-pdf">
+        <div>
+          <Header />
+        </div>{" "}
+        <div className="add-remove-pdf-docs-and-arrange-documents-section">
+          <div className="for-first-section-header-and-the-btns">
+            <p className="add-remove-header-text-for-section">
+              Add/Remove PDF Documents
+            </p>
+            <div className="header-and-add-doc-add-form-btns">
+              <div className="two-btns-for-add-pdf-and-forms">
+                <label
+                  htmlFor="fileInput"
+                  className="add-doc-btn-for-section-document"
+                >
+                  Add Document
+                </label>
+                <input
+                  id="fileInput"
+                  type="file"
+                  accept=".pdf"
+                  style={{ display: "none" }}
+                  onChange={handleFileChange}
+                />
+                <label
+                  htmlFor="fileInput"
+                  className="add-doc-btn-for-section-document"
+                >
+                  Add Form
+                </label>
+                <input
+                  id="fileInput"
+                  type="file"
+                  accept=".pdf"
+                  style={{ display: "none" }}
+                  onChange={handleFileChange}
+                />
+                {/* <button className="add-doc-btn-for-section-form">Add Form</button> */}
+              </div>
+              <div className="uploaded-documents-preview">
+                {selectedPdfs.map((pdf, index) => (
+                  <div className="pdf-preview-for-multiple-files" key={index}>
+                    <div className="pdw-preview-with-name-of-pdf flex items-center">
+                      <embed
+                        src={previewUrls[index]}
+                        type="application/pdf"
+                        width="200"
+                        height="100"
+                        style={{ overflow: "hidden" }}
+                      />
 
-                    <h2 className="text-sm">{fileNames[index]}</h2>
-                  </div>
-                  {showConfirmation && (
-                    <ConfirmationModal
-                      title="Document removal confirmation"
-                      message={`Are you sure you want to remove this document from your inspection file ?
+                      <h2 className="text-sm">{fileNames[index]}</h2>
+                    </div>
+                    {showConfirmation && (
+                      <ConfirmationModal
+                        title="Document removal confirmation"
+                        message={`Are you sure you want to remove this document from your inspection file ?
                     You can select 'Dont Print' if you don't want the document to be printed in the report ${fileNames[confirmationIndex]}?`}
-                      onConfirm={handleConfirmRemove}
-                      onCancel={handleCancelRemove}
-                    />
-                  )}
-                  <div className="check-boxes-and-remove-button">
-                    <form className="form-for-check-box-and-search-box">
-                      <label>
-                        <input type="checkbox" />
-                        Don't Print
-                      </label>
-                      <label>
-                        <input type="checkbox" />
-                        Save To Template
-                      </label>
-                      <label>
-                        <input type="checkbox" />
-                        Ignore Page Margins
-                      </label>
-                      <label>
-                        <input type="checkbox" />
-                        Bookmark
-                      </label>
-                      <input
-                        name="fsrch"
-                        className="bookmark-name-input-box-ss"
-                        placeholder="<<Bookmark Name>>"
-                      ></input>
-                    </form>
-                    <button
-                      style={{ backgroundcolor: "transparent" }}
-                      onClick={() => handleRemovePdf(index)}
-                    >
-                      Remove <br /> Document
-                    </button>
+                        onConfirm={handleConfirmRemove}
+                        onCancel={handleCancelRemove}
+                      />
+                    )}
+                    <div className="check-boxes-and-remove-button">
+                      <form className="form-for-check-box-and-search-box">
+                        <label>
+                          <input type="checkbox" />
+                          Don't Print
+                        </label>
+                        <label>
+                          <input type="checkbox" />
+                          Save To Template
+                        </label>
+                        <label>
+                          <input type="checkbox" />
+                          Ignore Page Margins
+                        </label>
+                        <label>
+                          <input type="checkbox" />
+                          Bookmark
+                        </label>
+                        <input
+                          name="fsrch"
+                          className="bookmark-name-input-box-ss"
+                          placeholder="<<Bookmark Name>>"
+                        ></input>
+                      </form>
+                      <button
+                        style={{ backgroundcolor: "transparent" }}
+                        onClick={() => handleRemovePdf(index)}
+                      >
+                        Remove <br /> Document
+                      </button>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="arrange-document-list-right-side-section">
+            <p className="arrgane-document-header-for-section">
+              Arrange Document
+            </p>
+            <div className="list-for-the-documents-in-the-section">
+              {/* <h1>List with Green Icons</h1> */}
+              <ul className="nested-list">
+                <ul className="nested-list">
+                  {pdfNames.map((fileName, index) => (
+                    <li key={index}>
+                      <h2 className="text-sm">{fileName}</h2>
+                    </li>
+                  ))}
+                </ul>
+              </ul>
             </div>
           </div>
         </div>
-        <div className="arrange-document-list-right-side-section">
-          <p className="arrgane-document-header-for-section">
-            Arrange Document
-          </p>
-          <div className="list-for-the-documents-in-the-section">
-            {/* <h1>List with Green Icons</h1> */}
-            <ul className="nested-list">
-              <ul className="nested-list">
-                {pdfNames.map((fileName, index) => (
-                  <li key={index}>
-                    <h2 className="text-sm">{fileName}</h2>
-                  </li>
-                ))}
-              </ul>
-            </ul>
-          </div>
+        <div>
+          <Footer />
         </div>
       </div>
     </>
