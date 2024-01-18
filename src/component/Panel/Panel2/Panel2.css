@@ -1,75 +1,84 @@
 body{
     background-color: #fee4c3;
 }
-.container {
+.container-panel2 {
     display: flex;
     /* justify-content: center; */
     
     
 }
 
-.panel {
+.panel2 {
     display: flex;
     align-items: center;
     margin: 7px;
+    /* margin-top: -2%; */
 }
 
-.button-column {
+.button-column-panel2 {
     display: flex;
     flex-direction: column;
 }
 
-.scroll-box,
-.scroll-box1 {
+.scroll-box-panel2,
+.scroll-box1-panel2 {
     margin: 5px;
     overflow-y: scroll; /* Enable vertical scrollbar */
     border: solid thin black; /* Border for visibility */
     background-color: white;
 }
 
-.scroll-box_panel1 {
-    width: 120vh;
-    height: 37vh;
+.scroll-box-panel2 {
+    width: 100vh;
+    height: 30vh;
     border: solid black 1px;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
-.scroll-box1 {
-    width: 280px;
-    height: 140px;
+.scroll-box1-panel2 {
+    width: 250px;
+    height: 120px;
 }
 
-.button-container {
+.button-container-panel2 {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.image-button {
-    margin: 10px;
-    padding: 5px;
+.image-button-panel2 {
+    margin: 7px;
+    padding: 2px;
     border: 1px solid black;
     background: none;
     cursor: pointer;
 }
 
-.panelupdown{
+.panelupdown-panel2{
     display: flex;
-
     flex-direction: column;
 }
 
-.checkbox-list {
+.checkbox-list-panel2 {
     display: flex;
     flex-direction: column;
     margin-left: 30px;
     margin-right: 10px;
   }
-  
-  label {
-    margin-bottom: 8px; /* Adjust as needed for spacing between checkboxes */
+  .scroll-box3-panel2{
+    width: 25vh;
+    height: 30vh;
+    border: solid black 1px;
+
   }
-  
+  .scroll-box4-panel2{
+    width: 189vh;
+    height: 32vh;
+    border: solid black 1px;
+    padding-left: 10px;
+    justify-content: center;
+
+  }
 @media screen and (max-width: 1200px) {
     .scroll-box {
         width: 95vw;

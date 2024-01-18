@@ -8,11 +8,14 @@ import Header from "../Header/Header";
 const Book = () => {
   // const [lastName, setLastName] = useState("");
   // const [firstName, setFirstName] = useState("");
-  const [formData, setFormData] = useState({ id: '', agentlastname: '', firstName: '' });
-  const [tableData, setTableData] = useState([]);
+  //const [Company, setCompany] = useState("");
+  // const [workPhone, setworkPhone] = useState("");
 
-  const [Company, setCompany] = useState("");
-  const [workPhone, setworkPhone] = useState("");
+  const [formData, setFormData] = useState({ id: '', agentlastname: '', firstName: '', Company: '', workPhone: '' });
+  const [tableData, setTableData] = useState([]);
+  const [selectedAgentId, setSelectedAgentId] = useState(null);
+
+ 
   const [WorkFax, setWorkFax] = useState("");
   const [HomePhone, setHomePhone] = useState("");
   const [HomeFax, setHomeFax] = useState("");
@@ -70,7 +73,7 @@ const Book = () => {
     setSelectedFile(null);
   };
 
-  
+
   useEffect(() => {
     const existingData = JSON.parse(localStorage.getItem('formData')) || [];
     setTableData(existingData);
@@ -80,18 +83,61 @@ const Book = () => {
     const id = uuidv4();
     const newFormData = { ...formData, id };
     setTableData([...tableData, newFormData]);
-    setFormData({ id: '', agentlastname: '', firstName: '' });
+    setFormData({ id: '', agentlastname: '', firstName: '', Company: '', workPhone:'' });
   };
 
   useEffect(() => {
     localStorage.setItem('formData', JSON.stringify(tableData));
   }, [tableData]);
 
-  const clearLocalStorage = () => {
-    localStorage.removeItem('formData');
-    setTableData([]);
-    setFormData({ id: '', agentlastname: '', firstName: '' });
+  const clearLocalStorage = (agentId) => {
+    // Remove the specific agent's data from localStorage
+    const storedData = JSON.parse(localStorage.getItem('formData')) || [];
+    const updatedData = storedData.filter((data) => data.id !== agentId);
+    localStorage.setItem('formData', JSON.stringify(updatedData));
+
+    // Update the table data
+    const updatedTableData = tableData.filter((data) => data.id !== agentId);
+    setTableData(updatedTableData);
+
+    // Clear the form data for the selected agent
+    setFormData({ id: '', agentlastname: '', firstName: '', Company: '', workPhone:''  });
+
+    // Clear the selectedAgentId
+    setSelectedAgentId(null);
   };
+ 
+  
+  const clearForm = () => {
+    setFormData({
+      id: "",
+      agentlastname: "",
+      firstName: "",
+      Company: "",
+      workPhone: "",
+      // ... other form fields
+    });
+
+    // Clear other state variables as needed
+    setWorkFax("");
+    setHomePhone("");
+    setHomeFax("");
+    setCellphone("");
+    setPager("");
+    setAddress("");
+    setAddressLine2("");
+    setCity("");
+    setProvince("");
+    setPostalCode("");
+    setCountry("");
+    setEmailAddress("");
+    setWebsite("");
+    setState("");
+    setZipCode("");
+    setNotes("");
+    // setOtherState("");
+  };
+
 
 
   return (
@@ -114,10 +160,10 @@ const Book = () => {
                   type="text"
                   className="input-for-form-book"
                   id="agentlastname"
-                  value={formData.lastName}
+                  value={formData.agentlastname}
                   style={{ width: "11%" }}
                   onChange={(e) => setFormData({ ...formData, agentlastname: e.target.value })}
-                  />
+                />
 
                 <label
                   htmlFor="inputfirstname"
@@ -133,7 +179,7 @@ const Book = () => {
                   value={formData.firstName}
                   style={{ width: "11%", marginLeft: "5px" }}
                   onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                  />
+                />
               </div>
               <div className="form-group-book">
                 <label htmlFor="inputCompany" className="label-book">
@@ -142,10 +188,10 @@ const Book = () => {
                 <input
                   type="emaCompanyil"
                   className="input-for-form-book"
-                  id="inputCompany"
-                  value={Company}
+                  id="Company"
+                  value={formData.Company}
                   style={{ width: "11%" }}
-                  onChange={(e) => setCompany(e.target.value)}
+                  onChange={(e) => setFormData({ ...formData, Company: e.target.value })}
                 />
               </div>
 
@@ -156,10 +202,10 @@ const Book = () => {
                 <input
                   type="text"
                   className="input-for-form-book"
-                  id="inputworkPhone"
-                  value={workPhone}
+                  id="workPhone"
+                  value={formData.workPhone}
                   style={{ width: "11%", marginLeft: "5px" }}
-                  onChange={(e) => setworkPhone(e.target.value)}
+                  onChange={(e) => setFormData({ ...formData, workPhone: e.target.value })}
                 />
 
                 <label
@@ -413,7 +459,7 @@ const Book = () => {
           style={{ hight: "45%" }}
         >
           <div className="">
-            <table className="table-auto border border-black ml-5 mt-2 ">
+            <table className="table-auto border border-black ml-5 mt-2 " >
               <thead>
                 <tr>
                   <td
@@ -442,15 +488,18 @@ const Book = () => {
                   </td>
                 </tr>
               </thead>
+
               <tbody>
-          {tableData.map((data) => (
-            <tr key={data.id}>
-              {/* <td>{data.id}</td> */}
-              <td>{data.agentlastname}</td>
-              <td>{data.firstName}</td>
-            </tr>
-          ))}
-        </tbody>
+                {tableData.map((data) => (
+                  <tr key={data.id} onClick={() => setSelectedAgentId(data.id)} className={`cursor-pointer ${selectedAgentId === data.id ? 'bg-blue-500 text-white' : ''}`}>
+                    <td  style={{ border: '1px solid black' }}>{data.agentlastname}</td>
+                    <td  style={{ border: '1px solid black' }}>{data.firstName}</td>
+                    <td  style={{ border: '1px solid black' }}>{data.Company}</td>
+                    <td  style={{ border: '1px solid black' }}>{data.workPhone}</td>
+                    {/* Optionally include a button here if you want it per row */}
+                  </tr>
+                ))}
+              </tbody>
             </table>
           </div>
         </div>
@@ -459,14 +508,16 @@ const Book = () => {
       <div className="btn-conat-book ml-5 text-sm ">
         <div className="flex flex-col-3 gap-1 mt-2 ml-2 ">
           <button className="border border-black bg-gray-300 hover:bg-blue-100 w-60 h-6 rounded"
-           onClick={submitForm}>
+            onClick={submitForm}>
             Save
           </button>
           <button className="border border-black bg-gray-300 hover:bg-blue-100 w-60 h-6 rounded">
             Export Contacts
           </button>
-          <button className="border border-black bg-gray-300 hover:bg-blue-100  w-60  h-6 rounded"
-          onClick={clearLocalStorage}>
+          <button
+            className="border border-black bg-gray-300 hover:bg-blue-100 w-60 h-6 rounded"
+            onClick={() => clearLocalStorage(selectedAgentId)}
+          >
             Delete Agent
           </button>
         </div>
@@ -475,11 +526,12 @@ const Book = () => {
             className="border border-black bg-gray-300 hover:bg-blue-100 h-6 rounded"
             style={{ width: "24%" }}
           >
-            Sync Agents with HIP Office
+            Sync Agents with MACJ Office
           </button>
           <button
             className="border border-black bg-gray-300 hover:bg-blue-100 h-6 rounded"
             style={{ width: "24%" }}
+            onClick={clearForm}
           >
             Add New Agent
           </button>
@@ -502,3 +554,10 @@ const Book = () => {
 };
 
 export default Book;
+
+
+
+
+
+
+
