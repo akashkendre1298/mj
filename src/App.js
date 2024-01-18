@@ -9,6 +9,7 @@ import ColorPalet from './component/ColorPalet/ColorPalet';
 import InsertPdf from './component/InsertPdf/InsertPdf';
 import Book from "./component/Address _book/Book";
 import PhotoReview from './component/Photo/PhotoReview';
+import ContractPage from "./component/Contract/Contract";
 function App() {
   return (
     <BrowserRouter>
@@ -20,6 +21,7 @@ function App() {
         <Route path="/insertpdf" element={<InsertPdf />}></Route>
         <Route path="/book" element={<Book />}></Route>
         <Route path="/photoreview" element={<PhotoReview />}></Route>
+        <Route path="/contractpage" element={<ContractPage />}></Route>
 
 
 
