@@ -32,14 +32,8 @@
   padding-left: 15px;
   padding-right: 15px;
   cursor: pointer;
-  background-color: #f3f2f1;
-  color: black;
-  border: 2px solid rgb(191, 189, 189);
-  border-radius: 5px;
-}
-.Batch-AddPhotos-Button-Browse:hover {
-  background-color: #d7e9f7;
-  border-color: #005a9e;
+  background-color: white;
+  border-color: black;
 }
 
 .Batch-Addphotos-Ok-btn-container {
@@ -74,25 +68,24 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.Batch-AddPhotos-Button-container {
+  margin-top: 20px;
+  margin-left: 210px;
+}
+.BatchAddphotos-Box-container {
+  width: 620px;
+  height: 80px;
+  border: 2px solid black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 .BatchAddPhots-close-image {
   width: 10px;
   height: 10px;
-
-  color: black;
-
-  cursor: pointer;
-}
-.BatchAddPhots-close-image:hover{
-  background-color: #d7e9f7;
-  border-color: #005a9e;
 }
 .Batch-AddPhotos-header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.Batch-Add-Photos-para-checkbox{
-  cursor: pointer;
-  margin-left: 50px;
-
 }

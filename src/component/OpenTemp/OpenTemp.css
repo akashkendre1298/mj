@@ -3,19 +3,19 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 60vh;
+  width: 50%;
+  height: 45vh;
   border: 1px solid rgb(191, 189, 189);
   border-radius: 5px;
   border: rgb(229, 229, 229);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   background-color: rgb(229, 229, 229);
 }
-.Contant {
-  /* padding-top: 150px;
-  padding-left: 30%; */
+.Contant-OpenTemp {
+  padding-top: 150px;
+  padding-left: 30%;
 }
-.template-selector {
+.template-selector-OpenTemp {
   height: 20px;
   display: flex;
   justify-content: space-between;
@@ -24,14 +24,14 @@
   border: solid 1px rgb(191, 189, 189);
   padding: 12px;
 }
-.selectTemp {
+.selectOpenTemp {
   font-size: 12px;
 }
-.close-button {
+.close-button-OpenTemp {
   background-color: transparent;
   border: none;
 }
-.para1 {
+.para1-OpenTemp {
   padding: 0 20px;
   text-align: center;
   font-size: 15px;
@@ -52,7 +52,7 @@
   padding: 5px;
 }
 
-.TempName {
+.TempName-OpenTemp {
   text-align: center;
   font-size: 15px;
 }
@@ -78,7 +78,7 @@
   /* margin: 10px; */
   margin-left: 20px;
 }
-.button-container {
+.button-container-OpenTemp {
   display: flex;
   /* justify-content: space-between; */
   width: 200px;
@@ -98,7 +98,7 @@
   margin-right: 5px;
 }
 
-.open-button:hover {
+.open-button_OpenTemp:hover {
   background-color: #d7e9f7;
   border-color: #005a9e;
 }
@@ -114,7 +114,7 @@
   cursor: pointer;
 }
 
-.cancel-button:hover {
+.cancel-button_OpenTemp:hover {
   background-color: #d7e9f7;
   border-color: #005a9e;
 }
