@@ -1,19 +1,24 @@
 /* TabList.css */
-.tab-list-buttons {
+.tab-list-buttons-aa-bb {
   display: grid;
+  width: 10em;
+  /* font-size: 12px; */
 }
 
 .tab-list-button {
   padding: 10px;
   margin: 0;
-  border: 1px solid #ccc; /* Add border to each tab */
+  border: 1px solid #ccc;
   background-color: #f0f0f0;
   cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+  height: 3rem;
 }
 
 .tab-list-active {
   background-color: #ccc;
-  width: 5em;
+  /* width: 5em; */
   height: 3em;
 }
 .tab-list-content {
@@ -25,11 +30,13 @@
 }
 
 .tab-list-pane.tab-list-active {
-  display: block;
+  display: grid;
   border: 1px solid #ccc;
   padding: 10px;
   width: 100%;
   height: 100%;
+  justify-content: center;
+  align-items: center;
 }
 .flex-container-for-tablist-for-edit-img {
   display: flex;
@@ -38,5 +45,50 @@
 }
 .width-set-for-the-popup-windows-edit-image-section {
   width: 60em;
+  /* display: flex; */
+}
+.edit-image-popup-close-image {
+  height: 10px;
+  width: 10px;
+}
+.edit-image-header-text-and-close-Button {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(242, 236, 236);
+  border: solid 1px rgb(191, 189, 189);
+  padding: 0 1em 0 1em;
+}
+.undeo-redo-btns-after-tablist {
+  display: flex;
+  justify-content: center;
+  /* gap: 22px; */
+  font-size: 12px;
+  margin: 10px 0 10px 0;
+}
+.color-picker-heading-and-color-picker {
+  display: grid;
+  justify-content: center;
+}
+.color-picker-heading {
+  font-size: 12px;
+}
+.color-pickkkker {
+  background-color: yellow;
+  width: 4em;
+  height: 3em;
+}
+.color-picker-heading-and-color-picker {
+  display: grid;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+}
+.undo-redo-button-and-color-picker-combine {
+  background-color: rgb(229, 229, 229);
+}
+.undeo-redo-btns-after-tablist button {
+  width: 6em;
+  border: 1px solid #8080808f;
+  border-radius: 3px;
 }
