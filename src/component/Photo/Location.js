@@ -1,3 +1,4 @@
+import React from "react";
 import "./Location.css";
 import Recallcheck from "./Recallcheck";
 const Location = () => {
@@ -6,7 +7,7 @@ const Location = () => {
       <div className="container-for-locations-and-recall-component">
         <div className="syysysysy">
           <div className="PhotoReview-Location-container">
-            <label for="username">Location</label>
+            <label htmlfor="username">Location</label>
             <br />
             <select className="PhotoReview-Location-first-inputfields">
               <option value=""></option>
@@ -39,7 +40,7 @@ const Location = () => {
             <section className="Section-for-label-and-checkbox">
               <input type="checkbox" name="agree" />
               <label
-                for="agree"
+                htmlfor="agree"
                 className="PhotoReview-Location-Checkbox-label"
               >
                 Print At End
@@ -52,7 +53,7 @@ const Location = () => {
                 name="agree"
               />
               <label
-                for="agree"
+                htmlfor="agree"
                 className="PhotoReview-Location-Checkbox-label"
               >
                 Summary
@@ -61,7 +62,7 @@ const Location = () => {
             <section className="Section-for-label-and-checkbox">
               <input type="checkbox" id="agree" name="agree" />
               <label
-                for="agree"
+                htmlfor="agree"
                 className="PhotoReview-Location-Checkbox-label"
               >
                 Use Location As Caption

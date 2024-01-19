@@ -18,11 +18,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: lightgrey;
-  padding-left: 18px;
+  /* padding-left: 18px;
   padding-right: 25px;
   padding-top: 10px;
-  padding-bottom: 10px;
-  width: 1000px;
+  padding-bottom: 10px; */
+  /* width: 1000px; */
   height: 550px;
 
   border-radius: 8px;
@@ -33,6 +33,7 @@
   width: 960px;
   height: 400px;
   /* margin-bottom: 30px; */
+  margin: 1em;
 }
 
 .caption-popupbox-buttons-main-container {
@@ -70,5 +71,16 @@
   justify-content: flex-end;
 }
 .caption-popup-caption-editor-container {
-  margin-left: 0px;
+  /* margin-left: 0px; */
+  display: flex;
+  justify-content: space-between;
+}
+.caption-popup-caption-editor-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fee4c3;
+  border: solid 1px rgb(191, 189, 189);
+  padding: 0px 1em 0 1em;
+  height: 2em;
 }

@@ -59,14 +59,13 @@ const Caption = () => {
               <label className="caption-popup-caption-editor">
                 Caption Editor
               </label>
-            </div>
-
-            <div className="caption-popup-close-image-contaier">
-              <img
-                src={close}
-                className="caption-popup-close-image"
-                onClick={handleClosePopup}
-              />
+              <div className="caption-popup-close-image-contaier">
+                <img
+                  src={close}
+                  className="caption-popup-close-image"
+                  onClick={handleClosePopup}
+                />
+              </div>
             </div>
 
             <br />
