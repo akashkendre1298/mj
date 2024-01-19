@@ -3,6 +3,7 @@ import moveUpButtonImg from '../../Assets/icons/ic_up.png';
 import moveDownButtonImg from '../../Assets/icons/ic_down.png';
 import inheritButtonImg from '../../Assets/icons/sync.png';
 import selectIconsButtonImg from '../../Assets/icons/open_inspection.png';
+import ColorPicker from "./ColorPicker";
 
 const ColorPalette = () => {
   // State for row colors
@@ -152,6 +153,15 @@ const ColorPalette = () => {
     }
   };
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openColorPicker = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeColorPicker = () => {
+    setIsModalOpen(false);
+  };
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-white">
       <div className="rounded-lg" style={{ width: "90%", backgroundColor: "#f3f2f1" }}>
@@ -179,17 +189,17 @@ const ColorPalette = () => {
                 <thead>
                   <tr className="text-sm  font-thin">
 
-                    <th className="border p-2">Section name</th>
-                    <th className="border p-2">Section title font</th>
-                    <th className="border p-2">Print</th>
-                    <th className="border p-2 color-column">Border</th>
-                    <th className="border p-2 color-column">Header Background</th>
-                    <th className="border p-2">Header Font</th>
-                    <th className="border p-2 color-column">Footer Background</th>
-                    <th className="border p-2">Footer Font</th>
-                    <th className="border p-2">Section Icon</th>
-                    <th className="border p-2 color-column">TOC background</th>
-                    <th className="border p-2">TOC Font</th>
+                    <th className="border font-semibold p-2">Section name</th>
+                    <th className="border font-semibold p-2">Section title font</th>
+                    <th className="border font-semibold p-2">Print</th>
+                    <th className="border font-semibold p-2 color-column">Border</th>
+                    <th className="border font-semibold p-2 color-column">Header Background</th>
+                    <th className="border font-semibold p-2">Header Font</th>
+                    <th className="border font-semibold p-2 color-column">Footer Background</th>
+                    <th className="border font-semibold p-2">Footer Font</th>
+                    <th className="border font-semibold p-2">Section Icon</th>
+                    <th className="border font-semibold p-2 color-column">TOC background</th>
+                    <th className="border font-semibold p-2">TOC Font</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -258,7 +268,7 @@ const ColorPalette = () => {
                       <td className="border p-2"></td>
                       <td className="border p-2"></td>
                       <td className="border p-2">
-                        <input
+                        {/* <input
                           type="color"
                           id={`toc_bg_color_${index}`}
                           name={`toc_bg_color_${index}`}
@@ -270,7 +280,16 @@ const ColorPalette = () => {
                               e.target.value
                             )
                           }
-                        />
+                        /> */}
+                        <div>
+                          <input type="color" onClick={openColorPicker} />
+
+                          {isModalOpen && (
+                            <ColorPicker onClose={closeColorPicker} />
+
+                          )}
+                        </div>
+
                       </td>
                       <td className="border p-2"></td>
                     </tr>

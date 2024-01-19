@@ -35,60 +35,64 @@ const Caption = () => {
 
   return (
     <div className="Caption-main-container">
-      <label>Caption</label>
-      <br />
-      <input
-        className="Caption-main-input-filed"
-        value={captionValue}
-        onChange={handleInputChange}
-      />
-      <img
-        src={img7}
-        alt=""
-        className="Caption-image-toopen-popupbox"
-        onClick={handlePopupOpen}
-      />
-
-      {isPopupOpen && (
-        <div className="Caption-main-popup-container">
-          <div className="caption-popup-caption-editor-container">
-            <label className="caption-popup-caption-editor">
-              Caption Editor
-            </label>
-          </div>
-
-          <div className="caption-popup-close-image-contaier">
-            <img
-              src={close}
-              className="caption-popup-close-image"
-              onClick={handleClosePopup}
-            />
-          </div>
-
-          <br />
-
+      <div className="Caption-main-label-name">
+        <label>Caption</label>
+        <div className="caption-main-input-field">
           <input
-            className="caption-popupbox-input-filed"
+            className="Caption-main-input-filed"
             value={captionValue}
             onChange={handleInputChange}
           />
-          <br />
-          <div className="caption-popupbox-buttons-main-container">
-            <button
-              className="caption-popupbox-btns"
-              onClick={handleSaveChanges}
-            >
-              Save Changes
-            </button>
-            <button
-              className="caption-popupbox-btns"
-              onClick={handleDiscardChanges}
-            >
-              Discard Changes
-            </button>
-          </div>
         </div>
-      )}
+      </div>
+      <div className="caption-image-edit-caption-container">
+        <img
+          src={img7}
+          alt=""
+          className="Caption-image-toopen-popupbox"
+          onClick={handlePopupOpen}
+        />
+
+        {isPopupOpen && (
+          <div className="Caption-main-popup-container">
+            <div className="caption-popup-caption-editor-container">
+              <label className="caption-popup-caption-editor">
+                Caption Editor
+              </label>
+              <div className="caption-popup-close-image-contaier">
+                <img
+                  src={close}
+                  className="caption-popup-close-image"
+                  onClick={handleClosePopup}
+                />
+              </div>
+            </div>
+
+            <br />
+
+            <input
+              className="caption-popupbox-input-filed"
+              value={captionValue}
+              onChange={handleInputChange}
+            />
+            <br />
+            <div className="caption-popupbox-buttons-main-container">
+              <button
+                className="caption-popupbox-btns"
+                onClick={handleSaveChanges}
+              >
+                Save Changes
+              </button>
+              <button
+                className="caption-popupbox-btns"
+                onClick={handleDiscardChanges}
+              >
+                Discard Changes
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

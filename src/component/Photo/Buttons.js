@@ -1,7 +1,6 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import img1 from "./icons/gallery.png";
 import img2 from "./icons/document.png";
-
 import img5 from "./icons/camera-48.png";
 import img6 from "./icons/trash.png";
 import img7 from "./icons/notes.png";
@@ -9,12 +8,45 @@ import img8 from "./icons/diskette.png";
 import img9 from "./icons/search-in-browser-64.png";
 import img10 from "./icons/preview-48.png";
 import img11 from "./icons/delete.png";
-
+import close from "./icons/close_2997911.png";
 import "./Buttons.css";
+import EditImageTabList from "./../EditImageTabList/EditImageTabList";
+import Editor from "./../Editor/Editor";
+import PropTypes from "prop-types";
 
 const Buttons = ({ onFileSelect }) => {
+  // tablistconst [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState(1);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const handleTabClick = (tabNumber) => {
+    setActiveTab(tabNumber);
+  };
+  // close popup for edit image
+
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
+  };
+
+  // Define custom tab names
+  const tabNames = [
+    "Crop Image",
+    "Adjust Brightness",
+    "Adjust Contrass",
+    "Rotate Clockwise",
+    "Draw Line",
+    "Draw Arrow",
+    "Draw Rectangle",
+    "Draw Oval",
+    "Add Text",
+    "Overlay Image",
+  ];
+
+  const [captionValue, setCaptionValue] = useState("");
   const fileInputRef = useRef(null);
   const uploadedFileRef = useRef(null);
+  const [showPopup, setShowPopup] = useState(false);
+  const [inputValue, setInputValue] = useState("");
 
   const handleImg1Click = () => {
     if (fileInputRef.current) {
@@ -39,7 +71,30 @@ const Buttons = ({ onFileSelect }) => {
     // Save the uploaded data (you can implement the saving logic here)
     console.log("Save data:", uploadedFileRef.current);
   };
+  const openPopup = () => {
+    setShowPopup(true);
+  };
 
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+
+  const handleInputSubmit = () => {
+    // Handle the input value as needed
+    console.log("Input value:", inputValue);
+    closePopup();
+  };
+  const handlePopupOpen = () => {
+    setIsPopupOpen(true);
+  };
+
+  // Map each tab index to its corresponding content component
+  const tabContentComponents = {
+    1: <Editor />,
+    // 2: <AdjustBrightnessContent />,
+    // 3: <AdjustContrastContent />,
+    // ... (add other tab content components)
+  };
   return (
     <>
       <input
@@ -62,18 +117,82 @@ const Buttons = ({ onFileSelect }) => {
         <li>
           <a href="#file">
             <div className="Buttons-orderlist-to-adjust-images">
-              <img src={img2} alt="" />
+              <img src={img2} alt="" onClick={handlePopupOpen} />
+              {isPopupOpen && (
+                <div className="edit-image-main-popup-container-css">
+                  {/* <EditImageTabList /> */}
+                  <div className="flex-container-for-tablist-for-edit-img">
+                    <div className="width-set-for-the-popup-windows-edit-image-section">
+                      {" "}
+                      <div className="edit-image-header-text-and-close-Button">
+                        <p className="edit-image-header-popup-window">
+                          Edit Image
+                        </p>
+
+                        <img
+                          src={close}
+                          className="edit-image-popup-close-image"
+                          onClick={handleClosePopup}
+                        />
+                      </div>
+                      <div className="flex">
+                        <div className="tab-list-buttons-aa-bb">
+                          {tabNames.map((tabName, index) => (
+                            <button
+                              key={index + 1}
+                              onClick={() => handleTabClick(index + 1)}
+                              className={
+                                activeTab === index + 1
+                                  ? "tab-list-active"
+                                  : "tab-list-button"
+                              }
+                            >
+                              {tabName}
+                            </button>
+                          ))}
+                          <div className="undo-redo-button-and-color-picker-combine">
+                            <section className="undeo-redo-btns-after-tablist">
+                              <button>Undo</button>
+                              <button>Redo</button>
+                            </section>
+                            <section className="color-picker-heading-and-color-picker">
+                              <p className="color-picker-heading">
+                                Current Color
+                              </p>
+                              <button className="color-pickkkker"></button>
+                            </section>
+                          </div>
+                        </div>
+                        <div className="tab-list-content">
+                          {tabNames.map((tabName, index) => (
+                            <div
+                              key={index + 1}
+                              className={
+                                activeTab === index + 1
+                                  ? "tab-list-pane tab-list-active"
+                                  : "tab-list-pane"
+                              }
+                            >
+                              {tabContentComponents[activeTab]}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </a>
         </li>
 
-        <li>
+        {/* <li>
           <a href="#file">
             <div className="Buttons-orderlist-to-adjust-images">
               <img src={img5} alt="" />
             </div>
           </a>
-        </li>
+        </li> */}
         <li>
           <a href="#file">
             <div
@@ -105,8 +224,9 @@ const Buttons = ({ onFileSelect }) => {
 
       <div>
         <ul className="Buttons-unoorderlist-for-icons-buttons">
+          {/* ... other list items */}
           <li>
-            <a href="#file">
+            <a href="#file" onClick={openPopup}>
               <div className="Buttons-orderlist-for-icons-buttons">
                 <img src={img9} alt="" />
               </div>
@@ -128,8 +248,29 @@ const Buttons = ({ onFileSelect }) => {
           </li>
         </ul>
       </div>
+
+      {showPopup && (
+        <div className="Add-Icons-popup-container">
+          <div className="Add-Icons-Popup-header-container">
+            <p className="Add-Icons-Popup-header-AddIcons">
+              Select and click on the icons to Add
+            </p>
+            <img
+              src={close}
+              alt="Close"
+              className="Add-IconsPopup-close-image"
+              onClick={closePopup}
+            />
+          </div>
+          <hr className="line1" />
+
+          <hr className="line2" />
+        </div>
+      )}
     </>
   );
 };
-
+Buttons.propTypes = {
+  onFileSelect: PropTypes.func.isRequired,
+};
 export default Buttons;

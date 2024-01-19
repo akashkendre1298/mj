@@ -2,10 +2,10 @@
 
 .Buttons-unorderlist-container {
   list-style-type: none;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  display: flex;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1em;
-  margin-top: -20px;
+  /*  margin-top: -20px; */
 }
 
 .Buttons-orderlist-to-adjust-images {
@@ -34,4 +34,23 @@
 .Buttons-orderlist-for-icons-buttons {
   width: 25px;
   height: 25px;
+}
+
+/* Edit Image Popup-css */
+
+.edit-image-main-popup-container-css {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: lightgrey;
+  /* padding-left: 18px; */
+  /* padding-right: 25px; */
+  /* padding-top: 10px; */
+  /* padding-bottom: 10px; */
+  /* width: 1000px; */
+  /* height: 550px; */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }

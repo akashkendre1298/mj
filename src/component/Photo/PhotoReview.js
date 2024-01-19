@@ -4,7 +4,7 @@ import Location from "./Location";
 import Buttons from "./Buttons";
 import Caption from "./Caption";
 import Recallcheck from "./Recallcheck";
-import Sbuttons from "./Sbuttons";
+// import Sbuttons from "./Sbuttons";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
@@ -69,7 +69,7 @@ const PhotoReview = () => {
             onDragLeave={handleDragLeave}
           >
             <Location />
-            <Recallcheck />
+            {/* <Recallcheck /> */}
 
             {/* Drag and drop file upload section */}
             <div className="PhotoReview-Drag-Drop-Box">
@@ -116,7 +116,7 @@ const PhotoReview = () => {
 
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <Buttons onFileSelect={handleFileSelect} />
-              <Sbuttons />
+              {/* <Sbuttons /> */}
             </div>
             <Caption />
           </div>
