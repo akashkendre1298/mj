@@ -27,6 +27,8 @@ function App() {
         <Route path="/batchaddphotos" element={<BatchAddPhotos />}></Route>
       </Routes>
     </BrowserRouter>
+    // <Editor />
+    // <ColorPicker />
   );
 }
 export default App;
