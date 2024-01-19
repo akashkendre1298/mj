@@ -1,9 +1,5 @@
-.Caption-main-container {
-  /* margin-left: 10px; */
-  margin-top: -10px;
-}
 .Caption-main-input-filed {
-  width: 704px;
+  width: 690px;
   /* margin-left: 15px; */
 }
 .Caption-image-toopen-popupbox {
@@ -14,6 +10,7 @@
   margin-left: 703px;
   width: 25px;
   height: 25px;
+  cursor: pointer;
 }
 .Caption-main-popup-container {
   position: absolute;
@@ -61,6 +58,7 @@
 .caption-popup-close-image {
   width: 15px;
   height: 15px;
+  cursor: pointer;
 }
 
 .caption-popup-caption-editor {

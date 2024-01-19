@@ -69,7 +69,7 @@ const PhotoReview = () => {
             onDragLeave={handleDragLeave}
           >
             <Location />
-            <Recallcheck />
+            {/* <Recallcheck /> */}
 
             {/* Drag and drop file upload section */}
             <div className="PhotoReview-Drag-Drop-Box">
