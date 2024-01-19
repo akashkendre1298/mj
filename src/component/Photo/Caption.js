@@ -3,6 +3,7 @@ import img7 from "./icons/notes.png";
 
 import close from "./icons/close_2997911.png";
 import "./Caption.css";
+import Buttons from "./Buttons";
 
 const Caption = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -77,18 +78,22 @@ const Caption = () => {
             />
             <br />
             <div className="caption-popupbox-buttons-main-container">
-              <button
-                className="caption-popupbox-btns"
-                onClick={handleSaveChanges}
-              >
-                Save Changes
-              </button>
-              <button
-                className="caption-popupbox-btns"
-                onClick={handleDiscardChanges}
-              >
-                Discard Changes
-              </button>
+              <div className="caption-popupbox-Buttons">
+                <button
+                  className="caption-popupbox-btns"
+                  onClick={handleSaveChanges}
+                >
+                  Save Changes
+                </button>
+              </div>
+              <div className="caption-popupbox-Buttons">
+                <button
+                  className="caption-popupbox-btns"
+                  onClick={handleDiscardChanges}
+                >
+                  Discard Changes
+                </button>
+              </div>
             </div>
           </div>
         )}
