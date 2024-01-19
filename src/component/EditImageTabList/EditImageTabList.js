@@ -30,6 +30,13 @@ const EditImageTabList = ({ isOpen, onRequestClose }) => {
     "Overlay Image",
   ];
 
+  // Map each tab index to its corresponding content component
+  const tabContentComponents = {
+    // 1: <CropImageContent />,
+    // 2: <AdjustBrightnessContent />,
+    // 3: <AdjustContrastContent />,
+    // ... (add other tab content components)
+  };
   return (
     <>
       {/* {isPopupOpen && ( */}
@@ -81,7 +88,7 @@ const EditImageTabList = ({ isOpen, onRequestClose }) => {
                       : "tab-list-pane"
                   }
                 >
-                  Content for {tabName}
+                  {tabContentComponents[activeTab]}
                 </div>
               ))}
             </div>
