@@ -1,4 +1,4 @@
-// import "./Recallcheck.css";
+import "./Recallcheck.css";
 const Recallcheck = () => {
   return (
     <>

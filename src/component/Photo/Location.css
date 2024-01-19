@@ -2,7 +2,10 @@
   margin-left: 6px;
 }
 .PhotoReview-Location-first-inputfields {
-  width: 170px;
+  font-size: 10px;
+  width: 17em;
+  padding-left: 1em;
+  height: 2em;
 }
 .PhotoReview-Location-button {
   margin-left: 75px;
