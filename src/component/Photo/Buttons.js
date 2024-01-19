@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import img1 from "./icons/gallery.png";
 import img2 from "./icons/document.png";
 
@@ -9,10 +9,40 @@ import img8 from "./icons/diskette.png";
 import img9 from "./icons/search-in-browser-64.png";
 import img10 from "./icons/preview-48.png";
 import img11 from "./icons/delete.png";
-
+import close from "./icons/close_2997911.png";
+import "../EditImageTabList/EditImageTabList.css";
 import "./Buttons.css";
+import EditImageTabList from "./../EditImageTabList/EditImageTabList";
 
 const Buttons = ({ onFileSelect }) => {
+  // tablistconst [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState(1);
+
+  const handleTabClick = (tabNumber) => {
+    setActiveTab(tabNumber);
+  };
+  // close popup for edit image
+
+  // const handleClosePopup = () => {
+  //   setIsPopupOpen(false);
+  // };
+
+  // Define custom tab names
+  const tabNames = [
+    "Crop Image",
+    "Adjust Brightness",
+    "Adjust Contrass",
+    "Rotate Clockwise",
+    "Draw Line",
+    "Draw Arrow",
+    "Draw Rectangle",
+    "Draw Oval",
+    "Add Text",
+    "Overlay Image",
+  ];
+
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [captionValue, setCaptionValue] = useState("");
   const fileInputRef = useRef(null);
   const uploadedFileRef = useRef(null);
 
@@ -39,6 +69,38 @@ const Buttons = ({ onFileSelect }) => {
     // Save the uploaded data (you can implement the saving logic here)
     console.log("Save data:", uploadedFileRef.current);
   };
+  // const handleopentablist = () => {
+  //   console.log("tblist opened");
+  // };
+  const handlePopupOpen = () => {
+    if (!isPopupOpen) {
+      // Only reset captionValue if the popup is not already open
+      setCaptionValue("");
+    }
+    setIsPopupOpen(true);
+  };
+
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
+  };
+  const handleSaveChanges = () => {
+    // Save logic here (you can send the data to the server or perform any other action)
+    setIsPopupOpen(false);
+  };
+
+  const handleDiscardChanges = () => {
+    setIsPopupOpen(false);
+  };
+
+  const handleInputChange = (e) => {
+    setCaptionValue(e.target.value);
+  };
+
+  // close popup for edit image
+
+  // const handleClosePopup = () => {
+  //   setIsPopupOpen(false);
+  // };
 
   return (
     <>
@@ -61,11 +123,74 @@ const Buttons = ({ onFileSelect }) => {
         </li>
         <li>
           <a href="#file">
-            <div className="Buttons-orderlist-to-adjust-images">
+            <div
+              className="Buttons-orderlist-to-adjust-images"
+              onClick={handlePopupOpen}
+            >
               <img src={img2} alt="" />
             </div>
           </a>
         </li>
+        {isPopupOpen && (
+          <div className="edit-image-main-popup-container-css">
+            {/* <EditImageTabList /> */}
+            <div className="flex-container-for-tablist-for-edit-img">
+              <div className="width-set-for-the-popup-windows-edit-image-section">
+                {" "}
+                <div className="edit-image-header-text-and-close-Button">
+                  <p className="edit-image-header-popup-window">Edit Image</p>
+
+                  <img
+                    src={close}
+                    className="edit-image-popup-close-image"
+                    onClick={handleClosePopup}
+                  />
+                </div>
+                <div className="flex">
+                  <div className="tab-list-buttons-aa-bb">
+                    {tabNames.map((tabName, index) => (
+                      <button
+                        key={index + 1}
+                        onClick={() => handleTabClick(index + 1)}
+                        className={
+                          activeTab === index + 1
+                            ? "tab-list-active"
+                            : "tab-list-button"
+                        }
+                      >
+                        {tabName}
+                      </button>
+                    ))}
+                    <div className="undo-redo-button-and-color-picker-combine">
+                      <section className="undeo-redo-btns-after-tablist">
+                        <button>Undo</button>
+                        <button>Redo</button>
+                      </section>
+                      <section className="color-picker-heading-and-color-picker">
+                        <p className="color-picker-heading">Current Color</p>
+                        <button className="color-pickkkker"></button>
+                      </section>
+                    </div>
+                  </div>
+                  <div className="tab-list-content">
+                    {tabNames.map((tabName, index) => (
+                      <div
+                        key={index + 1}
+                        className={
+                          activeTab === index + 1
+                            ? "tab-list-pane tab-list-active"
+                            : "tab-list-pane"
+                        }
+                      >
+                        Content for {tabName}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         <li>
           <a href="#file">

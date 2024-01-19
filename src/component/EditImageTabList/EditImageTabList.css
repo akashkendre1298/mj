@@ -42,6 +42,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10;
 }
 .width-set-for-the-popup-windows-edit-image-section {
   width: 60em;
@@ -58,6 +59,7 @@
   background-color: rgb(242, 236, 236);
   border: solid 1px rgb(191, 189, 189);
   padding: 0 1em 0 1em;
+  height: 2em;
 }
 .undeo-redo-btns-after-tablist {
   display: flex;

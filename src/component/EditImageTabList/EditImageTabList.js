@@ -4,10 +4,16 @@ import Buttons from "./../Photo/Buttons";
 import editimgclose from "../Photo/icons/close_2997911.png";
 
 const EditImageTabList = ({ isOpen, onRequestClose }) => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [activeTab, setActiveTab] = useState(1);
 
   const handleTabClick = (tabNumber) => {
     setActiveTab(tabNumber);
+  };
+  // close popup for edit image
+
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
   };
 
   // Define custom tab names
@@ -26,12 +32,18 @@ const EditImageTabList = ({ isOpen, onRequestClose }) => {
 
   return (
     <>
+      {/* {isPopupOpen && ( */}
       <div className="flex-container-for-tablist-for-edit-img">
         <div className="width-set-for-the-popup-windows-edit-image-section">
           {" "}
           <div className="edit-image-header-text-and-close-Button">
             <p className="edit-image-header-popup-window">Edit Image</p>
-            <img src={editimgclose} className="edit-image-popup-close-image" />
+
+            <img
+              src={editimgclose}
+              className="edit-image-popup-close-image"
+              onClick={handleClosePopup}
+            />
           </div>
           <div className="flex">
             <div className="tab-list-buttons-aa-bb">
@@ -76,6 +88,7 @@ const EditImageTabList = ({ isOpen, onRequestClose }) => {
           </div>
         </div>
       </div>
+      {/* )} */}
     </>
   );
 };
