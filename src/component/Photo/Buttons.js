@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import img1 from "./icons/gallery.png";
 import img2 from "./icons/document.png";
-
 import img5 from "./icons/camera-48.png";
 import img6 from "./icons/trash.png";
 import img7 from "./icons/notes.png";
@@ -9,8 +8,7 @@ import img8 from "./icons/diskette.png";
 import img9 from "./icons/search-in-browser-64.png";
 import img10 from "./icons/preview-48.png";
 import img11 from "./icons/delete.png";
-import close from "./icons/close_2997911.png";
-import "../EditImageTabList/EditImageTabList.css";
+
 import "./Buttons.css";
 import EditImageTabList from "./../EditImageTabList/EditImageTabList";
 
@@ -45,6 +43,8 @@ const Buttons = ({ onFileSelect }) => {
   const [captionValue, setCaptionValue] = useState("");
   const fileInputRef = useRef(null);
   const uploadedFileRef = useRef(null);
+  const [showPopup, setShowPopup] = useState(false);
+  const [inputValue, setInputValue] = useState("");
 
   const handleImg1Click = () => {
     if (fileInputRef.current) {
@@ -69,38 +69,6 @@ const Buttons = ({ onFileSelect }) => {
     // Save the uploaded data (you can implement the saving logic here)
     console.log("Save data:", uploadedFileRef.current);
   };
-  // const handleopentablist = () => {
-  //   console.log("tblist opened");
-  // };
-  const handlePopupOpen = () => {
-    if (!isPopupOpen) {
-      // Only reset captionValue if the popup is not already open
-      setCaptionValue("");
-    }
-    setIsPopupOpen(true);
-  };
-
-  const handleClosePopup = () => {
-    setIsPopupOpen(false);
-  };
-  const handleSaveChanges = () => {
-    // Save logic here (you can send the data to the server or perform any other action)
-    setIsPopupOpen(false);
-  };
-
-  const handleDiscardChanges = () => {
-    setIsPopupOpen(false);
-  };
-
-  const handleInputChange = (e) => {
-    setCaptionValue(e.target.value);
-  };
-
-  // close popup for edit image
-
-  // const handleClosePopup = () => {
-  //   setIsPopupOpen(false);
-  // };
 
   return (
     <>
@@ -192,13 +160,13 @@ const Buttons = ({ onFileSelect }) => {
           </div>
         )}
 
-        <li>
+        {/* <li>
           <a href="#file">
             <div className="Buttons-orderlist-to-adjust-images">
               <img src={img5} alt="" />
             </div>
           </a>
-        </li>
+        </li> */}
         <li>
           <a href="#file">
             <div
@@ -230,8 +198,9 @@ const Buttons = ({ onFileSelect }) => {
 
       <div>
         <ul className="Buttons-unoorderlist-for-icons-buttons">
+          {/* ... other list items */}
           <li>
-            <a href="#file">
+            <a href="#file" onClick={openPopup}>
               <div className="Buttons-orderlist-for-icons-buttons">
                 <img src={img9} alt="" />
               </div>
@@ -253,6 +222,25 @@ const Buttons = ({ onFileSelect }) => {
           </li>
         </ul>
       </div>
+
+      {showPopup && (
+        <div className="Add-Icons-popup-container">
+          <div className="Add-Icons-Popup-header-container">
+            <p className="Add-Icons-Popup-header-AddIcons">
+              Select and click on the icons to Add
+            </p>
+            <img
+              src={close}
+              alt="Close"
+              className="Add-IconsPopup-close-image"
+              onClick={closePopup}
+            />
+          </div>
+          <hr className="line1" />
+
+          <hr className="line2" />
+        </div>
+      )}
     </>
   );
 };
