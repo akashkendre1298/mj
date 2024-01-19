@@ -36,10 +36,14 @@
   border-color: black;
 }
 
+.Batch-AddPhotos-Button-Browse:hover {
+  background-color: #d7e9f7;
+  border-color: #005a9e;
+}
+
 .Batch-Addphotos-Ok-btn-container {
   display: flex;
   justify-content: flex-end;
-
   margin-top: 15px;
 }
 .Batch-Addphotos-Ok-btn {
@@ -83,6 +87,7 @@
 .BatchAddPhots-close-image {
   width: 10px;
   height: 10px;
+  cursor: pointer;
 }
 .Batch-AddPhotos-header-container {
   display: flex;

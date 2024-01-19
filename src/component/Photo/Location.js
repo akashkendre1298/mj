@@ -33,23 +33,28 @@ const Location = () => {
       </div>
 
       <div className="PhotoReview-Location-Checkbox-Container">
-        <input type="checkbox" name="agree" />
-        <label for="agree" className="PhotoReview-Location-Checkbox-label">
-          Print At End
-        </label>
-        <input
-          type="checkbox"
-          className="PhotoReview-Location-Checkbox-label"
-          name="agree"
-        />
-        <label for="agree" className="PhotoReview-Location-Checkbox-label">
-          Summary
-        </label>
-        <br />
-        <input type="checkbox" id="agree" name="agree" />
-        <label for="agree" className="PhotoReview-Location-Checkbox-label">
-          Use Location As Caption
-        </label>
+        <section className="Section-for-label-and-checkbox">
+          <input type="checkbox" name="agree" />
+          <label for="agree" className="PhotoReview-Location-Checkbox-label">
+            Print At End
+          </label>
+        </section>
+        <section className="Section-for-label-and-checkbox">
+          <input
+            type="checkbox"
+            className="PhotoReview-Location-Checkbox-label"
+            name="agree"
+          />
+          <label for="agree" className="PhotoReview-Location-Checkbox-label">
+            Summary
+          </label>
+        </section>
+        <section className="Section-for-label-and-checkbox">
+          <input type="checkbox" id="agree" name="agree" />
+          <label for="agree" className="PhotoReview-Location-Checkbox-label">
+            Use Location As Caption
+          </label>
+        </section>
       </div>
     </>
   );

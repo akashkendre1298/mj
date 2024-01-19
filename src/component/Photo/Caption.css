@@ -1,16 +1,17 @@
 .Caption-main-container {
-  margin-left: 10px;
+  /* margin-left: 10px; */
+  margin-top: -10px;
 }
 .Caption-main-input-filed {
-  width: 670px;
-  margin-left: 15px;
+  width: 704px;
+  /* margin-left: 15px; */
 }
 .Caption-image-toopen-popupbox {
   /* cursor: pointer; */
   background-color: white;
   padding: 3px;
-  margin-top: -27px;
-  margin-left: 695px;
+  margin-top: -25px;
+  margin-left: 703px;
   width: 25px;
   height: 25px;
 }
@@ -34,7 +35,7 @@
 .caption-popupbox-input-filed {
   width: 960px;
   height: 400px;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 
 .caption-popupbox-buttons-main-container {
@@ -55,7 +56,6 @@
 .caption-popupbox-btns:hover {
   background-color: #d7e9f7;
   border-color: #005a9e;
-
 }
 
 .caption-popup-close-image {

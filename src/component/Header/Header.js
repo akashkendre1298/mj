@@ -130,43 +130,48 @@ const Header = () => {
           </ul>
         </div>
 
-      
-      <div className="menu-item relative ml-4">
-        <div
-          className="main-label cursor-pointer"
-          onClick={() => handleMenuClick(1)}
-        >
-          General information
+        <div className="menu-item relative ml-4">
+          <div
+            className="main-label cursor-pointer"
+            onClick={() => handleMenuClick(1)}
+          >
+            General information
+          </div>
+          {activeMenu === 1 && (
+            <ul className="submenu absolute z-10 bg-white shadow mt-2">
+              <Link to="/panel1">
+                <li className="py-2 px-4 hover:bg-gray-200">Wall</li>
+              </Link>
+              <li className="py-2 px-4 hover:bg-gray-200">Batch Add Photos</li>
+              <li className="py-2 px-4 hover:bg-gray-200">Clear All Photos</li>
+            </ul>
+          )}
         </div>
-        {activeMenu === 1 && (
-          <ul className="submenu absolute z-10 bg-white shadow mt-2">
-            <Link to="/panel1">
-              <li className="py-2 px-4 hover:bg-gray-200">Wall</li>
-            </Link>
-            <li className="py-2 px-4 hover:bg-gray-200">Batch Add Photos</li>
-            <li className="py-2 px-4 hover:bg-gray-200">Clear All Photos</li>
-          </ul>
-        )}
-      </div>
 
-      <div className="menu-item relative ml-4">
-        <div
-          className="main-label cursor-pointer"
-          onClick={() => handleMenuClick(2)}
-        >
-          Photos
+        <div className="menu-item relative ml-4">
+          <div
+            className="main-label cursor-pointer"
+            onClick={() => handleMenuClick(2)}
+          >
+            Photos
+          </div>
+          {activeMenu === 2 && (
+            <ul className="submenu absolute z-10 bg-white shadow mt-2">
+              <Link to="/photoreview">
+                <li className="py-2 px-4 hover:bg-gray-200">
+                  Add Review Photos
+                </li>
+              </Link>
+              <Link to="/batchaddphotos">
+                <li className="py-2 px-4 hover:bg-gray-200">
+                  Batch Add Photos
+                </li>
+              </Link>
+              <li className="py-2 px-4 hover:bg-gray-200">Clear All Photos</li>
+            </ul>
+          )}
         </div>
-        {activeMenu === 2 && (
-          <ul className="submenu absolute z-10 bg-white shadow mt-2">
-            <Link to="/photoreview">
-              <li className="py-2 px-4 hover:bg-gray-200">Add Review Photos</li>
-            </Link>
-            <li className="py-2 px-4 hover:bg-gray-200">Batch Add Photos</li>
-            <li className="py-2 px-4 hover:bg-gray-200">Clear All Photos</li>
-          </ul>
-        )}
-      </div>
-   
+
         <div>
           <ul>
             <li className="ml-5">About</li>
@@ -284,103 +289,106 @@ const Header = () => {
                 </a>
               </li>
             </Link>
-          
-          <hr />
-          <Link to="/">
-          <li className="list-for-header-section-main-nav border-r border-black-900">
-            <a href="#" className="header2-tag-a">
-              <div className="flex justify-center">
-              <img src={img8} alt="" />
-              </div>
-              <div>
-                Client
-                <br /> Info
-              </div>
-            </a>
-          </li>
-          </Link>
-          <Link to={{pathname:"/Book"}}>
-          <li className="list-for-header-section-main-nav">
-            <a href="#" className="header2-tag-a">
-              <div className="flex justify-center">
-              <img src={img14} alt="" />
-              </div>
-              <div>Address<br /> Book</div>
-            </a>
-          </li>
-          </Link>
-          <li className="list-for-header-section-main-nav  border-r border-black-900">
-            <a href="#" className="header2-tag-a">
-              <div className="flex justify-center">
-              <img src={img9} alt="" />
-              </div>
-              <div>
-                Contract
-                <br /> Page
-              </div>
-            </a>
-          </li>
-          <hr />
-          <li className="list-for-header-section-main-nav">
-            <a href="#" className="header2-tag-a">
-              <div className="flex justify-center">
-              <img src={img10} alt="" />
-              </div>
-              <div>Copy</div>
-            </a>
-          </li>
-          <li className="list-for-header-section-main-nav  border-r border-black-900">
-            <a href="#" className="header2-tag-a">
-              <div className="flex justify-center">
-              <img src={img11} alt="" />
-              </div>
-              <div>Paste</div>
-            </a>
-          </li>
-          <hr />
-          <li className="list-for-header-section-main-nav">
-            <a href="#"className="header2-tag-a">
-              <div className="flex justify-center">
-              <img src={img12} alt="" />
-              </div>
-              <div>
-                Geneate
-                <br /> report
-              </div>
-            </a>
-          </li>
-          <hr />
-          <li className="list-for-header-section-main-nav">
-            <a href="#" className="header2-tag-a">
-              <div className="flex justify-center">
-              <img src={img15} alt="" />
-              </div>
-              <div>
-                Mobile
-                <br /> Sync
-              </div>
-            </a>
-          </li>
-          <li className="list-for-header-section-main-nav  border-r border-black-900">
-            <a href="#" className="header2-tag-a">
-              <div className="flex justify-center">
-              <img src={img13} alt="" />
-              </div>
-              <div>
-                Upload
-                <br /> report
-              </div>
-            </a>
-          </li>
-          <hr />
-        </ul>
-      </nav>
-      {openTemplatePopup && (
-        <div className="popup">
-          {/* Render your OpenTemplate component here */}
-          <OpenTemp onClose={closeOpenTemplatePopup} />
-        </div>
-      )}
+
+            <hr />
+            <Link to="/">
+              <li className="list-for-header-section-main-nav border-r border-black-900">
+                <a href="#" className="header2-tag-a">
+                  <div className="flex justify-center">
+                    <img src={img8} alt="" />
+                  </div>
+                  <div>
+                    Client
+                    <br /> Info
+                  </div>
+                </a>
+              </li>
+            </Link>
+            <Link to={{ pathname: "/Book" }}>
+              <li className="list-for-header-section-main-nav">
+                <a href="#" className="header2-tag-a">
+                  <div className="flex justify-center">
+                    <img src={img14} alt="" />
+                  </div>
+                  <div>
+                    Address
+                    <br /> Book
+                  </div>
+                </a>
+              </li>
+            </Link>
+            <li className="list-for-header-section-main-nav  border-r border-black-900">
+              <a href="#" className="header2-tag-a">
+                <div className="flex justify-center">
+                  <img src={img9} alt="" />
+                </div>
+                <div>
+                  Contract
+                  <br /> Page
+                </div>
+              </a>
+            </li>
+            <hr />
+            <li className="list-for-header-section-main-nav">
+              <a href="#" className="header2-tag-a">
+                <div className="flex justify-center">
+                  <img src={img10} alt="" />
+                </div>
+                <div>Copy</div>
+              </a>
+            </li>
+            <li className="list-for-header-section-main-nav  border-r border-black-900">
+              <a href="#" className="header2-tag-a">
+                <div className="flex justify-center">
+                  <img src={img11} alt="" />
+                </div>
+                <div>Paste</div>
+              </a>
+            </li>
+            <hr />
+            <li className="list-for-header-section-main-nav">
+              <a href="#" className="header2-tag-a">
+                <div className="flex justify-center">
+                  <img src={img12} alt="" />
+                </div>
+                <div>
+                  Geneate
+                  <br /> report
+                </div>
+              </a>
+            </li>
+            <hr />
+            <li className="list-for-header-section-main-nav">
+              <a href="#" className="header2-tag-a">
+                <div className="flex justify-center">
+                  <img src={img15} alt="" />
+                </div>
+                <div>
+                  Mobile
+                  <br /> Sync
+                </div>
+              </a>
+            </li>
+            <li className="list-for-header-section-main-nav  border-r border-black-900">
+              <a href="#" className="header2-tag-a">
+                <div className="flex justify-center">
+                  <img src={img13} alt="" />
+                </div>
+                <div>
+                  Upload
+                  <br /> report
+                </div>
+              </a>
+            </li>
+            <hr />
+          </ul>
+        </nav>
+        {openTemplatePopup && (
+          <div className="popup">
+            {/* Render your OpenTemplate component here */}
+            <OpenTemp onClose={closeOpenTemplatePopup} />
+          </div>
+        )}
 
         {saveTemplatePopup && (
           <div className="popup">
