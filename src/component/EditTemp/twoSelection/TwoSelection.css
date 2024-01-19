@@ -1,0 +1,117 @@
+.form-container-twoselection {
+    background-color:rgb(229, 229, 229);;
+    border-radius: 5px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65vh;
+    height: 60vh;
+  }
+  
+  .h2-twoselection {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .p-twoselection {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .label-twoselection {
+    display: block;
+    margin-bottom: 5px;
+  }
+    .input-twoselection {
+      flex: 1;
+      padding: 10px;
+      height: 30px;
+      width: 150px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      outline: 1rem;
+      margin: 1px;
+  } 
+  
+  .input-twoselection:hover {
+    /* background-color: #d7e9f7; */
+    border-color: #005a9e;
+    }
+  
+  .cancel-button-twoselection{
+    font-size: 14px;
+    width: 95px;
+    height: 25px;
+    background-color: #f3f2f1;
+    color: black;
+    border: 2px solid rgb(191, 189, 189);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+    }
+    .cancel-button-twoselection:hover {
+    background-color: #d7e9f7;
+    border-color: #005a9e;
+    }
+  
+    .back-button-twoselection{
+      font-size: 14px;
+      width: 95px;
+      height: 25px;
+      background-color: #f3f2f1;
+      color: black;
+      border: 2px solid rgb(191, 189, 189);
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 5px;
+      }
+      .back-button-twoselection:hover {
+      background-color: #d7e9f7;
+      border-color: #005a9e;
+      }
+  
+      .next-button-twoselection{
+        font-size: 14px;
+        width: 95px;
+        height: 25px;
+        background-color: #f3f2f1;
+        color: black;
+        border: 2px solid rgb(191, 189, 189);
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 5px;
+        }
+        .next-button-twoselection:hover {
+        background-color: #d7e9f7;
+        border-color: #005a9e;
+        }
+  
+        .done-button-twoselection{
+          font-size: 14px;
+          width: 95px;
+          height: 25px;
+          background-color: #f3f2f1;
+          color: black;
+          border: 2px solid rgb(191, 189, 189);
+          border-radius: 5px;
+          cursor: pointer;
+          margin-right: 5px;
+          }
+          .done-button-twoselection:hover {
+          background-color: #d7e9f7;
+          border-color: #005a9e;
+          }
+  
+          .button-container-twoselection{
+            display: flex;
+            margin-top: 30px;
+            margin-left: 40px;
+          }
+  
+          .label-container-twoselection{
+            display: flex;
+  
+          }
+  
