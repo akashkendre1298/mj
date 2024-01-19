@@ -114,7 +114,13 @@ const PhotoReview = () => {
               )}
             </div>
 
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "Center",
+              }}
+            >
               <Buttons onFileSelect={handleFileSelect} />
               {/* <Sbuttons /> */}
             </div>
