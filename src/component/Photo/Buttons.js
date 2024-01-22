@@ -11,6 +11,8 @@ import img11 from "./icons/delete.png";
 import close from "./icons/close_2997911.png";
 import "./Buttons.css";
 import EditImageTabList from "./../EditImageTabList/EditImageTabList";
+import Editor from "./../Editor/Editor";
+import PropTypes from "prop-types";
 
 const Buttons = ({ onFileSelect }) => {
   // tablistconst [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -84,6 +86,14 @@ const Buttons = ({ onFileSelect }) => {
   };
   const handlePopupOpen = () => {
     setIsPopupOpen(true);
+  };
+
+  // Map each tab index to its corresponding content component
+  const tabContentComponents = {
+    1: <Editor />,
+    // 2: <AdjustBrightnessContent />,
+    // 3: <AdjustContrastContent />,
+    // ... (add other tab content components)
   };
   return (
     <>
@@ -163,7 +173,7 @@ const Buttons = ({ onFileSelect }) => {
                                   : "tab-list-pane"
                               }
                             >
-                              Content for {tabName}
+                              {tabContentComponents[activeTab]}
                             </div>
                           ))}
                         </div>
@@ -260,5 +270,7 @@ const Buttons = ({ onFileSelect }) => {
     </>
   );
 };
-
+Buttons.propTypes = {
+  onFileSelect: PropTypes.func.isRequired,
+};
 export default Buttons;

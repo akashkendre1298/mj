@@ -3,6 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import { FaFolderOpen } from 'react-icons/fa';
 import './EditTemp.css';
+import { Link } from 'react-router-dom';
 
 const EditTemp = ({ onClose }) => {
     // State variables
@@ -126,6 +127,7 @@ const EditTemp = ({ onClose }) => {
 const handleRemoveItem = () => {
     if (lastSelectionType === 'menu' && selectedMenuTitleIndex !== null) {
         // Remove a menu item
+         
         setItems((prevItems) => {
             const updatedItems = [...prevItems];
             updatedItems.splice(selectedMenuTitleIndex, 1);
@@ -306,7 +308,9 @@ const handleRemoveItem = () => {
                     {/* Item Manipulation Buttons */}
                     <div className="button-container-edittemp">
                         <div className="input-container-edittemp">
+                            
                             <button className="btnM-edittemp">Add</button>
+                      
                             <button className="btnM-edittemp">Remove</button>
                             <button className="btnM-edittemp">Move Up</button>
                             <button className="btnM-edittemp">Move Down</button>

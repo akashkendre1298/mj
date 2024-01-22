@@ -52,7 +52,7 @@
     color: #333;
   }
   
-  .radio-group-inspection-label:before {
+  .radio-group-inspectionlabel:before {
     content: '';
     display: block;
     position: absolute;

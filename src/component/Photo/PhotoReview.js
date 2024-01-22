@@ -69,7 +69,7 @@ const PhotoReview = () => {
             onDragLeave={handleDragLeave}
           >
             <Location />
-            <Recallcheck />
+            {/* <Recallcheck /> */}
 
             {/* Drag and drop file upload section */}
             <div className="PhotoReview-Drag-Drop-Box">
@@ -114,7 +114,13 @@ const PhotoReview = () => {
               )}
             </div>
 
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "Center",
+              }}
+            >
               <Buttons onFileSelect={handleFileSelect} />
               {/* <Sbuttons /> */}
             </div>

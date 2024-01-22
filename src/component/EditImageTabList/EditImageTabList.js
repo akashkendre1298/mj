@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./EditImageTabList.css";
 import Buttons from "./../Photo/Buttons";
 import editimgclose from "../Photo/icons/close_2997911.png";
+import PropTypes from "prop-types";
 
 const EditImageTabList = ({ isOpen, onRequestClose }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -13,7 +14,7 @@ const EditImageTabList = ({ isOpen, onRequestClose }) => {
   // close popup for edit image
 
   const handleClosePopup = () => {
-    setIsPopupOpen(false);
+    onRequestClose();
   };
 
   // Define custom tab names
@@ -30,6 +31,13 @@ const EditImageTabList = ({ isOpen, onRequestClose }) => {
     "Overlay Image",
   ];
 
+  // Map each tab index to its corresponding content component
+  const tabContentComponents = {
+    // 1: <CropImageContent />,
+    // 2: <AdjustBrightnessContent />,
+    // 3: <AdjustContrastContent />,
+    // ... (add other tab content components)
+  };
   return (
     <>
       {/* {isPopupOpen && ( */}
@@ -81,7 +89,7 @@ const EditImageTabList = ({ isOpen, onRequestClose }) => {
                       : "tab-list-pane"
                   }
                 >
-                  Content for {tabName}
+                  {tabContentComponents[activeTab]}
                 </div>
               ))}
             </div>
@@ -92,5 +100,8 @@ const EditImageTabList = ({ isOpen, onRequestClose }) => {
     </>
   );
 };
-
+EditImageTabList.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onRequestClose: PropTypes.func.isRequired,
+};
 export default EditImageTabList;
