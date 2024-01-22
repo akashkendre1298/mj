@@ -45,7 +45,7 @@ const Editor = () => {
 
     return (
         <div style={{ display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', width: '80%', height: '80%', backgroundColor: '#fff', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', width: '80%', height: '80%', backgroundColor: '#fff', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)', border: "rgb(229, 229, 229)" }}>
                 <div style={{ display: 'flex', borderBottom: '1px solid #ccc' }}>
                     <div style={{ flex: 1, padding: '10px' }}>
                         <label>Font:</label>

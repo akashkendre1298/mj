@@ -317,17 +317,20 @@ const Header = () => {
                 </a>
               </li>
             </Link>
-            <li className="list-for-header-section-main-nav  border-r border-black-900">
-              <a href="#" className="header2-tag-a">
-                <div className="flex justify-center">
-                  <img src={img9} alt="" />
-                </div>
-                <div>
-                  Contract
-                  <br /> Page
-                </div>
-              </a>
-            </li>
+
+            <Link to="/contractpage">
+              <li className="list-for-header-section-main-nav  border-r border-black-900">
+                <a href="#" className="header2-tag-a">
+                  <div className="flex justify-center">
+                    <img src={img9} alt="" />
+                  </div>
+                  <div>
+                    Contract
+                    <br /> Page
+                  </div>
+                </a>
+              </li>
+            </Link>
             <hr />
             <li className="list-for-header-section-main-nav">
               <a href="#" className="header2-tag-a">
