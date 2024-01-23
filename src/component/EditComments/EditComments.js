@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 
-import Header from '../../Header/Header';
-import Footer from '../../Footer/Footer';
-import PanelHeader from '../PanelHeader/PanelHeader';
+import Header from '../Header/Header';
+import Footer from './../Footer/Footer';
+
+
+
 
 function Panel2() {
  
@@ -12,7 +14,8 @@ function Panel2() {
         <div>
         <Header />
       </div>
-      <PanelHeader />
+   
+   <div><Footer/></div>
 
         </>
   );
