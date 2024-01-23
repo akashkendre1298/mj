@@ -32,8 +32,7 @@ function App() {
 
       </Routes>
     </BrowserRouter>
-    // <PannelComponent/>
-    // <InternetLogin/>
+   
   );
 }
 export default App;
