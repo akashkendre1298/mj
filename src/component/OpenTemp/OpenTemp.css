@@ -30,6 +30,11 @@
 .close-button-OpenTemp {
   background-color: transparent;
   border: none;
+  padding: 0 10px;
+
+}
+.close-button-OpenTemp:hover{
+  background-color: #e60000;
 }
 .para1-OpenTemp {
   padding: 0 20px;

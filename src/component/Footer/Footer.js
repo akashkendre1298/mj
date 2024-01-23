@@ -4,6 +4,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
+    <>
     <footer className="footer">
       <div className="left-section">
         <button className="settings-button">Application Settings</button>
@@ -20,6 +21,7 @@ const Footer = () => {
         </form>
       </div>
     </footer>
+    </>
   );
 };
 

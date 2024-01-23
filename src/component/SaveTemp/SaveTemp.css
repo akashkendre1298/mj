@@ -8,6 +8,7 @@
   border-radius: 5px;
   background-color: rgb(229, 229, 229);
   z-index: 1;
+  padding-bottom: 10px;
 }
 
 .Contant_SaveTemp {
@@ -40,11 +41,15 @@
   border: none;
   padding: 5px;
 }
-
+.close-button:hover{
+  background-color: #e60000;
+}
 .para1_SaveTemp {
-  padding: 2px;
+  padding: 0 10px;
   text-align: center;
   font-size: 15px;
+  /* background-color: #fff; */
+
 }
 
 .template-card__body__center__input_SaveTemp {
@@ -54,8 +59,9 @@
 }
 
 .template-card__body__center__input__field_SaveTemp {
+  margin-top: 10px;
   width: 90%;
-  height:70px; /* Adjusted height */
+  height: 120px;
   resize: none;
   overflow-y: scroll;
   border: 1px solid rgb(190, 188, 188);
@@ -75,17 +81,26 @@
   border: 1px solid rgb(191, 189, 189);
   border-radius: 5px;
   margin-left: 25px;
+  height: 30px;
+  background-color: #fff;
+
 }
 
 .para3_SaveTemp {
   display: flex;
   flex-direction: column;
-  width: 550px;
+  width: 540px;
   height: 70px; /* Adjusted height */
   border: 1px solid rgb(191, 189, 189);
   border-radius: 5px;
   padding: 10px;
-  margin: 10px;
+  margin-left: 25px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+.para1{
+  padding: 0 10px;
+
 }
 
 .chkbox {
