@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { useState,useEffect } from 'react';
 import { FaFolderOpen } from 'react-icons/fa';
@@ -13,236 +14,8 @@ import { Link } from 'react-router-dom';
 import Inspection from './Inspection/Inspection';
 
 const EditTemp = ({ onClose }) => {
-
-    function OneDamage() {
-        const [formData, setFormData] = useState({
-          tabName: '',
-          damagePanelName: '',
-        });
-      
-        const handleInputChange = (e) => {
-          const { name, value } = e.target;
-          setFormData((prevData) => ({
-            ...prevData,
-            [name]: value,
-          }));
-        };
-      
-        const handleCancel = () => {
-          // Add functionality for cancel button if needed
-          console.log('Cancel button clicked');
-        };
-      
-        const handleBack = () => {
-          // Add functionality for back button if needed
-          console.log('Back button clicked');
-        };
-      
-        const handleNext = () => {
-          // Add functionality for next button if needed
-          console.log('Next button clicked');
-        };
-      
-        const handleDone = () => {
-          // Save the form data to localStorage
-          localStorage.setItem('formData', JSON.stringify(formData));
-          console.log('Done button clicked');
-        };
-      
-        // Access the stored data when the component mounts
-        React.useEffect(() => {
-          // Retrieve the stored data from localStorage
-          const storedFormData = localStorage.getItem('formData');
-      
-          // Check if the data exists before updating the state
-          if (storedFormData) {
-            setFormData(JSON.parse(storedFormData));
-          }
-        }, []);
-        return (
-          <div className="form-container-onedamage">
-            {/* <h2 className='h2-onedamage'>Creating A Page With 1 Damage Panel</h2> */}
-            <p className='p-onedamage'>Creating A Page With 1 Damage Panel.The Damage Panel Name is what will appear on the report.</p>
-            {/* <form onSubmit={handleSubmit}> */}
-            <div className='label-container-onedamage'>
-            <label className='label-onedamage' htmlFor="field1">Tab Name:</label>
-              <input
-                className='input-onedamage'
-                type="text"
-                name="tabName"
-                // placeholder="Enter your first value"
-                value={formData.tabName}
-                onChange={handleInputChange}
-                required
-              />
-              </div>
-              <div className='label-container-onedamage'>
-              <label className='label-onedamage' htmlFor="field2">damage Panel Name:</label>
-              <input
-                className='input-onedamage'
-                type="text"
-                name="damagePanelName"
-                // placeholder="Enter your second value"
-                value={formData.damagePanelName}
-                onChange={handleInputChange}
-                required
-              />
-              </div>
-              <div className="button-container-onedamge">
-                <button type="button" className="cancel-button-onedamage" onClick={handleCancel}>
-                  Cancel
-                </button>
-                <button type="button" className="back-button-onedamage" onClick={handleBack}>
-                  Back
-                </button>
-                <button type="button" className="next-button-onedamage" onClick={handleNext}>
-                  Next
-                </button>
-                <button type="button" className="done-button-onedamage" onClick={handleDone}>
-                Done
-              </button>
-              
-              </div>
-            {/* </form> */}
-          </div>
-        );
-      }
-
-
-      function TwoSelection() {
-        const [formData, setFormData] = useState({
-          tabName_3rd: '',
-          selectionPanelName_1st: '',
-          selectionPanelName_2nd: '',
-        });
-      
-        const handleInputChange = (e) => {
-          const { name, value } = e.target;
-          setFormData((prevData) => ({
-            ...prevData,
-            [name]: value,
-          }));
-        };
-      
-        const handleSubmit = (e) => {
-          e.preventDefault();
-          // Add logic for form submission if needed
-          console.log('Form submitted:', formData);
-        };
-      
-        const handleCancel = () => {
-          // Add functionality for cancel button if needed
-          console.log('Cancel button clicked');
-        };
-      
-        const handleBack = () => {
-          // Add functionality for back button if needed
-          console.log('Back button clicked');
-        };
-      
-        const handleNext = () => {
-          // Add functionality for next button if needed
-          console.log('Next button clicked');
-        };
-      
-        const handleDone = () => {
-          // Add functionality for done button if needed
-          console.log('Done button clicked');
-        };
-      
-        return (
-          <div className="form-container-twoselection">
-            <p className="p-twoselection">Creating the page with 2 Selection Panels. The name of the first Selection Panel Name will appear on the report.</p>
-            <form onSubmit={handleSubmit}>
-              <div className="label-container-twoselection">
-                <label className="label-twoselection">
-                  Tab Name:
-                </label>
-                <input
-                  className="input-twoselection"
-                  type="text"
-                  name="tabName_3rd"
-                  // placeholder="Enter your first value"
-                  value={formData.tabName_3rd}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
-              <div className="label-container-twoselection">
-                <label className="label-twoselection">
-                 1st Selection Panel Name:
-                </label>
-                <input
-                  className="input-twoselection"
-                  type="text"
-                  name="selectionPanelName_1st"
-                  // placeholder="Enter your second value"
-                  value={formData.selectionPanelName_1st}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
-              <div className="label-container-twoselection">
-                <label className="label-oneselection">
-                  2nd Selection Panel Name:
-                </label>
-                <input
-                  className="input-twoselection"
-                  type="text"
-                  name="selectionPanelName_2nd"
-                  // placeholder="Enter your third value"
-                  value={formData.selectionPanelName_2nd}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
-              <div className="button-container-twoselection">
-                <button type="button" className="cancel-button-twoselection" onClick={handleCancel}>
-                  Cancel
-                </button>
-                <button type="button" className="back-button-twoselection" onClick={handleBack}>
-                  Back
-                </button>
-                <button type="button" className="next-button-twoselection" onClick={handleNext}>
-                  Next
-                </button>
-                <button type="submit" className="done-button-twoselection" onClick={handleDone}>
-                  Done
-                </button>
-              </div>
-            </form>
-          </div>
-        );
-      }
-
-
-      const renderContent = () => {
-        switch (selectedOption) {
-          case "oneDamage":
-            return <OneDamage />;
-          case "qwaesrasdfgtf":
-            return <TwoSelection />;
-          default:
-            return null;
-        }
-      };
-    
-      const handleNextButtonClick = () => {
-        // You can perform any other action here before showing the content
-        setShowContent(true);
-      };
-    
-
-
-
     const [selectedOption, setSelectedOption] = useState(null);
-    const [showContent, setShowContent] = useState(false);
-    const [damagePanelName, setDamagePanelName] = useState('');
     // const [isPopupOpen, setIsPopupOpen] = useState(false);
-    const handleDoneFromOneDamage = (panelName) => {
-        // Set the damagePanelName in the state
-        setDamagePanelName(panelName);
-      };
   
     const [popupStates, setPopupStates] = useState({
       'Option 1': false,
@@ -617,7 +390,7 @@ const handleClosePopupInspection = () => {
                         {/* Additional Item Content Placeholder */}
                         <div className="box2-edittemp">
                             <div className='item'>
-                            <p className="damage-panel-name">{damagePanelName}</p>
+                                {/* Placeholder for additional item content */}
                             </div>
                         </div>
                     </div>
@@ -733,7 +506,7 @@ const handleClosePopupInspection = () => {
         <button className="back-button-inspection" onClick={handleBack}>
           Back
         </button>
-        <button className="next-button-inspection" onClick={handleNextButtonClick}>
+        <button className="next-button-inspection" onClick={handleNext}>
           Next
         </button>
         <button className="done-button-inspection" >
