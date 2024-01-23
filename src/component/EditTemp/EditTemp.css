@@ -10,9 +10,9 @@
   border-radius: 5px;
   border: rgb(229, 229, 229);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  background-color: rgb(254, 228, 195);
+  background-color: rgb(229, 229, 229);
   /* padding: 10px; */
-  top: 350px;
+  top: 320px;
   left :-10%
 }
 .Contant-edittemp{
@@ -81,14 +81,14 @@ justify-content: center;
 align-items: center;
 }
 .box-edittemp {
-  width: 50vh;
-  height: 35vh;
+  width: 57vh;
+  height: 45vh;
   resize: none;
   overflow-y: scroll;
   border: 2px solid rgb(190, 188, 188);
   border-radius: 5px;
-  padding: 10px;
-  margin-left: 15px;
+  padding: 8px;
+  margin-left: 30px;
 }
 .box-edittemp:hover{
   border-color: #005a9e;
@@ -172,13 +172,13 @@ border-color: #005a9e;
 }
 .box2-edittemp {
   width: 65vh;
-  height: 35vh;
+  height: 45vh;
   resize: none;
   overflow-y: scroll;
   border: 2px solid rgb(190, 188, 188);
   border-radius: 5px;
-  padding: 10px;
-  margin-right: 20px;
+  padding: 8px;
+  margin-right: 10px;
 }
 .box2-edittemp:hover{
   border-color: #005a9e;
@@ -282,7 +282,7 @@ border-color: #005a9e;
   display: flex; 
     justify-content: space-between;
     width: 200px;
-     /* margin-left: 37%;  */
+      margin: right 10px; 
    padding: 5px;
  } 
 

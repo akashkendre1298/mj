@@ -1,4 +1,4 @@
-.form-container-onedamageselection {
+.form-container-onedamagetwoselection {
     background-color:rgb(229, 229, 229);;
     border-radius: 5px;
     padding: 20px;
@@ -10,21 +10,21 @@
     height: 50vh;
   }
   
-  .h2-onedamageselection {
+  .h2-onedamagetwoselection {
     font-size: 24px;
     margin-bottom: 10px;
   }
   
-  .p-onedamageselection {
+  .p-onedamagetwoselection {
     font-size: 14px;
     margin-bottom: 20px;
   }
   
-  .label-onedamageselection {
+  .label-onedamagetwoselection {
     display: block;
     margin-bottom: 5px;
   }
-    .input-onedamageselection {
+    .input-onedamagetwoselection {
       flex: 1;
       padding: 10px;
       height: 30px;
@@ -35,12 +35,12 @@
       margin: 1px;
   } 
   
-  .input-onedamageselection:hover {
+  .input-onedamagetwoselection:hover {
     /* background-color: #d7e9f7; */
     border-color: #005a9e;
     }
   
-  .cancel-button-onedamageselection{
+  .cancel-button-onedamagetwoselection{
     font-size: 14px;
     width: 95px;
     height: 25px;
@@ -51,12 +51,12 @@
     cursor: pointer;
     margin-right: 5px;
     }
-    .cancel-button-onedamageselection:hover {
+    .cancel-button-onedamagetwoselection:hover {
     background-color: #d7e9f7;
     border-color: #005a9e;
     }
   
-    .back-button-onedamageselection{
+    .back-button-onedamagetwoselection{
       font-size: 14px;
       width: 95px;
       height: 25px;
@@ -67,12 +67,12 @@
       cursor: pointer;
       margin-right: 5px;
       }
-      .back-button-onedamageselection:hover {
+      .back-button-onedamagetwoselection:hover {
       background-color: #d7e9f7;
       border-color: #005a9e;
       }
   
-      .next-button-onedamageselection{
+      .next-button-onedamagetwoselection{
         font-size: 14px;
         width: 95px;
         height: 25px;
@@ -83,12 +83,12 @@
         cursor: pointer;
         margin-right: 5px;
         }
-        .next-button-onedamageselection:hover {
+        .next-button-onedamagetwoselection:hover {
         background-color: #d7e9f7;
         border-color: #005a9e;
         }
   
-        .done-button-onedamageselection{
+        .done-button-onedamagetwoselection{
           font-size: 14px;
           width: 95px;
           height: 25px;
@@ -99,18 +99,18 @@
           cursor: pointer;
           margin-right: 5px;
           }
-          .done-button-onedamageselection:hover {
+          .done-button-onedamagetwoselection:hover {
           background-color: #d7e9f7;
           border-color: #005a9e;
           }
   
-          .button-container-onedamageselection{
+          .button-container-onedamagetwoselection{
             display: flex;
             margin-top: 30px;
             margin-left: 40px;
           }
   
-          .label-container-onedamageselection{
+          .label-container-onedamagetwoselection{
             display: flex;
   
           }

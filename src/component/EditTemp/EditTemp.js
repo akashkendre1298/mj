@@ -1,11 +1,330 @@
 
 import React from 'react';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { FaFolderOpen } from 'react-icons/fa';
+import OneDamage from "../EditTemp/OneDamage/OneDamage";
+import twoDamage from "../EditTemp/twoDamage/TwoDamage";
+import OneSelection from "../EditTemp/oneSelection/OneSelection";
+import twoSelection  from "../EditTemp/twoSelection/TwoSelection";
+import oneDamageSelection from "../EditTemp/oneDamageSelection/OneDamageSelection";
+import OneDamageTwoSelection from '../EditTemp/oneDamageTwoSelection/OneDamageTwoSelection';
 import './EditTemp.css';
 import { Link } from 'react-router-dom';
+import Inspection from './Inspection/Inspection';
 
 const EditTemp = ({ onClose }) => {
+
+    function OneDamage() {
+        const [formData, setFormData] = useState({
+          tabName: '',
+          damagePanelName: '',
+        });
+      
+        const handleInputChange = (e) => {
+          const { name, value } = e.target;
+          setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+          }));
+        };
+      
+        const handleCancel = () => {
+          // Add functionality for cancel button if needed
+          console.log('Cancel button clicked');
+        };
+      
+        const handleBack = () => {
+          // Add functionality for back button if needed
+          console.log('Back button clicked');
+        };
+      
+        const handleNext = () => {
+          // Add functionality for next button if needed
+          console.log('Next button clicked');
+        };
+      
+        const handleDone = () => {
+          // Save the form data to localStorage
+          localStorage.setItem('formData', JSON.stringify(formData));
+          console.log('Done button clicked');
+        };
+      
+        // Access the stored data when the component mounts
+        React.useEffect(() => {
+          // Retrieve the stored data from localStorage
+          const storedFormData = localStorage.getItem('formData');
+      
+          // Check if the data exists before updating the state
+          if (storedFormData) {
+            setFormData(JSON.parse(storedFormData));
+          }
+        }, []);
+        return (
+          <div className="form-container-onedamage">
+            {/* <h2 className='h2-onedamage'>Creating A Page With 1 Damage Panel</h2> */}
+            <p className='p-onedamage'>Creating A Page With 1 Damage Panel.The Damage Panel Name is what will appear on the report.</p>
+            {/* <form onSubmit={handleSubmit}> */}
+            <div className='label-container-onedamage'>
+            <label className='label-onedamage' htmlFor="field1">Tab Name:</label>
+              <input
+                className='input-onedamage'
+                type="text"
+                name="tabName"
+                // placeholder="Enter your first value"
+                value={formData.tabName}
+                onChange={handleInputChange}
+                required
+              />
+              </div>
+              <div className='label-container-onedamage'>
+              <label className='label-onedamage' htmlFor="field2">damage Panel Name:</label>
+              <input
+                className='input-onedamage'
+                type="text"
+                name="damagePanelName"
+                // placeholder="Enter your second value"
+                value={formData.damagePanelName}
+                onChange={handleInputChange}
+                required
+              />
+              </div>
+              <div className="button-container-onedamge">
+                <button type="button" className="cancel-button-onedamage" onClick={handleCancel}>
+                  Cancel
+                </button>
+                <button type="button" className="back-button-onedamage" onClick={handleBack}>
+                  Back
+                </button>
+                <button type="button" className="next-button-onedamage" onClick={handleNext}>
+                  Next
+                </button>
+                <button type="button" className="done-button-onedamage" onClick={handleDone}>
+                Done
+              </button>
+              
+              </div>
+            {/* </form> */}
+          </div>
+        );
+      }
+
+
+      function TwoSelection() {
+        const [formData, setFormData] = useState({
+          tabName_3rd: '',
+          selectionPanelName_1st: '',
+          selectionPanelName_2nd: '',
+        });
+      
+        const handleInputChange = (e) => {
+          const { name, value } = e.target;
+          setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+          }));
+        };
+      
+        const handleSubmit = (e) => {
+          e.preventDefault();
+          // Add logic for form submission if needed
+          console.log('Form submitted:', formData);
+        };
+      
+        const handleCancel = () => {
+          // Add functionality for cancel button if needed
+          console.log('Cancel button clicked');
+        };
+      
+        const handleBack = () => {
+          // Add functionality for back button if needed
+          console.log('Back button clicked');
+        };
+      
+        const handleNext = () => {
+          // Add functionality for next button if needed
+          console.log('Next button clicked');
+        };
+      
+        const handleDone = () => {
+          // Add functionality for done button if needed
+          console.log('Done button clicked');
+        };
+      
+        return (
+          <div className="form-container-twoselection">
+            <p className="p-twoselection">Creating the page with 2 Selection Panels. The name of the first Selection Panel Name will appear on the report.</p>
+            <form onSubmit={handleSubmit}>
+              <div className="label-container-twoselection">
+                <label className="label-twoselection">
+                  Tab Name:
+                </label>
+                <input
+                  className="input-twoselection"
+                  type="text"
+                  name="tabName_3rd"
+                  // placeholder="Enter your first value"
+                  value={formData.tabName_3rd}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className="label-container-twoselection">
+                <label className="label-twoselection">
+                 1st Selection Panel Name:
+                </label>
+                <input
+                  className="input-twoselection"
+                  type="text"
+                  name="selectionPanelName_1st"
+                  // placeholder="Enter your second value"
+                  value={formData.selectionPanelName_1st}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className="label-container-twoselection">
+                <label className="label-oneselection">
+                  2nd Selection Panel Name:
+                </label>
+                <input
+                  className="input-twoselection"
+                  type="text"
+                  name="selectionPanelName_2nd"
+                  // placeholder="Enter your third value"
+                  value={formData.selectionPanelName_2nd}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className="button-container-twoselection">
+                <button type="button" className="cancel-button-twoselection" onClick={handleCancel}>
+                  Cancel
+                </button>
+                <button type="button" className="back-button-twoselection" onClick={handleBack}>
+                  Back
+                </button>
+                <button type="button" className="next-button-twoselection" onClick={handleNext}>
+                  Next
+                </button>
+                <button type="submit" className="done-button-twoselection" onClick={handleDone}>
+                  Done
+                </button>
+              </div>
+            </form>
+          </div>
+        );
+      }
+
+
+      const renderContent = () => {
+        switch (selectedOption) {
+          case "oneDamage":
+            return <OneDamage />;
+          case "qwaesrasdfgtf":
+            return <TwoSelection />;
+          default:
+            return null;
+        }
+      };
+    
+      const handleNextButtonClick = () => {
+        // You can perform any other action here before showing the content
+        setShowContent(true);
+      };
+    
+
+
+
+    const [selectedOption, setSelectedOption] = useState(null);
+    const [showContent, setShowContent] = useState(false);
+    const [damagePanelName, setDamagePanelName] = useState('');
+    // const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const handleDoneFromOneDamage = (panelName) => {
+        // Set the damagePanelName in the state
+        setDamagePanelName(panelName);
+      };
+  
+    const [popupStates, setPopupStates] = useState({
+      'Option 1': false,
+      'Option 2': false,
+      'Option 3': false,
+      'Option 4': false,
+      'Option 5': false,
+      'Option 6': false,
+    });
+  
+    const componentsMap = {
+      'Option 1': OneDamage,
+      'Option 2': twoDamage,
+      'Option 3': OneSelection,
+      'Option 4': twoSelection,
+      'Option 5': oneDamageSelection,
+       'Option 6': OneDamageTwoSelection,
+    };
+  
+    const handleRadioChange = (event) => {
+      const value = event.target.value;
+      setSelectedOption(value);
+    };
+  
+    useEffect(() => {
+      // Check if the selectedOption exists and the corresponding popup state is false
+      if (selectedOption && !popupStates[selectedOption]) {
+        console.log('Closing popup');
+        // Reset the selected option
+        setSelectedOption('');
+      }
+    }, [popupStates]);
+  
+    const openPopup = () => {
+      setPopupStates((prevState) => ({
+        ...prevState,
+        [selectedOption]: true,
+      }));
+    };
+    
+    const closePopup = () => {
+      setPopupStates((prevState) => ({
+        ...prevState,
+        [selectedOption]: false,
+        
+      }));
+  console.log("closing")
+    };
+    
+  
+  
+    const handleCancel = () => {
+      // Reset the selected option and close the popup
+      setSelectedOption('');
+      setPopupStates((prevState) => ({
+        ...prevState,
+        [selectedOption]: false,
+      }));
+      console.log('Cancel clicked');
+    };
+  
+    const handleBack = () => {
+     
+      console.log('Back clicked');
+    };
+  
+  
+    const handleNext = () => {
+      // Handle next action
+      console.log('Next clicked');
+      openPopup();
+    };
+  
+    const handleDone = () => {
+      // Handle done action
+      console.log('Done clicked');
+      // console.log('Selected option:', selectedOption);
+      closePopup();
+    };
+  
+    
+   
     // State variables
     const [inputText, setInputText] = useState('');
     const [displayText, setDisplayText] = useState('');
@@ -19,6 +338,7 @@ const EditTemp = ({ onClose }) => {
     const [lastSelectionType, setLastSelectionType] = useState('menu'); // 'menu' or 'menuItem'
     const [selectedMenuTitleIndex, setSelectedMenuTitleIndex] = useState(null);
     const [showPopup, setShowPopup] = useState(false);
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
 
     const [menuItems, setMenuItems] = useState([]);
 
@@ -130,7 +450,7 @@ const handleRemoveItem = () => {
          
         setItems((prevItems) => {
             const updatedItems = [...prevItems];
-            updatedItems.splice(selectedMenuTitleIndex, 1);
+            updatedItems.filter(selectedMenuTitleIndex, 1);
             return updatedItems;
         });
     } else if (lastSelectionType === 'menuItem' && selectedMenuItemIndex !== null) {
@@ -150,8 +470,27 @@ const handleRemoveItem = () => {
     // Additional logic for other cases if needed
 };
 
-    
+const handleCopyItems = () => {
+    if (lastSelectionType === 'menu' && selectedMenuTitleIndex !== null) {
+      const copiedMenu = { ...items[selectedMenuTitleIndex] };
+      setItems((prevItems) => [...prevItems, copiedMenu]);
+    } else if (lastSelectionType === 'menuItem' && selectedMenuItemIndex !== null) {
+      const copiedMenuItem = { ...items[selectedMenuItemIndex] };
+      setItems((prevItems) => [...prevItems, copiedMenuItem]);
+    }
+  };
 
+
+const openPopupInspection=()=>{
+    console.log("popup open")
+    setIsPopupOpen(true);
+
+};
+    
+const handleClosePopupInspection = () => {
+    console.log('popup close');
+    setIsPopupOpen(false);
+  };
 
 
     // JSX for rendering the component
@@ -278,7 +617,7 @@ const handleRemoveItem = () => {
                         {/* Additional Item Content Placeholder */}
                         <div className="box2-edittemp">
                             <div className='item'>
-                                {/* Placeholder for additional item content */}
+                            <p className="damage-panel-name">{damagePanelName}</p>
                             </div>
                         </div>
                     </div>
@@ -302,14 +641,109 @@ const handleRemoveItem = () => {
                             <button className="btnM-edittemp" onClick={handleRemoveItem}>
                     Remove
                 </button>
-                            <button className="btnM-edittemp">Copy</button>
+                            <button className="btnM-edittemp" onClick={handleCopyItems}>Copy</button>
                         </div>
                     </div>
                     {/* Item Manipulation Buttons */}
                     <div className="button-container-edittemp">
                         <div className="input-container-edittemp">
                             
-                            <button className="btnM-edittemp">Add</button>
+                            <button className="btnM-edittemp" onClick={openPopupInspection}>Add</button>
+                            {isPopupOpen && (
+
+                                // <Inspection/>
+                                <div className="dialog-inspection">
+      <div className="dialog-header-inspection">
+        <p className='para-inspection'>
+          What would you like to have on your new panel? A damage panel is a section that has a list of conditions/narratives and a red and black section to move the items into. A selection panel is one list used for selecting types of materials, locations, etc:
+        </p>
+      </div>
+      <div className="dialog-body-inspection">
+        <label className='label-inspection'>
+          <input
+            type="radio"
+            name="options"
+            value="Option 1"
+            checked={selectedOption === 'Option 1'}
+            onChange={handleRadioChange}
+          />
+          1 Damage Panel
+        </label>
+
+       
+        <label className='label-inspection'>
+          <input
+            type="radio"
+            name="options"
+            value="Option 2"
+            checked={selectedOption === 'Option 2'}
+            onChange={handleRadioChange}
+          />
+          2 Damage Panels
+        </label>
+
+        <label className='label-inspection'>
+          <input
+            type="radio"
+            name="options"
+            value="Option 3"
+            checked={selectedOption === 'Option 3'}
+            onChange={handleRadioChange}
+          />
+          1 Selection Panel
+        </label>
+
+        <label className='label-inspection'>
+          <input
+            type="radio"
+            name="options"
+            value="Option 4"
+            checked={selectedOption === 'Option 4'}
+            onChange={handleRadioChange}
+          />
+          2 Selection Panels
+        </label>
+
+        <label className='label-inspection'>
+          <input
+            type="radio"
+            name="options"
+            value="Option 5"
+            checked={selectedOption === 'Option 5'}
+            onChange={handleRadioChange}
+          />
+          1 Damage Panel & 1 Selection Panel
+        </label>
+
+        <label className='label-inspection'>
+          <input
+            type="radio"
+            name="options"
+            value="Option 6"
+            checked={selectedOption === 'Option 6'}
+            onChange={handleRadioChange}
+          />
+          1 Damage Panel & 2 Selection Panels
+        </label>
+      </div>
+      <div className="dialog-footer-inspection">
+      <button className="cancel-button-inspection" onClick={handleClosePopupInspection}>
+          Cancel
+        </button>
+        <button className="back-button-inspection" onClick={handleBack}>
+          Back
+        </button>
+        <button className="next-button-inspection" onClick={handleNextButtonClick}>
+          Next
+        </button>
+        <button className="done-button-inspection" >
+          Done
+        </button>
+      </div>
+      {/* Render the popup based on the selected option */}
+      {popupStates[selectedOption] && React.createElement(componentsMap[selectedOption])}
+    </div>
+                            )}
                       
                             <button className="btnM-edittemp">Remove</button>
                             <button className="btnM-edittemp">Move Up</button>
