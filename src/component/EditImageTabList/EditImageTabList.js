@@ -36,7 +36,7 @@ const EditImageTabList = ({ isOpen, onRequestClose }) => {
     1: <Editor />,
     2: <AdjustBrightnessContent imageUrl={imageUrl} />,
     3: <AdjustContrastContent imageUrl={imageUrl} />,
-    // 4: <RotateClockwiseContent imageUrl={imageUrl} />,
+    4: <RotateClockwiseContent imageUrl={imageUrl} />,
     // ... (add other tab content components)
   };
 
