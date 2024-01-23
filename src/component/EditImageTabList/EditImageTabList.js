@@ -3,9 +3,12 @@ import "./EditImageTabList.css";
 import editimgclose from "../Photo/icons/close_2997911.png";
 import PropTypes from "prop-types";
 import Editor from "../Editor/Editor";
-import AdjustBrightness from "./AdjustBrightnessContent/AdjustBrightness";
+import AdjustBrightnessContent from "./AdjustBrightnessContent/AdjustBrightnessContent";
+import AdjustContrastContent from "./AdjustContrast/AdjustContrastContent";
 
 const EditImageTabList = ({ isOpen, onRequestClose }) => {
+  const imageUrl = "../../Assets/icons/download.jpeg"; // Replace with the actual path
+
   const [activeTab, setActiveTab] = useState(1);
 
   const handleTabClick = (tabNumber) => {
@@ -31,8 +34,8 @@ const EditImageTabList = ({ isOpen, onRequestClose }) => {
 
   const tabContentComponents = {
     1: <Editor />,
-    2: <AdjustBrightness />,
-    // 3: <AdjustContrastContent />,
+    2: <AdjustBrightnessContent imageUrl={imageUrl} />,
+    3: <AdjustContrastContent imageUrl={imageUrl} />,
     // ... (add other tab content components)
   };
 

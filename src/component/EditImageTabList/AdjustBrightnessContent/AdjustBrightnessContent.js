@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import "./AdjustBrightness.css"; // You may need to create a CSS file for styling
-import imageUrl from "../../../Assets/icons/download.jpeg";
-const AdjustBrightness = () => {
+import "./AdjustBrightnessContent.css"; // You may need to create a CSS file for styling
+// import imageUrl from "../../../Assets/icons/download.jpeg";
+
+const AdjustBrightnessContent = () => {
   const [brightness, setBrightness] = useState(100);
 
   const handleBrightnessChange = (event) => {
@@ -32,4 +33,4 @@ const AdjustBrightness = () => {
   );
 };
 
-export default AdjustBrightness;
+export default AdjustBrightnessContent;
