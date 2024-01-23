@@ -3,6 +3,7 @@ import "./EditImageTabList.css";
 import editimgclose from "../Photo/icons/close_2997911.png";
 import PropTypes from "prop-types";
 import Editor from "../Editor/Editor";
+import AdjustBrightness from "./AdjustBrightnessContent/AdjustBrightness";
 
 const EditImageTabList = ({ isOpen, onRequestClose }) => {
   const [activeTab, setActiveTab] = useState(1);
@@ -30,7 +31,7 @@ const EditImageTabList = ({ isOpen, onRequestClose }) => {
 
   const tabContentComponents = {
     1: <Editor />,
-    // 2: <AdjustBrightnessContent />,
+    2: <AdjustBrightness />,
     // 3: <AdjustContrastContent />,
     // ... (add other tab content components)
   };
@@ -77,6 +78,7 @@ const EditImageTabList = ({ isOpen, onRequestClose }) => {
               <div className="tab-list-content">
                 {tabNames.map((tabName, index) => (
                   <div
+                    style={{ width: "100%" }}
                     key={index + 1}
                     className={
                       activeTab === index + 1
