@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./BatchAddPhotos.css";
 import close from "../icons/close_2997911.png";
+import Header from "../../Header/Header";
+
+import Footer from "./../../Footer/Footer";
 
 const BatchAddPhotos = () => {
   const [isPopupOpen, setPopupOpen] = useState(true);
@@ -26,6 +29,7 @@ const BatchAddPhotos = () => {
 
   return (
     <>
+      <Header />
       {isPopupOpen && (
         <div className="Batch-AddPhotos-main-container">
           <div className="Batch-AddPhotos-header-container">

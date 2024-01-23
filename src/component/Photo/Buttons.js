@@ -8,6 +8,7 @@ import img8 from "./icons/diskette.png";
 import img9 from "./icons/search-in-browser-64.png";
 import img10 from "./icons/preview-48.png";
 import img11 from "./icons/delete.png";
+import check from "./icons/check-mark.png";
 import close from "./icons/close_2997911.png";
 import "./Buttons.css";
 import EditImageTabList from "./../EditImageTabList/EditImageTabList";
@@ -71,12 +72,15 @@ const Buttons = ({ onFileSelect }) => {
     // Save the uploaded data (you can implement the saving logic here)
     console.log("Save data:", uploadedFileRef.current);
   };
+  // Function to open the popup
   const openPopup = () => {
     setShowPopup(true);
   };
 
+  // Function to close the popup
   const closePopup = () => {
     setShowPopup(false);
+    setIsPopupOpen(false);
   };
 
   const handleInputSubmit = () => {
@@ -120,8 +124,11 @@ const Buttons = ({ onFileSelect }) => {
               <img src={img2} alt="" onClick={handlePopupOpen} />
               {isPopupOpen && (
                 <div className="edit-image-main-popup-container-css">
-                  {/* <EditImageTabList /> */}
-                  <div className="flex-container-for-tablist-for-edit-img">
+                  <EditImageTabList
+                    isOpen={isPopupOpen}
+                    onRequestClose={closePopup}
+                  />
+                  {/* <div className="flex-container-for-tablist-for-edit-img">
                     <div className="width-set-for-the-popup-windows-edit-image-section">
                       {" "}
                       <div className="edit-image-header-text-and-close-Button">
@@ -179,7 +186,7 @@ const Buttons = ({ onFileSelect }) => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               )}
             </div>
@@ -250,21 +257,70 @@ const Buttons = ({ onFileSelect }) => {
       </div>
 
       {showPopup && (
-        <div className="Add-Icons-popup-container">
+        <div className="Add-Icons-popup-main-container">
           <div className="Add-Icons-Popup-header-container">
             <p className="Add-Icons-Popup-header-AddIcons">
               Select and click on the icons to Add
             </p>
+            <div className="divAdd-IconsPopup-close-image">
+              <img
+                src={close}
+                alt="Close"
+                className="Add-IconsPopup-close-image"
+                onClick={closePopup}
+              />
+            </div>
+          </div>
+          <div className="Add-Icons-Search-button-main-contaier">
+            <div className="Add-Icons-Search-Button">
+              <p>Search</p>
+            </div>
+            <div className="Add-Icons-Search-Button">
+              <p>Add</p>
+            </div>
+          </div>
+          <div className="Add-icon-horizonatl-line1">
+            <hr></hr>
+          </div>
+          <div className="Add-icons-select-icons-from-given-main-container">
             <img
-              src={close}
-              alt="Close"
-              className="Add-IconsPopup-close-image"
-              onClick={closePopup}
+              src={check}
+              alt="Icon1"
+              className="Add-icon-select-icon-image-tage-ite"
+            />
+            <img
+              src={check}
+              alt="Icon2"
+              className="Add-icon-select-icon-image-tage-ite"
+            />
+            <img
+              src={check}
+              alt="Icon3"
+              className="Add-icon-select-icon-image-tage-ite"
+            />
+            <img
+              src={check}
+              alt="Icon4"
+              className="Add-icon-select-icon-image-tage-ite"
+            />
+            <img
+              src={check}
+              alt="Icon5"
+              className="Add-icon-select-icon-image-tage-ite"
+            />
+            <img
+              src={check}
+              alt="Icon6"
+              className="Add-icon-select-icon-image-tage-ite"
             />
           </div>
-          <hr className="line1" />
+          <div className="Add-icon-horizonatl-line1">
+            <hr></hr>
+          </div>
 
-          <hr className="line2" />
+          <div className="Add-Icons-cancel-btn-zz">
+            <button className="Add-Icons-cancel-btn-yy">Cancel</button>
+          </div>
         </div>
       )}
     </>

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from 'uuid';
+
 import "./Book.css";
 import "./Style.css";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
+import imageCompression from 'browser-image-compression';
 
 const Book = () => {
   // const [lastName, setLastName] = useState("");
@@ -11,11 +13,15 @@ const Book = () => {
   //const [Company, setCompany] = useState("");
   // const [workPhone, setworkPhone] = useState("");
 
-  const [formData, setFormData] = useState({ id: '', agentlastname: '', firstName: '', Company: '', workPhone: '' });
+  // const [formData, setFormData] = useState({ id: '', agentlastname: '', firstName: '', Company: '', workPhone: '' });
+  const [formData, setFormData] = useState({ entries: [] });
   const [tableData, setTableData] = useState([]);
   const [selectedAgentId, setSelectedAgentId] = useState(null);
 
- 
+  const [selectedImage, setSelectedImage] = useState(
+    localStorage.getItem('uploadedImage') || null
+  );
+
   const [WorkFax, setWorkFax] = useState("");
   const [HomePhone, setHomePhone] = useState("");
   const [HomeFax, setHomeFax] = useState("");
@@ -79,16 +85,43 @@ const Book = () => {
     setTableData(existingData);
   }, []);
 
-  const submitForm = () => {
-    const id = uuidv4();
-    const newFormData = { ...formData, id };
-    setTableData([...tableData, newFormData]);
-    setFormData({ id: '', agentlastname: '', firstName: '', Company: '', workPhone:'' });
+  // const handleSave = () => {
+  //   const newId = uuidv4();
+  //   const newData = {
+  //     id: newId,
+  //     agentlastname: formData.agentlastname,
+  //     firstName: formData.firstName,
+  //     Company: formData.Company,
+  //     workPhone: formData.workPhone,
+  //     // Add other properties as needed
+  //   };
+
+  //   // Update the state with the new data entry
+  //   setFormData((prevData) => [...prevData, newData]);
+
+  //   // Save the updated data to localStorage
+  //   const dataToSave = JSON.stringify({ formData: [...formData, newData] });
+  //   localStorage.setItem('yourDataKey', dataToSave);
+  // };
+  const handleSave = () => {
+    const newId = uuidv4();
+    const newData = {
+      id: newId,
+      agentlastname: formData.agentlastname,
+      firstName: formData.firstName,
+      Company: formData.Company,
+      workPhone: formData.workPhone,
+      // Add other properties as needed
+    };
+
+    // Update the state with the new data entry
+    setFormData((prevData) => ({ entries: [...prevData.entries, newData] }));
+
+    // Save the updated data to localStorage
+    const dataToSave = JSON.stringify({ formData: { entries: [...formData.entries, newData] } });
+    localStorage.setItem('yourDataKey', dataToSave);
   };
 
-  useEffect(() => {
-    localStorage.setItem('formData', JSON.stringify(tableData));
-  }, [tableData]);
 
   const clearLocalStorage = (agentId) => {
     // Remove the specific agent's data from localStorage
@@ -101,13 +134,13 @@ const Book = () => {
     setTableData(updatedTableData);
 
     // Clear the form data for the selected agent
-    setFormData({ id: '', agentlastname: '', firstName: '', Company: '', workPhone:''  });
+    setFormData({ id: '', agentlastname: '', firstName: '', Company: '', workPhone: '' });
 
     // Clear the selectedAgentId
     setSelectedAgentId(null);
   };
- 
-  
+
+
   const clearForm = () => {
     setFormData({
       id: "",
@@ -137,7 +170,33 @@ const Book = () => {
     setNotes("");
     // setOtherState("");
   };
+  const handleImageUpload = async (e) => {
+    const file = e.target.files[0];
 
+    if (file && file.type.startsWith('image/')) {
+      try {
+        // Compress the image before converting to data URL
+        const compressedFile = await imageCompression(file, {
+          maxSizeMB: 1, // Set the desired max size in MB (adjust as needed)
+          maxWidthOrHeight: 800, // Set the maximum width or height (adjust as needed)
+        });
+
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          const imageUrl = event.target.result;
+          setSelectedImage(imageUrl);
+
+          // Save imageUrl to localStorage
+          localStorage.setItem('uploadedImage', imageUrl);
+        };
+        reader.readAsDataURL(compressedFile);
+      } catch (error) {
+        console.error('Error compressing the image:', error);
+      }
+    } else {
+      console.error('Please select a valid image file.');
+    }
+  };
 
 
   return (
@@ -433,24 +492,51 @@ const Book = () => {
                 ></textarea>
               </div>
             </form>
-            <div class="basis-1/1 ml-5">
-              <div className="photoupload-book ">
+            <div className="flex flex-row" style={{ lineHeight: "17px" }}>
+              {/* ... Other form elements ... */}
+              <div className="photoupload-book">
                 <div className="bg-white ml-2 mt-10 mr-5 w-40 h-48 border-2 border-dashed border-gray-400 flex items-center justify-center">
-                  <p class="text-gray-600">Agent Photo</p>
+                  {selectedImage ? (
+                    <img src={selectedImage} alt="Selected" className="max-h-full max-w-full" />
+                  ) : (
+                    <p className="text-gray-600">Agent Photo</p>
+                  )}
                 </div>
 
-                <div class="flex ml-2 mt-2">
-                  <div class="flex space-x-4">
-                    <button class="bg-gray-300 hover:bg-gray-400 px-3 h-7 border border-gray-400 rounded">
+                <div className="flex ml-2 mt-2">
+                  <div className="flex space-x-4">
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleImageUpload}
+                      className="hidden"
+                      id="imageInput"
+                    />
+                    <label
+                      htmlFor="imageInput"
+                      className="bg-gray-300 hover:bg-gray-400 px-3 h-7 border border-gray-400 rounded cursor-pointer"
+                    >
                       Upload
-                    </button>
-                    <button class="bg-gray-300 hover:bg-gray-400  px-3 h-7 border border-gray-400 rounded">
+                    </label>
+                    <button
+                      className="bg-gray-300 hover:bg-gray-400 px-3 h-7 border border-gray-400 rounded"
+                      onClick={() => {
+                        // Clear the selected image
+                        setSelectedImage(null);
+                        // Clear the file input value
+                        document.getElementById('imageInput').value = '';
+                        // Remove imageUrl from localStorage
+                        localStorage.removeItem('uploadedImage');
+                      }}
+                    >
                       Cancel
                     </button>
                   </div>
                 </div>
               </div>
             </div>
+
+
           </div>
         </div>
         <div className="border-l border-black"></div>
@@ -492,10 +578,10 @@ const Book = () => {
               <tbody>
                 {tableData.map((data) => (
                   <tr key={data.id} onClick={() => setSelectedAgentId(data.id)} className={`cursor-pointer ${selectedAgentId === data.id ? 'bg-blue-500 text-white' : ''}`}>
-                    <td  style={{ border: '1px solid black' }}>{data.agentlastname}</td>
-                    <td  style={{ border: '1px solid black' }}>{data.firstName}</td>
-                    <td  style={{ border: '1px solid black' }}>{data.Company}</td>
-                    <td  style={{ border: '1px solid black' }}>{data.workPhone}</td>
+                    <td style={{ border: '1px solid black' }}>{data.agentlastname}</td>
+                    <td style={{ border: '1px solid black' }}>{data.firstName}</td>
+                    <td style={{ border: '1px solid black' }}>{data.Company}</td>
+                    <td style={{ border: '1px solid black' }}>{data.workPhone}</td>
                     {/* Optionally include a button here if you want it per row */}
                   </tr>
                 ))}
@@ -507,10 +593,14 @@ const Book = () => {
 
       <div className="btn-conat-book ml-5 text-sm ">
         <div className="flex flex-col-3 gap-1 mt-2 ml-2 ">
-          <button className="border border-black bg-gray-300 hover:bg-blue-100 w-60 h-6 rounded"
+          {/* <button className="border border-black bg-gray-300 hover:bg-blue-100 w-60 h-6 rounded"
             onClick={submitForm}>
             Save
-          </button>
+          </button> */}
+          <button
+            className="border border-black bg-gray-300 hover:bg-blue-100 w-60 h-6 rounded"
+
+            onClick={handleSave}>Save</button>
           <button className="border border-black bg-gray-300 hover:bg-blue-100 w-60 h-6 rounded">
             Export Contacts
           </button>
@@ -554,8 +644,6 @@ const Book = () => {
 };
 
 export default Book;
-
-
 
 
 
