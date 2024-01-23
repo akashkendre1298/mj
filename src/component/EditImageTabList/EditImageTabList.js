@@ -5,10 +5,10 @@ import PropTypes from "prop-types";
 import Editor from "../Editor/Editor";
 import AdjustBrightnessContent from "./AdjustBrightnessContent/AdjustBrightnessContent";
 import AdjustContrastContent from "./AdjustContrast/AdjustContrastContent";
+import RotateClockwiseContent from "./RotateClockwiseContent/RotateClockwiseContent";
+import imageUrl from "../../Assets/icons/download.jpeg";
 
 const EditImageTabList = ({ isOpen, onRequestClose }) => {
-  const imageUrl = "../../Assets/icons/download.jpeg"; // Replace with the actual path
-
   const [activeTab, setActiveTab] = useState(1);
 
   const handleTabClick = (tabNumber) => {
@@ -36,6 +36,7 @@ const EditImageTabList = ({ isOpen, onRequestClose }) => {
     1: <Editor />,
     2: <AdjustBrightnessContent imageUrl={imageUrl} />,
     3: <AdjustContrastContent imageUrl={imageUrl} />,
+    // 4: <RotateClockwiseContent imageUrl={imageUrl} />,
     // ... (add other tab content components)
   };
 
