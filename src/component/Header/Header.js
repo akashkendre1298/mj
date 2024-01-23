@@ -138,7 +138,8 @@ const Header = () => {
             General information
           </div>
           {activeMenu === 1 && (
-            <ul className="submenu absolute z-10 bg-white shadow mt-2">
+            <ul className="submenu absolute z-10 bg-white shadow mt-2"
+              style={{ width: "180px", lineHeight: "12px" }}>
               <Link to="/panel1">
                 <li className="py-2 px-4 hover:bg-gray-200">Wall</li>
               </Link>
@@ -156,7 +157,8 @@ const Header = () => {
             Photos
           </div>
           {activeMenu === 2 && (
-            <ul className="submenu absolute z-10 bg-white shadow mt-2">
+            <ul className="submenu absolute z-10 bg-white shadow mt-2"
+              style={{ width: "180px", lineHeight: "12px" }}>
               <Link to="/photoreview">
                 <li className="py-2 px-4 hover:bg-gray-200">
                   Add Review Photos
