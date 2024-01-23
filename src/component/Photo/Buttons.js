@@ -71,12 +71,14 @@ const Buttons = ({ onFileSelect }) => {
     // Save the uploaded data (you can implement the saving logic here)
     console.log("Save data:", uploadedFileRef.current);
   };
+  // Function to open the popup
   const openPopup = () => {
-    setShowPopup(true);
+    setIsPopupOpen(true);
   };
 
+  // Function to close the popup
   const closePopup = () => {
-    setShowPopup(false);
+    setIsPopupOpen(false);
   };
 
   const handleInputSubmit = () => {
@@ -120,8 +122,11 @@ const Buttons = ({ onFileSelect }) => {
               <img src={img2} alt="" onClick={handlePopupOpen} />
               {isPopupOpen && (
                 <div className="edit-image-main-popup-container-css">
-                  {/* <EditImageTabList /> */}
-                  <div className="flex-container-for-tablist-for-edit-img">
+                  <EditImageTabList
+                    isOpen={isPopupOpen}
+                    onRequestClose={closePopup}
+                  />
+                  {/* <div className="flex-container-for-tablist-for-edit-img">
                     <div className="width-set-for-the-popup-windows-edit-image-section">
                       {" "}
                       <div className="edit-image-header-text-and-close-Button">
@@ -179,7 +184,7 @@ const Buttons = ({ onFileSelect }) => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               )}
             </div>
@@ -249,7 +254,7 @@ const Buttons = ({ onFileSelect }) => {
         </ul>
       </div>
 
-      {showPopup && (
+      {isPopupOpen && (
         <div className="Add-Icons-popup-container">
           <div className="Add-Icons-Popup-header-container">
             <p className="Add-Icons-Popup-header-AddIcons">
