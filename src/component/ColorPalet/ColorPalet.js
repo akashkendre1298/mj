@@ -71,6 +71,11 @@ const ColorPalette = () => {
   // State to store all table data
   const [allTableData, setAllTableData] = useState([]);
 
+  // State for managing color picker
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedColorIndex, setSelectedColorIndex] = useState(null);
+  const [colorPickerPosition, setColorPickerPosition] = useState({ top: 0, left: 0 });
+
   // Function to handle color change
   const handleColorChange = (id, column, color) => {
     setRowColors((prevColors) =>
@@ -153,15 +158,24 @@ const ColorPalette = () => {
     }
   };
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  // Function to open the color picker
+  const openColorPicker = (index, event) => {
+    setSelectedColorIndex(index);
 
-  const openColorPicker = () => {
+    // Calculate position relative to the document
+    const rect = event.target.getBoundingClientRect();
+    const top = rect.bottom + window.scrollY;
+    const left = rect.left + window.scrollX;
+
+    setColorPickerPosition({ top, left });
     setIsModalOpen(true);
   };
 
+  // Function to close the color picker
   const closeColorPicker = () => {
     setIsModalOpen(false);
   };
+
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-white">
       <div className="rounded-lg" style={{ width: "90%", backgroundColor: "#f3f2f1" }}>
@@ -183,12 +197,10 @@ const ColorPalette = () => {
           </div>
 
           <div className="flex">
-
             <div>
               <table className="w-full" style={{ width: "100%", backgroundColor: "#ffff", border: "2px solid #3498db" }}>
                 <thead>
                   <tr className="text-sm  font-thin">
-
                     <th className="border font-semibold p-2">Section name</th>
                     <th className="border font-semibold p-2">Section title font</th>
                     <th className="border font-semibold p-2">Print</th>
@@ -211,7 +223,6 @@ const ColorPalette = () => {
                       }
                       onClick={() => handleRowClick(index, 0)}
                     >
-
                       <td className="border p-2">{data.sectionName}</td>
                       <td className="border p-2"></td>
                       <td className="border p-2">
@@ -268,38 +279,24 @@ const ColorPalette = () => {
                       <td className="border p-2"></td>
                       <td className="border p-2"></td>
                       <td className="border p-2">
-                        {/* <input
-                          type="color"
-                          id={`toc_bg_color_${index}`}
-                          name={`toc_bg_color_${index}`}
-                          value={rowColors[index].tocBackground}
-                          onChange={(e) =>
-                            handleColorChange(
-                              data.id,
-                              "tocBackground",
-                              e.target.value
-                            )
-                          }
-                        /> */}
                         <div>
-                          <input type="color" onClick={openColorPicker} />
+                          <input type="color" onClick={(e) => openColorPicker(index, e)} />
 
                           {isModalOpen && (
-                            <ColorPicker onClose={closeColorPicker} />
-
+                            <div className="z-10" style={{ position: 'absolute', top: `${colorPickerPosition.top}px`, left: `${colorPickerPosition.left}px`, zIndex: 1000 }}>
+                              <ColorPicker onClose={closeColorPicker} selectedColorIndex={selectedColorIndex} />
+                            </div>
                           )}
                         </div>
-
                       </td>
                       <td className="border p-2"></td>
                     </tr>
                   ))}
                 </tbody>
-
               </table>
             </div>
             <div className="text-center mx-2 text-sm" style={{ width: "20%" }}>
-              <div className="">
+              <div>
                 <button className="flex items-center justify-center w-full px-4 bg-white  border border-black" onClick={handleMoveUp}>
                   <img src={moveUpButtonImg} alt="Move Up" className="mr-2" />Move Up
                 </button>
@@ -309,7 +306,7 @@ const ColorPalette = () => {
                   <img src={moveDownButtonImg} alt="Move Down" className="mr-2" />Move Down
                 </button>
               </div>
-              <div className="">
+              <div>
                 <button className="flex items-center justify-center w-full px-4 bg-white border border-black">
                   <img src={inheritButtonImg} alt="Inherit from formatting" className="mr-2" />Inherit from formatting
                 </button>
@@ -319,12 +316,12 @@ const ColorPalette = () => {
                   <img alt="" className="mr-2" />Match Colors
                 </button>
               </div>
-              <div className="">
+              <div>
                 <button className="flex items-center justify-center w-full px-4 bg-white border border-black" onClick={handleSelectAll}>
                   {selectAll ? "Deselect All" : "Select All"}
                 </button>
               </div>
-              <div className="">
+              <div>
                 <button className="flex items-center justify-center w-full px-4  ">
                   <input type="checkbox" />
                   Show print option before Generating Report
@@ -336,7 +333,7 @@ const ColorPalette = () => {
                   Select Section With Comments Ratings or Photos
                 </button>
               </div>
-              <div className="">
+              <div>
                 <button className="flex items-center justify-center w-full px-4 bg-white border border-black">
                   <img src={selectIconsButtonImg} alt="Select Icons For All Sections" className="mr-2" />
                   Select Icons For All Sections
@@ -348,7 +345,6 @@ const ColorPalette = () => {
                   Remove All Section For All Sections
                 </button>
               </div>
-
               <div>
                 <p className="mb-6">Select Alignment For All Section</p>
                 <div className="flex justify-center ">

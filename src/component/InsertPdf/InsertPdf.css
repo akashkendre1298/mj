@@ -38,12 +38,14 @@
 .for-first-section-header-and-the-btns {
   /* display: flex; */
   width: 80%;
+  height: 74vh;
   justify-content: center;
   border: 0.1px solid grey;
   /* padding: 1em; */
 }
 .arrange-document-list-right-side-section {
   width: 20%;
+  height: 74vh;
   border: 0.1px solid grey;
   padding: 2px;
 }
@@ -54,13 +56,12 @@
 }
 .list-for-the-documents-in-the-section {
   padding: 10px;
-  /* height: 100vh; */
-  height: auto;
+  height: 65vh;
   border: 1px solid grey;
 }
 .arrgane-document-header-for-section {
   padding-left: 12px;
-  margin-bottom: 2.7em;
+  margin-bottom: 2.1em;
 }
 ul.list-icon-status-online {
   list-style-image: url("../../Assets/icons/status_online.png");
