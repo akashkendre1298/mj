@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-
 import "./BatchAddPhotos.css";
 import close from "../icons/close_2997911.png";
+import Header from "../../Header/Header";
+
+import Footer from "./../../Footer/Footer";
 
 const BatchAddPhotos = () => {
   const [isPopupOpen, setPopupOpen] = useState(true);
+  const [selectedFolder, setSelectedFolder] = useState(null);
 
   const handleClose = () => {
     setPopupOpen(false);
@@ -12,23 +15,32 @@ const BatchAddPhotos = () => {
 
   const handleFileUpload = (e) => {
     const selectedFile = e.target.files[0];
-    // Handle the file upload logic here
     console.log("Selected file:", selectedFile);
+
+    setSelectedFolder(selectedFile);
   };
 
   const handleBrowseClick = () => {
-    document.getElementById("fileInput").click();
+    const fileInput = document.getElementById("fileInput");
+    if (fileInput) {
+      fileInput.click();
+    }
   };
 
   return (
     <>
+      <Header />
       {isPopupOpen && (
         <div className="Batch-AddPhotos-main-container">
           <div className="Batch-AddPhotos-header-container">
             <p className="Batch-AddPhotos-header-BulkImport">Bulk Import</p>
-            <img src={close} className="BatchAddPhots-close-image" />
+            <img
+              src={close}
+              alt="Close"
+              className="BatchAddPhots-close-image"
+              onClick={handleClose}
+            />
           </div>
-         
 
           <div className="Batch-AddPhotos-Button-container">
             <button
@@ -39,12 +51,19 @@ const BatchAddPhotos = () => {
             </button>
             <input
               type="file"
+              id="fileInput"
               style={{ display: "none" }}
               onChange={handleFileUpload}
+              webkitdirectory=""
+              directory=""
             />
           </div>
 
-          <div className="BatchAddphotos-Box-container"></div>
+          <div className="BatchAddphotos-Box-container">
+            {selectedFolder && (
+              <p>Selected Folder: {selectedFolder.webkitRelativePath}</p>
+            )}
+          </div>
 
           <div className="Batch-Add-Photos-para-main-container">
             <label htmlFor="agree" id="BAlabel">
@@ -70,9 +89,7 @@ const BatchAddPhotos = () => {
             <label htmlFor="agree">
               Extra blanks left will not affect how the report prints.
             </label>
-
             <br />
-            {/* Additional options... */}
           </div>
 
           <div className="Batch-Addphotos-Ok-btn-container">

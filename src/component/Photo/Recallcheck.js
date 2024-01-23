@@ -2,9 +2,10 @@ import "./Recallcheck.css";
 const Recallcheck = () => {
   return (
     <>
-      ``
       <div className="RC-main-container">
-        <label for="RecallCheck" className="Recallcheck-container-labelname">RecallCheck</label>
+        <label for="RecallCheck" className="Recallcheck-container-labelname">
+          RecallCheck
+        </label>
         <br />
         <input
           type="text"

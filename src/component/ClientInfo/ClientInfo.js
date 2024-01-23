@@ -41,7 +41,7 @@ const ClientInfo = () => {
       </div>
 
       <form className="formcont text-sm">
-        <h1 className="text text-lg">Client Information</h1>
+        <h1 className="text text-lg py-5">Client Information</h1>
 
         <div className="form-group">
           <label htmlFor="inputlastname" className="label">

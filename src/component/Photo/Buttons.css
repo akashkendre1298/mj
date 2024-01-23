@@ -2,10 +2,10 @@
 
 .Buttons-unorderlist-container {
   list-style-type: none;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  display: flex;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1em;
-  margin-top: -20px;
+  /*  margin-top: -20px; */
 }
 
 .Buttons-orderlist-to-adjust-images {
@@ -34,4 +34,93 @@
 .Buttons-orderlist-for-icons-buttons {
   width: 25px;
   height: 25px;
+}
+
+/* Edit Image Popup-css */
+
+.edit-image-main-popup-container-css {
+  position: absolute;
+  top: 41%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: lightgrey;
+  /* padding-left: 18px; */
+  /* padding-right: 25px; */
+  /* padding-top: 10px; */
+  /* padding-bottom: 10px; */
+  /* width: 1000px; */
+  /* height: 550px; */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.Add-Icons-popup-main-container {
+  position: absolute;
+  top: 41%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: lightgrey;
+
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: 40em;
+  height: 30em;
+}
+.divAdd-IconsPopup-close-image {
+  width: 10px;
+  height: 5px;
+  cursor: pointer;
+}
+.Add-Icons-Popup-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fee4c3;
+  border: solid 1px rgb(191, 189, 189);
+  padding: 0px 1em 0 1em;
+  height: 2em;
+}
+.Add-Icons-Search-button-main-contaier {
+  display: flex;
+  justify-content: flex-start;
+}
+.Add-icon-horizonatl-line1 {
+  height: 3px;
+  background-color: #5600ff;
+  border: none;
+}
+
+.Add-Icons-Search-Button {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.Add-Icons-Search-Button:hover {
+  background-color: rgb(0, 162, 255);
+  border-bottom: 4px solid blue;
+}
+.Add-Icons-cancel-btn-zz {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+  margin-top: 7px;
+}
+.Add-Icons-cancel-btn-yy {
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: #f3f2f1;
+  color: black;
+  border: 2px solid rgb(191, 189, 189);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.Add-icons-select-icons-from-given-main-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9em;
+  margin: 4em 7em;
+}
+.Add-icon-select-icon-image-tage-ite {
+  cursor: pointer;
 }

@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import ClientInfo from "./component/ClientInfo/ClientInfo";
 import Footer from "./component/Footer/Footer";
 import ColorPalet from "./component/ColorPalet/ColorPalet";
