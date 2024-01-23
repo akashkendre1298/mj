@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './OneDamage.css';
 
-function OneDamage () {
+function OneDamage() {
   const [formData, setFormData] = useState({
     tabName: '',
     damagePanelName: '',
@@ -31,12 +31,21 @@ function OneDamage () {
   };
 
   const handleDone = () => {
-    // Add functionality for done button if needed
+    // Save the form data to localStorage
+    localStorage.setItem('formData', JSON.stringify(formData));
     console.log('Done button clicked');
   };
 
-  
+  // Access the stored data when the component mounts
+  React.useEffect(() => {
+    // Retrieve the stored data from localStorage
+    const storedFormData = localStorage.getItem('formData');
 
+    // Check if the data exists before updating the state
+    if (storedFormData) {
+      setFormData(JSON.parse(storedFormData));
+    }
+  }, []);
   return (
     <div className="form-container-onedamage">
       {/* <h2 className='h2-onedamage'>Creating A Page With 1 Damage Panel</h2> */}
@@ -76,9 +85,10 @@ function OneDamage () {
           <button type="button" className="next-button-onedamage" onClick={handleNext}>
             Next
           </button>
-          <button type="submit" className="done-button-onedamage" onClick={handleDone}>
-            Done
-          </button>
+          <button type="button" className="done-button-onedamage" onClick={handleDone}>
+          Done
+        </button>
+        
         </div>
       {/* </form> */}
     </div>

@@ -3,6 +3,7 @@ import "./Header.css";
 import OpenTemp from "../OpenTemp/OpenTemp";
 import EditTemp from "../EditTemp/EditTemp";
 import SaveTemp from "../SaveTemp/SaveTemp";
+
 import img1 from "../../Assets/icons/open_inspection.png";
 import img2 from "../../Assets/icons/save_inspection.png";
 import img3 from "../../Assets/icons/open_template.png";
@@ -91,9 +92,7 @@ const Header = () => {
           <div
             className="main-label cursor-pointer"
             onClick={() => handleMenuClick(0)}
-          >
-            File
-          </div>
+          ></div>
           {activeMenu === 0 && (
             <ul
               className="submenu absolute z-10 bg-white shadow mt-2 w-48 leading-tight"
@@ -253,6 +252,7 @@ const Header = () => {
               </a>
             </li>
             <hr />
+            <Link to="/EditComments">
             <li className="list-for-header-section-main-nav">
               <a href="#" className="header2-tag-a">
                 <div className="flex justify-center">
@@ -264,6 +264,7 @@ const Header = () => {
                 </div>
               </a>
             </li>
+            </Link>
             <li className="list-for-header-section-main-nav  border-r border-black-900">
               <a
                 href="#"
