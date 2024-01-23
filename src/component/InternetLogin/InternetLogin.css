@@ -1,0 +1,114 @@
+/* styles.css */
+
+.body-internetlogin {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200vh;
+    width: 150vh;
+    /* background-color: rgba(0, 0, 0, 0.2); */
+  }
+  
+  .popup-container-internetlogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200%;
+    background-color: rgb(242, 236, 236);;
+  }
+  
+  .popup-internetlogin {
+    /* background-color: rgb(229, 229, 229); */
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); */
+    padding: 20px;
+    border-radius: 5px;
+    width: 700px;
+    height: 100px;
+    text-align: center;
+    position: relative;
+    padding: 2em 6px 6px 6px;
+  }
+  .p-internetlogin{
+    font-size: 15px;
+  }
+
+  .p-internetlogin1{
+    font-size: 15px;
+  }
+ /* styles.css */
+.popup-border-internetlogin {
+    /* border: 2px solid black; */
+    padding: 20px;
+    background-color: rgb(229, 229, 229);
+    height: 350px;
+  }
+  
+  /* Add other styles as needed */
+  
+  
+  .close-btn-internetlogin {
+    color: #999;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 4px;
+    right: 10px;
+  }
+  
+  .h2-internetlogin {
+    color: #333;
+  }
+  
+  .input-row-internetlogin {
+    /* display: flex; */
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .label-internetlogin {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .input-internetlogin {
+    flex: 2;
+    padding: 2px;
+    box-sizing: border-box;
+  }
+  
+  .button-container-internetlogin {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    /* justify-content: space-between; */
+  }
+  
+  .button-internetlogin {
+    padding: 10px;
+    width: 25%;
+    background-color: #f3f2f1;
+    color:black;
+    border: 2px solid rgb(191, 189, 189);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  
+  .cancel-btn-internetlogin {
+    background-color: #f3f2f1;
+    color: black;
+  }
+
+  
+  
+  .button-internetlogin:hover,
+  .cancel-btn-internetlogin:hover {
+    background-color: #d7e9f7;
+    border-color: #005a9e;
+  }
+  
