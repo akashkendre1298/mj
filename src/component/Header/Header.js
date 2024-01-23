@@ -3,6 +3,7 @@ import "./Header.css";
 import OpenTemp from "../OpenTemp/OpenTemp";
 import EditTemp from "../EditTemp/EditTemp";
 import SaveTemp from "../SaveTemp/SaveTemp";
+
 import img1 from "../../Assets/icons/open_inspection.png";
 import img2 from "../../Assets/icons/save_inspection.png";
 import img3 from "../../Assets/icons/open_template.png";
@@ -91,9 +92,7 @@ const Header = () => {
           <div
             className="main-label cursor-pointer"
             onClick={() => handleMenuClick(0)}
-          >
-            File
-          </div>
+          ></div>
           {activeMenu === 0 && (
             <ul
               className="submenu absolute z-10 bg-white shadow mt-2 w-48 leading-tight"
@@ -138,7 +137,8 @@ const Header = () => {
             General information
           </div>
           {activeMenu === 1 && (
-            <ul className="submenu absolute z-10 bg-white shadow mt-2">
+            <ul className="submenu absolute z-10 bg-white shadow mt-2"
+              style={{ width: "180px", lineHeight: "12px" }}>
               <Link to="/panel1">
                 <li className="py-2 px-4 hover:bg-gray-200">Wall</li>
               </Link>
@@ -156,7 +156,8 @@ const Header = () => {
             Photos
           </div>
           {activeMenu === 2 && (
-            <ul className="submenu absolute z-10 bg-white shadow mt-2">
+            <ul className="submenu absolute z-10 bg-white shadow mt-2"
+              style={{ width: "180px", lineHeight: "12px" }}>
               <Link to="/photoreview">
                 <li className="py-2 px-4 hover:bg-gray-200">
                   Add Review Photos

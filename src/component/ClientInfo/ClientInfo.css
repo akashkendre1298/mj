@@ -15,7 +15,7 @@
 .formcont {
   margin-right: 20vh;
   align-items: center;
-  line-height: 16px;
+  /* line-height: 16px; */
   padding-bottom: 5px;
 }
 
@@ -57,7 +57,7 @@
   padding: 2px;
   border: 2px solid #ccc;
   border-radius: 2px;
-  width: 150px;
+  /* width: 150px; */
   outline: none;
 }
 
