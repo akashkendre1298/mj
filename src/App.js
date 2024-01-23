@@ -13,29 +13,27 @@ import Panel3 from "./component/Panel/Panel3/Panel3";
 import PhotoReview from './component/Photo/PhotoReview';
 import PannelComponent from "./component/Panel/PannelComponent/PannelComponent";
 import EditComments from "./component/EditComments/EditComments";
+import InternetLogin from "./component/InternetLogin/InternetLogin";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<ClientInfo />}></Route>
-        <Route path="/" element={<Footer />}></Route>
-        <Route path="/colorpalet" element={<ColorPalet />}></Route>
-        <Route path="/insertpdf" element={<InsertPdf />}></Route>
-        <Route path="/book" element={<Book />}></Route>
-        <Route path="/panel1" element={<Panel1 />}></Route>
-        <Route path="/panel2" element={<Panel2 />}></Route>
-        <Route path="/panel3" element={<Panel3 />}></Route>
-        <Route path="/photoreview" element={<PhotoReview/>}></Route>
-        <Route path="/EditComments" element={<EditComments/>}></Route>
+    // <BrowserRouter>
+    //   <Routes>
+    //     <Route path="/" element={<ClientInfo />}></Route>
+    //     <Route path="/" element={<Footer />}></Route>
+    //     <Route path="/colorpalet" element={<ColorPalet />}></Route>
+    //     <Route path="/insertpdf" element={<InsertPdf />}></Route>
+    //     <Route path="/book" element={<Book />}></Route>
+    //     <Route path="/panel1" element={<Panel1 />}></Route>
+    //     <Route path="/panel2" element={<Panel2 />}></Route>
+    //     <Route path="/panel3" element={<Panel3 />}></Route>
+    //     <Route path="/photoreview" element={<PhotoReview/>}></Route>
+    //     <Route path="/EditComments" element={<EditComments/>}></Route>
 
-        
-
-
-
-      </Routes>
-    </BrowserRouter>
+    //   </Routes>
+    // </BrowserRouter>
     // <PannelComponent/>
+    <InternetLogin/>
   );
 }
 export default App;
