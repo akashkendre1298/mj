@@ -1,103 +1,106 @@
 
 
 import React from 'react';
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { FaFolderOpen } from 'react-icons/fa';
 import OneDamage from "../EditTemp/OneDamage/OneDamage";
 import twoDamage from "../EditTemp/twoDamage/TwoDamage";
 import OneSelection from "../EditTemp/oneSelection/OneSelection";
-import twoSelection  from "../EditTemp/twoSelection/TwoSelection";
+import twoSelection from "../EditTemp/twoSelection/TwoSelection";
 import oneDamageSelection from "../EditTemp/oneDamageSelection/OneDamageSelection";
 import OneDamageTwoSelection from '../EditTemp/oneDamageTwoSelection/OneDamageTwoSelection';
 import './EditTemp.css';
 import { Link } from 'react-router-dom';
 import Inspection from './Inspection/Inspection';
+import TwoSelection from './twoSelection/TwoSelection';
+import TwoDamage from './twoDamage/TwoDamage';
+import OneDamageSelection from './oneDamageSelection/OneDamageSelection';
 
 const EditTemp = ({ onClose }) => {
     const [selectedOption, setSelectedOption] = useState(null);
     // const [isPopupOpen, setIsPopupOpen] = useState(false);
-  
+
     const [popupStates, setPopupStates] = useState({
-      'Option 1': false,
-      'Option 2': false,
-      'Option 3': false,
-      'Option 4': false,
-      'Option 5': false,
-      'Option 6': false,
+        'Option 1': false,
+        'Option 2': false,
+        'Option 3': false,
+        'Option 4': false,
+        'Option 5': false,
+        'Option 6': false,
     });
-  
+
     const componentsMap = {
-      'Option 1': OneDamage,
-      'Option 2': twoDamage,
-      'Option 3': OneSelection,
-      'Option 4': twoSelection,
-      'Option 5': oneDamageSelection,
-       'Option 6': OneDamageTwoSelection,
+        'Option 1': OneDamage,
+        'Option 2': twoDamage,
+        'Option 3': OneSelection,
+        'Option 4': twoSelection,
+        'Option 5': oneDamageSelection,
+        'Option 6': OneDamageTwoSelection,
     };
-  
+
     const handleRadioChange = (event) => {
-      const value = event.target.value;
-      setSelectedOption(value);
+        const value = event.target.value;
+        setSelectedOption(value);
     };
-  
+
     useEffect(() => {
-      // Check if the selectedOption exists and the corresponding popup state is false
-      if (selectedOption && !popupStates[selectedOption]) {
-        console.log('Closing popup');
-        // Reset the selected option
-        setSelectedOption('');
-      }
+        // Check if the selectedOption exists and the corresponding popup state is false
+        if (selectedOption && !popupStates[selectedOption]) {
+            console.log('Closing popup');
+            // Reset the selected option
+            setSelectedOption('');
+        }
     }, [popupStates]);
-  
+
     const openPopup = () => {
-      setPopupStates((prevState) => ({
-        ...prevState,
-        [selectedOption]: true,
-      }));
+        setPopupStates((prevState) => ({
+            ...prevState,
+            [selectedOption]: true,
+        }));
     };
-    
+
     const closePopup = () => {
-      setPopupStates((prevState) => ({
-        ...prevState,
-        [selectedOption]: false,
-        
-      }));
-  console.log("closing")
+        setPopupStates((prevState) => ({
+            ...prevState,
+            [selectedOption]: false,
+
+        }));
+        console.log("closing")
     };
-    
-  
-  
+
+
+
     const handleCancel = () => {
-      // Reset the selected option and close the popup
-      setSelectedOption('');
-      setPopupStates((prevState) => ({
-        ...prevState,
-        [selectedOption]: false,
-      }));
-      console.log('Cancel clicked');
+        // Reset the selected option and close the popup
+        setSelectedOption('');
+        setPopupStates((prevState) => ({
+            ...prevState,
+            [selectedOption]: false,
+        }));
+        console.log('Cancel clicked');
     };
-  
+
     const handleBack = () => {
-     
-      console.log('Back clicked');
+
+        console.log('Back clicked');
     };
-  
-  
+
+
     const handleNext = () => {
-      // Handle next action
-      console.log('Next clicked');
-      openPopup();
+        // Handle next action
+        console.log('Next clicked');
+        openPopup();
     };
-  
+
     const handleDone = () => {
-      // Handle done action
-      console.log('Done clicked');
-      // console.log('Selected option:', selectedOption);
-      closePopup();
+        // Handle done action
+        console.log('Done clicked');
+        // console.log('Selected option:', selectedOption);
+        closePopup();
     };
-  
-    
-   
+
+
+
     // State variables
     const [inputText, setInputText] = useState('');
     const [displayText, setDisplayText] = useState('');
@@ -209,61 +212,61 @@ const EditTemp = ({ onClose }) => {
     // Function to handle OK button click in the popup
     const handleOkButtonClick = () => {
         setItems((prevItems) =>
-        prevItems.map((item) =>
-          item.id === selectedMenuItemIndex.id ? { ...item, name: newItemName } : item
-        )
-      );
+            prevItems.map((item) =>
+                item.id === selectedMenuItemIndex.id ? { ...item, name: newItemName } : item
+            )
+        );
         setPopupVisible(false);
     };
 
     // Function to handle removing a menu item or subitem
-const handleRemoveItem = () => {
-    if (lastSelectionType === 'menu' && selectedMenuTitleIndex !== null) {
-        // Remove a menu item
-         
-        setItems((prevItems) => {
-            const updatedItems = [...prevItems];
-            updatedItems.filter(selectedMenuTitleIndex, 1);
-            return updatedItems;
-        });
-    } else if (lastSelectionType === 'menuItem' && selectedMenuItemIndex !== null) {
-        // Remove a subitem from a menu item
-        const selectedItem = items[selectedMenuItemIndex];
-        const updatedSubItems = selectedItem.subItems.filter((_, index) => index !== selectedSubItemIndex);
+    const handleRemoveItem = () => {
+        if (lastSelectionType === 'menu' && selectedMenuTitleIndex !== null) {
+            // Remove a menu item
 
-        setItems((prevItems) => {
-            const updatedItems = [...prevItems];
-            updatedItems[selectedMenuItemIndex] = {
-                ...selectedItem,
-                subItems: updatedSubItems,
-            };
-            return updatedItems;
-        });
-    }
-    // Additional logic for other cases if needed
-};
+            setItems((prevItems) => {
+                const updatedItems = [...prevItems];
+                updatedItems.filter(selectedMenuTitleIndex, 1);
+                return updatedItems;
+            });
+        } else if (lastSelectionType === 'menuItem' && selectedMenuItemIndex !== null) {
+            // Remove a subitem from a menu item
+            const selectedItem = items[selectedMenuItemIndex];
+            const updatedSubItems = selectedItem.subItems.filter((_, index) => index !== selectedSubItemIndex);
 
-const handleCopyItems = () => {
-    if (lastSelectionType === 'menu' && selectedMenuTitleIndex !== null) {
-      const copiedMenu = { ...items[selectedMenuTitleIndex] };
-      setItems((prevItems) => [...prevItems, copiedMenu]);
-    } else if (lastSelectionType === 'menuItem' && selectedMenuItemIndex !== null) {
-      const copiedMenuItem = { ...items[selectedMenuItemIndex] };
-      setItems((prevItems) => [...prevItems, copiedMenuItem]);
-    }
-  };
+            setItems((prevItems) => {
+                const updatedItems = [...prevItems];
+                updatedItems[selectedMenuItemIndex] = {
+                    ...selectedItem,
+                    subItems: updatedSubItems,
+                };
+                return updatedItems;
+            });
+        }
+        // Additional logic for other cases if needed
+    };
+
+    const handleCopyItems = () => {
+        if (lastSelectionType === 'menu' && selectedMenuTitleIndex !== null) {
+            const copiedMenu = { ...items[selectedMenuTitleIndex] };
+            setItems((prevItems) => [...prevItems, copiedMenu]);
+        } else if (lastSelectionType === 'menuItem' && selectedMenuItemIndex !== null) {
+            const copiedMenuItem = { ...items[selectedMenuItemIndex] };
+            setItems((prevItems) => [...prevItems, copiedMenuItem]);
+        }
+    };
 
 
-const openPopupInspection=()=>{
-    console.log("popup open")
-    setIsPopupOpen(true);
+    const openPopupInspection = () => {
+        console.log("popup open")
+        setIsPopupOpen(true);
 
-};
-    
-const handleClosePopupInspection = () => {
-    console.log('popup close');
-    setIsPopupOpen(false);
-  };
+    };
+
+    const handleClosePopupInspection = () => {
+        console.log('popup close');
+        setIsPopupOpen(false);
+    };
 
 
     // JSX for rendering the component
@@ -284,7 +287,7 @@ const handleClosePopupInspection = () => {
                     {/* Menu Section */}
                     <div className='menu-edittemp'>
                     </div>
-                        <p className='menutitle-edittemp'>Menu</p>
+                    <p className='menutitle-edittemp'>Menu</p>
                     {/* Item Section */}
                     <div className='item'>
                         <p className='itemtitle-edittemp'>Item</p>
@@ -412,112 +415,119 @@ const handleClosePopupInspection = () => {
                                 Add
                             </button>
                             <button className="btnM-edittemp" onClick={handleRemoveItem}>
-                    Remove
-                </button>
+                                Remove
+                            </button>
                             <button className="btnM-edittemp" onClick={handleCopyItems}>Copy</button>
                         </div>
                     </div>
                     {/* Item Manipulation Buttons */}
                     <div className="button-container-edittemp">
                         <div className="input-container-edittemp">
-                            
+
                             <button className="btnM-edittemp" onClick={openPopupInspection}>Add</button>
                             {isPopupOpen && (
 
                                 // <Inspection/>
                                 <div className="dialog-inspection">
-      <div className="dialog-header-inspection">
-        <p className='para-inspection'>
-          What would you like to have on your new panel? A damage panel is a section that has a list of conditions/narratives and a red and black section to move the items into. A selection panel is one list used for selecting types of materials, locations, etc:
-        </p>
-      </div>
-      <div className="dialog-body-inspection">
-        <label className='label-inspection'>
-          <input
-            type="radio"
-            name="options"
-            value="Option 1"
-            checked={selectedOption === 'Option 1'}
-            onChange={handleRadioChange}
-          />
-          1 Damage Panel
-        </label>
+                                    <div className="dialog-header-inspection">
+                                        <p className='para-inspection'>
+                                            What would you like to have on your new panel? A damage panel is a section that has a list of conditions/narratives and a red and black section to move the items into. A selection panel is one list used for selecting types of materials, locations, etc:
+                                        </p>
+                                    </div>
+                                    <div className="dialog-body-inspection">
+                                        <label className='label-inspection'>
+                                            <input
+                                                type="radio"
+                                                name="options"
+                                                value="Option 1"
+                                                checked={selectedOption === 'Option 1'}
+                                                onChange={handleRadioChange}
+                                            />
+                                            1 Damage Panel
+                                        </label>
 
-       
-        <label className='label-inspection'>
-          <input
-            type="radio"
-            name="options"
-            value="Option 2"
-            checked={selectedOption === 'Option 2'}
-            onChange={handleRadioChange}
-          />
-          2 Damage Panels
-        </label>
 
-        <label className='label-inspection'>
-          <input
-            type="radio"
-            name="options"
-            value="Option 3"
-            checked={selectedOption === 'Option 3'}
-            onChange={handleRadioChange}
-          />
-          1 Selection Panel
-        </label>
+                                        <label className='label-inspection'>
+                                            <input
+                                                type="radio"
+                                                name="options"
+                                                value="Option 2"
+                                                checked={selectedOption === 'Option 2'}
+                                                onChange={handleRadioChange}
+                                            />
+                                            2 Damage Panels
+                                        </label>
 
-        <label className='label-inspection'>
-          <input
-            type="radio"
-            name="options"
-            value="Option 4"
-            checked={selectedOption === 'Option 4'}
-            onChange={handleRadioChange}
-          />
-          2 Selection Panels
-        </label>
+                                        <label className='label-inspection'>
+                                            <input
+                                                type="radio"
+                                                name="options"
+                                                value="Option 3"
+                                                checked={selectedOption === 'Option 3'}
+                                                onChange={handleRadioChange}
+                                            />
+                                            1 Selection Panel
+                                        </label>
 
-        <label className='label-inspection'>
-          <input
-            type="radio"
-            name="options"
-            value="Option 5"
-            checked={selectedOption === 'Option 5'}
-            onChange={handleRadioChange}
-          />
-          1 Damage Panel & 1 Selection Panel
-        </label>
+                                        <label className='label-inspection'>
+                                            <input
+                                                type="radio"
+                                                name="options"
+                                                value="Option 4"
+                                                checked={selectedOption === 'Option 4'}
+                                                onChange={handleRadioChange}
+                                            />
+                                            2 Selection Panels
+                                        </label>
 
-        <label className='label-inspection'>
-          <input
-            type="radio"
-            name="options"
-            value="Option 6"
-            checked={selectedOption === 'Option 6'}
-            onChange={handleRadioChange}
-          />
-          1 Damage Panel & 2 Selection Panels
-        </label>
-      </div>
-      <div className="dialog-footer-inspection">
-      <button className="cancel-button-inspection" onClick={handleClosePopupInspection}>
-          Cancel
-        </button>
-        <button className="back-button-inspection" onClick={handleBack}>
-          Back
-        </button>
-        <button className="next-button-inspection" onClick={handleNext}>
-          Next
-        </button>
-        <button className="done-button-inspection" >
-          Done
-        </button>
-      </div>
-      {/* Render the popup based on the selected option */}
-      {popupStates[selectedOption] && React.createElement(componentsMap[selectedOption])}
-    </div>
+                                        <label className='label-inspection'>
+                                            <input
+                                                type="radio"
+                                                name="options"
+                                                value="Option 5"
+                                                checked={selectedOption === 'Option 5'}
+                                                onChange={handleRadioChange}
+                                            />
+                                            1 Damage Panel & 1 Selection Panel
+                                        </label>
+
+                                        <label className='label-inspection'>
+                                            <input
+                                                type="radio"
+                                                name="options"
+                                                value="Option 6"
+                                                checked={selectedOption === 'Option 6'}
+                                                onChange={handleRadioChange}
+                                            />
+                                            1 Damage Panel & 2 Selection Panels
+                                        </label>
+                                    </div>
+                                    <div className="dialog-footer-inspection">
+                                        <button className="cancel-button-inspection" onClick={handleClosePopupInspection}>
+                                            Cancel
+                                        </button>
+                                        <button className="back-button-inspection" onClick={handleBack}>
+                                            Back
+                                        </button>
+                                        <button className="next-button-inspection" onClick={handleNext}>
+                                            Next
+                                        </button>
+                                        <button className="done-button-inspection" >
+                                            Done
+                                        </button>
+                                    </div>
+                                    {/* Render the popup based on the selected option */}
+                                    {/* {popupStates[selectedOption] && React.createElement(componentsMap[selectedOption])} */}
+                                    {isPopupOpen && selectedOption === 'Option 1' && <OneDamage isPopupOpen={isPopupOpen} setIsPopupOpen={setIsPopupOpen} onClose={() => setPopupStates({ ...popupStates, 'Option 1': false })} />}
+                                    {isPopupOpen && selectedOption === 'Option 2' && <TwoDamage isPopupOpen={isPopupOpen} setIsPopupOpen={setIsPopupOpen} onClose={() => setPopupStates({ ...popupStates, 'Option 2': false })} />}
+                                    {isPopupOpen && selectedOption === 'Option 3' && <OneSelection isPopupOpen={isPopupOpen} setIsPopupOpen={setIsPopupOpen} onClose={() => setPopupStates({ ...popupStates, 'Option 3': false })} />}
+                                    {isPopupOpen && selectedOption === 'Option 4' && <TwoSelection isPopupOpen={isPopupOpen} setIsPopupOpen={setIsPopupOpen} onClose={() => setPopupStates({ ...popupStates, 'Option 4': false })} />}
+                                    {isPopupOpen && selectedOption === 'Option 5' && <OneDamageSelection isPopupOpen={isPopupOpen} setIsPopupOpen={setIsPopupOpen} onClose={() => setPopupStates({ ...popupStates, 'Option 5': false })} />}
+                                    {isPopupOpen && selectedOption === 'Option 6' && <OneDamageTwoSelection isPopupOpen={isPopupOpen} setIsPopupOpen={setIsPopupOpen} onClose={() => setPopupStates({ ...popupStates, 'Option 6': false })} />}
+
+                                </div>
                             )}
-                      
+
                             <button className="btnM-edittemp">Remove</button>
                             <button className="btnM-edittemp">Move Up</button>
                             <button className="btnM-edittemp">Move Down</button>

@@ -97,6 +97,9 @@ const BatchAddPhotos = () => {
           </div>
         </div>
       )}
+      <div>
+        <Footer />
+      </div>
     </>
   );
 };

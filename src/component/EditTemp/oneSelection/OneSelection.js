@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './OneSelection.css';
 
-function OneSelection () {
+function OneSelection({ setIsPopupOpen, isPopupOpen, onClose }) {
   const [formData, setFormData] = useState({
     tabName_2nd: '',
     selectionPanelName: '',
@@ -18,11 +18,13 @@ function OneSelection () {
   const handleCancel = () => {
     // Add functionality for cancel button if needed
     console.log('Cancel button clicked');
+    setIsPopupOpen(false);
   };
 
   const handleBack = () => {
     // Add functionality for back button if needed
-    console.log('Back button clicked');
+  
+    onClose(); // Call the onClose function passed from the parent
   };
 
   const handleNext = () => {
@@ -35,7 +37,7 @@ function OneSelection () {
     console.log('Done button clicked');
   };
 
-  
+
 
   return (
     <div className="form-container-oneselection">
@@ -43,43 +45,43 @@ function OneSelection () {
       <p className='p-oneselection'>Creating A Page With 1 Selection Panel.The Selection Panel Name is what will appear on the report.</p>
       {/* <form onSubmit={handleSubmit}> */}
       <div className='label-container-oneselection'>
-      <label className='label-oneselection' htmlFor="field1">Tab Name:</label>
+        <label className='label-oneselection' htmlFor="field1">Tab Name:</label>
         <input
           className='input-oneselection'
           type="text"
           name="tabName_2nd"
-        //   placeholder="Enter your first value"
+          //   placeholder="Enter your first value"
           value={formData.tabName_2nd}
           onChange={handleInputChange}
           required
         />
-        </div>
-        <div className='label-container-oneselection'>
+      </div>
+      <div className='label-container-oneselection'>
         <label className='label-oneselection' htmlFor="field2">Selection Panel Name:</label>
         <input
           className='input-oneselection'
           type="text"
           name="selectionPanelName"
-        //   placeholder="Enter your second value"
+          //   placeholder="Enter your second value"
           value={formData.selectionPanelName}
           onChange={handleInputChange}
           required
         />
-        </div>
-        <div className="button-container-onselection">
-          <button type="button" className="cancel-button-oneselection" onClick={handleCancel}>
-            Cancel
-          </button>
-          <button type="button" className="back-button-oneselection" onClick={handleBack}>
-            Back
-          </button>
-          <button type="button" className="next-button-oneselection" onClick={handleNext}>
-            Next
-          </button>
-          <button type="submit" className="done-button-oneselection" onClick={handleDone}>
-            Done
-          </button>
-        </div>
+      </div>
+      <div className="button-container-onselection">
+        <button type="button" className="cancel-button-oneselection" onClick={handleCancel}>
+          Cancel
+        </button>
+        <button type="button" className="back-button-oneselection" onClick={handleBack}>
+          Back
+        </button>
+        <button type="button" className="next-button-oneselection" onClick={handleNext}>
+          Next
+        </button>
+        <button type="submit" className="done-button-oneselection" onClick={handleDone}>
+          Done
+        </button>
+      </div>
       {/* </form> */}
     </div>
   );

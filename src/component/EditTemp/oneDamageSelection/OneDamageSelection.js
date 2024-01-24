@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './OneDamageSelection.css';
 
-function OneDamageSelection() {
+function OneDamageSelection({ setIsPopupOpen, isPopupOpen, onClose }) {
   const [formData, setFormData] = useState({
     tabName_4th: '',
     damagePanelName_3rd: '',
@@ -25,11 +25,13 @@ function OneDamageSelection() {
   const handleCancel = () => {
     // Add functionality for cancel button if needed
     console.log('Cancel button clicked');
+    setIsPopupOpen(false);
   };
 
   const handleBack = () => {
     // Add functionality for back button if needed
     console.log('Back button clicked');
+    onClose();
   };
 
   const handleNext = () => {
