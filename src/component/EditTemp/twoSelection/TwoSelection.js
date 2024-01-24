@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './TwoSelection.css';
 
-function TwoSelection() {
+function TwoSelection({ setIsPopupOpen, isPopupOpen, onClose }) {
   const [formData, setFormData] = useState({
     tabName_3rd: '',
     selectionPanelName_1st: '',
@@ -25,11 +25,13 @@ function TwoSelection() {
   const handleCancel = () => {
     // Add functionality for cancel button if needed
     console.log('Cancel button clicked');
+    setIsPopupOpen(false);
   };
 
   const handleBack = () => {
     // Add functionality for back button if needed
     console.log('Back button clicked');
+    onClose(); // Call the onClose function passed from the parent
   };
 
   const handleNext = () => {
@@ -62,7 +64,7 @@ function TwoSelection() {
         </div>
         <div className="label-container-twoselection">
           <label className="label-twoselection">
-           1st Selection Panel Name:
+            1st Selection Panel Name:
           </label>
           <input
             className="input-twoselection"

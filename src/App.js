@@ -16,6 +16,9 @@ import EditComments from "./component/EditComments/EditComments";
 import InternetLogin from "./component/InternetLogin/InternetLogin";
 
 import BatchAddPhotos from "./component/Photo/BatchAddPhotos/BatchAddPhotos";
+import ContractPage from './component/Contract/Contract';
+import ColorPalette from "./component/ColorPalet/ColorPalet";
+import Editor from "./component/Editor/Editor";
 
 function App() {
   return (
@@ -32,8 +35,12 @@ function App() {
         <Route path="/photoreview" element={<PhotoReview />}></Route>
         <Route path="/EditComments" element={<EditComments />}></Route>
         <Route path="/batchaddphotos" element={<BatchAddPhotos />}></Route>
+        <Route path="/contractpage" element={<ContractPage />}></Route>
+        <Route path="/generateReport" element={<ColorPalette />}></Route>
       </Routes>
     </BrowserRouter>
+
+    // <Editor />
   );
 }
 export default App;

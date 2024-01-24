@@ -1,3 +1,17 @@
 .editor-for-edit-images-tablist-section{
+    display: flex;
+    justify-content: center;
+}
+.button-for-editor{
+    background-color: #f3f2f1;
+    color: black;
+    border: 2px solid rgb(191, 189, 189);
+    border-radius: 5px; 
+    width: 100px;
     
+
+}
+.button-for-editor:hover{
+    background-color: #d7e9f7;
+    border-color: #005a9e;
 }
