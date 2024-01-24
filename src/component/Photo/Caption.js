@@ -71,7 +71,7 @@ const Caption = () => {
 
             <br />
 
-            <input
+            <textarea
               className="caption-popupbox-input-filed"
               value={captionValue}
               onChange={handleInputChange}
