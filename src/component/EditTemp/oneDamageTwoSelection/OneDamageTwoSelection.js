@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './OneDamageTwoSelection.css';
 
-function OneDamageTwoSelection() {
+function OneDamageTwoSelection({ setIsPopupOpen, isPopupOpen, onClose }) {
   const [formData, setFormData] = useState({
     tabName_5th: '',
     damagePanelName_4th: '',
     selectionPanelName_4th: '',
-    selectionPanelName_5th:'',
+    selectionPanelName_5th: '',
   });
 
   const handleInputChange = (e) => {
@@ -26,11 +26,13 @@ function OneDamageTwoSelection() {
   const handleCancel = () => {
     // Add functionality for cancel button if needed
     console.log('Cancel button clicked');
+    setIsPopupOpen(false);
   };
 
   const handleBack = () => {
     // Add functionality for back button if needed
     console.log('Back button clicked');
+    onClose();
   };
 
   const handleNext = () => {
@@ -77,7 +79,7 @@ function OneDamageTwoSelection() {
         </div>
         <div className="label-container-onedamagetwoselection">
           <label className="label-onedamagetwoselection">
-           1st Selection Panel Name:
+            1st Selection Panel Name:
           </label>
           <input
             className="input-onedamagetwoselection"
@@ -91,7 +93,7 @@ function OneDamageTwoSelection() {
         </div>
         <div className="label-container-onedamagetwoselection">
           <label className="label-onedamagetwoselection">
-           2nd Selection Panel Name:
+            2nd Selection Panel Name:
           </label>
           <input
             className="input-onedamagetwoselection"

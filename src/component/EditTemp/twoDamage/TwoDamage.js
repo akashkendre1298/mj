@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './TwoDamage.css';
 
-function TwoDamage() {
+function TwoDamage({ setIsPopupOpen, isPopupOpen, onClose }) {
   const [formData, setFormData] = useState({
     tabName_1st: '',
     damagePanelName_1st: '',
@@ -25,10 +25,12 @@ function TwoDamage() {
   const handleCancel = () => {
     // Add functionality for cancel button if needed
     console.log('Cancel button clicked');
+    setIsPopupOpen(false)
   };
 
   const handleBack = () => {
     // Add functionality for back button if needed
+    onClose()
     console.log('Back button clicked');
   };
 
