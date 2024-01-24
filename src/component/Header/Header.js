@@ -252,6 +252,7 @@ const Header = () => {
               </a>
             </li>
             <hr />
+            <Link to="/EditComments">
             <li className="list-for-header-section-main-nav">
               <a href="#" className="header2-tag-a">
                 <div className="flex justify-center">
@@ -263,6 +264,7 @@ const Header = () => {
                 </div>
               </a>
             </li>
+            </Link>
             <li className="list-for-header-section-main-nav  border-r border-black-900">
               <a
                 href="#"

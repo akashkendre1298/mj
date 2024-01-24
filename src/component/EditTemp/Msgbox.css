@@ -1,0 +1,86 @@
+.form-container-updates {
+    background-color:rgb(229, 229, 229);;
+    border-radius: 5px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65vh;
+    height: 60vh;
+  }
+  
+  .h2-updates {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .p-updates {
+    font-size: 14px;
+    margin-bottom: 90px;
+  }
+  
+  .label-updates {
+    display: block;
+    margin-bottom: 5px;
+  }
+    .input-updates {
+      flex: 1;
+      padding: 10px;
+      height: 30px;
+      width: 150px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      outline: 1rem;
+      margin: 1px;
+  } 
+  
+  .input-updates:hover {
+    /* background-color: #d7e9f7; */
+    border-color: #005a9e;
+    }
+  
+  .cancel-button-updates{
+    font-size: 14px;
+    width: 95px;
+    height: 25px;
+    background-color: #f3f2f1;
+    color: black;
+    border: 2px solid rgb(191, 189, 189);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+    }
+    .cancel-button-updates:hover {
+    background-color: #d7e9f7;
+    border-color: #005a9e;
+    }
+  
+    .update-button-updates{
+        font-size: 14px;
+        width: 95px;
+        height: 25px;
+        background-color: #f3f2f1;
+        color: black;
+        border: 2px solid rgb(191, 189, 189);
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 5px;
+        }
+        .update-button-updates:hover {
+        background-color: #d7e9f7;
+        border-color: #005a9e;
+        }
+
+          .button-container-updates{
+            display: flex;
+            margin-left: 100px;
+            margin-top: 150px;
+          
+          }
+   
+          .label-container-updates{
+            display: flex;
+  
+          }
+  

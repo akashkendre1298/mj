@@ -9,8 +9,12 @@ import Book from "./component/Address _book/Book";
 import Panel1 from "./component/Panel/Panel1/Panel1";
 import Panel2 from "./component/Panel/Panel2/Panel2";
 import Panel3 from "./component/Panel/Panel3/Panel3";
-import PhotoReview from "./component/Photo/PhotoReview";
-import BatchAddPhotos from "./component/Photo/BatchAddPhotos/BatchAddPhotos";
+
+import PhotoReview from './component/Photo/PhotoReview';
+import PannelComponent from "./component/Panel/PannelComponent/PannelComponent";
+import EditComments from "./component/EditComments/EditComments";
+import InternetLogin from "./component/InternetLogin/InternetLogin";
+
 function App() {
   return (
     <BrowserRouter>
@@ -23,12 +27,12 @@ function App() {
         <Route path="/panel1" element={<Panel1 />}></Route>
         <Route path="/panel2" element={<Panel2 />}></Route>
         <Route path="/panel3" element={<Panel3 />}></Route>
-        <Route path="/photoreview" element={<PhotoReview />}></Route>
-        <Route path="/batchaddphotos" element={<BatchAddPhotos />}></Route>
+        <Route path="/photoreview" element={<PhotoReview/>}></Route>
+        <Route path="/EditComments" element={<EditComments/>}></Route>
+
       </Routes>
     </BrowserRouter>
-    // <Editor />
-    // <ColorPicker />
+   
   );
 }
 export default App;

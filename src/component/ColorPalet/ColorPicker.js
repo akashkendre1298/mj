@@ -19,15 +19,15 @@ const ColorPicker = ({ index }) => {
     };
 
     return (
-        <div>
+        <div className='z-10'>
             {/* Color Picker Input */}
-            <input
+            {/* <input
                 type="color"
                 id={`footer_bg_color_${index}`}
                 name={`footer_bg_color_${index}`}
                 value={rowColors[index].footerBackground}
                 onChange={(e) => handleColorChange(index, 'footerBackground', e.target.value)}
-            />
+            /> */}
 
             {/* Color Picker Popup */}
             <div>

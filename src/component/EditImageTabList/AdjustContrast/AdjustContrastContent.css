@@ -1,0 +1,19 @@
+.preview-image {
+  width: 50%;
+  height: 50%;
+}
+.adjust-contrast-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  top: 13%;
+  position: absolute;
+}
+.contrast-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  margin-top: 2em;
+}
