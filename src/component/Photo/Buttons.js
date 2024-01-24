@@ -246,7 +246,9 @@ const Buttons = ({ onFileSelect }) => {
           </div>
 
           <div className="Add-Icons-cancel-btn-zz">
-            <button className="Add-Icons-cancel-btn-yy">Cancel</button>
+            <button className="Add-Icons-cancel-btn-yy" onClick={closePopup}>
+              Cancel
+            </button>
           </div>
         </div>
       )}
