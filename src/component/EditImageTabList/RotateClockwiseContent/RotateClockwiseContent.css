@@ -1,17 +1,20 @@
-/* .rotate-clockwise-container {
+.rotate-clockwise-container {
   display: grid;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  top: 13%;
+  /* text-align: center; */
+  top: 30%;
   position: absolute;
 }
 
-.image-container {
+.image-container-rotate {
   transform-origin: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.preview-image {
+.preview-image-rotate {
   width: 50%;
   height: 50%;
-} */
+}

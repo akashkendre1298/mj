@@ -44,10 +44,7 @@
   align-items: center;
   z-index: 10;
 }
-.width-set-for-the-popup-windows-edit-image-section {
-  /* width: 60em; */
-  /* display: flex; */
-}
+
 .edit-image-popup-close-image {
   height: 10px;
   width: 10px;

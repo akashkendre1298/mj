@@ -1,4 +1,4 @@
-.preview-image {
+.preview-image-contrast {
   width: 50%;
   height: 50%;
 }
@@ -16,4 +16,8 @@
   align-items: center;
   gap: 1em;
   margin-top: 2em;
+}
+.image-container-adjust-contrast {
+  display: flex;
+  justify-content: center;
 }

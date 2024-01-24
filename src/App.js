@@ -29,7 +29,7 @@ function App() {
         <Route path="/panel3" element={<Panel3 />}></Route>
         <Route path="/photoreview" element={<PhotoReview/>}></Route>
         <Route path="/EditComments" element={<EditComments/>}></Route>
-
+    
       </Routes>
     </BrowserRouter>
    
