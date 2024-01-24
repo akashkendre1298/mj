@@ -47,7 +47,7 @@ function OneDamageTwoSelection({ setIsPopupOpen, isPopupOpen, onClose }) {
 
   return (
     <div className="form-container-onedamagetwoselection">
-      <p className="p-onedamagetwoselection">Creating the page with 1 Damage Panel and 1 Selection Panel. The Damage Panel Name will be appear on the report.</p>
+      <p className="p-onedamagetwoselection">Creating the page with 1 Damage Panel and 2 Selection Panel. The Damage Panel Name will be appear on the report.</p>
       <form onSubmit={handleSubmit}>
         <div className="label-container-onedamagetwoselection">
           <label className="label-onedamagetwoselection">
