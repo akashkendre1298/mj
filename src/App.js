@@ -14,12 +14,13 @@ import PhotoReview from './component/Photo/PhotoReview';
 import PannelComponent from "./component/Panel/PannelComponent/PannelComponent";
 import EditComments from "./component/EditComments/EditComments";
 import InternetLogin from "./component/InternetLogin/InternetLogin";
+import MobileUpload from "./component/MobileUpload/MobileUpolad";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<ClientInfo />}></Route>
+         <Route path="/" element={<ClientInfo />}></Route>
         <Route path="/" element={<Footer />}></Route>
         <Route path="/colorpalet" element={<ColorPalet />}></Route>
         <Route path="/insertpdf" element={<InsertPdf />}></Route>
@@ -28,8 +29,7 @@ function App() {
         <Route path="/panel2" element={<Panel2 />}></Route>
         <Route path="/panel3" element={<Panel3 />}></Route>
         <Route path="/photoreview" element={<PhotoReview/>}></Route>
-        <Route path="/EditComments" element={<EditComments/>}></Route>
-
+        <Route path="/EditComments" element={<EditComments/>}></Route>  
       </Routes>
     </BrowserRouter>
    

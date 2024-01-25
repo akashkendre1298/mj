@@ -1,0 +1,143 @@
+.flex-container-mobileupload {
+    display: flex;
+    justify-content: space-between;
+     
+  }
+  
+  .container-mobileupload {
+    background-color: #fee4c3;
+  }
+  
+  .template-mobileupload {
+    width: 750px; /* Adjust the width as needed */
+    height: 550px;
+    border-right: 1px solid gray;
+    position: relative;
+    margin-top: 15px;
+    background-color: #fee4c3;
+  }
+  
+  .title-mobileupload {
+    text-align: center;
+    font-weight: 400;
+    margin: 10px;
+    font-size: 14px;
+  }
+  
+  .buttons-mobileupload {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .button-mobileupload {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    background-color:whitesmoke;
+    margin: 20px;
+    font-size: 14px;
+  }
+  
+  .i-mobileupload {
+    font-size: 14px;
+  }
+  
+  .button1-mobileupload{
+    font-size: 14px;
+  width: 150px;
+  height: 27px;
+  background-color: #f3f2f1;
+  color: black;
+  border: 2px solid rgb(191, 189, 189);
+  border-radius: 5px;
+  cursor: pointer;
+  }
+
+.container-footer-mobileupload {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fee4c3;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .button-footer-mobileupload {
+    font-size: 15px;
+  width: 170px;
+  height: 25px;
+  background-color: #f3f2f1;
+  color: black;
+  border: 2px solid rgb(191, 189, 189);
+  border-radius: 5px;
+  cursor: pointer;
+    
+  }
+  
+  .tag-footer-mobileuplaod {
+    /* background-color: yellow; */
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .input-footer-mobileupload {
+    border: 2px solid rgb(191, 189, 189);
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: black;
+  }
+
+  .input-footer-mobileupload:hover {
+    background-color: #d7e9f7;
+    border-color: #005a9e;
+  }
+  
+  /* Use Font Awesome icons */
+  .fa-footer-mobileupload {
+    margin-right: 5px;
+  }
+  
+  /* .footer-icon {
+    margin: 0 5px;
+    color: black;
+  }
+   */
+
+
+
+.container-header-mobileupload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:#fee4c3 ;
+    padding: 20px;
+    /* font-family: Arial; */
+  }
+  
+  .title-header-mobileupload {
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  
+  .note-header-mobileupload {
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+    margin-bottom: 10px;
+  }
+  
+  .info-header-mobileupload {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  
