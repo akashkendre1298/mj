@@ -1,13 +1,13 @@
 .form-container-twodamage {
-    background-color:rgb(229, 229, 229);;
-    border-radius: 5px;
-    padding: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 74vh;
-    height: 50vh;
+  background-color: rgb(229, 229, 229);
+  border-radius: 5px;
+  padding: 20px;
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 62vh;
+  height: 48vh;
   }
   
   .h2-twodamage {

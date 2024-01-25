@@ -1,12 +1,12 @@
  .form-container-onedamage {
-  background-color:rgb(229, 229, 229);;
-  border-radius: 5px;
+  background-color: rgb(229, 229, 229);
+  /* border-radius: 5px; */
   padding: 20px;
   position: absolute;
-  top: 50%;
+  top: 53%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 74vh;
+  width: 62vh;
   height: 50vh;
 }
 
