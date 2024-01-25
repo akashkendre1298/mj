@@ -1,0 +1,20 @@
+.rotate-clockwise-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  /* text-align: center; */
+  top: 30%;
+  position: absolute;
+}
+
+.image-container-rotate {
+  transform-origin: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview-image-rotate {
+  width: 50%;
+  height: 50%;
+}

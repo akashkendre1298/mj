@@ -48,7 +48,10 @@ const Buttons = ({ onFileSelect }) => {
   const uploadedFileRef = useRef(null);
   const [showPopup, setShowPopup] = useState(false);
   const [inputValue, setInputValue] = useState("");
+  const [selectedFolder, setSelectedFolder] = useState(null);
+  const [uploadedImageUrl, setUploadedImageUrl] = useState(null);
 
+  const [uploadedIcon, setUploadedIcon] = useState(null);
   const handleImg1Click = () => {
     if (fileInputRef.current) {
       fileInputRef.current.click();
@@ -57,6 +60,8 @@ const Buttons = ({ onFileSelect }) => {
 
   const handleFileChange = (e) => {
     if (e.target.files && e.target.files.length > 0) {
+      const imageUrl = URL.createObjectURL(e.target.files[0]);
+      setUploadedImageUrl(imageUrl);
       uploadedFileRef.current = e.target.files[0];
       onFileSelect(uploadedFileRef.current);
     }
@@ -92,6 +97,13 @@ const Buttons = ({ onFileSelect }) => {
     setIsPopupOpen(true);
   };
 
+  const handleFileChangeInAddTab = (e) => {
+    if (e.target.files && e.target.files.length > 0) {
+      const imageUrl = URL.createObjectURL(e.target.files[0]);
+      setUploadedIcon(imageUrl); // Update state with the uploaded icon URL
+    }
+  };
+
   return (
     <>
       <input
@@ -120,6 +132,7 @@ const Buttons = ({ onFileSelect }) => {
                   <EditImageTabList
                     isOpen={isPopupOpen}
                     onRequestClose={closePopup}
+                    uploadedImageUrl={uploadedImageUrl}
                   />
                 </div>
               )}
@@ -199,55 +212,68 @@ const Buttons = ({ onFileSelect }) => {
             </div>
           </div>
           <div className="Add-Icons-Search-button-main-contaier">
-            <div className="Add-Icons-Search-Button">
-              <p>Search</p>
+            <div
+              className={`Tab ${activeTab === 1 ? "active" : ""}`}
+              onClick={() => handleTabClick(1)}
+              id="Add-Icons-Search-Button"
+            >
+              Search
             </div>
-            <div className="Add-Icons-Search-Button">
-              <p>Add</p>
+            <div
+              className={`Tab ${activeTab === 2 ? "active" : ""}`}
+              onClick={() => handleTabClick(2)}
+              id="Add-Icons-Search-Button"
+            >
+              Add
             </div>
           </div>
-          <div className="Add-icon-horizonatl-line1">
-            <hr></hr>
-          </div>
-          <div className="Add-icons-select-icons-from-given-main-container">
-            <img
-              src={check}
-              alt="Icon1"
-              className="Add-icon-select-icon-image-tage-ite"
-            />
-            <img
-              src={check}
-              alt="Icon2"
-              className="Add-icon-select-icon-image-tage-ite"
-            />
-            <img
-              src={check}
-              alt="Icon3"
-              className="Add-icon-select-icon-image-tage-ite"
-            />
-            <img
-              src={check}
-              alt="Icon4"
-              className="Add-icon-select-icon-image-tage-ite"
-            />
-            <img
-              src={check}
-              alt="Icon5"
-              className="Add-icon-select-icon-image-tage-ite"
-            />
-            <img
-              src={check}
-              alt="Icon6"
-              className="Add-icon-select-icon-image-tage-ite"
-            />
-          </div>
-          <div className="Add-icon-horizonatl-line1">
-            <hr></hr>
-          </div>
+          {activeTab === 1 && (
+            // Add your search tab content here
+            <div className="Search-Tab">
+              <div className="Add-icon-horizonatl-line1">
+                <hr className="" />
+              </div>
 
-          <div className="Add-Icons-cancel-btn-zz">
-            <button className="Add-Icons-cancel-btn-yy">Cancel</button>
-          </div>
+              <div className="Add-icons-No-Icons-found">
+                {uploadedIcon ? (
+                  <img src={uploadedIcon} alt="Uploaded Icon" />
+                ) : (
+                  <span>No Icons found</span>
+                )}
+              </div>
+
+              <div className="Add-Icons-cancel-btn-zz">
+                {/* <hr className="Add-icon-horizonatl-line2" /> */}
+                <button
+                  className="Add-Icons-cancel-btn-yy"
+                  onClick={closePopup}
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          )}
+          {activeTab === 2 && (
+            // Add your add tab content here
+            <div className="Add-Tab">
+              <div className="Add-icon-horizonatl-line1">
+                <hr className="" />
+              </div>
+              <div className="Add-icons-No-Icons-found">
+                <span>Add Icons</span>
+                {/* <p>No ICON FIUBNF</p> */}
+              </div>
+
+              <div className="Add-icons-No-Icons-found">
+                <input type="file" onChange={handleFileChangeInAddTab} />
+              </div>
+
+              <div className="Add-Icons-cancel-btn-zz">
+                {/* <hr className="Add-icon-horizonatl-line2" /> */}
+                <button className="Add-Icons-cancel-btn-yy">Done</button>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </>

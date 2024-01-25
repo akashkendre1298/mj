@@ -25,6 +25,7 @@ const Header = () => {
   const [openTemplatePopup, setOpenTemplatePopup] = useState(false);
   const [saveTemplatePopup, setSaveTemplatePopup] = useState(false);
   const [editTemplatePopup, setEditTemplatePopup] = useState(false);
+  const [activePopup, setActivePopup] = useState(null);
 
   const openOpenTemplatePopup = () => {
     setOpenTemplatePopup(true);
@@ -82,6 +83,18 @@ const Header = () => {
     setActiveMenu(activeMenu === menuId ? null : menuId);
   };
 
+  // const [activePopup, setActivePopup] = useState(null);
+
+  const openPopup = (popupId) => {
+    console.log(`Opening ${popupId} popup`);
+    setActivePopup(popupId);
+  };
+
+  const closePopup = () => {
+    console.log("Closing popup");
+    setActivePopup(null);
+  };
+
   return (
     <>
       <div
@@ -137,8 +150,10 @@ const Header = () => {
             General information
           </div>
           {activeMenu === 1 && (
-            <ul className="submenu absolute z-10 bg-white shadow mt-2"
-              style={{ width: "180px", lineHeight: "12px" }}>
+            <ul
+              className="submenu absolute z-10 bg-white shadow mt-2"
+              style={{ width: "180px", lineHeight: "12px" }}
+            >
               <Link to="/panel1">
                 <li className="py-2 px-4 hover:bg-gray-200">Wall</li>
               </Link>
@@ -156,8 +171,10 @@ const Header = () => {
             Photos
           </div>
           {activeMenu === 2 && (
-            <ul className="submenu absolute z-10 bg-white shadow mt-2"
-              style={{ width: "180px", lineHeight: "12px" }}>
+            <ul
+              className="submenu absolute z-10 bg-white shadow mt-2"
+              style={{ width: "180px", lineHeight: "12px" }}
+            >
               <Link to="/photoreview">
                 <li className="py-2 px-4 hover:bg-gray-200">
                   Add Review Photos
@@ -252,9 +269,13 @@ const Header = () => {
               </a>
             </li>
             <hr />
-            <Link to="/EditComments">
+
             <li className="list-for-header-section-main-nav">
-              <a href="#" className="header2-tag-a">
+              <p
+               
+                onClick={() => openPopup("editComments")}
+                className="header2-tag-a"
+              >
                 <div className="flex justify-center">
                   <img src={img5} alt="" />
                 </div>
@@ -262,9 +283,9 @@ const Header = () => {
                   Edit <br />
                   Comments
                 </div>
-              </a>
+              </p>
             </li>
-            </Link>
+
             <li className="list-for-header-section-main-nav  border-r border-black-900">
               <a
                 href="#"
@@ -352,17 +373,20 @@ const Header = () => {
               </a>
             </li>
             <hr />
-            <li className="list-for-header-section-main-nav">
-              <a href="#" className="header2-tag-a">
-                <div className="flex justify-center">
-                  <img src={img12} alt="" />
-                </div>
-                <div>
-                  Geneate
-                  <br /> report
-                </div>
-              </a>
-            </li>
+
+            <Link to="/generateReport">
+              <li className="list-for-header-section-main-nav">
+                <a href="#" className="header2-tag-a">
+                  <div className="flex justify-center">
+                    <img src={img12} alt="" />
+                  </div>
+                  <div>
+                    Geneate
+                    <br /> report
+                  </div>
+                </a>
+              </li>
+            </Link>
             <hr />
             <li className="list-for-header-section-main-nav">
               <a href="#" className="header2-tag-a">

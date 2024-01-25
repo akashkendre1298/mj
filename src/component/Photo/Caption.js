@@ -1,19 +1,16 @@
 import React, { useState } from "react";
 import img7 from "./icons/notes.png";
-
 import close from "./icons/close_2997911.png";
 import "./Caption.css";
 import Buttons from "./Buttons";
 
 const Caption = () => {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [captionValue, setCaptionValue] = useState("");
+  const [popupCaptionValue, setPopupCaptionValue] = useState("");
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const handlePopupOpen = () => {
-    if (!isPopupOpen) {
-      // Only reset captionValue if the popup is not already open
-      setCaptionValue("");
-    }
+    setPopupCaptionValue(captionValue); // Copy text to popup input field
     setIsPopupOpen(true);
   };
 
@@ -22,7 +19,7 @@ const Caption = () => {
   };
 
   const handleSaveChanges = () => {
-    // Save logic here (you can send the data to the server or perform any other action)
+    setCaptionValue(popupCaptionValue); // Save changes to the main input field
     setIsPopupOpen(false);
   };
 
@@ -32,6 +29,10 @@ const Caption = () => {
 
   const handleInputChange = (e) => {
     setCaptionValue(e.target.value);
+  };
+
+  const handlePopupInputChange = (e) => {
+    setPopupCaptionValue(e.target.value);
   };
 
   return (
@@ -60,7 +61,7 @@ const Caption = () => {
               <label className="caption-popup-caption-editor">
                 Caption Editor
               </label>
-              <div className="caption-popup-close-image-contaier">
+              <div className="caption-popup-close-image-container">
                 <img
                   src={close}
                   className="caption-popup-close-image"
@@ -71,10 +72,10 @@ const Caption = () => {
 
             <br />
 
-            <input
+            <textarea
               className="caption-popupbox-input-filed"
-              value={captionValue}
-              onChange={handleInputChange}
+              value={popupCaptionValue}
+              onChange={handlePopupInputChange}
             />
             <br />
             <div className="caption-popupbox-buttons-main-container">

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './OneDamage.css';
 
-function OneDamage() {
+function OneDamage({ setIsPopupOpen, isPopupOpen, onClose }) {
   const [formData, setFormData] = useState({
     tabName: '',
     damagePanelName: '',
@@ -18,11 +18,14 @@ function OneDamage() {
   const handleCancel = () => {
     // Add functionality for cancel button if needed
     console.log('Cancel button clicked');
+    setIsPopupOpen(false);
   };
 
   const handleBack = () => {
     // Add functionality for back button if needed
     console.log('Back button clicked');
+
+    onClose(); // Call the onClose function passed from the parent
   };
 
   const handleNext = () => {
@@ -46,51 +49,46 @@ function OneDamage() {
       setFormData(JSON.parse(storedFormData));
     }
   }, []);
+
   return (
     <div className="form-container-onedamage">
-      {/* <h2 className='h2-onedamage'>Creating A Page With 1 Damage Panel</h2> */}
-      <p className='p-onedamage'>Creating A Page With 1 Damage Panel.The Damage Panel Name is what will appear on the report.</p>
-      {/* <form onSubmit={handleSubmit}> */}
+      <p className='p-onedamage'>Creating A Page With 1 Damage Panel. The Damage Panel Name is what will appear on the report.</p>
       <div className='label-container-onedamage'>
-      <label className='label-onedamage' htmlFor="field1">Tab Name:</label>
+        <label className='label-onedamage' htmlFor="field1">Tab Name:</label>
         <input
           className='input-onedamage'
           type="text"
           name="tabName"
-          // placeholder="Enter your first value"
           value={formData.tabName}
           onChange={handleInputChange}
           required
         />
-        </div>
-        <div className='label-container-onedamage'>
-        <label className='label-onedamage' htmlFor="field2">damage Panel Name:</label>
+      </div>
+      <div className='label-container-onedamage'>
+        <label className='label-onedamage' htmlFor="field2">Damage Panel Name:</label>
         <input
           className='input-onedamage'
           type="text"
           name="damagePanelName"
-          // placeholder="Enter your second value"
           value={formData.damagePanelName}
           onChange={handleInputChange}
           required
         />
-        </div>
-        <div className="button-container-onedamge">
-          <button type="button" className="cancel-button-onedamage" onClick={handleCancel}>
-            Cancel
-          </button>
-          <button type="button" className="back-button-onedamage" onClick={handleBack}>
-            Back
-          </button>
-          <button type="button" className="next-button-onedamage" onClick={handleNext}>
-            Next
-          </button>
-          <button type="button" className="done-button-onedamage" onClick={handleDone}>
+      </div>
+      <div className="button-container-onedamage">
+        <button type="button" className="cancel-button-onedamage" onClick={handleCancel}>
+          Cancel
+        </button>
+        <button type="button" className="back-button-onedamage" onClick={handleBack}>
+          Back
+        </button>
+        <button type="button" className="next-button-onedamage" onClick={handleNext}>
+          Next
+        </button>
+        <button type="button" className="done-button-onedamage" onClick={handleDone}>
           Done
         </button>
-        
-        </div>
-      {/* </form> */}
+      </div>
     </div>
   );
 }

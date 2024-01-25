@@ -13,10 +13,10 @@ const AdjustContrastContent = ({ imageUrl }) => {
   return (
     <div className="adjust-contrast-container">
       <div
-        className="image-container"
+        className="image-container-adjust-contrast"
         style={{ filter: `contrast(${contrast}%)` }}
       >
-        <img src={imageUrl} alt="Preview" className="preview-image" />
+        <img src={imageUrl} alt="Preview" className="preview-image-contrast " />
       </div>
       <div className="contrast-control">
         <label htmlFor="contrastRange">Adjust Contrast</label>

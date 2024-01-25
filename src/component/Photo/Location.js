@@ -1,6 +1,7 @@
 import React from "react";
 import "./Location.css";
 import Recallcheck from "./Recallcheck";
+import { Link } from "react-router-dom";
 const Location = () => {
   return (
     <>
@@ -33,7 +34,9 @@ const Location = () => {
             <select className="PhotoReview-Location-first-inputfields"></select>
           </div>
           <div className="PhotoReview-Location-button">
-            <button>@</button>
+            <Link to="/panel1">
+              <button>@</button>
+            </Link>
           </div>
 
           <div className="PhotoReview-Location-Checkbox-Container">

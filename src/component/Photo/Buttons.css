@@ -20,6 +20,7 @@
 .Buttons-orderlist-to-adjust-images {
   max-width: 100%;
   max-height: 100%;
+  cursor: pointer;
 }
 .Buttons-unoorderlist-for-icons-buttons {
   display: grid;
@@ -90,30 +91,43 @@
   background-color: #5600ff;
   border: none;
 }
+.Add-icon-horizonatl-line2 {
+  /* position: relative;
+  top: 73%; */
+  height: 3px;
+  background-color: #e1dfe6;
+  border: none;
+}
 
-.Add-Icons-Search-Button {
+#Add-Icons-Search-Button {
   padding: 10px;
   cursor: pointer;
 }
 
-.Add-Icons-Search-Button:hover {
+#Add-Icons-Search-Button:hover {
   background-color: rgb(0, 162, 255);
   border-bottom: 4px solid blue;
 }
 .Add-Icons-cancel-btn-zz {
   display: flex;
   justify-content: flex-end;
-  margin-right: 15px;
-  margin-top: 7px;
+  /* margin-right: 15px; */
+  /* margin-top: 7px; */
+  position: absolute;
+  top: 86%;
+  border-top: 1px solid #e1dfe6;
+  width: 100%;
+  padding: 1em 1em 0 0;
 }
 .Add-Icons-cancel-btn-yy {
-  padding-left: 25px;
-  padding-right: 25px;
   background-color: #f3f2f1;
   color: black;
   border: 2px solid rgb(191, 189, 189);
   border-radius: 5px;
   cursor: pointer;
+  /* position: absolute; */
+  /* top: 91%; */
+  width: 6em;
 }
 .Add-icons-select-icons-from-given-main-container {
   display: grid;
@@ -123,4 +137,23 @@
 }
 .Add-icon-select-icon-image-tage-ite {
   cursor: pointer;
+}
+.Add-icons-No-Icons-found {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+#Add-icons-button-ss-tt {
+  background-color: #f3f2f1;
+  color: black;
+  border: 2px solid rgb(191, 189, 189);
+  border-radius: 5px;
+  cursor: pointer;
+  /* position: absolute; */
+  /* top: 91%; */
+  width: 9em;
+}
+#Add-icons-button-ss-tt:hover {
+  background-color: #d7e9f7;
+  border-color: #005a9e;
 }

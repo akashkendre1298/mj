@@ -1,0 +1,28 @@
+/* CropImageContent.css */
+.crop-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.image-container {
+  position: relative;
+  width: 500px; /* Adjust based on your design */
+  height: 300px; /* Adjust based on your design */
+  overflow: hidden;
+  cursor: crosshair; /* Set cursor to crosshair */
+}
+
+.original-image {
+  display: block;
+  width: 100%;
+}
+
+.cropped-image-container {
+  margin-top: 20px;
+}
+
+.cropped-image-container img {
+  max-width: 100%;
+}
