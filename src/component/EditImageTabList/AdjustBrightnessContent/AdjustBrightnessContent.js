@@ -15,7 +15,11 @@ const AdjustBrightnessContent = ({ imageUrl }) => {
         className="image-container-adjust-brightness"
         style={{ filter: `brightness(${brightness}%)` }}
       >
-        <img src={imageUrl} alt="Preview" className="preview-image-brightness" />
+        <img
+          src={imageUrl}
+          alt="Preview"
+          className="preview-image-brightness"
+        />
       </div>
       <div className="brightness-control">
         <label htmlFor="brightnessRange">Adjust Brightness</label>
