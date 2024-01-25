@@ -1,12 +1,12 @@
 .dialog-inspection {
   position: absolute;
   top: 43%;
-  left: 72%;
+  left: 74%;
   transform: translate(-50%, -50%);
-  width: 77vh;
-  height: 57vh;
+  width: 63vh;
+  height: 53vh;
   background-color: rgb(229, 229, 229);
-  border-right: 1px solid #9a9797;
+  /* border-right: 1px solid #9a9797;
 
   }
   
@@ -26,6 +26,7 @@
     font-size: 14px;
     font-weight: 400;
      color: black; 
+     padding-top: 36px;
   }
   
   .dialog-body-inspection {

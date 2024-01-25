@@ -129,15 +129,15 @@ background-color: #d7e9f7;
 border-color: #005a9e;
 }
 .btnM-edittemp{
-font-size: 14px;
-width: 95px;
-height: 25px;
-background-color: #f3f2f1;
-color: black;
-border: 2px solid rgb(191, 189, 189);
-border-radius: 5px;
-cursor: pointer;
-margin-right: 5px;
+  font-size: 14px;
+  width: 90px;
+  height: 25px;
+  background-color: #f3f2f1;
+  color: black;
+  border: 2px solid rgb(191, 189, 189);
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
 }
 .btnM-edittemp:hover {
 background-color: #d7e9f7;
@@ -171,14 +171,14 @@ border-color: #005a9e;
   display: flex;
 }
 .box2-edittemp {
-  width: 65vh;
-  height: 45vh;
-  resize: none;
-  overflow-y: scroll;
-  border: 2px solid rgb(190, 188, 188);
-  border-radius: 5px;
-  padding: 8px;
-  margin-right: 10px;
+  width: 62vh;
+    height: 45vh;
+    resize: none;
+    overflow-y: scroll;
+    border: 2px solid rgb(190, 188, 188);
+    border-radius: 5px;
+    padding: 8px;
+    margin-right: 10px;
 }
 .box2-edittemp:hover{
   border-color: #005a9e;
@@ -301,7 +301,7 @@ border-color: #005a9e;
   /* padding: 10px; */
   /* margin: 5px; */
   cursor: pointer;
-  gap: 242px;
+  gap: 275px;
 }
 
 .menu-item-edittemp.selected {
