@@ -25,6 +25,7 @@ const Header = () => {
   const [openTemplatePopup, setOpenTemplatePopup] = useState(false);
   const [saveTemplatePopup, setSaveTemplatePopup] = useState(false);
   const [editTemplatePopup, setEditTemplatePopup] = useState(false);
+  const [activePopup, setActivePopup] = useState(null);
 
   const openOpenTemplatePopup = () => {
     setOpenTemplatePopup(true);
@@ -80,6 +81,18 @@ const Header = () => {
 
   const handleMenuClick = (menuId) => {
     setActiveMenu(activeMenu === menuId ? null : menuId);
+  };
+
+  // const [activePopup, setActivePopup] = useState(null);
+
+  const openPopup = (popupId) => {
+    console.log(`Opening ${popupId} popup`);
+    setActivePopup(popupId);
+  };
+
+  const closePopup = () => {
+    console.log("Closing popup");
+    setActivePopup(null);
   };
 
   return (
@@ -256,19 +269,23 @@ const Header = () => {
               </a>
             </li>
             <hr />
-            <Link to="/EditComments">
-              <li className="list-for-header-section-main-nav">
-                <a href="#" className="header2-tag-a">
-                  <div className="flex justify-center">
-                    <img src={img5} alt="" />
-                  </div>
-                  <div>
-                    Edit <br />
-                    Comments
-                  </div>
-                </a>
-              </li>
-            </Link>
+
+            <li className="list-for-header-section-main-nav">
+              <p
+               
+                onClick={() => openPopup("editComments")}
+                className="header2-tag-a"
+              >
+                <div className="flex justify-center">
+                  <img src={img5} alt="" />
+                </div>
+                <div>
+                  Edit <br />
+                  Comments
+                </div>
+              </p>
+            </li>
+
             <li className="list-for-header-section-main-nav  border-r border-black-900">
               <a
                 href="#"

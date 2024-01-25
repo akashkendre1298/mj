@@ -49,12 +49,9 @@ const Buttons = ({ onFileSelect }) => {
   const [showPopup, setShowPopup] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [selectedFolder, setSelectedFolder] = useState(null);
-  const [uploadedPhoto, setUploadedPhoto] = useState(null);
-  const handlePhotoUpload = (e) => {
-    if (e.target.files && e.target.files.length > 0) {
-      setUploadedPhoto(URL.createObjectURL(e.target.files[0]));
-    }
-  };
+  const [uploadedImageUrl, setUploadedImageUrl] = useState(null);
+
+  const [uploadedIcon, setUploadedIcon] = useState(null);
   const handleImg1Click = () => {
     if (fileInputRef.current) {
       fileInputRef.current.click();
@@ -63,6 +60,8 @@ const Buttons = ({ onFileSelect }) => {
 
   const handleFileChange = (e) => {
     if (e.target.files && e.target.files.length > 0) {
+      const imageUrl = URL.createObjectURL(e.target.files[0]);
+      setUploadedImageUrl(imageUrl);
       uploadedFileRef.current = e.target.files[0];
       onFileSelect(uploadedFileRef.current);
     }
@@ -98,6 +97,13 @@ const Buttons = ({ onFileSelect }) => {
     setIsPopupOpen(true);
   };
 
+  const handleFileChangeInAddTab = (e) => {
+    if (e.target.files && e.target.files.length > 0) {
+      const imageUrl = URL.createObjectURL(e.target.files[0]);
+      setUploadedIcon(imageUrl); // Update state with the uploaded icon URL
+    }
+  };
+
   return (
     <>
       <input
@@ -106,13 +112,6 @@ const Buttons = ({ onFileSelect }) => {
         style={{ display: "none" }}
         ref={fileInputRef}
         onChange={handleFileChange}
-      />
-      <input
-        type="file"
-        accept="image/*,video/*"
-        style={{ display: "none" }}
-        ref={fileInputRef}
-        onChange={handlePhotoUpload}
       />
 
       <ul className="Buttons-unorderlist-container">
@@ -133,6 +132,7 @@ const Buttons = ({ onFileSelect }) => {
                   <EditImageTabList
                     isOpen={isPopupOpen}
                     onRequestClose={closePopup}
+                    uploadedImageUrl={uploadedImageUrl}
                   />
                 </div>
               )}
@@ -233,15 +233,13 @@ const Buttons = ({ onFileSelect }) => {
               <div className="Add-icon-horizonatl-line1">
                 <hr className="" />
               </div>
-              {uploadedPhoto && (
-                <div className="Uploaded-Photo-Container">
-                  <img src={uploadedPhoto} alt="Uploaded" />
-                </div>
-              )}
 
               <div className="Add-icons-No-Icons-found">
-                <span>No Icons found</span>
-                {/* <p>No ICON FIUBNF</p> */}
+                {uploadedIcon ? (
+                  <img src={uploadedIcon} alt="Uploaded Icon" />
+                ) : (
+                  <span>No Icons found</span>
+                )}
               </div>
 
               <div className="Add-Icons-cancel-btn-zz">
@@ -261,11 +259,13 @@ const Buttons = ({ onFileSelect }) => {
               <div className="Add-icon-horizonatl-line1">
                 <hr className="" />
               </div>
+              <div className="Add-icons-No-Icons-found">
+                <span>Add Icons</span>
+                {/* <p>No ICON FIUBNF</p> */}
+              </div>
 
               <div className="Add-icons-No-Icons-found">
-                <input type="file" onChange={handlePhotoUpload} />
-
-                {/* <button id="Add-icons-button-ss-tt"> Add Icons</button> */}
+                <input type="file" onChange={handleFileChangeInAddTab} />
               </div>
 
               <div className="Add-Icons-cancel-btn-zz">
