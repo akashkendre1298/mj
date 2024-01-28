@@ -56,7 +56,7 @@ function OneDamage({ setIsPopupOpen, isPopupOpen, onClose }) {
       <div className='label-container-onedamage'>
         <label className='label-onedamage' htmlFor="field1">Tab Name:</label>
         <input
-          className='input-onedamage'
+          className='input1-onedamage'
           type="text"
           name="tabName"
           value={formData.tabName}

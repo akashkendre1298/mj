@@ -53,7 +53,7 @@ function TwoDamage({ setIsPopupOpen, isPopupOpen, onClose }) {
             Tab Name:
           </label>
           <input
-            className="input-twodamage"
+            className="input1-twodamage"
             type="text"
             name="tabName_1st"
             // placeholder="Enter your first value"
@@ -67,7 +67,7 @@ function TwoDamage({ setIsPopupOpen, isPopupOpen, onClose }) {
            1st Damage Panel Name:
           </label>
           <input
-            className="input-twodamage"
+            className="input2-twodamage"
             type="text"
             name="damagePanelName_1st"
             // placeholder="Enter your second value"

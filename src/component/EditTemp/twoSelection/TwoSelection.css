@@ -34,11 +34,44 @@
       outline: 1rem;
       margin: 1px;
   } 
+
+  .input1-twoselection {
+    flex: 1;
+    padding: 10px;
+    height: 30px;
+    width: 150px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    outline: 1rem;
+    margin: 1px;
+    margin-left: 97px;
+} 
+
+.input2-twoselection {
+  flex: 1;
+  padding: 10px;
+  height: 30px;
+  width: 150px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  outline: 1rem;
+  margin: 1px;
+  margin-left: 5px;
+} 
   
   .input-twoselection:hover {
     /* background-color: #d7e9f7; */
     border-color: #005a9e;
     }
+
+    .input1-twoselection:hover {
+      /* background-color: #d7e9f7; */
+      border-color: #005a9e;
+      }
+      .input2-twoselection:hover {
+        /* background-color: #d7e9f7; */
+        border-color: #005a9e;
+        }
   
   .cancel-button-twoselection{
     font-size: 14px;
