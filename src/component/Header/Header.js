@@ -117,13 +117,17 @@ const Header = () => {
           </div>
           {activeMenu === 0 && (
             <ul
-              className="submenu w-36 absolute z-10 bg-white shadow mt-2 leading-tight "
-              style={{ lineHeight: "12px", fontSize: "13px" }}
+              className="submenu w-36 absolute z-10 bg-white shadow mt-2"
+              style={{
+                lineHeight: "24px",
+                fontSize: "13px",
+                textAlign: "center",
+              }}
             >
-              <li className="hover:bg-gray-200 text-xs">Open Inspection</li>
-              <li className="hover:bg-gray-200 text-xs">Save Inspection</li>
-              <li className="hover:bg-gray-200 text-xs">Open Template</li>
-              <li className="hover:bg-gray-200 text-xs">Save Template</li>
+              <li className="hover:bg-gray-200">Open Inspection</li>
+              <li className="hover:bg-gray-200">Save Inspection</li>
+              <li className="hover:bg-gray-200">Open Template</li>
+              <li className="hover:bg-gray-200">Save Template</li>
             </ul>
           )}
         </div>
@@ -207,7 +211,11 @@ const Header = () => {
           {activeMenu === 3 && (
             <ul
               className="submenu w-36 absolute z-10 bg-white shadow mt-2"
-              style={{ lineHeight: "24px", fontSize: "13px" }}
+              style={{
+                lineHeight: "24px",
+                fontSize: "13px",
+                textAlign: "Center",
+              }}
             >
               <Link to="/panel1">
                 <li className=" hover:bg-gray-200">Wall</li>
@@ -228,7 +236,11 @@ const Header = () => {
           {activeMenu === 4 && (
             <ul
               className="submenu w-36  absolute z-10 bg-white shadow mt-2"
-              style={{ lineHeight: "34px", fontSize: "13px" }}
+              style={{
+                lineHeight: "34px",
+                fontSize: "13px",
+                textAlign: "Center",
+              }}
             >
               <Link to="/photoreview">
                 <li className=" hover:bg-gray-200">Add Review Photos</li>
