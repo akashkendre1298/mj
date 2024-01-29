@@ -20,6 +20,7 @@ import img13 from "../../Assets/icons/upload_report.png";
 import img14 from "../../Assets/icons/address_book.png";
 import img15 from "../../Assets/icons/sync.png";
 import { Link } from "react-router-dom";
+import InternetLogin from "./../InternetLogin/InternetLogin";
 
 const Header = () => {
   const [openTemplatePopup, setOpenTemplatePopup] = useState(false);
@@ -95,6 +96,12 @@ const Header = () => {
     setActivePopup(null);
   };
 
+  const isInternetLoginPopup = () => {
+    console.log("Login Popup Clicked");
+  };
+  const internetLogin = () => {
+    console.log("Login Popup Clicked");
+  };
   return (
     <>
       <div
@@ -105,7 +112,9 @@ const Header = () => {
           <div
             className="main-label cursor-pointer"
             onClick={() => handleMenuClick(0)}
-          ></div>
+          >
+            Edit
+          </div>
           {activeMenu === 0 && (
             <ul
               className="submenu absolute z-10 bg-white shadow mt-2 w-48 leading-tight"
@@ -126,30 +135,68 @@ const Header = () => {
             </ul>
           )}
         </div>
-        <div>
+        {/* <div>
           <ul>
             <li className="ml-5">Edit</li>
           </ul>
-        </div>
+        </div> */}
         <div>
-          <ul>
+          {/* <ul onClick={internetLogin}>
             <li className="ml-5">Internet</li>
-          </ul>
+            {isInternetLoginPopup && <InternetLogin />}
+          </ul> */}
+          <div
+            className="main-label cursor-pointer ml-4"
+            onClick={() => handleMenuClick(1)}
+          >
+            Internet
+          </div>
+          {activeMenu === 1 && (
+            <ul
+              onClick={internetLogin}
+              className="submenu absolute z-10 bg-white shadow mt-2"
+              style={{ width: "180px", lineHeight: "12px" }}
+            >
+              <Link to="/internetlogin">
+                <li className="ml-5 py-2 px-4 hover:bg-gray-200">
+                  Internet Login
+                </li>
+                {/* {isInternetLoginPopup && <InternetLogin />} */}
+              </Link>
+            </ul>
+          )}
         </div>
         <div>
-          <ul>
-            <li className="ml-5">Report Setting</li>
-          </ul>
+          <div className="menu-item relative ml-4">
+            <div
+              className="main-label cursor-pointer"
+              onClick={() => handleMenuClick(2)}
+            >
+              Report Setting
+            </div>
+            {activeMenu === 2 && (
+              <ul
+                className="submenu absolute z-10 bg-white shadow mt-2"
+                style={{ width: "180px", lineHeight: "12px" }}
+              >
+                <Link to="/coverpagedesigner">
+                  <li className="py-2 px-4 hover:bg-gray-200">
+                    Cover Page Designer
+                  </li>
+                </Link>
+              </ul>
+            )}
+          </div>
         </div>
 
         <div className="menu-item relative ml-4">
           <div
             className="main-label cursor-pointer"
-            onClick={() => handleMenuClick(1)}
+            onClick={() => handleMenuClick(3)}
           >
             General information
           </div>
-          {activeMenu === 1 && (
+          {activeMenu === 3 && (
             <ul
               className="submenu absolute z-10 bg-white shadow mt-2"
               style={{ width: "180px", lineHeight: "12px" }}
@@ -166,11 +213,11 @@ const Header = () => {
         <div className="menu-item relative ml-4">
           <div
             className="main-label cursor-pointer"
-            onClick={() => handleMenuClick(2)}
+            onClick={() => handleMenuClick(4)}
           >
             Photos
           </div>
-          {activeMenu === 2 && (
+          {activeMenu === 4 && (
             <ul
               className="submenu absolute z-10 bg-white shadow mt-2"
               style={{ width: "180px", lineHeight: "12px" }}

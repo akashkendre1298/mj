@@ -33,8 +33,8 @@
   border: solid 1px rgb(191, 189, 189);
   padding: 12px 0 12px 12px;
 }
-.selectTemp-edittemp {
-  font-size: 12px;
+.selectTemp-edittemp{
+  font-size: 15px;
 }
 .close-button-edittemp {
   background-color: transparent;
@@ -143,7 +143,8 @@
 }
 .para1-edittemp {
   text-align: center;
-  font-size: 14px;
+  font-size: 15px;
+  
 }
 
 .Donebtn-edittemp {
@@ -205,8 +206,8 @@
   align-items: center;
 }
 
-.selectTemp1-edittemp {
-  font-size: 12px;
+.selectTemp1-edittemp{
+  font-size: 15px;
 }
 .close-button1-edittemp {
   background-color: transparent;
@@ -215,8 +216,8 @@
 .para2-edittemp {
   /* padding: 5px; */
   margin-left: 2px;
-  margin-top: 0px;
-  font-size: 17px;
+  margin-top:0px;
+  font-size: 15px;
 }
 .menutext1-edittemp {
   padding: 5px;
@@ -254,7 +255,7 @@
 }
 
 .cancel-button1-edittemp {
-  font-size: 14px;
+  font-size: 15px;
   width: 100px;
   height: 25px;
   background-color: #f3f2f1;
@@ -270,7 +271,7 @@
 }
 .submenu-edittemp {
   padding-left: 20px;
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .button-container-edittemp {
@@ -299,9 +300,6 @@
   background-color: lightblue;
 }
 
-/* ... other existing styles ... */
-/* EditTemp.css */
-
 .menu-box-edittemp {
   display: flex;
   flex-wrap: wrap;
@@ -318,4 +316,5 @@
   margin-bottom: 5px;
 }
 
-/* ... other existing styles ... */
+
+

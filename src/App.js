@@ -20,6 +20,7 @@ import ContractPage from "./component/Contract/Contract";
 import ColorPalette from "./component/ColorPalet/ColorPalet";
 import Editor from "./component/Editor/Editor";
 import MobileUpload from "./component/MobileUpload/MobileUpolad";
+import CoverPageDesigner from "./component/CoverPageDesigner/CoverPageDesigner";
 
 function App() {
   return (
@@ -38,6 +39,12 @@ function App() {
         <Route path="/batchaddphotos" element={<BatchAddPhotos />}></Route>
         <Route path="/contractpage" element={<ContractPage />}></Route>
         <Route path="/generateReport" element={<ColorPalette />}></Route>
+        <Route path="/internetlogin" element={<InternetLogin />}></Route>
+        <Route
+          path="/coverpagedesigner"
+          element={<CoverPageDesigner />}
+        ></Route>
+        {/* <Route path="/" element={<MobileUpload/>}></Route> */}
         <Route path="/mobilesync" element={<MobileUpload />}></Route>
       </Routes>
     </BrowserRouter>

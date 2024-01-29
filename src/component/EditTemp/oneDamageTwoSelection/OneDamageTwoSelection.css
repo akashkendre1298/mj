@@ -35,11 +35,62 @@
       outline: 1rem;
       margin: 1px;
   } 
+
+  .input1-onedamagetwoselection {
+    flex: 1;
+    padding: 10px;
+    height: 30px;
+    width: 150px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    outline: 1rem;
+    margin: 1px;
+    margin-left: 98px;
+} 
+
+.input2-onedamagetwoselection {
+  flex: 1;
+  padding: 10px;
+  height: 30px;
+  width: 150px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  outline: 1rem;
+  margin: 1px;
+  margin-left: 32px;
+} 
+
+.input3-onedamagetwoselection {
+  flex: 1;
+  padding: 10px;
+  height: 30px;
+  width: 150px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  outline: 1rem;
+  margin: 1px;
+  margin-left: 6px;
+} 
   
   .input-onedamagetwoselection:hover {
     /* background-color: #d7e9f7; */
     border-color: #005a9e;
     }
+
+    .input1-onedamagetwoselection:hover {
+      /* background-color: #d7e9f7; */
+      border-color: #005a9e;
+      }
+
+      .input2-onedamagetwoselection:hover {
+        /* background-color: #d7e9f7; */
+        border-color: #005a9e;
+        }
+
+        .input3-onedamagetwoselection:hover {
+          /* background-color: #d7e9f7; */
+          border-color: #005a9e;
+          }
   
   .cancel-button-onedamagetwoselection{
     font-size: 14px;

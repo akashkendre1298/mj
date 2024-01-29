@@ -45,7 +45,7 @@
   .radio-group-inspection-label {
     display: block;
     position: relative;
-    padding-left: 30px;
+    padding-left: 25px;
     /* margin-bottom: 10px; */
     cursor: pointer;
     font-size: 15px;
@@ -140,5 +140,36 @@
 
          .label-inspection {
             display: block;
-            margin-bottom: 10px;
+            margin-top: 10px;
+             margin-right:235px;
+          }
+
+          .label1-inspection {
+            display: block;
+            margin-top: 10px;
+             margin-right:348px;
+          }
+
+          .label2-inspection {
+            display: block;
+            margin-top: 10px;
+             margin-right:345px;
+          }
+
+          .label3-inspection {
+            display: block;
+            margin-top: 10px;
+             margin-right:348px;
+          }
+          
+          .label4-inspection {
+            display: block;
+            margin-top: 10px;
+             margin-right:345px;
+          }
+          
+          .label5-inspection {
+            display: block;
+            margin-top: 10px;
+             margin-right:231px;
           }
