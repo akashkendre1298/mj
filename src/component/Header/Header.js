@@ -117,21 +117,13 @@ const Header = () => {
           </div>
           {activeMenu === 0 && (
             <ul
-              className="submenu absolute z-10 bg-white shadow mt-2 w-48 leading-tight"
-              style={{ width: "180px", lineHeight: "12px" }}
+              className="submenu w-36 absolute z-10 bg-white shadow mt-2 leading-tight "
+              style={{ lineHeight: "12px", fontSize: "13px" }}
             >
-              <li className="py-2 px-4 hover:bg-gray-200 text-xs">
-                Open Inspection
-              </li>
-              <li className="py-2 px-4 hover:bg-gray-200 text-xs">
-                Save Inspection
-              </li>
-              <li className="py-2 px-4 hover:bg-gray-200 text-xs">
-                Open Template
-              </li>
-              <li className="py-2 px-4 hover:bg-gray-200 text-xs">
-                Save Template
-              </li>
+              <li className="hover:bg-gray-200 text-xs">Open Inspection</li>
+              <li className="hover:bg-gray-200 text-xs">Save Inspection</li>
+              <li className="hover:bg-gray-200 text-xs">Open Template</li>
+              <li className="hover:bg-gray-200 text-xs">Save Template</li>
             </ul>
           )}
         </div>
@@ -154,11 +146,19 @@ const Header = () => {
           {activeMenu === 1 && (
             <ul
               onClick={internetLogin}
-              className="submenu absolute z-10 bg-white shadow mt-2"
-              style={{ width: "180px", lineHeight: "12px" }}
+              className="submenu w-36 left-12 absolute z-10 bg-white shadow mt-2"
+              style={{ fontSize: "13px" }}
             >
               <Link to="/internetlogin">
-                <li className="ml-5 py-2 px-4 hover:bg-gray-200">
+                <li
+                  className=" hover:bg-gray-200"
+                  style={{
+                    height: "2em",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
                   Internet Login
                 </li>
                 {/* {isInternetLoginPopup && <InternetLogin />} */}
@@ -176,11 +176,19 @@ const Header = () => {
             </div>
             {activeMenu === 2 && (
               <ul
-                className="submenu absolute z-10 bg-white shadow mt-2"
-                style={{ width: "180px", lineHeight: "12px" }}
+                className="submenu w-36 absolute z-10 bg-white shadow mt-2"
+                style={{ lineHeight: "12px", fontSize: "13px" }}
               >
                 <Link to="/coverpagedesigner">
-                  <li className="py-2 px-4 hover:bg-gray-200">
+                  <li
+                    className=" hover:bg-gray-200"
+                    style={{
+                      height: "2em",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
                     Cover Page Designer
                   </li>
                 </Link>
@@ -198,14 +206,14 @@ const Header = () => {
           </div>
           {activeMenu === 3 && (
             <ul
-              className="submenu absolute z-10 bg-white shadow mt-2"
-              style={{ width: "180px", lineHeight: "12px" }}
+              className="submenu w-36 absolute z-10 bg-white shadow mt-2"
+              style={{ lineHeight: "24px", fontSize: "13px" }}
             >
               <Link to="/panel1">
-                <li className="py-2 px-4 hover:bg-gray-200">Wall</li>
+                <li className=" hover:bg-gray-200">Wall</li>
               </Link>
-              <li className="py-2 px-4 hover:bg-gray-200">Batch Add Photos</li>
-              <li className="py-2 px-4 hover:bg-gray-200">Clear All Photos</li>
+              <li className=" hover:bg-gray-200">Batch Add Photos</li>
+              <li className=" hover:bg-gray-200">Clear All Photos</li>
             </ul>
           )}
         </div>
@@ -219,20 +227,16 @@ const Header = () => {
           </div>
           {activeMenu === 4 && (
             <ul
-              className="submenu absolute z-10 bg-white shadow mt-2"
-              style={{ width: "180px", lineHeight: "12px" }}
+              className="submenu w-36  absolute z-10 bg-white shadow mt-2"
+              style={{ lineHeight: "34px", fontSize: "13px" }}
             >
               <Link to="/photoreview">
-                <li className="py-2 px-4 hover:bg-gray-200">
-                  Add Review Photos
-                </li>
+                <li className=" hover:bg-gray-200">Add Review Photos</li>
               </Link>
               <Link to="/batchaddphotos">
-                <li className="py-2 px-4 hover:bg-gray-200">
-                  Batch Add Photos
-                </li>
+                <li className=" hover:bg-gray-200">Batch Add Photos</li>
               </Link>
-              <li className="py-2 px-4 hover:bg-gray-200">Clear All Photos</li>
+              <li className=" hover:bg-gray-200">Clear All Photos</li>
             </ul>
           )}
         </div>
@@ -445,7 +449,7 @@ const Header = () => {
                 </div> */}
                 <Link to="/mobilesync">
                   <li className="list-for-header-section-main-nav">
-                    <a href="#" className="header2-tag-a">
+                    <a href="#" className="header2-tag-a p-0">
                       <div className="flex justify-center">
                         <img src={img15} alt="" />
                       </div>
