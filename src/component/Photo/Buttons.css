@@ -5,6 +5,7 @@
   display: flex;
   grid-template-columns: repeat(4, 1fr);
   gap: 1em;
+
   /*  margin-top: -20px; */
 }
 
@@ -15,13 +16,25 @@
 
   background-color: white;
   padding: 1px;
-}
-
-.Buttons-orderlist-to-adjust-images {
   max-width: 100%;
   max-height: 100%;
   cursor: pointer;
+  filter: blur(2px) grayscale(100%); /* Apply blur by default */
+  transition: filter 0.3s ease; /* Add transition for a smooth effect */
 }
+.Buttons-orderlist-to-adjust-images.active,
+.Buttons-orderlist-to-adjust-images:not(.img1):active {
+  filter: none; /* Remove grayscale and blur when active */
+}
+.Buttons-orderlist-to-adjust-images.img1 {
+  filter: none; /* Remove grayscale and blur for img1 */
+}
+
+/* .Buttons-orderlist-to-adjust-images {
+  max-width: 100%;
+  max-height: 100%;
+  cursor: pointer;
+} */
 .Buttons-unoorderlist-for-icons-buttons {
   display: grid;
   margin-top: -40px;
@@ -30,6 +43,11 @@
 }
 .Buttons-orderlist-for-icons-buttons {
   background-color: white;
+  filter: blur(2px) grayscale(100%); /* Apply blur by default */
+  transition: filter 0.3s ease; /* Add transition for a smooth effect */
+  &.active {
+    filter: none; /* Remove blur when active */
+  }
 }
 .Buttons-orderlist-to-adjust-images,
 .Buttons-orderlist-for-icons-buttons {
@@ -67,6 +85,7 @@
   z-index: 1;
   width: 40em;
   height: 30em;
+  overflow: auto;
 }
 .divAdd-IconsPopup-close-image {
   width: 10px;
@@ -74,6 +93,8 @@
   cursor: pointer;
 }
 .Add-Icons-Popup-header-container {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -81,10 +102,17 @@
   border: solid 1px rgb(191, 189, 189);
   padding: 0px 1em 0 1em;
   height: 2em;
+  z-index: 2; /* Add a higher z-index to make sure it's above other elements */
 }
 .Add-Icons-Search-button-main-contaier {
+  position: sticky;
+  top: 2em; /* Adjust the top position based on the height of the header */
   display: flex;
   justify-content: flex-start;
+  background-color: #fee4c3;
+  border: solid 1px rgb(191, 189, 189);
+  padding: 0px 1em;
+  z-index: 1; /* Add a z-index to make sure it's above other elements except the header */
 }
 .Add-icon-horizonatl-line1 {
   height: 3px;
@@ -105,16 +133,16 @@
 }
 
 #Add-Icons-Search-Button:hover {
-  background-color: rgb(0, 162, 255);
-  border-bottom: 4px solid blue;
+  background-color: #c3ddf1;
+  border-bottom: 3px solid blue;
 }
 .Add-Icons-cancel-btn-zz {
   display: flex;
   justify-content: flex-end;
   /* margin-right: 15px; */
   /* margin-top: 7px; */
-  position: absolute;
-  top: 86%;
+  position: fixed;
+  top: 90%;
   border-top: 1px solid #e1dfe6;
   width: 100%;
   padding: 1em 1em 0 0;
@@ -153,7 +181,48 @@
   /* top: 91%; */
   width: 9em;
 }
-#Add-icons-button-ss-tt:hover {
+
+.Add-Icons-cancel-btn-yy:hover {
   background-color: #d7e9f7;
   border-color: #005a9e;
+}
+.Add-icons-user-uploaded-icons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3em;
+  margin: 2em;
+}
+.Add-icons-user-uploaded-icons-add-tab {
+  /* display: grid; */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3em;
+  margin: 2em;
+}
+.Add-icons-user-uploaded-icons-img-to-be-uploaded {
+  cursor: pointer;
+}
+
+.Add-icons-No-Icons-found-after-uploaded-para {
+  text-align: center;
+  font-size: 14px;
+  padding: 0.6em;
+  letter-spacing: 0.6px;
+}
+.label-name-for-Added-icons {
+  align-items: center;
+  /* text-align: center; */
+  height: 2em;
+  padding-left: 1em;
+  width: 100%;
+}
+.Add-icon-item {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 1em;
+}
+.input-file-choose-file-to-add-icons {
+  position: fixed;
+  top: 33%;
+  left: 41%;
 }

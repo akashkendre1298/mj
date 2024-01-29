@@ -82,3 +82,8 @@
   padding: 0px 1em 0 1em;
   height: 2em;
 }
+.caption-popupbox-btns:hover {
+  background-color: #d7e9f7;
+  border-color: #005a9e;
+}
+

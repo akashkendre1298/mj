@@ -272,7 +272,6 @@ const Header = () => {
 
             <li className="list-for-header-section-main-nav">
               <p
-               
                 onClick={() => openPopup("editComments")}
                 className="header2-tag-a"
               >
@@ -390,13 +389,27 @@ const Header = () => {
             <hr />
             <li className="list-for-header-section-main-nav">
               <a href="#" className="header2-tag-a">
-                <div className="flex justify-center">
+                {/* <div className="flex justify-center">
                   <img src={img15} alt="" />
                 </div>
                 <div>
                   Mobile
                   <br /> Sync
-                </div>
+                </div> */}
+                <Link to="/mobilesync">
+                  <li className="list-for-header-section-main-nav">
+                    <a href="#" className="header2-tag-a">
+                      <div className="flex justify-center">
+                        <img src={img15} alt="" />
+                      </div>
+                      <div>
+                        Mobile
+                        <br />
+                        Sync
+                      </div>
+                    </a>
+                  </li>
+                </Link>
               </a>
             </li>
             <li className="list-for-header-section-main-nav  border-r border-black-900">
