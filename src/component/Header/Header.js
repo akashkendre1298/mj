@@ -159,7 +159,7 @@ const Header = () => {
             >
               <Link to="/internetlogin">
                 <li className="ml-5 py-2 px-4 hover:bg-gray-200">
-                  InternetLogin
+                  Internet Login
                 </li>
                 {/* {isInternetLoginPopup && <InternetLogin />} */}
               </Link>
