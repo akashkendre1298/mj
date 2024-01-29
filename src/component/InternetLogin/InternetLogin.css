@@ -16,20 +16,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200%;
-    background-color: rgb(242, 236, 236);;
+    height: 80vh;
+    z-index: 999;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    /* background-color: rgb(242, 236, 236); */
+    /* align-items: center;*/
   }
   
   .popup-internetlogin {
-    /* background-color: rgb(229, 229, 229); */
-    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); */
-    padding: 20px;
+
+  
     border-radius: 5px;
     width: 700px;
-    height: 100px;
     text-align: center;
-    position: relative;
-    padding: 2em 6px 6px 6px;
+    
+   
+ 
   }
   .p-internetlogin{
     font-size: 15px;
@@ -50,13 +54,14 @@
   
   
   .close-btn-internetlogin {
-    color: #999;
+    /* color: #999;
     font-size: 20px;
     font-weight: bold;
-    cursor: pointer;
+  
     position: absolute;
     top: 4px;
-    right: 10px;
+    right: 10px; */
+    cursor: pointer;
   }
   
   .h2-internetlogin {
@@ -65,9 +70,9 @@
   
   .input-row-internetlogin {
     /* display: flex; */
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 10px;
+    /* flex-direction: row;
+    justify-content: space-between; */
+    /* margin-bottom: 10px; */
   }
   
   .label-internetlogin {
@@ -102,6 +107,8 @@
   .cancel-btn-internetlogin {
     background-color: #f3f2f1;
     color: black;
+    width: 5em;
+    border-radius: 4px;
   }
 
   
@@ -111,4 +118,14 @@
     background-color: #d7e9f7;
     border-color: #005a9e;
   }
-  
+  .close-button-and-login-header-for-popup-box{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2em 1em 0.2em 1em;
+    background-color: rgb(242, 236, 236); 
+  }
+  .two-inputs-for-login-page-credentials{
+    display: grid;
+    row-gap: 1em;
+    margin: 1em 0 1em 0;
+  }

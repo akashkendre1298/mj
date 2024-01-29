@@ -20,12 +20,24 @@ import img13 from "../../Assets/icons/upload_report.png";
 import img14 from "../../Assets/icons/address_book.png";
 import img15 from "../../Assets/icons/sync.png";
 import { Link } from "react-router-dom";
+import InternetLogin from "../InternetLogin/InternetLogin";
 
 const Header = () => {
   const [openTemplatePopup, setOpenTemplatePopup] = useState(false);
   const [saveTemplatePopup, setSaveTemplatePopup] = useState(false);
   const [editTemplatePopup, setEditTemplatePopup] = useState(false);
+  const [isInternetLoginPopup, setIsInternetLoginPopup] = useState(false);
 
+
+
+
+  const internetLogin = () => {
+    setIsInternetLoginPopup(true);
+
+  }
+  const closeInternetLoginPopup = () => {
+    setIsInternetLoginPopup(false);
+  }
   const openOpenTemplatePopup = () => {
     setOpenTemplatePopup(true);
   };
@@ -119,8 +131,12 @@ const Header = () => {
           </ul>
         </div>
         <div>
-          <ul>
+          <ul onClick={internetLogin}>
+
             <li className="ml-5">Internet</li>
+            {isInternetLoginPopup && (
+              <InternetLogin />
+            )}
           </ul>
         </div>
         <div>

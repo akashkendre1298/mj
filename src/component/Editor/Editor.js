@@ -57,7 +57,7 @@ const Editor = () => {
               height: "100%",
               alignItems: "center",
               justifyContent: "center",
-              width: "50.55em",
+              width: "60%",
               backgroundColor: "#F2F1EC",
 
             }}
@@ -67,21 +67,21 @@ const Editor = () => {
                 display: "flex",
                 flexDirection: "column",
                 width: "100%",
-                height: "37em",
+                height: "28em",
                 boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
               }}
             >
-              <div className="flex justify-between px-3 ">
+              <div className="flex justify-between px-3 editor-heading-close">
                 <div><p>Add Text</p></div>
                 <div className="hover:bg-red-600 px-2 cursor-pointer" onClick={handleClosePopup}><button>X</button></div>
               </div>
-              <div style={{ display: "flex", borderBottom: "1px solid #ccc" }}>
-                <div style={{ flex: 1, padding: "10px" }}>
+              <div style={{ display: "flex", borderBottom: "1px solid #ccc", backgroundColor: "#E5E5E5" }}>
+                <div style={{ flex: 1, padding: "30px" }}>
                   <label>Font:</label>
                   <select
                     value={font}
                     onChange={handleFontChange}
-                    className="border"
+                    className="border mb-3"
                   >
                     <option value="Arial">Arial</option>
                     <option value="Arial, Helvetica, sans-serif">
@@ -108,7 +108,7 @@ const Editor = () => {
                     {/* Add more fonts as needed */}
                   </select>
 
-                  <label>Font Size:</label>
+                  <label className="">Font Size:</label>
                   <input
                     type="number"
                     value={fontSize}
@@ -133,7 +133,7 @@ const Editor = () => {
                     />
                     <label className="px-3">Italic</label>
                   </div>
-                  <div>
+                  <div className="mb-1">
                     <input
                       type="checkbox"
                       checked={isHighlighted}
@@ -142,7 +142,7 @@ const Editor = () => {
                     <label className="px-3">Highlight</label>
                   </div>
 
-                  <div>
+                  <div className="mb-1">
                     <input
                       type="color"
                       value={textColor}
@@ -150,7 +150,7 @@ const Editor = () => {
                     />
                     <label>Text Color</label>
                   </div>
-                  <div>
+                  <div className="mb-1">
                     <input
                       type="color"
                       value={highlightColor}
@@ -166,7 +166,7 @@ const Editor = () => {
                       step="0.1"
                       value={highlightOpacity}
                       onChange={handleHighlightOpacityChange}
-                    />
+                      className="w-24" />
                     <label>Highlight Opacity</label>
                   </div>
                 </div>
@@ -193,13 +193,13 @@ const Editor = () => {
                   onChange={(e) => setText(e.target.value)}
                 />
               </div>
-              <div className=" flex justify-center gap-5 bg-gray-200">
+              <div className=" flex justify-center gap-5 py-2 bg-gray-200">
                 <div>
-                  <button className="button-for-editor p-2">Ok</button>
+                  <button className="button-for-editor px-2">Ok</button>
 
                 </div>
                 <div>
-                  <button className="button-for-editor p-2" onClick={handleClosePopup}>Cancel</button>
+                  <button className="button-for-editor px-2" onClick={handleClosePopup}>Cancel</button>
 
                 </div>
               </div>

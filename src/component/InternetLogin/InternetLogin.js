@@ -25,41 +25,46 @@ const InternetLogin = () => {
   if (!isPopupOpen) {
     return null;
   }
-  
+
   return (
-    <div className="popup-container-internetlogin">
+    <div className="popup-container-internetlogin z-50">
       <div className="popup-internetlogin">
+        <div className="close-button-and-login-header-for-popup-box">
+          <p>Macj Login</p>
+          <button className="close-btn-internetlogin" onClick={handleClose}>X</button></div>
         <div className="popup-border-internetlogin">
-          <span className="close-btn-internetlogin" onClick={handleClose}>X</span>
-          <p className='p-internetlogin'>Enter your Home Inspector Pro Cloud Service user name and password, 
-          This is the same as your homeinspectorpro.com username and password.</p><br/>
-          <p className='p-internetlogin1'>If you do not already have a Cloud Service account, you can sign up for a monthly or annual 
+
+          <p className='p-internetlogin'>Enter your Home Inspector Pro Cloud Service user name and password,
+            This is the same as your homeinspectorpro.com username and password.</p><br />
+          <p className='p-internetlogin1'>If you do not already have a Cloud Service account, you can sign up for a monthly or annual
             cloud service plan on the Home Inspector Pro website. This will allow you to upload reports,
             synchronize with the Home Inspector Pro Mobile program, and access additional cloud-based features.
           </p>
-          <div className="input-row-internetlogin">
-            <label htmlFor="username">Username:</label>
-            <input
-              className='input-internetlogin'
-              type="text"
-              id="username"
-              name="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-            />
-          </div>
-          <div className="input-row-internetlogin">
-            <label htmlFor="password">Password:</label>
-            <input
-              className='input-internetlogin'
-              type="password"
-              id="password"
-              name="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+          <div className="two-inputs-for-login-page-credentials">
+            <div className="input-row-internetlogin">
+              <label htmlFor="username">Username : </label>
+              <input
+                className='input-internetlogin'
+                type="text"
+                id="username"
+                name="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+            </div>
+            <div className="input-row-internetlogin">
+              <label htmlFor="password">Password : </label>
+              <input
+                className='input-internetlogin'
+                type="password"
+                id="password"
+                name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
           </div>
           <div className="button-container-internetlogin">
             <button onClick={handleLogin}>Login</button>
