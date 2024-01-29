@@ -1,14 +1,14 @@
 import React, { useRef, useState } from "react";
 import img1 from "./icons/gallery.png";
 import img2 from "./icons/document.png";
-import img5 from "./icons/camera-48.png";
+// import img5 from "./icons/camera-48.png";
 import img6 from "./icons/trash.png";
 import img7 from "./icons/notes.png";
 import img8 from "./icons/diskette.png";
 import img9 from "./icons/search-in-browser-64.png";
 import img10 from "./icons/preview-48.png";
 import img11 from "./icons/delete.png";
-import check from "./icons/check-mark.png";
+// import check from "./icons/check-mark.png";
 import close from "./icons/close_2997911.png";
 import "./Buttons.css";
 import EditImageTabList from "./../EditImageTabList/EditImageTabList";
@@ -50,8 +50,22 @@ const Buttons = ({ onFileSelect }) => {
   const [inputValue, setInputValue] = useState("");
   const [selectedFolder, setSelectedFolder] = useState(null);
   const [uploadedImageUrl, setUploadedImageUrl] = useState(null);
+  const [selectedPreviewIcon, setSelectedPreviewIcon] = useState(null);
+  const isImageUploaded = !!uploadedFileRef.current;
+  const [uploadedIconNames, setUploadedIconNames] = useState([]);
+  const handleIconClick = (icon) => {
+    // Check which icon is clicked
+    if (icon !== img9) {
+      setSelectedPreviewIcon(icon);
+      openPopup(); // Open the popup when a non-img9 icon is clicked
+    }
+  };
+  const handleDeletePreviewIcon = () => {
+    // Delete the previewed icon
+    setSelectedPreviewIcon(null);
+  };
 
-  const [uploadedIcon, setUploadedIcon] = useState(null);
+  const [uploadedIcon, setUploadedIcon] = useState([]);
   const handleImg1Click = () => {
     if (fileInputRef.current) {
       fileInputRef.current.click();
@@ -99,11 +113,25 @@ const Buttons = ({ onFileSelect }) => {
 
   const handleFileChangeInAddTab = (e) => {
     if (e.target.files && e.target.files.length > 0) {
-      const imageUrl = URL.createObjectURL(e.target.files[0]);
-      setUploadedIcon(imageUrl); // Update state with the uploaded icon URL
+      const newIcons = Array.from(e.target.files).map((file) =>
+        URL.createObjectURL(file)
+      );
+
+      setUploadedIcon((prevIcons) => [...prevIcons, ...newIcons]);
+      setUploadedIconNames((prevNames) => [
+        ...prevNames,
+        ...Array.from(e.target.files).map((file) => file.name),
+      ]);
     }
   };
-
+  const handleIconNameChange = (name, index) => {
+    // Update the name of the icon at the specified index
+    setUploadedIconNames((prevNames) => {
+      const newNames = [...prevNames];
+      newNames[index] = name;
+      return newNames;
+    });
+  };
   return (
     <>
       <input
@@ -117,7 +145,9 @@ const Buttons = ({ onFileSelect }) => {
       <ul className="Buttons-unorderlist-container">
         <li>
           <div
-            className="Buttons-orderlist-to-adjust-images"
+            className={`Buttons-orderlist-to-adjust-images img1 ${
+              activeTab === 1 ? "active" : ""
+            }`}
             onClick={handleImg1Click}
           >
             <img src={img1} alt="gallery" />
@@ -125,8 +155,16 @@ const Buttons = ({ onFileSelect }) => {
         </li>
         <li>
           <a href="#file">
-            <div className="Buttons-orderlist-to-adjust-images">
-              <img src={img2} alt="" onClick={handlePopupOpen} />
+            <div
+              className={`Buttons-orderlist-to-adjust-images ${
+                isImageUploaded ? "active" : ""
+              }`}
+            >
+              <img
+                src={img2}
+                alt=""
+                onClick={isImageUploaded ? handlePopupOpen : undefined}
+              />
               {isPopupOpen && (
                 <div className="edit-image-main-popup-container-css">
                   <EditImageTabList
@@ -143,8 +181,10 @@ const Buttons = ({ onFileSelect }) => {
         <li>
           <a href="#file">
             <div
-              className="Buttons-orderlist-to-adjust-images"
-              onClick={handleImg6Click}
+              className={`Buttons-orderlist-to-adjust-images ${
+                isImageUploaded ? "active" : ""
+              }`}
+              onClick={isImageUploaded ? handleImg6Click : undefined}
             >
               <img src={img6} alt="" />
             </div>
@@ -160,8 +200,10 @@ const Buttons = ({ onFileSelect }) => {
         <li>
           <a href="#file">
             <div
-              className="Buttons-orderlist-to-adjust-images"
-              onClick={handleImg8Click}
+              className={`Buttons-orderlist-to-adjust-images ${
+                isImageUploaded ? "active" : ""
+              }`}
+              onClick={isImageUploaded ? handleImg8Click : undefined}
             >
               <img src={img8} alt="" />
             </div>
@@ -173,23 +215,43 @@ const Buttons = ({ onFileSelect }) => {
         <ul className="Buttons-unoorderlist-for-icons-buttons">
           {/* ... other list items */}
           <li>
-            <a href="#file" onClick={openPopup}>
-              <div className="Buttons-orderlist-for-icons-buttons">
-                <img src={img9} alt="" />
+            <a href="#file">
+              <div
+                className={`Buttons-orderlist-for-icons-buttons ${
+                  isImageUploaded ? "active" : ""
+                }`}
+              >
+                <img
+                  src={img9}
+                  alt=""
+                  onClick={isImageUploaded ? openPopup : undefined}
+                />
               </div>
             </a>
           </li>
           <li>
             <a href="#file">
-              <div className="Buttons-orderlist-for-icons-buttons">
-                <img src={img10} alt="" />
+              <div
+                className={`Buttons-orderlist-for-icons-buttons ${
+                  isImageUploaded ? "active" : ""
+                }`}
+              >
+                {selectedPreviewIcon ? (
+                  <img src={selectedPreviewIcon} alt="" />
+                ) : (
+                  <img src={img10} alt="" />
+                )}
               </div>
             </a>
           </li>
           <li>
             <a href="#file">
-              <div className="Buttons-orderlist-for-icons-buttons">
-                <img src={img11} alt="" />
+              <div
+                className={`Buttons-orderlist-for-icons-buttons ${
+                  isImageUploaded ? "active" : ""
+                }`}
+              >
+                <img src={img11} alt="" onClick={handleDeletePreviewIcon} />
               </div>
             </a>
           </li>
@@ -234,11 +296,23 @@ const Buttons = ({ onFileSelect }) => {
                 <hr className="" />
               </div>
 
-              <div className="Add-icons-No-Icons-found">
-                {uploadedIcon ? (
-                  <img src={uploadedIcon} alt="Uploaded Icon" />
+              <div>
+                {uploadedIcon.length > 0 ? (
+                  <div className="Add-icons-user-uploaded-icons">
+                    {uploadedIcon.map((icon, index) => (
+                      <img
+                        className="Add-icons-user-uploaded-icons-img-to-be-uploaded"
+                        key={index}
+                        src={icon}
+                        alt={`Uploaded Icon ${index}`}
+                        onClick={() => handleIconClick(icon)}
+                      />
+                    ))}
+                  </div>
                 ) : (
-                  <span>No Icons found</span>
+                  <span className="Add-icons-No-Icons-found">
+                    No Icons found
+                  </span>
                 )}
               </div>
 
@@ -248,7 +322,7 @@ const Buttons = ({ onFileSelect }) => {
                   className="Add-Icons-cancel-btn-yy"
                   onClick={closePopup}
                 >
-                  Cancel
+                  Close
                 </button>
               </div>
             </div>
@@ -259,17 +333,61 @@ const Buttons = ({ onFileSelect }) => {
               <div className="Add-icon-horizonatl-line1">
                 <hr className="" />
               </div>
-              <div className="Add-icons-No-Icons-found">
-                <span>Add Icons</span>
-                {/* <p>No ICON FIUBNF</p> */}
+              <div className="Add-icons-user-uploaded-icons-after-uploaded">
+                {uploadedIcon.length > 0 ? (
+                  <p className="Add-icons-No-Icons-found-after-uploaded-para">
+                    You can add tags to the icon here for searching later.
+                    <br />
+                    File names are added as tags by default.You can enter any
+                    additional tags.
+                    <br />
+                    Add comma seperated tags for each icon below
+                  </p>
+                ) : (
+                  <p className="Add-icons-No-Icons-found-after-uploaded-para">
+                    Add Icons
+                  </p>
+                )}
+                <input
+                  className="input-file-choose-file-to-add-icons"
+                  type="file"
+                  onChange={handleFileChangeInAddTab}
+                  multiple
+                />
               </div>
-
-              <div className="Add-icons-No-Icons-found">
-                <input type="file" onChange={handleFileChangeInAddTab} />
+              <div>
+                {uploadedIcon.length > 0 && (
+                  <div className="Add-icons-user-uploaded-icons-add-tab">
+                    {uploadedIcon.map((icon, index) => (
+                      <div key={index} className="Add-icon-item">
+                        <img
+                          className="Add-icons-user-uploaded-icons-img-to-be-uploaded"
+                          src={icon}
+                          alt={`Uploaded Icon ${index}`}
+                          onClick={() => handleIconClick(icon)}
+                        />
+                        <input
+                          className="label-name-for-Added-icons"
+                          type="text"
+                          placeholder="Icon Name"
+                          value={uploadedIconNames[index] || ""}
+                          onChange={(e) =>
+                            handleIconNameChange(e.target.value, index)
+                          }
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {/* <input
+                  className="input-file-choose-file-to-add-icons"
+                  type="file"
+                  onChange={handleFileChangeInAddTab}
+                  multiple
+                /> */}
               </div>
 
               <div className="Add-Icons-cancel-btn-zz">
-                {/* <hr className="Add-icon-horizonatl-line2" /> */}
                 <button className="Add-Icons-cancel-btn-yy">Done</button>
               </div>
             </div>

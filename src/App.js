@@ -45,6 +45,7 @@ function App() {
           element={<CoverPageDesigner />}
         ></Route>
         {/* <Route path="/" element={<MobileUpload/>}></Route> */}
+        <Route path="/mobilesync" element={<MobileUpload />}></Route>
       </Routes>
     </BrowserRouter>
 

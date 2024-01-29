@@ -62,6 +62,7 @@ const PhotoReview = () => {
     <>
       <Header></Header>
       <p className="PhotoReview-Main-Para">
+        The photo added to the top-left box will appear on the cover of the
         report <br />
         the drop-down boxes are automatically preloaded with the sectors from
         The photo added to the top left box will appear on the cover of the the
