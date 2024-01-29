@@ -112,7 +112,9 @@ const Header = () => {
           <div
             className="main-label cursor-pointer"
             onClick={() => handleMenuClick(0)}
-          ></div>
+          >
+            Edit
+          </div>
           {activeMenu === 0 && (
             <ul
               className="submenu absolute z-10 bg-white shadow mt-2 w-48 leading-tight"
@@ -133,16 +135,36 @@ const Header = () => {
             </ul>
           )}
         </div>
-        <div>
+        {/* <div>
           <ul>
             <li className="ml-5">Edit</li>
           </ul>
-        </div>
+        </div> */}
         <div>
-          <ul onClick={internetLogin}>
+          {/* <ul onClick={internetLogin}>
             <li className="ml-5">Internet</li>
             {isInternetLoginPopup && <InternetLogin />}
-          </ul>
+          </ul> */}
+          <div
+            className="main-label cursor-pointer ml-4"
+            onClick={() => handleMenuClick(1)}
+          >
+            Internet
+          </div>
+          {activeMenu === 1 && (
+            <ul
+              onClick={internetLogin}
+              className="submenu absolute z-10 bg-white shadow mt-2"
+              style={{ width: "180px", lineHeight: "12px" }}
+            >
+              <Link to="/internetlogin">
+                <li className="ml-5 py-2 px-4 hover:bg-gray-200">
+                  InternetLogin
+                </li>
+                {/* {isInternetLoginPopup && <InternetLogin />} */}
+              </Link>
+            </ul>
+          )}
         </div>
         <div>
           <div className="menu-item relative ml-4">
