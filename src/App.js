@@ -39,6 +39,7 @@ function App() {
         <Route path="/batchaddphotos" element={<BatchAddPhotos />}></Route>
         <Route path="/contractpage" element={<ContractPage />}></Route>
         <Route path="/generateReport" element={<ColorPalette />}></Route>
+        <Route path="/internetlogin" element={<InternetLogin />}></Route>
         <Route
           path="/coverpagedesigner"
           element={<CoverPageDesigner />}
