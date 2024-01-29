@@ -13,7 +13,7 @@ const Footer = () => {
         <form className="connection-form">
           {/* Your form fields go here */}
           <label>
-            <input type="radio" name="connection" value="option1" />
+            <input className="input-field-for-footer-section" type="radio" name="connection" value="option1" />
             Not Connected
           </label>
 

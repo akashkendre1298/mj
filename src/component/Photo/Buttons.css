@@ -77,14 +77,14 @@
   position: absolute;
   top: 41%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -60%);
   background-color: lightgrey;
 
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 1;
   width: 40em;
-  height: 30em;
+  height: 35em;
   overflow: auto;
 }
 .divAdd-IconsPopup-close-image {
@@ -109,7 +109,7 @@
   top: 2em; /* Adjust the top position based on the height of the header */
   display: flex;
   justify-content: flex-start;
-  background-color: #fee4c3;
+  /* background-color: #fee4c3; */
   border: solid 1px rgb(191, 189, 189);
   padding: 0px 1em;
   z-index: 1; /* Add a z-index to make sure it's above other elements except the header */
@@ -134,7 +134,7 @@
 
 #Add-Icons-Search-Button:hover {
   background-color: #c3ddf1;
-  border-bottom: 3px solid blue;
+  /* border-bottom: 3px solid blue; */
 }
 .Add-Icons-cancel-btn-zz {
   display: flex;
@@ -143,7 +143,7 @@
   /* margin-top: 7px; */
   position: fixed;
   top: 90%;
-  border-top: 1px solid #e1dfe6;
+  /* border-top: 1px solid #e1dfe6; */
   width: 100%;
   padding: 1em 1em 0 0;
 }
@@ -219,10 +219,25 @@
   display: flex;
   align-items: center;
   gap: 1em;
-  padding: 1em;
+  padding: 0 1em 1em 1em;
 }
 .input-file-choose-file-to-add-icons {
-  position: fixed;
-  top: 33%;
-  left: 41%;
+  /* position: fixed;
+  top: 31%;
+  left: 41%; */
+  width: 10em;
+}
+.Add-icons-user-uploaded-icons-container-rrr {
+  border: 2px solid gray;
+  max-height: 299px; /* Set a maximum height for the container */
+  overflow-y: auto; /* Enable vertical scrollbar when content exceeds the height */
+  margin: 0.5em;
+  margin-top: 1em;
+}
+.kjcbdavcdkvykhcbd {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  /* height: 100vh; */
+  /* width: 130%; */
 }

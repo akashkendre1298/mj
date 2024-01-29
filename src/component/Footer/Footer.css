@@ -62,6 +62,6 @@
   align-items: center;
   gap: 0.5em;
 }
-input {
+.input-field-for-footer-section {
   margin-right: 10px;
 }

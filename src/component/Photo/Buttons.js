@@ -3,7 +3,7 @@ import img1 from "./icons/gallery.png";
 import img2 from "./icons/document.png";
 // import img5 from "./icons/camera-48.png";
 import img6 from "./icons/trash.png";
-import img7 from "./icons/notes.png";
+// import img7 from "./icons/notes.png";
 import img8 from "./icons/diskette.png";
 import img9 from "./icons/search-in-browser-64.png";
 import img10 from "./icons/preview-48.png";
@@ -190,13 +190,7 @@ const Buttons = ({ onFileSelect }) => {
             </div>
           </a>
         </li>
-        <li>
-          <a href="#file">
-            <div className="Buttons-orderlist-to-adjust-images">
-              <img src={img7} alt="" />
-            </div>
-          </a>
-        </li>
+
         <li>
           <a href="#file">
             <div
@@ -348,14 +342,16 @@ const Buttons = ({ onFileSelect }) => {
                     Add Icons
                   </p>
                 )}
-                <input
-                  className="input-file-choose-file-to-add-icons"
-                  type="file"
-                  onChange={handleFileChangeInAddTab}
-                  multiple
-                />
+                <div className="kjcbdavcdkvykhcbd">
+                  <input
+                    className="input-file-choose-file-to-add-icons"
+                    type="file"
+                    onChange={handleFileChangeInAddTab}
+                    multiple
+                  />
+                </div>
               </div>
-              <div>
+              <div className="Add-icons-user-uploaded-icons-container-rrr">
                 {uploadedIcon.length > 0 && (
                   <div className="Add-icons-user-uploaded-icons-add-tab">
                     {uploadedIcon.map((icon, index) => (
@@ -379,13 +375,15 @@ const Buttons = ({ onFileSelect }) => {
                     ))}
                   </div>
                 )}
-                {/* <input
+              </div>
+              {/* <div className="kjcbdavcdkvykhcbd">
+                <input
                   className="input-file-choose-file-to-add-icons"
                   type="file"
                   onChange={handleFileChangeInAddTab}
                   multiple
-                /> */}
-              </div>
+                />
+              </div> */}
 
               <div className="Add-Icons-cancel-btn-zz">
                 <button className="Add-Icons-cancel-btn-yy">Done</button>

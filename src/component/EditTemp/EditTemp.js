@@ -159,20 +159,36 @@ const EditTemp = ({ onClose }) => {
     };
 
     // Function to handle adding a menu item or subitem
+    // State variable for controlling popup visibility
+    // const [isPopupVisible, setPopupVisible] = useState(false);
+    // Retrieve the string from localStorage
+    const storedMenuData = localStorage.getItem('menuData');
+
+    // Parse the string to a JavaScript object
+    const menuData = JSON.parse(storedMenuData);
+
+    // Now, `menuData` is an array of objects with the proper structure
+    console.log(menuData);
+
+    // Use useEffect for localStorage
+    useEffect(() => {
+        // Save to localStorage whenever 'items' changes
+        localStorage.setItem('menuData', JSON.stringify(items));
+    }, [items]); // Dependency on 'items'
     const handleAddMenuItem = (event) => {
         event.preventDefault();
 
+        let updatedItems;
+
         if (lastSelectionType === 'menu' && selectedMenuTitleIndex !== null) {
             // Add a new menu item
-            setItems((prevItems) => {
-                const updatedItems = [...prevItems];
-                updatedItems[selectedMenuTitleIndex] = {
-                    ...updatedItems[selectedMenuTitleIndex],
-                    name: menuItem,
-                    subItems: [],
-                };
-                return updatedItems;
-            });
+            updatedItems = [...items];
+            const newItem = {
+                id: Date.now(), // Unique ID for the menu item
+                menuname: menuItem,
+                subItems: [],
+            };
+            updatedItems[selectedMenuTitleIndex] = newItem;
 
             setMenuItem('');
             setLastSelectionType('menuItem');
@@ -180,25 +196,34 @@ const EditTemp = ({ onClose }) => {
             // Add a new subitem to a menu item
             const selectedItem = items[selectedMenuItemIndex];
             if (!selectedItem.subItems.includes(menuItem)) {
-                setItems((prevItems) => {
-                    const updatedItems = [...prevItems];
-                    updatedItems[selectedMenuItemIndex] = {
-                        ...selectedItem,
-                        subItems: [...selectedItem.subItems, menuItem],
-                    };
-                    return updatedItems;
-                });
+                updatedItems = [...items];
+                const newSubItem = {
+                    id: Date.now(), // Unique ID for the subitem
+                    submenuname: menuItem,
+                };
+                updatedItems[selectedMenuItemIndex] = {
+                    ...selectedItem,
+                    subItems: [...selectedItem.subItems, newSubItem],
+                };
                 setMenuItem('');
             }
         } else {
             // Add a new menu if none selected
-            const newItem = { name: menuItem, subItems: [] };
-            setItems((prevItems) => [...prevItems, newItem]);
+            updatedItems = [
+                ...items,
+                {
+                    id: Date.now(), // Unique ID for the menu item
+                    menuname: menuItem,
+                    subItems: [],
+                },
+            ];
             setMenuItem('');
             setLastSelectionType('menu');
         }
-    };
 
+        // Update state
+        setItems(updatedItems);
+    };
     // State variable for controlling popup visibility
     const [isPopupVisible, setPopupVisible] = useState(false);
 
@@ -225,30 +250,36 @@ const EditTemp = ({ onClose }) => {
 
     // Function to handle removing a menu item or subitem
     const handleRemoveItem = () => {
-        if (lastSelectionType === 'menu' && selectedMenuTitleIndex !== null) {
-            // Remove a menu item
-
+        if (selectedSubItemIndex !== null) {
+            // Remove a submenu item
             setItems((prevItems) => {
-                const updatedItems = [...prevItems];
-                updatedItems.filter(selectedMenuTitleIndex, 1);
-                return updatedItems;
-            });
-        } else if (lastSelectionType === 'menuItem' && selectedMenuItemIndex !== null) {
-            // Remove a subitem from a menu item
-            const selectedItem = items[selectedMenuItemIndex];
-            const updatedSubItems = selectedItem.subItems.filter((_, index) => index !== selectedSubItemIndex);
+                const updatedItems = prevItems.map((menuItem) => {
+                    // Check if the menu item has subItems
+                    if (menuItem.subItems && menuItem.subItems.length > 0) {
+                        // Filter out the selected submenu item
+                        const updatedSubItems = menuItem.subItems.filter((_, index) => index !== selectedSubItemIndex);
 
-            setItems((prevItems) => {
-                const updatedItems = [...prevItems];
-                updatedItems[selectedMenuItemIndex] = {
-                    ...selectedItem,
-                    subItems: updatedSubItems,
-                };
+                        // Update the menu item with the modified submenu
+                        return {
+                            ...menuItem,
+                            subItems: updatedSubItems,
+                        };
+                    }
+
+                    // If the menu item has no subItems, return it as is
+                    return menuItem;
+                });
+
                 return updatedItems;
             });
         }
         // Additional logic for other cases if needed
     };
+
+
+
+
+
 
     const handleCopyItems = () => {
         if (lastSelectionType === 'menu' && selectedMenuTitleIndex !== null) {
@@ -304,7 +335,7 @@ const EditTemp = ({ onClose }) => {
                     {/* Menu Box */}
                     <div className="template-card__body__center__input-edittemp">
                         <div className="box-edittemp">
-                            <div className='menubox'>
+                            <div className='menubox text-left'>
                                 {/* Icon for Opening Folder */}
                                 <div className='iconmenu-edittemp'>
                                     <div>
@@ -328,7 +359,7 @@ const EditTemp = ({ onClose }) => {
 
                                 {/* Menu Items List */}
                                 <div key={selectedMenuItemIndex}>
-                                    <ul>
+                                    <ul className='pl-10'>
                                         {/* Render Menu Items */}
                                         {items.map((item, index) => (
                                             <li key={index}>
@@ -341,7 +372,7 @@ const EditTemp = ({ onClose }) => {
                                                         backgroundColor: selectedMenuItemIndex === index ? '#b3e0ff' : 'transparent',
                                                     }}
                                                 >
-                                                    {item.name}{' '}
+                                                    {item.menuname}{' '}
                                                 </button>
 
                                                 {/* Popup for Renaming Menu Item */}
@@ -382,9 +413,8 @@ const EditTemp = ({ onClose }) => {
                                                                         backgroundColor: selectedSubItemIndex === subIndex ? '#c2f0c2' : 'transparent',
                                                                     }}
                                                                 >
-                                                                    {subItem}
+                                                                    {subItem.submenuname}
                                                                 </button>
-
                                                             </li>
                                                         ))}
                                                     </ul>
