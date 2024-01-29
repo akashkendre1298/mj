@@ -34,11 +34,49 @@
       outline: 1rem;
       margin: 1px;
   } 
+
+  /* styles.css */
+
+.input1-twodamage {
+  flex: 1;
+  padding: 10px;
+  height: 30px;
+  width: 150px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  outline: 1rem;
+  margin: 1px;
+  margin-left: 95px;
+}
+
+.input2-twodamage {
+  flex: 1;
+  padding: 10px;
+  height: 30px;
+  width: 150px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  outline: 1rem;
+  margin: 1px;
+  margin-left: 6px;
+}
+
+
   
   .input-twodamage:hover {
     /* background-color: #d7e9f7; */
     border-color: #005a9e;
     }
+
+    .input1-twodamage:hover {
+      /* background-color: #d7e9f7; */
+      border-color: #005a9e;
+      }
+
+      .input2-twodamage:hover {
+        /* background-color: #d7e9f7; */
+        border-color: #005a9e;
+        }
   
   .cancel-button-twodamage{
     font-size: 14px;

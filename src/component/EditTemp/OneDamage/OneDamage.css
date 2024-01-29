@@ -35,10 +35,31 @@
     margin: 1px;
 } 
 
+/* styles.css */
+
+.input1-onedamage {
+  flex: 1;
+  padding: 10px;
+  height: 30px;
+  width: 150px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  outline: none; /* Remove the 1rem outline to improve symmetry */
+  margin: 1px;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin-left: 67px;
+}
+
+
 .input-onedamage:hover {
   /* background-color: #d7e9f7; */
   border-color: #005a9e;
   }
+
+  .input1-onedamage:hover {
+    /* background-color: #d7e9f7; */
+    border-color: #005a9e;
+    }
 
 .cancel-button-onedamage{
   font-size: 14px;
@@ -108,7 +129,6 @@
           display: flex;
           margin-left: 40px;
           margin-top: 30px;
-        
         }
 
         .label-container-onedamage{

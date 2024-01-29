@@ -8,12 +8,12 @@ import AdjustContrastContent from "./AdjustContrast/AdjustContrastContent";
 import RotateClockwiseContent from "./RotateClockwiseContent/RotateClockwiseContent";
 import CropImageContent from "./CropImageContent/CropImageContent";
 import DrawLineContent from "./DrawLineContent/DrawLineContent";
-import imageUrl from "../../Assets/icons/download.jpeg";
+// import imageUrl from "../../Assets/icons/download.jpeg";
 import DrawArrowContent from "./DrawArrowContent/DrawArrowContent";
 import DrawRectangleContent from "./DrawRectangleContent/DrawRectangleContent";
-import DrawOvalContent from './DrawOvalContent/DrawOvalContent';
+import DrawOvalContent from "./DrawOvalContent/DrawOvalContent";
 
-const EditImageTabList = ({ isOpen, onRequestClose }) => {
+const EditImageTabList = ({ isOpen, onRequestClose, uploadedImageUrl }) => {
   const [activeTab, setActiveTab] = useState(1);
 
   const handleTabClick = (tabNumber) => {
@@ -38,14 +38,14 @@ const EditImageTabList = ({ isOpen, onRequestClose }) => {
   ];
 
   const tabContentComponents = {
-    1: <CropImageContent imageUrl={imageUrl} />,
-    2: <AdjustBrightnessContent imageUrl={imageUrl} />,
-    3: <AdjustContrastContent imageUrl={imageUrl} />,
-    4: <RotateClockwiseContent imageUrl={imageUrl} />,
-    5: <DrawLineContent imageUrl={imageUrl} />,
-    6: <DrawArrowContent imageUrl={imageUrl} />,
-    7: <DrawRectangleContent imageUrl={imageUrl} />,
-    8: <DrawOvalContent imageUrl={imageUrl} />,
+    1: <CropImageContent imageUrl={uploadedImageUrl} />,
+    2: <AdjustBrightnessContent imageUrl={uploadedImageUrl} />,
+    3: <AdjustContrastContent imageUrl={uploadedImageUrl} />,
+    4: <RotateClockwiseContent imageUrl={uploadedImageUrl} />,
+    5: <DrawLineContent imageUrl={uploadedImageUrl} />,
+    6: <DrawArrowContent imageUrl={uploadedImageUrl} />,
+    7: <DrawRectangleContent imageUrl={uploadedImageUrl} />,
+    8: <DrawOvalContent imageUrl={uploadedImageUrl} />,
     9: <Editor />,
     // ... (add other tab content components)
   };

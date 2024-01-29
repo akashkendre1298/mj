@@ -47,7 +47,7 @@ function OneSelection({ setIsPopupOpen, isPopupOpen, onClose }) {
       <div className='label-container-oneselection'>
         <label className='label-oneselection' htmlFor="field1">Tab Name:</label>
         <input
-          className='input-oneselection'
+          className='input1-oneselection'
           type="text"
           name="tabName_2nd"
           //   placeholder="Enter your first value"

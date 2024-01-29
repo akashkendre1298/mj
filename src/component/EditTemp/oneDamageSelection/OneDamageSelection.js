@@ -53,7 +53,7 @@ function OneDamageSelection({ setIsPopupOpen, isPopupOpen, onClose }) {
             Tab Name:
           </label>
           <input
-            className="input-onedamageselection"
+            className="input1-onedamageselection"
             type="text"
             name="tabName_4th"
             // placeholder="Enter your first value"
@@ -67,7 +67,7 @@ function OneDamageSelection({ setIsPopupOpen, isPopupOpen, onClose }) {
             Damage Panel Name:
           </label>
           <input
-            className="input-onedamageselection"
+            className="input2-onedamageselection"
             type="text"
             name="damagePanelName_3rd"
             // placeholder="Enter your second value"

@@ -53,7 +53,7 @@ function TwoSelection({ setIsPopupOpen, isPopupOpen, onClose }) {
             Tab Name:
           </label>
           <input
-            className="input-twoselection"
+            className="input1-twoselection"
             type="text"
             name="tabName_3rd"
             // placeholder="Enter your first value"
@@ -67,7 +67,7 @@ function TwoSelection({ setIsPopupOpen, isPopupOpen, onClose }) {
             1st Selection Panel Name:
           </label>
           <input
-            className="input-twoselection"
+            className="input2-twoselection"
             type="text"
             name="selectionPanelName_1st"
             // placeholder="Enter your second value"

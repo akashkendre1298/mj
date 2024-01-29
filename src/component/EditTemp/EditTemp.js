@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { FaFolderOpen } from 'react-icons/fa';
@@ -19,6 +17,11 @@ import OneDamageSelection from './oneDamageSelection/OneDamageSelection';
 const EditTemp = ({ onClose }) => {
     const [selectedOption, setSelectedOption] = useState(null);
     // const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [currentStep, setCurrentStep] = useState(1);
+    
+    // Flag to indicate if a radio option is selected
+    const [isRadioOptionSelected, setIsRadioOptionSelected] = useState(false);
+
 
     const [popupStates, setPopupStates] = useState({
         'Option 1': false,
@@ -99,6 +102,7 @@ const EditTemp = ({ onClose }) => {
         closePopup();
     };
 
+    
 
 
     // State variables
@@ -435,7 +439,7 @@ const EditTemp = ({ onClose }) => {
                                         </p>
                                     </div>
                                     <div className="dialog-body-inspection">
-                                        <label className='label-inspection'>
+                                        <label className='label1-inspection'>
                                             <input
                                                 type="radio"
                                                 name="options"
@@ -447,7 +451,7 @@ const EditTemp = ({ onClose }) => {
                                         </label>
 
 
-                                        <label className='label-inspection'>
+                                        <label className='label2-inspection'>
                                             <input
                                                 type="radio"
                                                 name="options"
@@ -458,7 +462,7 @@ const EditTemp = ({ onClose }) => {
                                             2 Damage Panels
                                         </label>
 
-                                        <label className='label-inspection'>
+                                        <label className='label3-inspection'>
                                             <input
                                                 type="radio"
                                                 name="options"
@@ -469,7 +473,7 @@ const EditTemp = ({ onClose }) => {
                                             1 Selection Panel
                                         </label>
 
-                                        <label className='label-inspection'>
+                                        <label className='label4-inspection'>
                                             <input
                                                 type="radio"
                                                 name="options"
@@ -491,7 +495,7 @@ const EditTemp = ({ onClose }) => {
                                             1 Damage Panel & 1 Selection Panel
                                         </label>
 
-                                        <label className='label-inspection'>
+                                        <label className='label5-inspection'>
                                             <input
                                                 type="radio"
                                                 name="options"

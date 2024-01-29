@@ -29,7 +29,7 @@
   align-items: center;
   background-color: rgb(242, 236, 236);
   border: solid 1px rgb(191, 189, 189);
-  /* padding: 10px; */
+  padding: 3px 10px;
 }
 
 .selectTemp {
@@ -41,7 +41,7 @@
   border: none;
   padding: 5px;
 }
-.close-button:hover{
+.close-button:hover {
   background-color: #e60000;
 }
 .para1_SaveTemp {
@@ -49,7 +49,6 @@
   text-align: center;
   font-size: 15px;
   /* background-color: #fff; */
-
 }
 
 .template-card__body__center__input_SaveTemp {
@@ -83,7 +82,6 @@
   margin-left: 25px;
   height: 30px;
   background-color: #fff;
-
 }
 
 .para3_SaveTemp {
@@ -98,9 +96,8 @@
   margin-bottom: 10px;
   background-color: #fff;
 }
-.para1{
+.para1 {
   padding: 0 10px;
-
 }
 
 .chkbox {
@@ -133,3 +130,6 @@
   background-color: #d7e9f7;
   border-color: #005a9e;
 }
+/* .btn-in-save-template{
+
+} */
