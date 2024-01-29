@@ -16,16 +16,17 @@ import EditComments from "./component/EditComments/EditComments";
 import InternetLogin from "./component/InternetLogin/InternetLogin";
 
 import BatchAddPhotos from "./component/Photo/BatchAddPhotos/BatchAddPhotos";
-import ContractPage from './component/Contract/Contract';
+import ContractPage from "./component/Contract/Contract";
 import ColorPalette from "./component/ColorPalet/ColorPalet";
 import Editor from "./component/Editor/Editor";
 import MobileUpload from "./component/MobileUpload/MobileUpolad";
+import CoverPageDesigner from "./component/CoverPageDesigner/CoverPageDesigner";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-          <Route path="/" element={<ClientInfo />}></Route>
+        <Route path="/" element={<ClientInfo />}></Route>
         <Route path="/" element={<Footer />}></Route>
         <Route path="/colorpalet" element={<ColorPalet />}></Route>
         <Route path="/insertpdf" element={<InsertPdf />}></Route>
@@ -37,7 +38,11 @@ function App() {
         <Route path="/EditComments" element={<EditComments />}></Route>
         <Route path="/batchaddphotos" element={<BatchAddPhotos />}></Route>
         <Route path="/contractpage" element={<ContractPage />}></Route>
-        <Route path="/generateReport" element={<ColorPalette />}></Route> 
+        <Route path="/generateReport" element={<ColorPalette />}></Route>
+        <Route
+          path="/coverpagedesigner"
+          element={<CoverPageDesigner />}
+        ></Route>
         {/* <Route path="/" element={<MobileUpload/>}></Route> */}
       </Routes>
     </BrowserRouter>
