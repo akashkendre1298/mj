@@ -18,7 +18,7 @@ const EditTemp = ({ onClose }) => {
     const [selectedOption, setSelectedOption] = useState(null);
     // const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [currentStep, setCurrentStep] = useState(1);
-    
+
     // Flag to indicate if a radio option is selected
     const [isRadioOptionSelected, setIsRadioOptionSelected] = useState(false);
 
@@ -102,7 +102,7 @@ const EditTemp = ({ onClose }) => {
         closePopup();
     };
 
-    
+
 
 
     // State variables
@@ -287,11 +287,12 @@ const EditTemp = ({ onClose }) => {
                 </div>
 
                 {/* Menu and Item Section */}
-                <div className='Menu-Item'>
+                <div className='Menu-Item flex justify-center'>
                     {/* Menu Section */}
-                    <div className='menu-edittemp'>
+                    <div className='item'>
+
+                        <p className='itemtitle-edittemp'>Menu</p>
                     </div>
-                    <p className='menutitle-edittemp'>Menu</p>
                     {/* Item Section */}
                     <div className='item'>
                         <p className='itemtitle-edittemp'>Item</p>
