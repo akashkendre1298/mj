@@ -14,13 +14,16 @@
   align-items: center;
   justify-content: center;
 
-  background-color: white;
+  /* background-color: white; */
   padding: 1px;
   max-width: 100%;
   max-height: 100%;
   cursor: pointer;
   filter: blur(2px) grayscale(100%); /* Apply blur by default */
   transition: filter 0.3s ease; /* Add transition for a smooth effect */
+}
+.Buttons-orderlist-to-adjust-images:hover {
+  border: 1px solid black;
 }
 .Buttons-orderlist-to-adjust-images.active,
 .Buttons-orderlist-to-adjust-images:not(.img1):active {
@@ -42,7 +45,7 @@
   gap: 5px;
 }
 .Buttons-orderlist-for-icons-buttons {
-  background-color: white;
+  /* background-color: white; */
   filter: blur(2px) grayscale(100%); /* Apply blur by default */
   transition: filter 0.3s ease; /* Add transition for a smooth effect */
   &.active {
@@ -53,6 +56,9 @@
 .Buttons-orderlist-for-icons-buttons {
   width: 25px;
   height: 25px;
+}
+.Buttons-orderlist-for-icons-buttons:hover {
+  border: 1px solid black;
 }
 
 /* Edit Image Popup-css */
