@@ -4,7 +4,7 @@
   margin: 1px;
   width: 100%;
 }
-.main-div-for-insert-pdf{
+.main-div-for-insert-pdf {
   height: 100vh;
 }
 .add-doc-btn-for-section-document {
@@ -29,23 +29,23 @@
   background-color: rgb(135 207 235 / 34%);
 }
 .two-btns-for-add-pdf-and-forms {
-  /* margin-top: -0.5rem; */
   display: flex;
   gap: 0.5em;
   justify-content: center;
-  margin-bottom: 1em;
+  padding-bottom: 0.9em;
+  border-bottom: 1px solid grey;
 }
 .for-first-section-header-and-the-btns {
   /* display: flex; */
   width: 80%;
-  height: 74vh;
+  height: 80vh;
   justify-content: center;
-  border: 0.1px solid grey;
+  border-bottom: 0.1px solid grey;
   /* padding: 1em; */
 }
 .arrange-document-list-right-side-section {
   width: 20%;
-  height: 74vh;
+  height: 80vh;
   border: 0.1px solid grey;
   padding: 2px;
 }
@@ -56,7 +56,7 @@
 }
 .list-for-the-documents-in-the-section {
   padding: 10px;
-  height: 65vh;
+  height: 72.5vh;
   border: 1px solid grey;
 }
 .arrgane-document-header-for-section {
@@ -93,7 +93,7 @@ li.list-icon-status-online {
   background-size: contain;
 }
 .uploaded-documents-preview {
-  border: 0.1px solid grey;
+  /* border: 0.1px solid grey; */
   width: 100%;
   height: auto;
 }
@@ -103,9 +103,10 @@ li.list-icon-status-online {
 .pdf-preview-for-multiple-files {
   width: 100%;
   border: 0.1px solid #80808069;
-  /* margin-bottom: 1em; */
+  margin-bottom: 1em;
   display: flex;
   justify-content: space-between;
+  border-right: none;
 }
 .form-for-check-box-and-search-box {
   display: grid;
