@@ -271,12 +271,9 @@ const Buttons = ({ onFileSelect }) => {
               Select and click on the icons to Add
             </p>
             <div className="divAdd-IconsPopup-close-image">
-              <img
-                src={close}
-                alt="Close"
-                className="Add-IconsPopup-close-image"
-                onClick={closePopup}
-              />
+              <p className="Add-IconsPopupmage-close-i" onClick={closePopup}>
+                X
+              </p>
             </div>
           </div>
           <div className="Add-Icons-Search-button-main-contaier">
