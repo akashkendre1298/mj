@@ -63,6 +63,11 @@
   /* width: 15px;
   height: 15px; */
   cursor: pointer;
+  width: 31px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .caption-popup-caption-editor {
@@ -85,15 +90,14 @@
   background-color: rgb(242, 236, 236);
 
   border: solid 1px rgb(191, 189, 189);
-  padding: 0px 1em 0 1em;
+  padding: 0px 0 0 1em;
   height: 2em;
 }
 .caption-popupbox-btns:hover {
   background-color: #d7e9f7;
   border-color: #005a9e;
 }
-.caption-popup-close-image {
-}
+
 .caption-popup-close-image:hover {
   background-color: red;
   color: white;
