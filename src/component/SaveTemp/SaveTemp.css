@@ -134,3 +134,20 @@
 /* .btn-in-save-template{
 
 } */
+.Add-IconsPopup-close-image:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-in-save-template {
+  width: 2em;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-in-save-template:hover {
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}
