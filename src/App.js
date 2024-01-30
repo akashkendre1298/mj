@@ -40,12 +40,9 @@ function App() {
         <Route path="/contractpage" element={<ContractPage />}></Route>
         <Route path="/generateReport" element={<ColorPalette />}></Route>
         <Route path="/internetlogin" element={<InternetLogin />}></Route>
-        <Route
-          path="/coverpagedesigner"
-          element={<CoverPageDesigner />}
-        ></Route>
+        <Route path="/coverpagedesigner"element={<CoverPageDesigner />}></Route>
         {/* <Route path="/" element={<MobileUpload/>}></Route> */}
-        <Route path="/mobilesync" element={<MobileUpload />}></Route>
+        {/* <Route path="/mobilesync" element={<MobileUpload />}></Route> */}
       </Routes>
     </BrowserRouter>
 
