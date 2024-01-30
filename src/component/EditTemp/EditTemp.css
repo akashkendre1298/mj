@@ -33,18 +33,25 @@
   border: solid 1px rgb(191, 189, 189);
   padding: 12px 0 12px 12px;
 }
-.selectTemp-edittemp{
+.selectTemp-edittemp {
   font-size: 15px;
 }
 .close-button-edittemp {
-  background-color: transparent;
   border: none;
-  width: 20px;
+  width: 2em;
   /* padding: 5px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+}
+.close-button-edittemp:hover {
+  background-color: red;
+  color: white;
 }
 .close-div-edittemp:hover {
   background-color: red;
-  width: 20px;
+
   /* height: 20px; */
 }
 
@@ -157,7 +164,6 @@ margin-top: 5px;
 .para1-edittemp {
   text-align: center;
   font-size: 15px;
-  
 }
 
 .Donebtn-edittemp {
@@ -219,7 +225,7 @@ margin-top: 5px;
   align-items: center;
 } 
 
- .selectTemp1-edittemp{
+.selectTemp1-edittemp {
   font-size: 15px;
 } 
  .close-button1-edittemp {
@@ -229,7 +235,7 @@ margin-top: 5px;
 .para2-edittemp {
    padding: 5px; 
   margin-left: 2px;
-  margin-top:0px;
+  margin-top: 0px;
   font-size: 15px;
 }
  .menutext1-edittemp {
@@ -328,16 +334,3 @@ margin-top: 5px;
 .Menu-Item-edittemp > ul > li {
   margin-bottom: 5px;
 }
-
- .close-button1-edittemp{
-  background-color: red;
-  padding: 3px;
-  margin-left: 280px;
-
-} 
-
-.template-selector1-edittemp{
-  justify-content: space-between;
-  background-color: rgb(201, 199, 199);
-}
-

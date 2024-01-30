@@ -273,6 +273,7 @@ const EditTemp = ({ onClose }) => {
                 return updatedItems;
             });
         }
+
         // Additional logic for other cases if needed
     };
 
@@ -313,7 +314,7 @@ const EditTemp = ({ onClose }) => {
                 <div className="template-selector-edittemp">
                     <span className='selectTemp-edittemp'>Edit Template</span>
                     <div className='close-div-edittemp'>
-                        <button onClick={onClose} className="close-button-edittemp">X</button>
+                        <p onClick={onClose} className="close-button-edittemp">X</p>
                     </div>
                 </div>
 

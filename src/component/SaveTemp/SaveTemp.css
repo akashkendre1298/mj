@@ -29,7 +29,8 @@
   align-items: center;
   background-color: rgb(242, 236, 236);
   border: solid 1px rgb(191, 189, 189);
-  padding: 3px 10px;
+  padding: 0 0 0 1em;
+  height: 2em;
 }
 
 .selectTemp {
@@ -133,3 +134,22 @@
 /* .btn-in-save-template{
 
 } */
+.Add-IconsPopup-close-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 28px;
+}
+.btn-in-save-template {
+  width: 2em;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Add-IconsPopup-close-image:hover {
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}

@@ -1,131 +1,126 @@
 /* styles.css */
 
 .body-internetlogin {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200vh;
-    width: 150vh;
-    /* background-color: rgba(0, 0, 0, 0.2); */
-  }
-  
-  .popup-container-internetlogin {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    z-index: 999;
-    position: absolute;
-    top: 10%;
-    left: 30%;
-    /* background-color: rgb(242, 236, 236); */
-    /* align-items: center;*/
-  }
-  
-  .popup-internetlogin {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200vh;
+  width: 150vh;
+  /* background-color: rgba(0, 0, 0, 0.2); */
+}
 
-  
-    border-radius: 5px;
-    width: 700px;
-    text-align: center;
-    
-   
- 
-  }
-  .p-internetlogin{
-    font-size: 15px;
-  }
+.popup-container-internetlogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  z-index: 999;
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  /* background-color: rgb(242, 236, 236); */
+  /* align-items: center;*/
+}
 
-  .p-internetlogin1{
-    font-size: 15px;
-  }
- /* styles.css */
+.popup-internetlogin {
+  border-radius: 5px;
+  width: 700px;
+  text-align: center;
+}
+.p-internetlogin {
+  font-size: 15px;
+}
+
+.p-internetlogin1 {
+  font-size: 15px;
+}
+/* styles.css */
 .popup-border-internetlogin {
-    /* border: 2px solid black; */
-    padding: 20px;
-    background-color: rgb(229, 229, 229);
-    height: 350px;
-  }
-  
-  /* Add other styles as needed */
-  
-  
-  .close-btn-internetlogin {
-    /* color: #999;
-    font-size: 20px;
-    font-weight: bold;
-  
-    position: absolute;
-    top: 4px;
-    right: 10px; */
-    cursor: pointer;
-  }
-  
-  .h2-internetlogin {
-    color: #333;
-  }
-  
-  .input-row-internetlogin {
-    /* display: flex; */
-    /* flex-direction: row;
-    justify-content: space-between; */
-    /* margin-bottom: 10px; */
-  }
-  
-  .label-internetlogin {
-    flex: 1;
-    margin-right: 10px;
-  }
-  
-  .input-internetlogin {
-    flex: 2;
-    padding: 2px;
-    box-sizing: border-box;
-  }
-  
-  .button-container-internetlogin {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    /* justify-content: space-between; */
-  }
-  
-  .button-internetlogin {
-    padding: 10px;
-    width: 25%;
-    background-color: #f3f2f1;
-    color:black;
-    border: 2px solid rgb(191, 189, 189);
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 15px;
-  }
-  
-  .cancel-btn-internetlogin {
-    background-color: #f3f2f1;
-    color: black;
-    width: 5em;
-    border-radius: 4px;
-  }
+  /* border: 2px solid black; */
+  padding: 20px;
+  background-color: rgb(229, 229, 229);
+  height: 350px;
+}
 
-  
-  
-  .button-internetlogin:hover,
-  .cancel-btn-internetlogin:hover {
-    background-color: #d7e9f7;
-    border-color: #005a9e;
-  }
-  .close-button-and-login-header-for-popup-box{
-    display: flex;
-    justify-content: space-between;
-    padding: 0.2em 1em 0.2em 1em;
-    background-color: rgb(242, 236, 236); 
-  }
-  .two-inputs-for-login-page-credentials{
-    display: grid;
-    row-gap: 1em;
-    margin: 1em 0 1em 0;
-  }
+/* Add other styles as needed */
+
+.close-btn-internetlogin {
+  width: 2em;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.close-btn-internetlogin:hover {
+  background-color: red;
+  cursor: pointer;
+  color: white;
+}
+
+.h2-internetlogin {
+  color: #333;
+}
+
+.input-row-internetlogin {
+  /* display: flex; */
+  /* flex-direction: row;
+    justify-content: space-between; */
+  /* margin-bottom: 10px; */
+}
+
+.label-internetlogin {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.input-internetlogin {
+  flex: 2;
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+.button-container-internetlogin {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  /* justify-content: space-between; */
+}
+
+.button-internetlogin {
+  padding: 10px;
+  width: 25%;
+  background-color: #f3f2f1;
+  color: black;
+  border: 2px solid rgb(191, 189, 189);
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.cancel-btn-internetlogin {
+  background-color: #f3f2f1;
+  color: black;
+  width: 5em;
+  border-radius: 4px;
+}
+
+.button-internetlogin:hover,
+.cancel-btn-internetlogin:hover {
+  background-color: #d7e9f7;
+  border-color: #005a9e;
+}
+.close-button-and-login-header-for-popup-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2em 0 0.2em 1em;
+  align-items: center;
+  background-color: rgb(242, 236, 236);
+}
+.two-inputs-for-login-page-credentials {
+  display: grid;
+  row-gap: 1em;
+  margin: 1em 0 1em 0;
+}

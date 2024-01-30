@@ -3,12 +3,12 @@
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(242, 236, 236);
+  background-color: #d3d3d3;
   border: solid 1px rgb(191, 189, 189);
 
   /* padding: 20px; */
   width: 660px;
-  height: 390px;
+  height: 348px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   z-index: 2;
 }
@@ -68,17 +68,26 @@
 }
 
 .BatchAddPhots-close-image {
-  width: 10px;
-  height: 10px;
+  /* width: 10px;
+  height: 10px; */
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 30px;
+}
+.BatchAddPhots-close-image:hover {
+  background-color: red;
+  color: white;
 }
 .Batch-AddPhotos-header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fee4c3;
+  background-color: rgb(242, 236, 236);
   border: solid 1px rgb(191, 189, 189);
-  padding: 0px 1em 0 1em;
+  padding: 0px 0 0 1em;
   height: 2em;
 }
 .Batch-Add-Photos-para-main-container {
@@ -88,7 +97,7 @@
   background-color: #d7e9f7;
   border-color: #005a9e;
 }
-.Batch-Addphotos-Ok-btn:hover{
+.Batch-Addphotos-Ok-btn:hover {
   background-color: #d7e9f7;
   border-color: #005a9e;
 }

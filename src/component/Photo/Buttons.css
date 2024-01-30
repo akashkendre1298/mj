@@ -14,13 +14,16 @@
   align-items: center;
   justify-content: center;
 
-  background-color: white;
+  /* background-color: white; */
   padding: 1px;
   max-width: 100%;
   max-height: 100%;
   cursor: pointer;
   filter: blur(2px) grayscale(100%); /* Apply blur by default */
   transition: filter 0.3s ease; /* Add transition for a smooth effect */
+}
+.Buttons-orderlist-to-adjust-images:hover {
+  border: 1px solid black;
 }
 .Buttons-orderlist-to-adjust-images.active,
 .Buttons-orderlist-to-adjust-images:not(.img1):active {
@@ -42,7 +45,7 @@
   gap: 5px;
 }
 .Buttons-orderlist-for-icons-buttons {
-  background-color: white;
+  /* background-color: white; */
   filter: blur(2px) grayscale(100%); /* Apply blur by default */
   transition: filter 0.3s ease; /* Add transition for a smooth effect */
   &.active {
@@ -54,6 +57,9 @@
   width: 25px;
   height: 25px;
 }
+.Buttons-orderlist-for-icons-buttons:hover {
+  border: 1px solid black;
+}
 
 /* Edit Image Popup-css */
 
@@ -62,7 +68,7 @@
   top: 41%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: lightgrey;
+  background-color: #d3d3d3;
   /* padding-left: 18px; */
   /* padding-right: 25px; */
   /* padding-top: 10px; */
@@ -78,9 +84,9 @@
   top: 41%;
   left: 50%;
   transform: translate(-50%, -60%);
-  background-color: lightgrey;
+  background-color: #d3d3d3;
 
-  border-radius: 8px;
+  /* border-radius: 8px; */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 1;
   width: 40em;
@@ -88,9 +94,9 @@
   overflow: auto;
 }
 .divAdd-IconsPopup-close-image {
-  width: 10px;
+  /* width: 10px;
   height: 5px;
-  cursor: pointer;
+  cursor: pointer; */
 }
 .Add-Icons-Popup-header-container {
   position: sticky;
@@ -98,9 +104,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fee4c3;
+  background-color: rgb(242, 236, 236);
   border: solid 1px rgb(191, 189, 189);
-  padding: 0px 1em 0 1em;
+  padding: 0px 0 0 1em;
   height: 2em;
   z-index: 2; /* Add a higher z-index to make sure it's above other elements */
 }
@@ -189,8 +195,14 @@
 .Add-icons-user-uploaded-icons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 3em;
+  gap: 5em;
   margin: 2em;
+  border: 2px solid gray;
+  max-height: 382px;
+  overflow-y: auto;
+  margin: 0.5em;
+  margin-top: 1em;
+  padding: 1em;
 }
 .Add-icons-user-uploaded-icons-add-tab {
   /* display: grid; */
@@ -200,6 +212,10 @@
 }
 .Add-icons-user-uploaded-icons-img-to-be-uploaded {
   cursor: pointer;
+}
+.Add-icons-user-uploaded-icons-img-to-be-uploaded:hover {
+  border: 1px solid black;
+  /* margin: 1em; */
 }
 
 .Add-icons-No-Icons-found-after-uploaded-para {
@@ -214,6 +230,10 @@
   height: 2em;
   padding-left: 1em;
   width: 100%;
+  /* cursor: pointer; */
+}
+.label-name-for-Added-icons:hover {
+  border: 2px solid orange;
 }
 .Add-icon-item {
   display: flex;
@@ -227,6 +247,7 @@
   left: 41%; */
   width: 10em;
 }
+
 .Add-icons-user-uploaded-icons-container-rrr {
   border: 2px solid gray;
   max-height: 299px; /* Set a maximum height for the container */
@@ -240,4 +261,34 @@
   /* align-items: center; */
   /* height: 100vh; */
   /* width: 130%; */
+}
+.Add-icon-input-filed-to-search-icons {
+  width: 98%;
+  height: 2em;
+  /* margin: 0px 2px 2px 5px; */
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 1em;
+}
+.Add-icon-input-filed-to-search-icons:hover {
+  border: 2px solid orange;
+}
+.Add-icon-input-filed-to-search-icons-container {
+  display: flex;
+  justify-content: center;
+}
+.divAdd-IconsPopup-close-image:hover {
+  background-color: red;
+}
+.Add-IconsPopupmage-close-i:hover {
+  background-color: red;
+  color: white;
+}
+.Add-IconsPopupmage-close-i {
+  cursor: pointer;
+  width: 31px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

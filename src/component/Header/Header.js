@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./Header.css";
 import OpenTemp from "../OpenTemp/OpenTemp";
 import EditTemp from "../EditTemp/EditTemp";
@@ -21,11 +21,14 @@ import img14 from "../../Assets/icons/address_book.png";
 import img15 from "../../Assets/icons/sync.png";
 import { Link } from "react-router-dom";
 import InternetLogin from "./../InternetLogin/InternetLogin";
+import BatchAddPhotos from "./../Photo/BatchAddPhotos/BatchAddPhotos";
 
 const Header = () => {
   const [openTemplatePopup, setOpenTemplatePopup] = useState(false);
   const [saveTemplatePopup, setSaveTemplatePopup] = useState(false);
   const [editTemplatePopup, setEditTemplatePopup] = useState(false);
+  const [internetLoginPopup, setInternetLoginPopup] = useState(false);
+  const [batchAddPhotosPopup, setBatchAddPhotosPopup] = useState(false);
   const [activePopup, setActivePopup] = useState(null);
 
   const openOpenTemplatePopup = () => {
@@ -96,12 +99,30 @@ const Header = () => {
     setActivePopup(null);
   };
 
-  const isInternetLoginPopup = () => {
-    console.log("Login Popup Clicked");
+  const openisInternetLoginPopup = () => {
+    setInternetLoginPopup(true);
+  };
+  const closeisInternetLoginPopup = () => {
+    setInternetLoginPopup(false);
+  };
+  const closeBatchAddPhotosPopup = () => {
+    setBatchAddPhotosPopup(false);
+  };
+  const openBatchAddPhotosPopup = () => {
+    setBatchAddPhotosPopup(true);
   };
   const internetLogin = () => {
     console.log("Login Popup Clicked");
   };
+
+  // Reset the Batch Add Photos popup state when component unmounts
+  useEffect(() => {
+    return () => {
+      setBatchAddPhotosPopup(false);
+      setInternetLoginPopup(false);
+      setEditTemplatePopup(false);
+    };
+  }, []);
   return (
     <>
       <div
@@ -149,24 +170,22 @@ const Header = () => {
           </div>
           {activeMenu === 1 && (
             <ul
-              onClick={internetLogin}
               className="submenu w-36 left-12 absolute z-10 bg-white shadow mt-2"
               style={{ fontSize: "13px" }}
+              onClick={setInternetLoginPopup}
             >
-              <Link to="/internetlogin">
-                <li
-                  className=" hover:bg-gray-200"
-                  style={{
-                    height: "2em",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  Internet Login
-                </li>
-                {/* {isInternetLoginPopup && <InternetLogin />} */}
-              </Link>
+              <li
+                className=" hover:bg-gray-200"
+                style={{
+                  height: "2em",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                Internet Login
+              </li>
+              {/* {isInternetLoginPopup && <InternetLogin />} */}
             </ul>
           )}
         </div>
@@ -245,9 +264,14 @@ const Header = () => {
               <Link to="/photoreview">
                 <li className=" hover:bg-gray-200">Add Review Photos</li>
               </Link>
-              <Link to="/batchaddphotos">
-                <li className=" hover:bg-gray-200">Batch Add Photos</li>
-              </Link>
+              {/* <Link to="/batchaddphotos"> */}
+              <li
+                className=" hover:bg-gray-200"
+                onClick={setBatchAddPhotosPopup}
+              >
+                Batch Add Photos
+              </li>
+              {/* </Link> */}
               <li className=" hover:bg-gray-200">Clear All Photos</li>
             </ul>
           )}
@@ -495,18 +519,28 @@ const Header = () => {
             <OpenTemp onClose={closeOpenTemplatePopup} />
           </div>
         )}
-
         {saveTemplatePopup && (
           <div className="popup">
             {/* Render your OpenTemplate component here */}
             <SaveTemp onClose={closeSaveTemplatePopup} />
           </div>
         )}
-
         {editTemplatePopup && (
           <div className="popup m-0">
             {/* Render your EditTemplate component here */}
             <EditTemp onClose={closeEditTemplatePopup} />
+          </div>
+        )}{" "}
+        {internetLoginPopup && (
+          <div className="popup m-0">
+            {/* Render your EditTemplate component here */}
+            <InternetLogin onClose={closeisInternetLoginPopup} />
+          </div>
+        )}
+        {batchAddPhotosPopup && (
+          <div className="popup m-0">
+            {/* Render your EditTemplate component here */}
+            <BatchAddPhotos onClose={closeBatchAddPhotosPopup} />
           </div>
         )}
       </div>
