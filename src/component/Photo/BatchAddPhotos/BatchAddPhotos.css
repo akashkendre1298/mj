@@ -3,7 +3,7 @@
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(242, 236, 236);
+  background-color: #d3d3d3;
   border: solid 1px rgb(191, 189, 189);
 
   /* padding: 20px; */
@@ -76,7 +76,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fee4c3;
+  background-color: rgb(242, 236, 236);
   border: solid 1px rgb(191, 189, 189);
   padding: 0px 1em 0 1em;
   height: 2em;
@@ -88,7 +88,7 @@
   background-color: #d7e9f7;
   border-color: #005a9e;
 }
-.Batch-Addphotos-Ok-btn:hover{
+.Batch-Addphotos-Ok-btn:hover {
   background-color: #d7e9f7;
   border-color: #005a9e;
 }

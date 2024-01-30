@@ -62,7 +62,7 @@
   top: 41%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: lightgrey;
+  background-color: #d3d3d3;
   /* padding-left: 18px; */
   /* padding-right: 25px; */
   /* padding-top: 10px; */
@@ -78,7 +78,7 @@
   top: 41%;
   left: 50%;
   transform: translate(-50%, -60%);
-  background-color: lightgrey;
+  background-color: #d3d3d3;
 
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -98,7 +98,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fee4c3;
+  background-color: rgb(242, 236, 236);
   border: solid 1px rgb(191, 189, 189);
   padding: 0px 1em 0 1em;
   height: 2em;
@@ -189,8 +189,14 @@
 .Add-icons-user-uploaded-icons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 3em;
+  gap: 5em;
   margin: 2em;
+  border: 2px solid gray;
+  max-height: 382px;
+  overflow-y: auto;
+  margin: 0.5em;
+  margin-top: 1em;
+  padding: 1em;
 }
 .Add-icons-user-uploaded-icons-add-tab {
   /* display: grid; */
@@ -200,6 +206,10 @@
 }
 .Add-icons-user-uploaded-icons-img-to-be-uploaded {
   cursor: pointer;
+}
+.Add-icons-user-uploaded-icons-img-to-be-uploaded:hover {
+  border: 1px solid black;
+  /* margin: 1em; */
 }
 
 .Add-icons-No-Icons-found-after-uploaded-para {
@@ -214,6 +224,10 @@
   height: 2em;
   padding-left: 1em;
   width: 100%;
+  /* cursor: pointer; */
+}
+.label-name-for-Added-icons:hover {
+  border: 2px solid orange;
 }
 .Add-icon-item {
   display: flex;
@@ -227,6 +241,7 @@
   left: 41%; */
   width: 10em;
 }
+
 .Add-icons-user-uploaded-icons-container-rrr {
   border: 2px solid gray;
   max-height: 299px; /* Set a maximum height for the container */
@@ -240,4 +255,22 @@
   /* align-items: center; */
   /* height: 100vh; */
   /* width: 130%; */
+}
+.Add-icon-input-filed-to-search-icons {
+  width: 98%;
+  height: 2em;
+  /* margin: 0px 2px 2px 5px; */
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 1em;
+}
+.Add-icon-input-filed-to-search-icons:hover {
+  border: 2px solid orange;
+}
+.Add-icon-input-filed-to-search-icons-container {
+  display: flex;
+  justify-content: center;
+}
+.divAdd-IconsPopup-close-image:hover {
+  background-color: red;
 }

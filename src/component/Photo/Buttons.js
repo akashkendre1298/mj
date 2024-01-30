@@ -132,6 +132,18 @@ const Buttons = ({ onFileSelect }) => {
       return newNames;
     });
   };
+
+  // TO search and filter icons in Search Tab
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearchInputChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  // Filter icons based on the search query
+  const filteredIcons = uploadedIcon.filter((icon, index) =>
+    uploadedIconNames[index].toLowerCase().includes(searchQuery.toLowerCase())
+  );
   return (
     <>
       <input
@@ -286,14 +298,38 @@ const Buttons = ({ onFileSelect }) => {
           {activeTab === 1 && (
             // Add your search tab content here
             <div className="Search-Tab">
-              <div className="Add-icon-horizonatl-line1">
-                <hr className="" />
+              <div className="Add-icon-input-filed-to-search-icons-container">
+                <input
+                  className="Add-icon-input-filed-to-search-icons"
+                  placeholder="Search Icons By Name"
+                  value={searchQuery}
+                  onChange={handleSearchInputChange}
+                />
               </div>
 
-              <div>
+              {/* <div>
                 {uploadedIcon.length > 0 ? (
                   <div className="Add-icons-user-uploaded-icons">
                     {uploadedIcon.map((icon, index) => (
+                      <img
+                        className="Add-icons-user-uploaded-icons-img-to-be-uploaded"
+                        key={index}
+                        src={icon}
+                        alt={`Uploaded Icon ${index}`}
+                        onClick={() => handleIconClick(icon)}
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <span className="Add-icons-No-Icons-found">
+                    No Icons found
+                  </span>
+                )}
+              </div> */}
+              <div>
+                {filteredIcons.length > 0 ? (
+                  <div className="Add-icons-user-uploaded-icons">
+                    {filteredIcons.map((icon, index) => (
                       <img
                         className="Add-icons-user-uploaded-icons-img-to-be-uploaded"
                         key={index}
@@ -386,7 +422,12 @@ const Buttons = ({ onFileSelect }) => {
               </div> */}
 
               <div className="Add-Icons-cancel-btn-zz">
-                <button className="Add-Icons-cancel-btn-yy">Done</button>
+                <button
+                  className="Add-Icons-cancel-btn-yy"
+                  onClick={closePopup}
+                >
+                  Done
+                </button>
               </div>
             </div>
           )}
