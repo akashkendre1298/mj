@@ -30,7 +30,7 @@ const BatchAddPhotos = () => {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       {isPopupOpen && (
         <div className="Batch-AddPhotos-main-container">
           <div className="Batch-AddPhotos-header-container">
@@ -95,9 +95,6 @@ const BatchAddPhotos = () => {
           </div>
         </div>
       )}
-      <div>
-        <Footer />
-      </div>
     </>
   );
 };

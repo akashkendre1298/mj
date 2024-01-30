@@ -21,12 +21,14 @@ import img14 from "../../Assets/icons/address_book.png";
 import img15 from "../../Assets/icons/sync.png";
 import { Link } from "react-router-dom";
 import InternetLogin from "./../InternetLogin/InternetLogin";
+import BatchAddPhotos from "./../Photo/BatchAddPhotos/BatchAddPhotos";
 
 const Header = () => {
   const [openTemplatePopup, setOpenTemplatePopup] = useState(false);
   const [saveTemplatePopup, setSaveTemplatePopup] = useState(false);
   const [editTemplatePopup, setEditTemplatePopup] = useState(false);
   const [internetLoginPopup, setInternetLoginPopup] = useState(false);
+  const [batchAddPhotosPopup, setBatchAddPhotosPopup] = useState(false);
   const [activePopup, setActivePopup] = useState(null);
 
   const openOpenTemplatePopup = () => {
@@ -102,6 +104,12 @@ const Header = () => {
   };
   const closeisInternetLoginPopup = () => {
     setInternetLoginPopup(false);
+  };
+  const closeBatchAddPhotosPopup = () => {
+    setBatchAddPhotosPopup(false);
+  };
+  const openBatchAddPhotosPopup = () => {
+    setBatchAddPhotosPopup(true);
   };
   const internetLogin = () => {
     console.log("Login Popup Clicked");
@@ -247,9 +255,14 @@ const Header = () => {
               <Link to="/photoreview">
                 <li className=" hover:bg-gray-200">Add Review Photos</li>
               </Link>
-              <Link to="/batchaddphotos">
-                <li className=" hover:bg-gray-200">Batch Add Photos</li>
-              </Link>
+              {/* <Link to="/batchaddphotos"> */}
+              <li
+                className=" hover:bg-gray-200"
+                onClick={setBatchAddPhotosPopup}
+              >
+                Batch Add Photos
+              </li>
+              {/* </Link> */}
               <li className=" hover:bg-gray-200">Clear All Photos</li>
             </ul>
           )}
@@ -513,6 +526,12 @@ const Header = () => {
           <div className="popup m-0">
             {/* Render your EditTemplate component here */}
             <InternetLogin onClose={closeisInternetLoginPopup} />
+          </div>
+        )}
+        {batchAddPhotosPopup && (
+          <div className="popup m-0">
+            {/* Render your EditTemplate component here */}
+            <BatchAddPhotos onClose={closeBatchAddPhotosPopup} />
           </div>
         )}
       </div>
