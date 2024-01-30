@@ -68,9 +68,18 @@
 }
 
 .BatchAddPhots-close-image {
-  width: 10px;
-  height: 10px;
+  /* width: 10px;
+  height: 10px; */
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 31px;
+}
+.BatchAddPhots-close-image:hover {
+  background-color: red;
+  color: white;
 }
 .Batch-AddPhotos-header-container {
   display: flex;

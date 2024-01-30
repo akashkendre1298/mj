@@ -4,6 +4,7 @@ import close from "../icons/close_2997911.png";
 import Header from "../../Header/Header";
 
 import Footer from "./../../Footer/Footer";
+import Panel1 from "./../../Panel/Panel1/Panel1";
 
 const BatchAddPhotos = () => {
   const [isPopupOpen, setPopupOpen] = useState(true);
@@ -34,12 +35,9 @@ const BatchAddPhotos = () => {
         <div className="Batch-AddPhotos-main-container">
           <div className="Batch-AddPhotos-header-container">
             <p className="Batch-AddPhotos-header-BulkImport">Bulk Import</p>
-            <img
-              src={close}
-              alt="Close"
-              className="BatchAddPhots-close-image"
-              onClick={handleClose}
-            />
+            <p className="BatchAddPhots-close-image" onClick={handleClose}>
+              X
+            </p>
           </div>
 
           <div className="Batch-AddPhotos-Button-container">
