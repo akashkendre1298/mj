@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./InsertPdf.css";
 import Header from "../Header/Header";
-import Footer from './../Footer/Footer';
+import Footer from "./../Footer/Footer";
 
 const ConfirmationModal = ({ title, message, onConfirm, onCancel }) => {
   return (
@@ -132,6 +132,7 @@ const InsertPdf = () => {
                   Add Document
                 </label>
                 <input
+                  multiple
                   id="fileInput"
                   type="file"
                   accept=".pdf"
@@ -145,6 +146,7 @@ const InsertPdf = () => {
                   Add Form
                 </label>
                 <input
+                  multiple
                   id="fileInput"
                   type="file"
                   accept=".pdf"
