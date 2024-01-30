@@ -10,15 +10,18 @@ const SaveTemp = ({ onClose }) => {
       <div className="template-card_SaveTemp">
         <div className="template-selector_SaveTemp">
           <span className="selectTemp">Save Your Template</span>
-          {/* <div className="btn-in-save-template hover:bg-red-600"> */}
-          <img
+          <div className="btn-in-save-template">
+            {/* <img
             src={close}
             alt="Close"
             style={{ width: "10px", cursor: "pointer" }}
-            // className="Add-IconsPopup-close-image"
-            onClick={onClose}
-          />
-          {/* </div> */}
+           
+          /> */}
+
+            <p className="Add-IconsPopup-close-image" onClick={onClose}>
+              X
+            </p>
+          </div>
           {/* <button onClick={onClose} className="close-button">X</button> */}
         </div>
         <div className="para1_SaveTemp">

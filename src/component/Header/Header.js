@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./Header.css";
 import OpenTemp from "../OpenTemp/OpenTemp";
 import EditTemp from "../EditTemp/EditTemp";
@@ -114,6 +114,15 @@ const Header = () => {
   const internetLogin = () => {
     console.log("Login Popup Clicked");
   };
+
+  // Reset the Batch Add Photos popup state when component unmounts
+  useEffect(() => {
+    return () => {
+      setBatchAddPhotosPopup(false);
+      setInternetLoginPopup(false);
+      setEditTemplatePopup(false);
+    };
+  }, []);
   return (
     <>
       <div
