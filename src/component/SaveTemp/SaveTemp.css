@@ -134,10 +134,12 @@
 /* .btn-in-save-template{
 
 } */
-.Add-IconsPopup-close-image:hover {
+.Add-IconsPopup-close-image {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 30px;
+  height: 28px;
 }
 .btn-in-save-template {
   width: 2em;
@@ -146,7 +148,7 @@
   justify-content: center;
   align-items: center;
 }
-.btn-in-save-template:hover {
+.Add-IconsPopup-close-image:hover {
   background-color: red;
   color: white;
   cursor: pointer;

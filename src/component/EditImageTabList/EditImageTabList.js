@@ -57,11 +57,12 @@ const EditImageTabList = ({ isOpen, onRequestClose, uploadedImageUrl }) => {
           <div className="width-set-for-the-popup-windows-edit-image-section">
             <div className="edit-image-header-text-and-close-Button">
               <p className="edit-image-header-popup-window">Edit Image</p>
-              <img
-                src={editimgclose}
+              <p
                 className="edit-image-popup-close-image"
                 onClick={handleClosePopup}
-              />
+              >
+                X
+              </p>
             </div>
             <div className="flex">
               <div className="tab-list-buttons-aa-bb">
