@@ -26,6 +26,7 @@ const Header = () => {
   const [openTemplatePopup, setOpenTemplatePopup] = useState(false);
   const [saveTemplatePopup, setSaveTemplatePopup] = useState(false);
   const [editTemplatePopup, setEditTemplatePopup] = useState(false);
+  const [internetLoginPopup, setInternetLoginPopup] = useState(false);
   const [activePopup, setActivePopup] = useState(null);
 
   const openOpenTemplatePopup = () => {
@@ -96,8 +97,11 @@ const Header = () => {
     setActivePopup(null);
   };
 
-  const isInternetLoginPopup = () => {
-    console.log("Login Popup Clicked");
+  const openisInternetLoginPopup = () => {
+    setInternetLoginPopup(true);
+  };
+  const closeisInternetLoginPopup = () => {
+    setInternetLoginPopup(false);
   };
   const internetLogin = () => {
     console.log("Login Popup Clicked");
@@ -149,24 +153,22 @@ const Header = () => {
           </div>
           {activeMenu === 1 && (
             <ul
-              onClick={internetLogin}
               className="submenu w-36 left-12 absolute z-10 bg-white shadow mt-2"
               style={{ fontSize: "13px" }}
+              onClick={setInternetLoginPopup}
             >
-              <Link to="/internetlogin">
-                <li
-                  className=" hover:bg-gray-200"
-                  style={{
-                    height: "2em",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  Internet Login
-                </li>
-                {/* {isInternetLoginPopup && <InternetLogin />} */}
-              </Link>
+              <li
+                className=" hover:bg-gray-200"
+                style={{
+                  height: "2em",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                Internet Login
+              </li>
+              {/* {isInternetLoginPopup && <InternetLogin />} */}
             </ul>
           )}
         </div>
@@ -495,18 +497,22 @@ const Header = () => {
             <OpenTemp onClose={closeOpenTemplatePopup} />
           </div>
         )}
-
         {saveTemplatePopup && (
           <div className="popup">
             {/* Render your OpenTemplate component here */}
             <SaveTemp onClose={closeSaveTemplatePopup} />
           </div>
         )}
-
         {editTemplatePopup && (
           <div className="popup m-0">
             {/* Render your EditTemplate component here */}
             <EditTemp onClose={closeEditTemplatePopup} />
+          </div>
+        )}{" "}
+        {internetLoginPopup && (
+          <div className="popup m-0">
+            {/* Render your EditTemplate component here */}
+            <InternetLogin onClose={closeisInternetLoginPopup} />
           </div>
         )}
       </div>
