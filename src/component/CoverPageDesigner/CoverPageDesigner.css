@@ -14,7 +14,7 @@
   justify-content: space-between;
   /* align-items: center; */
   /* width: 100%; */
-  gap: 6em;
+  gap: 7em;
   padding: 1em;
 }
 .section-for-btnss-of-text-add-imgs {
@@ -46,12 +46,14 @@
   /* border: 1px solid #80808066; */
   padding: 1em;
   width: 100%;
+  justify-content: space-between;
 }
 .contains-all-the-button-that-appear-in-control-section {
   display: grid;
   justify-content: center;
   align-items: center;
   gap: 1em;
+  padding: 1em;
   /* margin-top: 1em; */
 }
 .btn-for-control-section-design-page {
@@ -85,7 +87,11 @@ fieldset {
   justify-content: center;
   gap: 1em;
   align-items: center;
-  flex-shrink: 0; /* Prevent this section from shrinking */
+  flex-shrink: 0;
+  background-color: grey;
+  /* height: 7em; */
+  background-color: #e5e7eb;
+  /* padding: 1em; */
 }
 .button-for-footer-for-changes-in-cover-page {
   border: 1px solid #00000038;
@@ -99,4 +105,25 @@ fieldset {
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
+}
+.contains-position-and-size-controls-with-this-div {
+  display: grid;
+  gap: 2em;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.contains-size-control-for-cover-page-design {
+  width: 18em;
+  height: 6em;
+  text-align: center;
+  padding: 1em;
+  font-size: 13px;
+}
+.contains-position-control-for-cover-page-design {
+  text-align: center;
+  font-size: 13px;
+  display: grid;
+  gap: 1em;
+  padding: 1em;
 }
