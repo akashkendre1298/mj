@@ -27,10 +27,10 @@
 }
 .Buttons-orderlist-to-adjust-images.active,
 .Buttons-orderlist-to-adjust-images:not(.img1):active {
-  filter: none; /* Remove grayscale and blur when active */
+  filter: none;
 }
 .Buttons-orderlist-to-adjust-images.img1 {
-  filter: none; /* Remove grayscale and blur for img1 */
+  filter: none;
 }
 
 /* .Buttons-orderlist-to-adjust-images {
@@ -74,7 +74,7 @@
   /* padding-top: 10px; */
   /* padding-bottom: 10px; */
   /* width: 1000px; */
-  height: 81%;
+  /* height: 81%; */
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 1;

@@ -2,13 +2,17 @@
   width: 50%;
   height: 50%;
 } */
-.adjust-brightness-container {
-  display: grid;
+.preview-image-brightness {
+  /* display: grid;
   justify-content: center;
   align-items: center;
   text-align: center;
   /* top: 51px; */
-  position: relative;
+  /* position: relative;
+  margin-top: 3em;  */
+  display: block;
+  width: 100%;
+  height: 500px;
   margin-top: 3em;
 }
 .brightness-control {

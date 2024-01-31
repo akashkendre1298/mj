@@ -1,8 +1,7 @@
 .draw-rectangle-container {
   position: relative;
   width: auto;
-  /* height: 538px; */
-  /* overflow: hidden; */
+
   cursor: crosshair;
 }
 
@@ -11,4 +10,5 @@
   width: 100%;
   height: 500px;
   margin-top: 3em;
+  border: 2px solid white;
 }

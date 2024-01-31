@@ -11,17 +11,19 @@ const RotateClockwiseContent = ({ imageUrl }) => {
   };
 
   return (
-    <div className="rotate-clockwise-container">
-      <div
-        className="image-container-rotate"
-        style={{ transform: `rotate(${rotationAngle}deg)` }}
-      >
-        <img src={imageUrl} alt="Preview" className="preview-image-rotate" />
+    <>
+      <div className="rotate-clockwise-container">
+        <div
+          className="image-container-rotate-clockwise-eee-rrrr"
+          style={{ transform: `rotate(${rotationAngle}deg)` }}
+        >
+          <img src={imageUrl} alt="Preview" className="preview-image-rotate" />
+        </div>
       </div>
       <div className="rotate-clockwise-control">
-        <button onClick={handleRotateClockwise}>Rotate Clockwise</button>
+        <button onClick={handleRotateClockwise} className="rotate-clockwise-control-btn-rreeett">Rotate Clockwise</button>
       </div>
-    </div>
+    </>
   );
 };
 
