@@ -28,15 +28,17 @@ function OneDamage({ setIsPopupOpen, isPopupOpen, onClose }) {
     onClose(); // Call the onClose function passed from the parent
   };
 
-  const handleNext = () => {
-    // Add functionality for next button if needed
-    console.log('Next button clicked');
-  };
+  // const handleNext = () => {
+  //   // Add functionality for next button if needed
+  //   console.log('Next button clicked');
+  // };
 
   const handleDone = () => {
     // Save the form data to localStorage
     localStorage.setItem('formData', JSON.stringify(formData));
     console.log('Done button clicked');
+    setIsPopupOpen(false);
+  
   };
 
   // Access the stored data when the component mounts
@@ -82,9 +84,9 @@ function OneDamage({ setIsPopupOpen, isPopupOpen, onClose }) {
         <button type="button" className="back-button-onedamage" onClick={handleBack}>
           Back
         </button>
-        <button type="button" className="next-button-onedamage" onClick={handleNext}>
+        {/* <button type="button" className="next-button-onedamage" onClick={handleNext}>
           Next
-        </button>
+        </button> */}
         <button type="button" className="done-button-onedamage" onClick={handleDone}>
           Done
         </button>

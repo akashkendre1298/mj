@@ -77,14 +77,15 @@ console.log("closing")
   };
 
 
-  const handleNext = () => {
-    // Handle next action
-    console.log('Next clicked');
-    openPopup();
-  };
+  // const handleNext = () => {
+  //   // Handle next action
+  //   console.log('Next clicked');
+  //   openPopup();
+  // };
 
   const handleDone = () => {
     // Handle done action
+    
     console.log('Done clicked');
     // console.log('Selected option:', selectedOption);
     closePopup();
@@ -173,9 +174,9 @@ console.log("closing")
         <button className="back-button-inspection" onClick={handleBack}>
           Back
         </button>
-        <button className="next-button-inspection" onClick={handleNext}>
+        {/* <button className="next-button-inspection" onClick={handleNext}>
           Next
-        </button>
+        </button> */}
         <button className="done-button-inspection" onClick={closePopup}>
           Done
         </button>
