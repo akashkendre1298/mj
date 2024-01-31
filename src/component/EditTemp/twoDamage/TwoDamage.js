@@ -34,14 +34,15 @@ function TwoDamage({ setIsPopupOpen, isPopupOpen, onClose }) {
     console.log('Back button clicked');
   };
 
-  const handleNext = () => {
-    // Add functionality for next button if needed
-    console.log('Next button clicked');
-  };
+  // const handleNext = () => {
+  //   // Add functionality for next button if needed
+  //   console.log('Next button clicked');
+  // };
 
   const handleDone = () => {
     // Add functionality for done button if needed
     console.log('Done button clicked');
+    setIsPopupOpen(false)
   };
 
   return (
@@ -97,9 +98,9 @@ function TwoDamage({ setIsPopupOpen, isPopupOpen, onClose }) {
           <button type="button" className="back-button-twodamage" onClick={handleBack}>
             Back
           </button>
-          <button type="button" className="next-button-twodamage" onClick={handleNext}>
+          {/* <button type="button" className="next-button-twodamage" onClick={handleNext}>
             Next
-          </button>
+          </button> */}
           <button type="submit" className="done-button-twodamage" onClick={handleDone}>
             Done
           </button>

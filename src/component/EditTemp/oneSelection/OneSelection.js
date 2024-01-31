@@ -27,13 +27,14 @@ function OneSelection({ setIsPopupOpen, isPopupOpen, onClose }) {
     onClose(); // Call the onClose function passed from the parent
   };
 
-  const handleNext = () => {
-    // Add functionality for next button if needed
-    console.log('Next button clicked');
-  };
+  // const handleNext = () => {
+  //   // Add functionality for next button if needed
+  //   console.log('Next button clicked');
+  // };
 
   const handleDone = () => {
     // Add functionality for done button if needed
+    setIsPopupOpen(false)
     console.log('Done button clicked');
   };
 
@@ -75,9 +76,9 @@ function OneSelection({ setIsPopupOpen, isPopupOpen, onClose }) {
         <button type="button" className="back-button-oneselection" onClick={handleBack}>
           Back
         </button>
-        <button type="button" className="next-button-oneselection" onClick={handleNext}>
+        {/* <button type="button" className="next-button-oneselection" onClick={handleNext}>
           Next
-        </button>
+        </button> */}
         <button type="submit" className="done-button-oneselection" onClick={handleDone}>
           Done
         </button>

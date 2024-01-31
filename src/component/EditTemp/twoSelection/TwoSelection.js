@@ -34,13 +34,14 @@ function TwoSelection({ setIsPopupOpen, isPopupOpen, onClose }) {
     onClose(); // Call the onClose function passed from the parent
   };
 
-  const handleNext = () => {
-    // Add functionality for next button if needed
-    console.log('Next button clicked');
-  };
+  // const handleNext = () => {
+  //   // Add functionality for next button if needed
+  //   console.log('Next button clicked');
+  // };
 
   const handleDone = () => {
     // Add functionality for done button if needed
+    setIsPopupOpen(false);
     console.log('Done button clicked');
   };
 
@@ -97,9 +98,9 @@ function TwoSelection({ setIsPopupOpen, isPopupOpen, onClose }) {
           <button type="button" className="back-button-twoselection" onClick={handleBack}>
             Back
           </button>
-          <button type="button" className="next-button-twoselection" onClick={handleNext}>
+          {/* <button type="button" className="next-button-twoselection" onClick={handleNext}>
             Next
-          </button>
+          </button> */}
           <button type="submit" className="done-button-twoselection" onClick={handleDone}>
             Done
           </button>

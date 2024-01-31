@@ -12,6 +12,9 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   background-color: rgb(229, 229, 229);
   padding: 10px;
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
   top: 320px;
   left: -10%;
   z-index: 2;
@@ -25,14 +28,26 @@
   height: 0;
   z-index: 0;
 }
-.template-selector-edittemp {
+/* .template-selector-edittemp {
   height: 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: rgb(242, 236, 236);
   border: solid 1px rgb(191, 189, 189);
-  padding: 12px 0 12px 12px;
+  padding: 12px;
+
+} */
+
+.template-selector-edittemp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(242, 236, 236);
+  border: solid 1px rgb(191, 189, 189);
+  /* padding: 0 0 0 1em; */
+  height: 2em;
+  /* width: 100%; */
 }
 .selectTemp-edittemp {
   font-size: 15px;
@@ -108,7 +123,8 @@
   border: 2px solid rgb(190, 188, 188);
   border-radius: 5px;
   padding: 8px;
-  margin-left: 17px;
+  margin-left: 27px;
+  background-color:white;
 }
 .box-edittemp:hover {
   border-color: #005a9e;
@@ -197,6 +213,7 @@
   border-radius: 5px;
   padding: 8px;
   margin-left: 10px;
+  background-color: white;
 }
 .box2-edittemp:hover {
   border-color: #005a9e;
@@ -297,7 +314,7 @@
   display: flex;
   justify-content: space-between;
   width: 200px;
-  margin-left: 5px;
+  margin-left: 11px;
   padding: 4px;
 }
 
@@ -333,4 +350,15 @@
 
 .Menu-Item-edittemp > ul > li {
   margin-bottom: 5px;
+}
+
+.close-button1-edittemp{
+  background-color: red;
+  padding: 5px;
+  margin-left: 276px;
+  justify-content: space-between;
+}
+
+.template-selector1-edittemp{
+  background-color: rgb(242, 236, 236);
 }
