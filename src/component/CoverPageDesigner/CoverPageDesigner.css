@@ -1,0 +1,102 @@
+.contains-template-and-design-components-for-cover-page-design-OBJECTS {
+  display: flex;
+  padding: 1em;
+  /* align-items: center; */
+  /* width: 100%; */
+  gap: 1em;
+  /* border: 1px solid #80808066; */
+  /* height: 34%; */
+  justify-content: space-between;
+  background-color: #e5e7eb;
+}
+.Buttons-and-check-boxes-for-Design-Component-ss {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  /* width: 100%; */
+  gap: 6em;
+  padding: 1em;
+}
+.section-for-btnss-of-text-add-imgs {
+  display: grid;
+  gap: 1em;
+}
+.section-for-btnss-of-text-add-imgs button {
+  border: 1px solid #00000038;
+  background-color: white;
+  font-size: 13px;
+  width: 8em;
+  height: 4em;
+}
+.lables-check-boxes-for-page-border-cover-page-stationary {
+  display: grid;
+  gap: 4em;
+  align-items: center;
+  line-height: 1em;
+  font-size: 13px;
+}
+.container-for-Object-and-control-section-for-design-cover-page-grid {
+  width: 60%;
+  flex-grow: 1; /* Allow this container to grow to fill available space */
+}
+.contains-controls-for-the-design-cover-page {
+  display: flex;
+  align-items: center;
+  /* height: 70%; */
+  /* border: 1px solid #80808066; */
+  padding: 1em;
+  width: 100%;
+}
+.contains-all-the-button-that-appear-in-control-section {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  /* margin-top: 1em; */
+}
+.btn-for-control-section-design-page {
+  border: 1px solid #00000038;
+  background-color: white;
+  font-size: 13px;
+  width: 10em;
+  height: 4em;
+}
+.no-stationary-loaded-text-button {
+  border: 1px solid #80808066;
+  text-align: center;
+  font-size: 13px;
+}
+fieldset {
+  border: 1px solid #80808066;
+}
+.tag-for-line-draw-through-text {
+  padding: 0 4px 0 4px;
+  margin-left: 0.5em;
+  font-size: 14px;
+}
+.div-contains-all-the-check-boxes-regarding-cover-page {
+  padding: 1em;
+  font-size: 13px;
+  line-height: 26px;
+  width: 16em;
+}
+.contains-bottom-section-with-buttons-design-cover-page {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  align-items: center;
+  flex-shrink: 0; /* Prevent this section from shrinking */
+}
+.button-for-footer-for-changes-in-cover-page {
+  border: 1px solid #00000038;
+  background-color: white;
+  font-size: 13px;
+  width: 10em;
+  height: 4em;
+}
+.flex-containerdcdcdcdcd {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
