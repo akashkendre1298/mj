@@ -117,7 +117,7 @@
   justify-content: flex-start;
   /* background-color: #fee4c3; */
   border: solid 1px rgb(191, 189, 189);
-  padding: 0px 1em;
+  /* padding: 0px 1em; */
   z-index: 1; /* Add a z-index to make sure it's above other elements except the header */
 }
 .Add-icon-horizonatl-line1 {
@@ -233,7 +233,7 @@
   /* cursor: pointer; */
 }
 .label-name-for-Added-icons:hover {
-  border: 2px solid orange;
+  border: 1px solid orange;
 }
 .Add-icon-item {
   display: flex;
@@ -268,10 +268,10 @@
   /* margin: 0px 2px 2px 5px; */
   border: 1px solid;
   border-radius: 4px;
-  padding: 1em;
+  padding-left: 1em;
 }
 .Add-icon-input-filed-to-search-icons:hover {
-  border: 2px solid orange;
+  border: 1px solid orange;
 }
 .Add-icon-input-filed-to-search-icons-container {
   display: flex;

@@ -164,7 +164,7 @@ const InsertPdf = () => {
                         type="application/pdf"
                         width="200"
                         height="100"
-                        style={{ overflow: "hidden" }}
+                        style={{ overflowY: "hidden" }}
                       />
 
                       <h2 className="text-sm">{fileNames[index]}</h2>
