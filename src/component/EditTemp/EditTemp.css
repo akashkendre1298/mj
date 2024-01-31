@@ -4,14 +4,14 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 75%;
   height: 75vh;
   border: 1px solid rgb(191, 189, 189);
   border-radius: 5px;
   border: rgb(229, 229, 229);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   background-color: rgb(229, 229, 229);
-  /* padding: 10px; */
+  padding: 10px;
   top: 320px;
   left: -10%;
 }
@@ -67,12 +67,25 @@
   padding: 5px;
   align-items: center;
 }
-.menutitle-edittemp {
-  padding-left: 150px;
+/* .menutitle-edittemp { */
+  /* padding-left: 150px; */
+  /* margin-right: 150px;
+} */
+/* .itemtitle-edittemp { */
+    /* padding-left: 250px;  */
+    /* margin-left: 14px;
+} */
+
+.p-menutitle-edittemp{
+margin-right: 445px;
+margin-top: 5px;
 }
-.itemtitle-edittemp {
-  padding-right: 250px;
+
+.p-itemtitle-edittemp{
+  margin-right: 70px;
+  margin-top: 5px;
 }
+
 .custom-scrollbars__content-edittemp {
   overflow: auto;
   scrollbar-width: none;
@@ -87,14 +100,14 @@
   align-items: center;
 }
 .box-edittemp {
-  width: 57vh;
+  width: 48vh;
   height: 45vh;
   resize: none;
   overflow-y: scroll;
   border: 2px solid rgb(190, 188, 188);
   border-radius: 5px;
   padding: 8px;
-  margin-left: 30px;
+  margin-left: 17px;
 }
 .box-edittemp:hover {
   border-color: #005a9e;
@@ -155,7 +168,7 @@
 
 .Donebtn-edittemp {
   padding: 10px;
-  margin-left: 110vh;
+  margin-left: 100vh;
 }
 .open-button-edittemp {
   width: 95px;
@@ -175,14 +188,14 @@
   display: flex;
 }
 .box2-edittemp {
-  width: 62vh;
+  width: 60vh;
   height: 45vh;
   resize: none;
   overflow-y: scroll;
   border: 2px solid rgb(190, 188, 188);
   border-radius: 5px;
   padding: 8px;
-  margin-right: 10px;
+  margin-left: 10px;
 }
 .box2-edittemp:hover {
   border-color: #005a9e;
@@ -191,7 +204,7 @@
   display: flex;
 }
 /*popupbox*/
-.template-card1-edittemp {
+ .template-card1-edittemp {
   display: flex;
   flex-direction: column;
   width: 45vh;
@@ -199,34 +212,34 @@
   border: 1px solid rgb(191, 189, 189);
   border-radius: 5px;
   background-color: rgb(229, 229, 229);
-}
-.Contant1-edittemp {
-  /* position: fixed; */
+} 
+ .Contant1-edittemp {
+  
   top: 0;
   left: 0;
-  width: 100%;
+  width: 90%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} 
 
 .selectTemp1-edittemp {
   font-size: 15px;
-}
-.close-button1-edittemp {
+} 
+ .close-button1-edittemp {
   background-color: transparent;
   border: none;
-}
+} 
 .para2-edittemp {
-  /* padding: 5px; */
+   padding: 5px; 
   margin-left: 2px;
   margin-top: 0px;
   font-size: 15px;
 }
-.menutext1-edittemp {
-  padding: 5px;
+ .menutext1-edittemp {
+  padding: 12px;
   border: none;
   border: 2px solid rgb(191, 189, 189);
   background-color: #f3f2f1;
@@ -235,7 +248,7 @@
   width: 40vh;
   height: 10px;
   margin-top: 0px;
-}
+} 
 .ok-button-edittemp {
   font-size: 14px;
   width: 100px;
@@ -246,21 +259,21 @@
   border-radius: 5px;
   cursor: pointer;
   margin-right: 5px;
-}
+} 
 
 .ok-button-edittemp:hover {
   background-color: #d7e9f7;
   border-color: #005a9e;
-}
-.button-container1-edittemp {
+} 
+ .button-container1-edittemp {
   display: flex;
   justify-content: space-between;
   width: 200px;
-  margin-left: 58px;
-  padding: 5px;
-}
+  margin-left: 110px;
+  padding: 7px;
+} 
 
-.cancel-button1-edittemp {
+ .cancel-button1-edittemp {
   font-size: 15px;
   width: 100px;
   height: 25px;
@@ -274,7 +287,7 @@
 .cancel-button1-edittemp:hover {
   background-color: #d7e9f7;
   border-color: #005a9e;
-}
+} 
 .submenu-edittemp {
   padding-left: 20px;
   font-size: 15px;
@@ -284,8 +297,8 @@
   display: flex;
   justify-content: space-between;
   width: 200px;
-  margin: right 10px;
-  padding: 5px;
+  margin-left: 5px;
+  padding: 4px;
 }
 
 .menu-box-edittemp {
@@ -296,10 +309,10 @@
 .Menu-Item-edittemp {
   /* border: 1px solid #ccc; */
   display: flex;
-  /* padding: 10px; */
+ padding-top: 10px;
   /* margin: 5px; */
   cursor: pointer;
-  gap: 275px;
+  gap: 190px;
 }
 
 .menu-item-edittemp.selected {

@@ -1,7 +1,7 @@
 .dialog-inspection {
   position: absolute;
-  top: 43%;
-  left: 74%;
+  top: 45%;
+  left: 72%;
   transform: translate(-50%, -50%);
   width: 63vh;
   height: 53vh;
@@ -26,7 +26,7 @@
     font-size: 14px;
     font-weight: 400;
      color: black; 
-     padding-top: 36px;
+     padding-top: 5px;
   }
   
   .dialog-body-inspection {
@@ -84,7 +84,6 @@
     background-color: #d7e9f7;
     border-color: #005a9e;
     }
-
     .back-button-inspection{
       font-size: 14px;
       width: 95px;
@@ -136,6 +135,7 @@
           .dialog-footer-inspection{
             display: block;
             margin-left: 70px;
+            margin-top: 30px;
           }
 
          .label-inspection {

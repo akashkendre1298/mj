@@ -3,10 +3,10 @@
   /* border-radius: 5px; */
   padding: 20px;
   position: absolute;
-  top: 53%;
-  left: 50%;
+  top: 48%;
+  left: 50.5%;
   transform: translate(-50%, -50%);
-  width: 62vh;
+  width: 63vh;
   height: 50vh;
 }
 
@@ -125,10 +125,10 @@
         border-color: #005a9e;
         }
 
-        .button-container-onedamge{
+        .button-container-onedamage{
           display: flex;
           margin-left: 40px;
-          margin-top: 30px;
+          margin-top: 60px;
         }
 
         .label-container-onedamage{

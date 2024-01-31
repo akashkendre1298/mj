@@ -1,86 +1,120 @@
-.form-container-updates {
-    background-color:rgb(229, 229, 229);;
-    border-radius: 5px;
-    padding: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 65vh;
-    height: 60vh;
-  }
-  
-  .h2-updates {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .p-updates {
-    font-size: 14px;
-    margin-bottom: 90px;
-  }
-  
-  .label-updates {
-    display: block;
-    margin-bottom: 5px;
-  }
-    .input-updates {
-      flex: 1;
-      padding: 10px;
-      height: 30px;
-      width: 150px;
-      border: 2px solid #ccc;
-      border-radius: 4px;
-      outline: 1rem;
-      margin: 1px;
-  } 
-  
-  .input-updates:hover {
-    /* background-color: #d7e9f7; */
-    border-color: #005a9e;
-    }
-  
-  .cancel-button-updates{
-    font-size: 14px;
-    width: 95px;
-    height: 25px;
-    background-color: #f3f2f1;
-    color: black;
-    border: 2px solid rgb(191, 189, 189);
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 5px;
-    }
-    .cancel-button-updates:hover {
-    background-color: #d7e9f7;
-    border-color: #005a9e;
-    }
-  
-    .update-button-updates{
-        font-size: 14px;
-        width: 95px;
-        height: 25px;
-        background-color: #f3f2f1;
-        color: black;
-        border: 2px solid rgb(191, 189, 189);
-        border-radius: 5px;
-        cursor: pointer;
-        margin-right: 5px;
-        }
-        .update-button-updates:hover {
-        background-color: #d7e9f7;
-        border-color: #005a9e;
-        }
+.dialog-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: auto;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
 
-          .button-container-updates{
-            display: flex;
-            margin-left: 100px;
-            margin-top: 150px;
-          
-          }
-   
-          .label-container-updates{
-            display: flex;
-  
-          }
-  
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.dialog-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.dialog-close-button {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.dialog-close-button:hover {
+  color: #f00;
+}
+
+.dialog-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+}
+
+.dialog-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+}
+
+.dialog-icon-container i {
+  font-size: 30px;
+  color: #000;
+}
+
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.dialog-text {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.dialog-input {
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.dialog-button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.dialog-ok-button {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.dialog-ok-button:hover {
+  background-color: #3e8e41;
+}
+
+.dialog-cancel-button {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.dialog-cancel-button:hover {
+  background-color: #c62828;
+}

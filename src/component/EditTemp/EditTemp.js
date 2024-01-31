@@ -321,13 +321,13 @@ const EditTemp = ({ onClose }) => {
                 {/* Menu and Item Section */}
                 <div className='Menu-Item flex justify-center'>
                     {/* Menu Section */}
-                    <div className='item'>
+                    <div className='menu'>
 
-                        <p className='itemtitle-edittemp'>Menu</p>
+                        <p className='p-menutitle-edittemp'>Menu</p>
                     </div>
                     {/* Item Section */}
                     <div className='item'>
-                        <p className='itemtitle-edittemp'>Item</p>
+                        <p className='p-itemtitle-edittemp'>Item</p>
                     </div>
                 </div>
 
@@ -381,8 +381,8 @@ const EditTemp = ({ onClose }) => {
                                                     <div className='Contant1-edittemp'>
                                                         <div className='template-card1-edittemp'>
                                                             {/* Popup Header */}
-                                                            <div className="template-selector1">
-                                                                <span className='selectTemp1-edittemp'>Select A Template</span>
+                                                            <div className="template-selector1-edittemp">
+                                                                <span className='selectTemp1-edittemp'>Input</span>
                                                                 <button className="close-button1-edittemp" onClick={handleClosePopup}>X</button>
                                                             </div>
                                                             {/* Popup Content */}
@@ -397,7 +397,8 @@ const EditTemp = ({ onClose }) => {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                )}
+                                                   
+   )}
 
                                                 {/* Render SubItems if Exist */}
                                                 {item.subItems.length > 0 && (
