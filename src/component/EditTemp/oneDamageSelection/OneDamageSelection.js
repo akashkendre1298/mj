@@ -34,13 +34,14 @@ function OneDamageSelection({ setIsPopupOpen, isPopupOpen, onClose }) {
     onClose();
   };
 
-  const handleNext = () => {
-    // Add functionality for next button if needed
-    console.log('Next button clicked');
-  };
+  // const handleNext = () => {
+  //   // Add functionality for next button if needed
+  //   console.log('Next button clicked');
+  // };
 
   const handleDone = () => {
     // Add functionality for done button if needed
+    setIsPopupOpen(false);
     console.log('Done button clicked');
   };
 
@@ -97,9 +98,9 @@ function OneDamageSelection({ setIsPopupOpen, isPopupOpen, onClose }) {
           <button type="button" className="back-button-onedamageselection" onClick={handleBack}>
             Back
           </button>
-          <button type="button" className="next-button-onedamageselection" onClick={handleNext}>
+          {/* <button type="button" className="next-button-onedamageselection" onClick={handleNext}>
             Next
-          </button>
+          </button> */}
           <button type="submit" className="done-button-onedamageselection" onClick={handleDone}>
             Done
           </button>

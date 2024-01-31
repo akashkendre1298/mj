@@ -89,11 +89,11 @@ const EditTemp = ({ onClose }) => {
     };
 
 
-    const handleNext = () => {
-        // Handle next action
-        console.log('Next clicked');
-        openPopup();
-    };
+    // const handleNext = () => {
+    //     // Handle next action
+    //     console.log('Next clicked');
+    //     openPopup();
+    // };
 
     const handleDone = () => {
         // Handle done action
@@ -546,9 +546,9 @@ const EditTemp = ({ onClose }) => {
                                         <button className="back-button-inspection" onClick={handleBack}>
                                             Back
                                         </button>
-                                        <button className="next-button-inspection" onClick={handleNext}>
+                                        {/* <button className="next-button-inspection" onClick={handleNext}>
                                             Next
-                                        </button>
+                                        </button> */}
                                         <button className="done-button-inspection" >
                                             Done
                                         </button>
@@ -580,7 +580,7 @@ const EditTemp = ({ onClose }) => {
 
                 {/* Done Button */}
                 <div className="Donebtn-edittemp">
-                    <button className="open-button-edittemp">Done</button>
+                    <button className="open-button-edittemp" onClick={onClose}>Done</button>
                 </div>
             </div>
         </div>
