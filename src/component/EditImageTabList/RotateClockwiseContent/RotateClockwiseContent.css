@@ -2,9 +2,9 @@
   display: grid;
   justify-content: center;
   align-items: center;
-  /* text-align: center; */
-  top: 30%;
-  position: absolute;
+  text-align: center;
+  top: 24%;
+  position: relative;
 }
 
 .image-container-rotate {
@@ -12,9 +12,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 50%;
+  width: 50%;
 }
 
 .preview-image-rotate {
-  width: 50%;
-  height: 50%;
+  /* width: 50%;
+  height: 50%; */
 }

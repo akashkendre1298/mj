@@ -14,6 +14,7 @@
   padding: 10px;
   top: 320px;
   left: -10%;
+  z-index: 2;
 }
 .Contant-edittemp {
   padding-top: 0px;
@@ -68,20 +69,20 @@
   align-items: center;
 }
 /* .menutitle-edittemp { */
-  /* padding-left: 150px; */
-  /* margin-right: 150px;
+/* padding-left: 150px; */
+/* margin-right: 150px;
 } */
 /* .itemtitle-edittemp { */
-    /* padding-left: 250px;  */
-    /* margin-left: 14px;
+/* padding-left: 250px;  */
+/* margin-left: 14px;
 } */
 
-.p-menutitle-edittemp{
-margin-right: 445px;
-margin-top: 5px;
+.p-menutitle-edittemp {
+  margin-right: 445px;
+  margin-top: 5px;
 }
 
-.p-itemtitle-edittemp{
+.p-itemtitle-edittemp {
   margin-right: 70px;
   margin-top: 5px;
 }
@@ -204,7 +205,7 @@ margin-top: 5px;
   display: flex;
 }
 /*popupbox*/
- .template-card1-edittemp {
+.template-card1-edittemp {
   display: flex;
   flex-direction: column;
   width: 45vh;
@@ -212,9 +213,8 @@ margin-top: 5px;
   border: 1px solid rgb(191, 189, 189);
   border-radius: 5px;
   background-color: rgb(229, 229, 229);
-} 
- .Contant1-edittemp {
-  
+}
+.Contant1-edittemp {
   top: 0;
   left: 0;
   width: 90%;
@@ -223,22 +223,22 @@ margin-top: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-} 
+}
 
 .selectTemp1-edittemp {
   font-size: 15px;
-} 
- .close-button1-edittemp {
+}
+.close-button1-edittemp {
   background-color: transparent;
   border: none;
-} 
+}
 .para2-edittemp {
-   padding: 5px; 
+  padding: 5px;
   margin-left: 2px;
   margin-top: 0px;
   font-size: 15px;
 }
- .menutext1-edittemp {
+.menutext1-edittemp {
   padding: 12px;
   border: none;
   border: 2px solid rgb(191, 189, 189);
@@ -248,7 +248,7 @@ margin-top: 5px;
   width: 40vh;
   height: 10px;
   margin-top: 0px;
-} 
+}
 .ok-button-edittemp {
   font-size: 14px;
   width: 100px;
@@ -259,21 +259,21 @@ margin-top: 5px;
   border-radius: 5px;
   cursor: pointer;
   margin-right: 5px;
-} 
+}
 
 .ok-button-edittemp:hover {
   background-color: #d7e9f7;
   border-color: #005a9e;
-} 
- .button-container1-edittemp {
+}
+.button-container1-edittemp {
   display: flex;
   justify-content: space-between;
   width: 200px;
   margin-left: 110px;
   padding: 7px;
-} 
+}
 
- .cancel-button1-edittemp {
+.cancel-button1-edittemp {
   font-size: 15px;
   width: 100px;
   height: 25px;
@@ -287,7 +287,7 @@ margin-top: 5px;
 .cancel-button1-edittemp:hover {
   background-color: #d7e9f7;
   border-color: #005a9e;
-} 
+}
 .submenu-edittemp {
   padding-left: 20px;
   font-size: 15px;
@@ -309,7 +309,7 @@ margin-top: 5px;
 .Menu-Item-edittemp {
   /* border: 1px solid #ccc; */
   display: flex;
- padding-top: 10px;
+  padding-top: 10px;
   /* margin: 5px; */
   cursor: pointer;
   gap: 190px;

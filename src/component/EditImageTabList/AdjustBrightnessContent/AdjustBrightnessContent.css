@@ -1,23 +1,24 @@
-.preview-image-brightness {
+/* .preview-image-brightness {
   width: 50%;
   height: 50%;
-}
+} */
 .adjust-brightness-container {
   display: grid;
   justify-content: center;
   align-items: center;
   text-align: center;
-  top: 13%;
-  position: absolute;
+  /* top: 51px; */
+  position: relative;
 }
-.brightness-control {
+/* .brightness-control {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1em;
-  margin-top: 2em;
-}
+  /* margin-top: 19em; *
+/* } */
 .image-container-adjust-brightness {
-  display: flex;
-  justify-content: center;
+  position: relative;
+  width: auto;
+  cursor: crosshair;
 }

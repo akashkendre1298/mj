@@ -8,8 +8,8 @@
 
 .image-container {
   position: relative;
-  width: 500px; /* Adjust based on your design */
-  height: 300px; /* Adjust based on your design */
+  width: auto; /* Adjust based on your design */
+  /* height: 538px; */
   overflow: hidden;
   cursor: crosshair; /* Set cursor to crosshair */
 }
@@ -17,12 +17,29 @@
 .original-image {
   display: block;
   width: 100%;
+  height: 500px;
+  margin-top: 2em;
+  /* object-fit: cover; */
 }
 
 .cropped-image-container {
   margin-top: 20px;
+
+  max-width: 100%; /* Ensure the container does not exceed its parent's width */
+  overflow: hidden; /* Hide any overflow content */
 }
 
 .cropped-image-container img {
-  max-width: 100%;
+  width: 100%; /* Ensure the image fills the container */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto; /* Center the image horizontally */
+}
+.image-container-rotate {
+  transform-origin: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 16em;
+  width: 26em;
 }

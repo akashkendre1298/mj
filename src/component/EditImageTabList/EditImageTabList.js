@@ -106,6 +106,14 @@ const EditImageTabList = ({ isOpen, onRequestClose, uploadedImageUrl }) => {
                 ))}
               </div>
             </div>
+            <div className="footer-for-Eidt-image-tabelist-btns">
+              <button className="footer-for-Eidt-image-tabelist-btns-save-and-discard">
+                Save Changes
+              </button>
+              <button className="footer-for-Eidt-image-tabelist-btns-save-and-discard">
+                Discard Changes
+              </button>
+            </div>
           </div>
         </div>
       )}

@@ -19,7 +19,7 @@
   max-width: 100%;
   max-height: 100%;
   cursor: pointer;
-  filter: blur(2px) grayscale(100%); /* Apply blur by default */
+  filter: blur(2px);
   transition: filter 0.3s ease; /* Add transition for a smooth effect */
 }
 .Buttons-orderlist-to-adjust-images:hover {
@@ -46,7 +46,7 @@
 }
 .Buttons-orderlist-for-icons-buttons {
   /* background-color: white; */
-  filter: blur(2px) grayscale(100%); /* Apply blur by default */
+  filter: blur(2px);
   transition: filter 0.3s ease; /* Add transition for a smooth effect */
   &.active {
     filter: none; /* Remove blur when active */
@@ -65,7 +65,7 @@
 
 .edit-image-main-popup-container-css {
   position: absolute;
-  top: 41%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #d3d3d3;
@@ -74,7 +74,7 @@
   /* padding-top: 10px; */
   /* padding-bottom: 10px; */
   /* width: 1000px; */
-  /* height: 550px; */
+  height: 81%;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 1;

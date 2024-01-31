@@ -72,10 +72,10 @@
   font-size: 12px;
   margin: 10px 0 10px 0;
 }
-.color-picker-heading-and-color-picker {
+/* .color-picker-heading-and-color-picker {
   display: grid;
   justify-content: center;
-}
+} */
 .color-picker-heading {
   font-size: 12px;
 }
@@ -86,9 +86,10 @@
 }
 .color-picker-heading-and-color-picker {
   display: grid;
-  gap: 1em;
+  gap: 0em;
   justify-content: center;
   align-items: center;
+  height: 6em;
 }
 .undo-redo-button-and-color-picker-combine {
   background-color: rgb(229, 229, 229);
@@ -97,4 +98,27 @@
   width: 6em;
   border: 1px solid #8080808f;
   border-radius: 3px;
+}
+.footer-for-Eidt-image-tabelist-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc;
+  border: solid 1px rgb(191, 189, 189);
+  padding: 0 0 0 1em;
+  height: 2em;
+}
+.footer-for-Eidt-image-tabelist-btns-save-and-discard:hover {
+  background-color: #d7e9f7;
+  border-color: #005a9e;
+}
+.footer-for-Eidt-image-tabelist-btns-save-and-discard {
+  /* margin-right: 2em; */
+  margin-left: 2em;
+  background-color: #f3f2f1;
+  color: black;
+  border: 2px solid rgb(191, 189, 189);
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0 10px 0 10px;
 }

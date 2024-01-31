@@ -1,12 +1,14 @@
 .draw-arrow-container {
   position: relative;
-  display: flex;
-  justify-content: center;
+  width: auto;
+  /* height: 538px; */
+  /* overflow: hidden; */
+  cursor: crosshair;
 }
 
 .canvas-for-draw-arrow-content {
-  border: 2px solid #ccc;
-  cursor: crosshair;
+  display: block;
   width: 100%;
-  height: 100%;
+  height: 500px;
+  margin-top: 3em;
 }
