@@ -9,14 +9,15 @@
   text-align: center;
   /* top: 51px; */
   position: relative;
+  margin-top: 3em;
 }
-/* .brightness-control {
+.brightness-control {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1em;
-  /* margin-top: 19em; *
-/* } */
+  gap: 2em;
+  margin-top: 1em;
+}
 .image-container-adjust-brightness {
   position: relative;
   width: auto;
