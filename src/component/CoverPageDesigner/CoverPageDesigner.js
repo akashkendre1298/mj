@@ -26,15 +26,45 @@ function CoverPageDesigner() {
 
   // Function to handle resizing, dragging, etc.
 
-  const handleCheckboxChange = (event) => {
+  const handleCheckboxChange = (event, label) => {
     if (event.target.checked) {
-      // If "Cover Photo" checkbox is checked, add a box to the output
-      addObjectToOutput("box", {
-        width: 200,
-        height: 100,
-        border: "1px solid black",
-      });
+      setSelectedObjects([...selectedObjects, label]);
+      addObjectToOutput("checkbox", { label: label });
+    } else {
+      const updatedSelectedObjects = selectedObjects.filter(
+        (obj) => obj !== label
+      );
+      setSelectedObjects(updatedSelectedObjects);
+      const updatedOutputContent = outputContent.filter(
+        (obj) => obj.properties.label !== label
+      );
+      setOutputContent(updatedOutputContent);
     }
+
+    // Check which checkbox is clicked and add corresponding functionality
+    if (label === "Cover Photo") {
+      // Add button to output for "Cover Photo" checkbox
+      const buttonComponent = {
+        type: "button",
+        properties: {
+          label: "Cover Photo",
+          onClick: () => alert("Button for Cover Photo clicked"),
+        },
+      };
+      addObjectToOutput("button", buttonComponent.properties);
+    }
+    if (label === "Company Logo") {
+      // Add button to output for "Cover Photo" checkbox
+      const buttonComponent = {
+        type: "button",
+        properties: {
+          label: "Company Logo",
+          onClick: () => alert("Button for Cover Photo clicked"),
+        },
+      };
+      addObjectToOutput("logo", buttonComponent.properties);
+    }
+    // Add similar functionality for other checkboxes as needed
   };
 
   return (
@@ -60,39 +90,74 @@ function CoverPageDesigner() {
                   {/* Checkbox for cover photo */}
                   {/* <p>objects</p> */}
                   <label className="flex items-center gap-2">
-                    <input type="checkbox" onChange={handleCheckboxChange} />
+                    <input
+                      type="checkbox"
+                      onChange={(e) => handleCheckboxChange(e, "Cover Photo")}
+                    />
                     Cover Photo
                   </label>
                   <label className="flex items-center gap-2">
-                    <input type="checkbox" onChange={handleCheckboxChange} />
+                    <input
+                      type="checkbox"
+                      onChange={(e) => handleCheckboxChange(e, " Company Logo")}
+                    />
                     Company Logo
                   </label>
                   <label className="flex items-center gap-2">
-                    <input type="checkbox" onChange={handleCheckboxChange} />
+                    <input
+                      type="checkbox"
+                      onChange={(e) =>
+                        handleCheckboxChange(e, "Company Information")
+                      }
+                    />
                     Company Information
                   </label>
                   <label className="flex items-center gap-2">
-                    <input type="checkbox" onChange={handleCheckboxChange} />
+                    <input
+                      type="checkbox"
+                      onChange={(e) =>
+                        handleCheckboxChange(e, "  Inspection Details")
+                      }
+                    />
                     Inspection Details
                   </label>
                   <label className="flex items-center gap-2">
-                    <input type="checkbox" onChange={handleCheckboxChange} />
+                    <input
+                      type="checkbox"
+                      onChange={(e) =>
+                        handleCheckboxChange(e, "Agent Information")
+                      }
+                    />
                     Agent Information
                   </label>
                   <label className="flex items-center gap-2">
-                    <input type="checkbox" onChange={handleCheckboxChange} />
+                    <input
+                      type="checkbox"
+                      onChange={(e) => handleCheckboxChange(e, "Cover Company")}
+                    />
                     Cover Company
                   </label>
                   <label className="flex items-center gap-2">
-                    <input type="checkbox" onChange={handleCheckboxChange} />
+                    <input
+                      type="checkbox"
+                      onChange={(e) => handleCheckboxChange(e, " Report Title")}
+                    />
                     Report Title
                   </label>
                   <label className="flex items-center gap-2">
-                    <input type="checkbox" onChange={handleCheckboxChange} />
+                    <input
+                      type="checkbox"
+                      onChange={(e) =>
+                        handleCheckboxChange(e, "Inspection Signature")
+                      }
+                    />
                     Inspection Signature
                   </label>
                   <label className="flex items-center gap-2">
-                    <input type="checkbox" onChange={handleCheckboxChange} />
+                    <input
+                      type="checkbox"
+                      onChange={(e) => handleCheckboxChange(e, "Agent Photo")}
+                    />
                     Agent Photo
                   </label>
                   {/* ... Add more checkboxes for other template components */}
@@ -110,14 +175,18 @@ function CoverPageDesigner() {
                       <label className="flex items-center gap-2">
                         <input
                           type="checkbox"
-                          onChange={handleCheckboxChange}
+                          onChange={(e) =>
+                            handleCheckboxChange(e, "Page Borders")
+                          }
                         />
                         Page Borders
-                      </label>{" "}
+                      </label>
                       <label className="flex items-center gap-2">
                         <input
                           type="checkbox"
-                          onChange={handleCheckboxChange}
+                          onChange={(e) =>
+                            handleCheckboxChange(e, "Cover Page Stationary")
+                          }
                         />
                         Cover Page Stationary
                       </label>
@@ -163,7 +232,7 @@ function CoverPageDesigner() {
                   </div>
                 </div>
               </fieldset>
-            </div>{" "}
+            </div>
           </fieldset>
           <fieldset className="bordered-text">
             <legend className="tag-for-line-draw-through-text">Controls</legend>
@@ -221,22 +290,25 @@ function CoverPageDesigner() {
         {/* Layering Column */}{" "}
         <fieldset className="bordered-text w-1/4">
           <legend className="tag-for-line-draw-through-text">Layers</legend>
-          <div className=" bg-white ">
+          <div className="contains-the-list-of-selected-objects-and-thier-layer">
             {/* <h2 className="text-2xl font-bold mb-4">Layering</h2> */}
             {/* ... Display the list of selected objects and their layers */}
+
+            <ul>
+              {selectedObjects.map((obj, index) => (
+                <li key={index}>{obj}</li>
+              ))}
+            </ul>
           </div>{" "}
         </fieldset>
         {/* Output Column */}
-        <div className="w-1/2 border p-4 border-gray-300 relative bg-white">
+        <div className="w-1/2 border p-4 border-gray-300 relative bg-white all-the-output-screen-with-all-the-changes-reflect-here">
           <h2 className="text-2xl font-bold mb-4">Output</h2>
           {outputContent.map((object, index) => (
-            <DraggableComponent
+            <OutputComponent
               key={index}
               type={object.type}
               properties={object.properties}
-              updateObject={(newProperties) =>
-                updateObjectInOutput(index, newProperties)
-              }
               remove={() => removeObjectFromOutput(index)}
             />
           ))}
@@ -261,44 +333,63 @@ function CoverPageDesigner() {
     </>
   );
 }
-
+// OutputComponent: A component to render different types of output
+function OutputComponent({ type, properties, remove }) {
+  switch (type) {
+    case "button":
+      return (
+        <p className="btn" onClick={properties.onClick}>
+          {properties.label}
+        </p>
+      );
+    case "Company Logo":
+      return (
+        <p className="btn" onClick={properties.onClick}>
+          {properties.label}
+        </p>
+      );
+    // Add cases for other types of output components
+    default:
+      return null;
+  }
+}
 // DraggableComponent: A draggable and resizable component for the Output Column
 function DraggableComponent({ type, properties, updateObject, remove }) {
   // ... Implement the draggable and resizable logic using state and events
-
-  return (
-    <div
-      className="border p-4 mb-4"
-      style={{
-        width: `${properties.width}px`,
-        height: `${properties.height}px`,
-        border: properties.border,
-        // ... Add more styles based on properties (e.g., position)
-      }}
-    >
-      {/* Display the content based on the type */}
-      {type === "text" && <span className="text-lg">{properties.text}</span>}
-      {type === "image" && (
-        <img
-          src={properties.src}
-          alt={properties.alt}
-          className="max-w-full h-auto"
-        />
-      )}
-      {type === "box" && <div className="w-full h-full bg-gray-200"></div>}
-      {/* ... Add more cases for other object types */}
-
-      {/* Add controls for resizing, moving, etc. */}
-      {/* <button className="btn" onClick={() => updateObject({ fontSize: 16 })}>Show Actual Font Size</button>
-            <button className="btn" onClick={() => updateObject({ zoom: 1.2 })}>Zoom In</button>
-            <button className="btn" onClick={() => updateObject({ zoom: 0.8 })}>Zoom Out</button> */}
-      {/* ... Add more controls as needed */}
-
-      <button className="btn" onClick={remove}>
-        Remove
-      </button>
-    </div>
-  );
+  // return (
+  //   <div
+  //     className="border p-4 mb-4"
+  //     style={{
+  //       width: `${properties.width}px`,
+  //       height: `${properties.height}px`,
+  //       border: properties.border,
+  //       // ... Add more styles based on properties (e.g., position)
+  //     }}
+  //   >
+  //     {/* Display the content based on the type */}
+  //     {type === "text" && <span className="text-lg">{properties.text}</span>}
+  //     {type === "image" && (
+  //       <img
+  //         src={properties.src}
+  //         alt={properties.alt}
+  //         className="max-w-full h-auto"
+  //       />
+  //     )}
+  //     {type === "box" && <div className="w-full h-full bg-gray-200"></div>}
+  //     {/* ... Add more cases for other object types */}
+  //     {/* Add controls for resizing, moving, etc. */}
+  //     {/* <button className="btn" onClick={() => updateObject({ fontSize: 16 })}>Show Actual Font Size</button>
+  //           <button className="btn" onClick={() => updateObject({ zoom: 1.2 })}>Zoom In</button>
+  //           <button className="btn" onClick={() => updateObject({ zoom: 0.8 })}>Zoom Out</button> */}
+  //     {/* ... Add more controls as needed */}
+  //     <button className="btn" onClick={remove}>
+  //       Photo
+  //     </button>
+  //     <button className="btn" onClick={remove}>
+  //       Remove
+  //     </button>
+  //   </div>
+  // );
 }
 
 export default CoverPageDesigner;

@@ -127,3 +127,7 @@ fieldset {
   gap: 1em;
   padding: 1em;
 }
+.contains-the-list-of-selected-objects-and-thier-layer {
+  line-height: 2em;
+  padding: 1em;
+}
