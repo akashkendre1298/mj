@@ -499,17 +499,7 @@ const Header = () => {
                 </Link>
               </a>
             </li>
-            <li className="list-for-header-section-main-nav  border-r border-black-900">
-              <a href="#" className="header2-tag-a">
-                <div className="flex justify-center">
-                  <img src={img13} alt="" />
-                </div>
-                <div>
-                  Upload
-                  <br /> report
-                </div>
-              </a>
-            </li>
+
             <hr />
           </ul>
         </nav>

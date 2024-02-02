@@ -12,6 +12,7 @@
   padding: 0;
   margin: 0;
   display: flex;
+  border-right: 1px solid #80808033;
 }
 
 .list-for-header-section-main-nav {
