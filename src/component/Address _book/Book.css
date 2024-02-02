@@ -58,8 +58,9 @@
   /* Center both labels and input fields */
   .form-group-book .label-book,
   .form-group-book .input-for-form-book {
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    text-align: right;
   }
   
   /* Add any additional styles for other form elements if needed */
