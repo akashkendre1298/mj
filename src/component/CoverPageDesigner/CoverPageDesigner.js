@@ -317,7 +317,7 @@ function CoverPageDesigner() {
       <div className="contains-bottom-section-with-buttons-design-cover-page">
         <div className="buttons-with-apply-export-import-discard-changes-apply">
           <button className="button-for-footer-for-changes-in-cover-page">
-            Apply Changes <br /> to Template
+            Apply Changes <br /> to Template Template
           </button>{" "}
           <button className="button-for-footer-for-changes-in-cover-page">
             Export Layout to a <br /> File for Future Use
