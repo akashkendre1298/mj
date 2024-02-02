@@ -205,7 +205,7 @@ const Book = () => {
         <Header />
       </div>
 
-      <div class="flex flex-row" style={{ lineHeight: "17px" }}>
+      <div class="flex flex-row mt-4" style={{ lineHeight: "25px" }}>
         <div class="basis-1/1">
           <div className="box1-book flex ml-5 ">
             <form className="formcont-book ">
@@ -220,14 +220,14 @@ const Book = () => {
                   className="input-for-form-book"
                   id="agentlastname"
                   value={formData.agentlastname}
-                  style={{ width: "11%" }}
+                  style={{ width: "12%" }}
                   onChange={(e) => setFormData({ ...formData, agentlastname: e.target.value })}
                 />
 
                 <label
                   htmlFor="inputfirstname"
                   className="label-book"
-                  style={{ width: "11%", marginLeft: "5px" }}
+                  style={{ width: "12%", marginLeft: "5px" }}
                 >
                   First
                 </label>
@@ -236,7 +236,7 @@ const Book = () => {
                   className="input-for-form-book"
                   id="firstName"
                   value={formData.firstName}
-                  style={{ width: "11%", marginLeft: "5px" }}
+                  style={{ width: "12%", marginLeft: "5px" }}
                   onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                 />
               </div>
@@ -249,12 +249,12 @@ const Book = () => {
                   className="input-for-form-book"
                   id="Company"
                   value={formData.Company}
-                  style={{ width: "11%" }}
+                  style={{ width: "12%" }}
                   onChange={(e) => setFormData({ ...formData, Company: e.target.value })}
                 />
               </div>
 
-              <div className="form-group-book">
+              {/* <div className="form-group-book">
                 <label htmlFor="inputworkPhone" className="label-book">
                   Work Phone
                 </label>
@@ -263,14 +263,14 @@ const Book = () => {
                   className="input-for-form-book"
                   id="workPhone"
                   value={formData.workPhone}
-                  style={{ width: "11%", marginLeft: "5px" }}
+                  style={{ width: "12%", marginLeft: "5px" }}
                   onChange={(e) => setFormData({ ...formData, workPhone: e.target.value })}
                 />
 
                 <label
                   htmlFor="inputWorkFax"
                   className="label-book"
-                  style={{ width: "11%", marginLeft: "5px" }}
+                  style={{ marginLeft: "5px" }}
                 >
                   Work Fax
                 </label>
@@ -282,7 +282,22 @@ const Book = () => {
                   style={{ width: "12%", marginLeft: "6px" }}
                   onChange={(e) => setWorkFax(e.target.value)}
                 />
+              </div> */}
+
+
+              {/* <div className="flex ">
+                <div>
+                <label htmlFor="" className="label-book">Work Phone</label>
+                <input type="text"
+                 className="input-for-form-book" />
+
+                </div>
+              
+              <div>
+                <label htmlFor="">Work Fax</label>
+                <input type="text" />
               </div>
+              </div> */}
               <div className="form-group-book">
                 <label htmlFor="inputHomePhone" className="label-book">
                   Home Phone
@@ -292,14 +307,14 @@ const Book = () => {
                   className="input-for-form-book"
                   id="inputHomePhone"
                   value={HomePhone}
-                  style={{ width: "11%", marginLeft: "5px" }}
+                  style={{ width: "12%", marginLeft: "5px" }}
                   onChange={(e) => setHomePhone(e.target.value)}
                 />
 
                 <label
                   htmlFor="inputHomeFax"
                   className="label-book"
-                  style={{ width: "11%", marginLeft: "5px" }}
+                  style={{ width: "12%", marginLeft: "5px" }}
                 >
                   Home Fax
                 </label>
@@ -320,14 +335,14 @@ const Book = () => {
                   className="input-for-form-book"
                   id="inputCellphone"
                   value={Cellphone}
-                  style={{ width: "11%", marginLeft: "5px" }}
+                  style={{ width: "12%", marginLeft: "5px" }}
                   onChange={(e) => setCellphone(e.target.value)}
                 />
 
                 <label
                   htmlFor="inputfax"
                   className="label-book"
-                  style={{ width: "11%", marginLeft: "5px" }}
+                  style={{ width: "12%", marginLeft: "5px" }}
                 >
                   Pager
                 </label>
@@ -348,7 +363,7 @@ const Book = () => {
                   className="input-for-form-book"
                   id="inputAddress"
                   value={Address}
-                  style={{ width: "11%", marginLeft: "5px" }}
+                  style={{ width: "12%", marginLeft: "5px" }}
                   onChange={(e) => setAddress(e.target.value)}
                 />
               </div>
@@ -361,7 +376,7 @@ const Book = () => {
                   className="input-for-form-book"
                   id="inputaddress2"
                   value={addressLine2}
-                  style={{ width: "11%", marginLeft: "5px" }}
+                  style={{ width: "12%", marginLeft: "5px" }}
                   onChange={(e) => setAddressLine2(e.target.value)}
                 />
               </div>
@@ -374,14 +389,14 @@ const Book = () => {
                   className="input-for-form-book"
                   id="inputCity"
                   value={City}
-                  style={{ width: "11%", marginLeft: "5px" }}
+                  style={{ width: "12%", marginLeft: "5px" }}
                   onChange={(e) => setCity(e.target.value)}
                 />
 
                 <label
                   htmlFor="inputProvince"
                   className="label-book"
-                  style={{ width: "11%", marginLeft: "5px" }}
+                  style={{ width: "12%", marginLeft: "5px" }}
                 >
                   Province
                 </label>
@@ -402,14 +417,14 @@ const Book = () => {
                   className="input-for-form-book"
                   id="inputPostalCode"
                   value={PostalCode}
-                  style={{ width: "11%", marginLeft: "5px" }}
+                  style={{ width: "12%", marginLeft: "5px" }}
                   onChange={(e) => setPostalCode(e.target.value)}
                 />
 
                 <label
                   htmlFor="inputfaxCountry"
                   className="label-book"
-                  style={{ width: "11%", marginLeft: "5px" }}
+                  style={{ width: "12%", marginLeft: "5px" }}
                 >
                   Country
                 </label>
@@ -430,7 +445,7 @@ const Book = () => {
                   className="input-for-form-book"
                   id="inputEmailAddress"
                   value={EmailAddress}
-                  style={{ width: "11%", marginLeft: "5px" }}
+                  style={{ width: "12%", marginLeft: "5px" }}
                   onChange={(e) => setEmailAddress(e.target.value)}
                 />
               </div>
@@ -445,14 +460,14 @@ const Book = () => {
                     className="input-for-form-book"
                     id="inputWebsite"
                     value={Website}
-                    style={{ width: "11%", marginLeft: "5px" }}
+                    style={{ width: "12%", marginLeft: "5px" }}
                     onChange={(e) => setWebsite(e.target.value)}
                   />
 
                   <label
                     htmlFor="inputState"
                     className="label-book"
-                    style={{ width: "11%", marginLeft: "5px" }}
+                    style={{ width: "12%", marginLeft: "5px" }}
                   >
                     State
                   </label>
@@ -473,7 +488,7 @@ const Book = () => {
                     className="input-for-form-book"
                     id="inputzip"
                     value={zipCode}
-                    style={{ width: "11%", marginLeft: "5px" }}
+                    style={{ width: "12%", marginLeft: "5px" }}
                     onChange={(e) => setZipCode(e.target.value)}
                   />
                 </div>
@@ -487,7 +502,7 @@ const Book = () => {
                   id="inputNotes"
                   rows="5"
                   value={Notes}
-                  style={{ width: "11%", marginLeft: "5px" }}
+                  style={{ width: "12%", marginLeft: "5px" }}
                   onChange={(e) => setNotes(e.target.value)}
                 ></textarea>
               </div>
@@ -495,7 +510,7 @@ const Book = () => {
             <div className="flex flex-row" style={{ lineHeight: "17px" }}>
               {/* ... Other form elements ... */}
               <div className="photoupload-book">
-                <div className="bg-white ml-2 mt-10 mr-5 w-40 h-48 border-2 border-dashed border-gray-400 flex items-center justify-center">
+                <div className="bg-white ml-5 mt-10 mr-5 w-40 h-48 border-2 border-dashed border-gray-400 flex items-center justify-center px-3">
                   {selectedImage ? (
                     <img src={selectedImage} alt="Selected" className="max-h-full max-w-full" />
                   ) : (
@@ -514,12 +529,12 @@ const Book = () => {
                     />
                     <label
                       htmlFor="imageInput"
-                      className="bg-gray-300 hover:bg-gray-400 px-3 h-7 border border-gray-400 rounded cursor-pointer"
+                      className="bg-gray-300 hover:bg-gray-400 px-3 h-6 border border-gray-400 rounded cursor-pointer text-sm"
                     >
                       Upload
                     </label>
                     <button
-                      className="bg-gray-300 hover:bg-gray-400 px-3 h-7 border border-gray-400 rounded"
+                      className="bg-gray-300 hover:bg-gray-400 px-3 h-6 border border-gray-400 rounded text-sm"
                       onClick={() => {
                         // Clear the selected image
                         setSelectedImage(null);
@@ -582,7 +597,7 @@ const Book = () => {
                     <td style={{ border: '1px solid black' }}>{data.firstName}</td>
                     <td style={{ border: '1px solid black' }}>{data.Company}</td>
                     <td style={{ border: '1px solid black' }}>{data.workPhone}</td>
-                    {/* Optionally include a button here if you want it per row */}z
+                    {/* Optionally include a button here if you want it per row */}
                   </tr>
                 ))}
               </tbody>
@@ -644,8 +659,3 @@ const Book = () => {
 };
 
 export default Book;
-
-
-
-
-

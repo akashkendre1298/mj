@@ -3,7 +3,7 @@ import './Inspection.css';
 import OneDamage from '../OneDamage/OneDamage';
 import twoDamage from "../twoDamage/TwoDamage";
 import OneSelection from "../oneSelection/OneSelection";
-import twoSelection  from "../twoSelection/TwoSelection";
+import twoSelection from "../twoSelection/TwoSelection";
 import oneDamageSelection from "../oneDamageSelection/OneDamageSelection";
 import OneDamageTwoSelection from '../oneDamageTwoSelection/OneDamageTwoSelection';
 
@@ -26,7 +26,7 @@ const Inspection = () => {
     'Option 3': OneSelection,
     'Option 4': twoSelection,
     'Option 5': oneDamageSelection,
-     'Option 6': OneDamageTwoSelection,
+    'Option 6': OneDamageTwoSelection,
   };
 
   const handleRadioChange = (event) => {
@@ -49,16 +49,16 @@ const Inspection = () => {
       [selectedOption]: true,
     }));
   };
-  
+
   const closePopup = () => {
     setPopupStates((prevState) => ({
       ...prevState,
       [selectedOption]: false,
-      
+
     }));
-console.log("closing")
+    console.log("closing")
   };
-  
+
 
 
   const handleCancel = () => {
@@ -68,11 +68,11 @@ console.log("closing")
       ...prevState,
       [selectedOption]: false,
     }));
-    console.log('Cancel clicked');
+    console.log('done clicked');
   };
 
   const handleBack = () => {
-   
+
     console.log('Back clicked');
   };
 
@@ -83,15 +83,15 @@ console.log("closing")
   //   openPopup();
   // };
 
-  const handleDone = () => {
-    // Handle done action
-    
-    console.log('Done clicked');
-    // console.log('Selected option:', selectedOption);
-    closePopup();
-  };
+  // const handleDone = () => {
+  //   // Handle done action
 
-  
+  //   console.log('Done clicked');
+  //   // console.log('Selected option:', selectedOption);
+  //   closePopup();
+  // };
+
+
   return (
     <div className="dialog-inspection">
       <div className="dialog-header-inspection">
@@ -111,7 +111,7 @@ console.log("closing")
           1 Damage Panel
         </label>
 
-       
+
         <label className='label-inspection'>
           <input
             type="radio"
@@ -168,7 +168,7 @@ console.log("closing")
         </label>
       </div>
       <div className="dialog-footer-inspection">
-      <button className="cancel-button-inspection" onClick={handleCancel}>
+        <button className="cancel-button-inspection" onClick={handleCancel}>
           Cancel
         </button>
         <button className="back-button-inspection" onClick={handleBack}>
@@ -177,7 +177,7 @@ console.log("closing")
         {/* <button className="next-button-inspection" onClick={handleNext}>
           Next
         </button> */}
-        <button className="done-button-inspection" onClick={closePopup}>
+        <button className="done-button-inspection" onClick={handleCancel}>
           Done
         </button>
       </div>

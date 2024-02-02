@@ -242,11 +242,13 @@ const EditTemp = ({ onClose }) => {
     const handleOkButtonClick = () => {
         setItems((prevItems) =>
             prevItems.map((item) =>
-                item.id === selectedMenuItemIndex.id ? { ...item, name: newItemName } : item
+                item.id === selectedMenuItemIndex.id ? { ...item, menuname: newItemName } : item
             )
         );
         setPopupVisible(false);
+        console.log("rename", newItemName);
     };
+
 
     // Function to handle removing a menu item or subitem
     const handleRemoveItem = () => {
@@ -374,6 +376,7 @@ const EditTemp = ({ onClose }) => {
                                                     }}
                                                 >
                                                     {item.menuname}{' '}
+                                                    {/* newItemName={newItemName} */}
                                                 </button>
 
                                                 {/* Popup for Renaming Menu Item */}
@@ -397,8 +400,8 @@ const EditTemp = ({ onClose }) => {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                   
-   )}
+
+                                                )}
 
                                                 {/* Render SubItems if Exist */}
                                                 {item.subItems.length > 0 && (
@@ -549,7 +552,7 @@ const EditTemp = ({ onClose }) => {
                                         {/* <button className="next-button-inspection" onClick={handleNext}>
                                             Next
                                         </button> */}
-                                        <button className="done-button-inspection" >
+                                        <button className="done-button-inspection" onClick={handleClosePopupInspection}>
                                             Done
                                         </button>
                                     </div>
