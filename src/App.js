@@ -26,8 +26,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<ClientInfo />}></Route>
-        <Route path="/" element={<Footer />}></Route>
+        <Route path="/client-info" element={<ClientInfo />}></Route>
+        {/* <Route path="/" element={<Footer />}></Route> */}
         <Route path="/colorpalet" element={<ColorPalet />}></Route>
         <Route path="/insertpdf" element={<InsertPdf />}></Route>
         <Route path="/book" element={<Book />}></Route>
@@ -40,7 +40,7 @@ function App() {
         <Route path="/contractpage" element={<ContractPage />}></Route>
         <Route path="/generateReport" element={<ColorPalette />}></Route>
         <Route path="/internetlogin" element={<InternetLogin />}></Route>
-        <Route path="/coverpagedesigner"element={<CoverPageDesigner />}></Route>
+        <Route path="/coverpagedesigner" element={<CoverPageDesigner />}></Route>
         {/* <Route path="/" element={<MobileUpload/>}></Route> */}
         {/* <Route path="/mobilesync" element={<MobileUpload />}></Route> */}
       </Routes>
