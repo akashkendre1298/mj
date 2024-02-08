@@ -59,5 +59,14 @@
     "electron": "^28.1.1",
     "electron-builder": "^24.9.1",
     "tailwindcss": "^3.4.1"
+  },
+  "build": {
+    "directories": {
+      "output": "build"
+    },
+    "appId": "com.yourcompany.macj",
+    "win": {
+      "target": "portable"
+    }
   }
 }
