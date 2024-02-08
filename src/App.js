@@ -26,8 +26,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/client-info" element={<ClientInfo />}></Route>
-        {/* <Route path="/" element={<Footer />}></Route> */}
+        <Route path="/" element={<ClientInfo />}></Route>
+        <Route path="/" element={<Footer />}></Route>
         <Route path="/colorpalet" element={<ColorPalet />}></Route>
         <Route path="/insertpdf" element={<InsertPdf />}></Route>
         <Route path="/book" element={<Book />}></Route>
